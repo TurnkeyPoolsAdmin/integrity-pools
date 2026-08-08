@@ -5,31 +5,31 @@ const steps = [
     step: "Step 1",
     title: "Consultation",
     desc: "We visit your property, listen to your vision, and discuss what's realistic for your space and budget. No pressure. No obligation.",
-    img: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_MiWGoGARyDQ-3.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-3.png",
   },
   {
     step: "Step 2",
     title: "Design",
     desc: "Our team creates detailed plans and 3D renderings so you can see exactly what you're getting before we break ground.",
-    img: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_MiWGoGARyDQ.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq.png",
   },
   {
     step: "Step 3",
     title: "Permits & Prep",
     desc: "We handle all permitting and city requirements. You shouldn't have to navigate bureaucracy.",
-    img: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_UCMH1MNP5Fo.png",
+    img: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.png",
   },
   {
     step: "Step 4",
     title: "Construction",
     desc: "Our crews and trusted subcontractors execute the build while keeping you informed at every milestone.",
-    img: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_MiWGoGARyDQ-1.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.png",
   },
   {
     step: "Step 5",
     title: "Final Walkthrough",
     desc: "We don't disappear after the last tile is set. We walk you through everything and make sure you're completely satisfied.",
-    img: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_MiWGoGARyDQ-2.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-2.png",
   },
 ];
 

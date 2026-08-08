@@ -2,15 +2,15 @@ export default function Partners() {
   const partners = [
     {
       name: "Pentair",
-      src: "https://thomaspools.us/assets/Logos/partners-logo/PENTAIR-LOGO.png",
+      src: "/images/Logos/partners-logo/pentair-logo.png",
     },
     {
       name: "Hayward",
-      src: "https://thomaspools.us/assets/Logos/partners-logo/HAYWARD-LOGO.png",
+      src: "/images/Logos/partners-logo/hayward-logo.png",
     },
     {
       name: "Fluidra",
-      src: "https://thomaspools.us/assets/Logos/partners-logo/FLUIDRA-LOGO.png",
+      src: "/images/Logos/partners-logo/fluidra-logo.png",
     },
   ];
 

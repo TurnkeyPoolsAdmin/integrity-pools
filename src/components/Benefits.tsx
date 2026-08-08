@@ -79,7 +79,7 @@ export default function Benefits() {
         <div
           className="h-[200px] md:h-[300px] bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://thomaspools.us/assets/Everything-your-backyards-need/pool-water-bg.png')`,
+            backgroundImage: `url('/images/banner-img/pool-drone-001-06-1.png')`,
           }}
         />
         <svg viewBox="0 0 1440 120" className="w-full h-[80px] md:h-[120px] relative z-10" preserveAspectRatio="none">

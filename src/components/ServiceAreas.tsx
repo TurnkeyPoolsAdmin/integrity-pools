@@ -28,7 +28,7 @@ export default function ServiceAreas() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://thomaspools.us/assets/Ready-To-transform-your-backyard-section/DSCN0269%201.png')`,
+            backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.png')`,
           }}
         />
         <div className="absolute inset-0 bg-black/20" />

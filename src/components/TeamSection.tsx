@@ -4,13 +4,13 @@ export default function TeamSection() {
       name: "Aaron Sternberg",
       role: "Head of Pricing and Design",
       desc: "Aaron leads the estimating and design process for every new project. He ensures each pool is thoughtfully designed, accurately priced, and aligned with your vision and budget.",
-      img: "https://thomaspools.us/assets/ready-to-level-up-section-img/image%2031.png",
+      img: "/images/ready-to-level-up-section-img/image-31.png",
     },
     {
       name: "Mark Pesin",
       role: "Head of Project Management",
       desc: "Mark ensures every project is executed smoothly from start to finish. He oversees permitting, timelines, coordination, and on-site quality to deliver pools that meet the highest standards.",
-      img: "https://thomaspools.us/assets/ready-to-level-up-section-img/mark_pesin.jpg",
+      img: "/images/ready-to-level-up-section-img/mark-pesin.jpg",
     },
   ];
 

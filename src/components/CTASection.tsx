@@ -37,7 +37,7 @@ export default function CTASection() {
           {/* Right - Image */}
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="https://thomaspools.us/assets/Ready-To-transform-your-backyard-section/DSCN0269%201.png"
+              src="/images/Ready-To-transform-your-backyard-section/dscn0269-1.png"
               alt="Beautiful backyard with pool"
               className="w-full h-[400px] lg:h-[500px] object-cover"
             />

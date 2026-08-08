@@ -15,17 +15,17 @@ const serviceDetails = [
   {
     title: "Pool Resurfacing & Remodeling",
     desc: "Transform your existing pool with new plaster, tile, coping, and equipment upgrades. We handle complete remodels that bring aging pools back to life with modern finishes and energy-efficient systems.",
-    img: "https://thomaspools.us/assets/service-multi-section-img/Aug%2010%202020%201.png",
+    img: "/images/service-multi-section-img/aug-10-2020-1.png",
   },
   {
     title: "Smart Pool Technology",
     desc: "Control your pool from your phone. We install and configure smart pool systems including iAquaLink and ScreenLogic so you can manage pumps, heaters, lighting, and more from anywhere.",
-    img: "https://thomaspools.us/assets/service-section-two-img/July%2018%202022%201.png",
+    img: "/images/service-section-two-img/july-18-2022-1.png",
   },
   {
     title: "Saltwater Pool Systems",
     desc: "Softer water, less maintenance, no harsh chemicals. We design and convert pools to saltwater systems that are gentler on skin and easier to maintain year-round.",
-    img: "https://thomaspools.us/assets/service-multi-section-img/0915171202a%201.png",
+    img: "/images/service-multi-section-img/0915171202a-1.png",
   },
 ];
 

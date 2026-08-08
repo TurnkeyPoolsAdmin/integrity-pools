@@ -10,41 +10,41 @@ const categories = [
   {
     name: "Modern Pools",
     images: [
-      { src: "https://thomaspools.us/assets/photo-gallery/modern-pools/0000.JPG", alt: "Modern geometric pool" },
-      { src: "https://thomaspools.us/assets/our-work-banner-img/DSCN0269%201.png", alt: "Custom modern pool design" },
-      { src: "https://thomaspools.us/assets/our-work-banner-img/July%2021%202022%201.png", alt: "Contemporary backyard pool" },
+      { src: "/images/photo-gallery/modern-pools/0000.jpg", alt: "Modern geometric pool" },
+      { src: "/images/our-work-banner-img/dscn0269-1.png", alt: "Custom modern pool design" },
+      { src: "/images/our-work-banner-img/july-21-2022-1.png", alt: "Contemporary backyard pool" },
     ],
   },
   {
     name: "Freeform Pools",
     images: [
-      { src: "https://thomaspools.us/assets/photo-gallery/freeform-pools/20140116_121726.jpg", alt: "Freeform pool with natural curves" },
-      { src: "https://thomaspools.us/assets/Everything-your-backyards-need/0721171355a%201.png", alt: "Natural shaped pool" },
-      { src: "https://thomaspools.us/assets/Everything-your-backyards-need/July%207%202020%201.png", alt: "Organic pool design" },
+      { src: "/images/photo-gallery/freeform-pools/20140116-121726.jpg", alt: "Freeform pool with natural curves" },
+      { src: "/images/Everything-your-backyards-need/0721171355a-1.png", alt: "Natural shaped pool" },
+      { src: "/images/Everything-your-backyards-need/july-7-2020-1.png", alt: "Organic pool design" },
     ],
   },
   {
     name: "Spas & Water Features",
     images: [
-      { src: "https://thomaspools.us/assets/photo-gallery/spas/IMG_5286.JPG", alt: "Custom spa installation" },
-      { src: "https://thomaspools.us/assets/Everything-your-backyards-need/IMG%207216%201.png", alt: "Pool with water features" },
-      { src: "https://thomaspools.us/assets/our-work-banner-img/IMG%207216%201.png", alt: "Spa and pool combo" },
+      { src: "/images/photo-gallery/spas/img-5286.jpg", alt: "Custom spa installation" },
+      { src: "/images/Everything-your-backyards-need/img-7216-1.png", alt: "Pool with water features" },
+      { src: "/images/our-work-banner-img/img-7216-1.png", alt: "Spa and pool combo" },
     ],
   },
   {
     name: "Outdoor Living",
     images: [
-      { src: "https://thomaspools.us/assets/photo-gallery/outdoor-living/1102171046.jpg", alt: "Outdoor living space" },
-      { src: "https://thomaspools.us/assets/Everything-your-backyards-need/Sept%2024%202019%201.png", alt: "Fire feature with pool" },
-      { src: "https://thomaspools.us/assets/Everything-your-backyards-need/Mar%2016%202022%201.png", alt: "Hardscape patio" },
+      { src: "/images/photo-gallery/outdoor-living/1102171046.jpg", alt: "Outdoor living space" },
+      { src: "/images/Everything-your-backyards-need/sept-24-2019-1.png", alt: "Fire feature with pool" },
+      { src: "/images/Everything-your-backyards-need/mar-16-2022-1.png", alt: "Hardscape patio" },
     ],
   },
   {
     name: "Build Process",
     images: [
-      { src: "https://thomaspools.us/assets/photo-gallery/pool-building-process/1010171358_HDR.jpg", alt: "Pool construction in progress" },
-      { src: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_UCMH1MNP5Fo.png", alt: "Excavation and prep" },
-      { src: "https://thomaspools.us/assets/how-we-wrok-with-you/unsplash_MiWGoGARyDQ-1.png", alt: "Steel and plumbing phase" },
+      { src: "/images/photo-gallery/pool-building-process/1010171358-hdr.jpg", alt: "Pool construction in progress" },
+      { src: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.png", alt: "Excavation and prep" },
+      { src: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.png", alt: "Steel and plumbing phase" },
     ],
   },
 ];

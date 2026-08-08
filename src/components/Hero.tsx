@@ -7,7 +7,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('https://thomaspools.us/assets/banner-img/Pool%20Drone%20001-06%201.png')`,
+          backgroundImage: `url('/images/banner-img/pool-drone-001-06-1.png')`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />

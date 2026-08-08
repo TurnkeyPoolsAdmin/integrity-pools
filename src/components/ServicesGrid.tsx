@@ -4,32 +4,32 @@ const services = [
   {
     title: "New Pool Construction",
     desc: "Custom-designed gunite and plaster pools built to your specifications. From classic rectangles to freeform lagoons.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/0721171355a%201.png",
+    img: "/images/Everything-your-backyards-need/0721171355a-1.png",
   },
   {
     title: "Pool Remodeling",
     desc: "Outdated tile. Cracked plaster. Equipment from another decade. We bring aging pools back to life.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/IMG%207216%201.png",
+    img: "/images/Everything-your-backyards-need/img-7216-1.png",
   },
   {
     title: "Landscaping",
     desc: "Standalone or integrated. Spillover designs. Therapeutic jets. The perfect complement to your pool or patio.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/July%207%202020%201.png",
+    img: "/images/Everything-your-backyards-need/july-7-2020-1.png",
   },
   {
     title: "Hardscaping",
     desc: "Pavers, natural stone, concrete decking. The foundation that ties your entire outdoor space together.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/Mar%2016%202022%201.png",
+    img: "/images/Everything-your-backyards-need/mar-16-2022-1.png",
   },
   {
     title: "Fire Features",
     desc: "Fire pits, fire bowls, and linear fire walls that extend your outdoor season into cooler months.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/Sept%2024%202019%201.png",
+    img: "/images/Everything-your-backyards-need/sept-24-2019-1.png",
   },
   {
     title: "Outdoor Kitchens",
     desc: "Custom grills, countertops, and entertainment areas built for serious outdoor cooking.",
-    img: "https://thomaspools.us/assets/Everything-your-backyards-need/unsplash_MiWGoGARyDQ.png",
+    img: "/images/Everything-your-backyards-need/unsplash-miwgogarydq.png",
   },
 ];
 

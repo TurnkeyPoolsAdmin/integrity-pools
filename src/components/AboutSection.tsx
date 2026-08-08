@@ -8,7 +8,7 @@ export default function AboutSection() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://thomaspools.us/assets/Everything-your-backyards-need/Sept%2024%202019%201.png')`,
+            backgroundImage: `url('/images/Everything-your-backyards-need/sept-24-2019-1.png')`,
           }}
         />
         <div className="absolute inset-0 bg-black/30" />
@@ -61,7 +61,7 @@ export default function AboutSection() {
               </p>
               <div className="relative inline-block">
                 <img
-                  src="https://thomaspools.us/assets/the-thomas-difference/thomas-person.png"
+                  src="/images/the-thomas-difference/thomas-person.png"
                   alt="Company founder"
                   className="w-48 h-48 rounded-full object-cover"
                 />

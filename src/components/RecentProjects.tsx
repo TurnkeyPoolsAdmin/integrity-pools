@@ -5,23 +5,23 @@ import Link from "next/link";
 
 const projects = [
   {
-    src: "https://thomaspools.us/assets/our-work-banner-img/DSCN0269%201.png",
+    src: "/images/our-work-banner-img/dscn0269-1.png",
     alt: "Custom pool with water features and landscaping",
   },
   {
-    src: "https://thomaspools.us/assets/our-work-banner-img/July%2021%202022%201.png",
+    src: "/images/our-work-banner-img/july-21-2022-1.png",
     alt: "Modern pool with bamboo and hardscape patio",
   },
   {
-    src: "https://thomaspools.us/assets/our-work-banner-img/IMG%207216%201.png",
+    src: "/images/our-work-banner-img/img-7216-1.png",
     alt: "Luxury backyard transformation with pool",
   },
   {
-    src: "https://thomaspools.us/assets/photo-gallery/modern-pools/0000.JPG",
+    src: "/images/photo-gallery/modern-pools/0000.jpg",
     alt: "Modern geometric pool design",
   },
   {
-    src: "https://thomaspools.us/assets/photo-gallery/freeform-pools/20140116_121726.jpg",
+    src: "/images/photo-gallery/freeform-pools/20140116-121726.jpg",
     alt: "Freeform pool with natural surroundings",
   },
 ];
