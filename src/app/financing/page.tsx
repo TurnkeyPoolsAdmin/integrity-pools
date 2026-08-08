@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Financing | Integrity Pools & Hardscapes",
@@ -31,7 +32,7 @@ export default function FinancingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-primary text-white">
+      <section className="relative pt-32 pb-32 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-secondary-light font-semibold uppercase tracking-wider text-sm mb-3">
@@ -46,6 +47,9 @@ export default function FinancingPage() {
               that makes sense.
             </p>
           </div>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider color="#ffffff" />
         </div>
       </section>
 
@@ -66,7 +70,7 @@ export default function FinancingPage() {
             {partners.map((p) => (
               <div
                 key={p.name}
-                className="bg-gray-light rounded-xl p-8 hover:shadow-md transition-shadow"
+                className="bg-gray-light rounded-xl p-8 card-lift"
               >
                 <h3 className="text-2xl font-bold text-dark mb-3">{p.name}</h3>
                 <p className="text-gray-600 leading-relaxed">{p.desc}</p>

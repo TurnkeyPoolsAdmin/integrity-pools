@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -86,7 +87,7 @@ export default function RecentProjects() {
             </svg>
           </button>
 
-          {/* Photos - 2 visible on desktop (like Thomas), center card larger */}
+          {/* Photos - 2 visible on desktop, center card larger */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             {visible.slice(0, 2).map((project, i) => (
               <div
@@ -94,10 +95,12 @@ export default function RecentProjects() {
                 className="rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500"
               >
                 <div className="relative h-72 md:h-96 overflow-hidden">
-                  <img
+                  <Image
                     src={project.src}
                     alt={project.alt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
                 </div>

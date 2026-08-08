@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Gallery | Integrity Pools & Hardscapes",
@@ -53,13 +55,16 @@ export default function GalleryPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-primary text-white">
+      <section className="relative pt-32 pb-32 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-heading font-bold mb-6">Our Work</h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
             Browse our portfolio of custom pools, spas, hardscaping, and outdoor
             living projects built for families across Southern California.
           </p>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider color="#ffffff" />
         </div>
       </section>
 
@@ -72,10 +77,12 @@ export default function GalleryPage() {
               {cat.images.map((img, i) => (
                 <div key={i} className="rounded-xl overflow-hidden shadow-md group cursor-pointer">
                   <div className="relative h-64 overflow-hidden">
-                    <img
+                    <Image
                       src={img.src}
                       alt={img.alt}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
                   </div>

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProcessSteps from "@/components/ProcessSteps";
 import Partners from "@/components/Partners";
 import CTASection from "@/components/CTASection";
+import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Services | Integrity Pools & Hardscapes",
@@ -33,7 +35,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-primary text-white">
+      <section className="relative pt-32 pb-32 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="text-secondary-light font-semibold uppercase tracking-wider text-sm mb-3">
@@ -52,6 +54,9 @@ export default function ServicesPage() {
             </Link>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0">
+          <WaveDivider color="#ffffff" />
+        </div>
       </section>
 
       {/* Service Details */}
@@ -65,11 +70,13 @@ export default function ServicesPage() {
               } gap-12 items-center`}
             >
               <div className="lg:w-1/2">
-                <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img
+                <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
+                  <Image
                     src={s.img}
                     alt={s.title}
-                    className="w-full h-80 object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
                   />
                 </div>
               </div>

@@ -75,7 +75,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="mt-4">
-                <p className="text-white text-xl font-bold">Tom Reid</p>
+                <p className="text-white text-xl font-bold">David Marsh</p>
                 <p className="text-white/70 text-sm">Founder, Integrity Pools</p>
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function AboutSection() {
                 Counties turn underused outdoor space into the place they actually want to be.
               </p>
               <p>
-                Tom Reid, our owner, still walks every job site. Not because he has to, but
+                David Marsh, our owner, still walks every job site. Not because he has to, but
                 because he cares how it turns out. That&apos;s the kind of company we&apos;ve always been.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-4">

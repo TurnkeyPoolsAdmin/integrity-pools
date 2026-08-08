@@ -10,10 +10,13 @@ export default function ContactForm() {
     projectType: "",
     message: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you! We'll be in touch within 24 hours.");
+    // Demo: no backend wired up yet. Show an inline confirmation.
+    // Drop a real endpoint (GHL, email, etc.) into this handler when ready.
+    setSubmitted(true);
   };
 
   return (
@@ -59,6 +62,32 @@ export default function ContactForm() {
 
             {/* Right side - form */}
             <div>
+              {submitted ? (
+                <div className="bg-white/10 border border-white/20 rounded-2xl p-8 md:p-10 text-center">
+                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-heading font-bold text-white mb-3">
+                    Thanks{formData.name ? `, ${formData.name.split(" ")[0]}` : ""}!
+                  </h3>
+                  <p className="text-white/70 leading-relaxed max-w-sm mx-auto">
+                    We got your request and will reach out within 24 hours to talk
+                    through your project.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
+                    }}
+                    className="mt-6 text-secondary-light font-semibold text-sm hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
@@ -149,6 +178,7 @@ export default function ContactForm() {
                   Start Your Project →
                 </button>
               </form>
+              )}
             </div>
           </div>
         </div>
