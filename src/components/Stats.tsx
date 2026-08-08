@@ -16,7 +16,7 @@ export default function Stats() {
             </div>
             <div className="text-center py-4 md:py-0 md:px-6">
               <p className="text-white/60 text-xs uppercase tracking-widest mb-1">We Partner With</p>
-              <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-1">Top</p>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-1">THE BEST</p>
               <p className="text-white/70 text-sm">Designers In The Industry</p>
             </div>
           </div>

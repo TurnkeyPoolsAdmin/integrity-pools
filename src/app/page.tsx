@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
+import AfterHeroBanner from "@/components/AfterHeroBanner";
 import RecentProjects from "@/components/RecentProjects";
 import TestimonialsSection from "@/components/Testimonials";
 import Benefits from "@/components/Benefits";
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <Hero />
       <Stats />
+      <AfterHeroBanner />
       <RecentProjects />
       <TestimonialsSection />
       <Benefits />

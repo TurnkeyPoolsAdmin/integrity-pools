@@ -18,8 +18,15 @@ export default function ContactForm() {
 
   return (
     <section className="relative py-20 overflow-hidden">
-      {/* Dark background with wave pattern */}
-      <div className="absolute inset-0 bg-dark" />
+      {/* Background photo + dark overlay */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: `url('https://thomaspools.us/assets/Ready-To-transform-your-backyard-section/DSCN0269%201.png')`,
+        }}
+      />
+      <div className="absolute inset-0 bg-dark/85" />
+      {/* Wave pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none">
           <path d="M0 100c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />

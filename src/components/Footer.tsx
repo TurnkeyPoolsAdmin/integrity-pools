@@ -73,7 +73,7 @@ export default function Footer() {
                 <p className="text-sm font-semibold text-white mb-3">Map &amp; Directions</p>
                 <div className="rounded-lg overflow-hidden">
                   <iframe
-                    src="https://maps.google.com/maps?q=29441+The+Old+Rd,+Castaic,+CA+91384&hl=en&z=13&output=embed"
+                    src="https://maps.google.com/maps?q=29441+The+Old+Rd,+Castaic,+CA+91384&hl=en&z=15&output=embed"
                     width="100%"
                     height="200"
                     style={{ border: 0 }}

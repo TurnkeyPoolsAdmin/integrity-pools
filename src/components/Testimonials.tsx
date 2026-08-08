@@ -46,6 +46,14 @@ export default function TestimonialsSection() {
               <br />
               Are Saying
             </h2>
+            <div className="flex items-center gap-2 mt-4">
+              <div className="flex text-accent text-sm">
+                {"★★★★★".split("").map((star, i) => (
+                  <span key={i}>{star}</span>
+                ))}
+              </div>
+              <span className="text-gray-500 text-sm italic">Over 70+ Google Reviews</span>
+            </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 mt-6 md:mt-0">
             <Link
