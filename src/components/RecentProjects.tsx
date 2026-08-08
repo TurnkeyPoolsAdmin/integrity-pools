@@ -42,15 +42,15 @@ export default function RecentProjects() {
   }
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12">
           <div>
-            <p className="text-secondary font-semibold uppercase tracking-widest text-sm mb-2">
+            <p className="text-secondary font-bold uppercase tracking-[0.175em] text-sm mb-3">
               Recent Work
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-none text-dark">
               Recent Projects
             </h2>
           </div>
@@ -68,7 +68,7 @@ export default function RecentProjects() {
           {/* Left arrow */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-10 h-10 rounded-full border-2 border-dark bg-white flex items-center justify-center hover:bg-dark hover:text-white transition-colors shadow-md"
+            className="absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-100 bg-white/95 text-dark flex items-center justify-center hover:bg-dark hover:text-white transition-colors shadow-xl"
             aria-label="Previous"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default function RecentProjects() {
           {/* Right arrow */}
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-10 h-10 rounded-full border-2 border-dark bg-white flex items-center justify-center hover:bg-dark hover:text-white transition-colors shadow-md"
+            className="absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full border border-gray-100 bg-white/95 text-dark flex items-center justify-center hover:bg-dark hover:text-white transition-colors shadow-xl"
             aria-label="Next"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,18 +114,18 @@ export default function RecentProjects() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-3 rounded-full transition-colors text-center text-sm"
+              className="bg-secondary hover:bg-secondary-light text-white font-bold px-10 py-4 rounded-full transition-colors text-center text-base"
             >
               Start Your Project →
             </Link>
             <Link
               href="/gallery"
-              className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-sm"
+              className="bg-white border border-gray-200 text-dark font-bold px-10 py-4 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-base"
             >
               View Full Gallery
             </Link>
           </div>
-          <p className="text-gray-600 max-w-md text-sm leading-relaxed mt-6 md:mt-0 md:text-right">
+          <p className="text-gray-600 max-w-md text-[15px] font-medium leading-relaxed mt-6 md:mt-0 md:text-right">
             Every backyard tells a story. Here&apos;s what we&apos;ve been building
             for families across Los Angeles and Ventura Counties.
           </p>

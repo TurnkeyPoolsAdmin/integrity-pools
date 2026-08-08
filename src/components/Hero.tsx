@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const stats = [
-  { eyebrow: "Over", number: "30+", caption: "Years Experience" },
+  { eyebrow: "Over", number: "30+", caption: "Years Combined Experience" },
   { eyebrow: "More Than", number: "1,600+", caption: "Backyard Transformations" },
   { eyebrow: "We Partner With", number: "THE BEST", caption: "Designers In The Industry" },
 ];

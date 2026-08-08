@@ -33,15 +33,15 @@ function QuoteIcon() {
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 bg-gray-light">
+    <section className="pt-20 pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row - split layout */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
-            <p className="text-secondary font-semibold uppercase tracking-widest text-sm mb-2">
+            <p className="text-secondary font-bold tracking-widest text-sm mb-4">
               Reviews
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-tight text-dark">
               What Homeowners
               <br />
               Are Saying
@@ -58,13 +58,13 @@ export default function TestimonialsSection() {
           <div className="flex flex-col sm:flex-row gap-3 mt-6 md:mt-0">
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-3 rounded-full transition-colors text-center text-sm"
+              className="bg-secondary hover:bg-secondary-light text-white font-bold px-8 py-3.5 rounded-full transition-colors text-center text-base"
             >
               Start Your Project →
             </Link>
             <Link
               href="/testimonials"
-              className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-sm"
+              className="bg-white border border-gray-200 text-dark font-bold px-8 py-3.5 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-base"
             >
               Read More Reviews
             </Link>
@@ -72,11 +72,11 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Reviews grid - 3 top, 2 bottom */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {testimonials.slice(0, 3).map((t, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
             >
               <QuoteIcon />
               <p className="text-gray-700 mt-4 mb-6 leading-relaxed text-lg">
@@ -87,11 +87,11 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.slice(3, 5).map((t, i) => (
             <div
               key={i + 3}
-              className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
             >
               <QuoteIcon />
               <p className="text-gray-700 mt-4 mb-6 leading-relaxed text-lg">

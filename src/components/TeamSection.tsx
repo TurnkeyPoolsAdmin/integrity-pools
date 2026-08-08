@@ -13,20 +13,20 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-20 bg-[#4dd4e6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14">
-          <p className="text-white/80 uppercase tracking-widest text-sm font-semibold mb-2">
+    <section className="py-20 lg:py-28 bg-[#4dd4e6]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-14 lg:mb-20">
+          <p className="text-white/80 uppercase tracking-[0.25em] text-sm font-normal mb-2">
             Meet The Team
           </p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
             Ready To Level Up Your
             <br />
             Yard Game
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 max-w-4xl">
           {team.map((member) => (
             <div key={member.name}>
               <div
@@ -41,7 +41,7 @@ export default function TeamSection() {
                 <h3 className="text-xl font-bold text-white">{member.name}</h3>
                 <p className="text-white/70 text-sm mb-3">{member.role}</p>
               </div>
-              <p className="text-white/80 text-sm leading-relaxed mt-4 max-w-sm">
+              <p className="text-white/90 text-sm leading-relaxed mt-4 max-w-sm">
                 {member.desc}
               </p>
             </div>

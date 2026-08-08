@@ -88,30 +88,30 @@ export default function Benefits() {
       </div>
 
       {/* Benefits section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="text-secondary font-semibold uppercase tracking-[0.2em] text-sm mb-3">
+            <p className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4">
               Benefits Over The Others
             </p>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-tight text-dark">
               Why Homeowners
               <br />
               Choose Integrity
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="bg-primary rounded-2xl p-8 hover:bg-primary-light transition-colors group"
+                className="bg-dark rounded-2xl p-10 shadow-xl hover:bg-primary-light transition-colors group"
               >
                 <div className="w-14 h-14 bg-secondary/20 rounded-full flex items-center justify-center mb-6 text-white/80 group-hover:text-white transition-colors">
                   {b.icon}
                 </div>
                 <h3 className="font-bold text-xl text-white mb-3">{b.title}</h3>
-                <p className="text-blue-200 leading-relaxed text-sm">{b.desc}</p>
+                <p className="text-gray-300 leading-relaxed text-[15px]">{b.desc}</p>
               </div>
             ))}
           </div>
@@ -119,13 +119,13 @@ export default function Benefits() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
             <Link
               href="/contact"
-              className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-3 rounded-full transition-colors text-sm"
+              className="bg-secondary hover:bg-secondary-light text-white font-bold px-9 py-4 rounded-full transition-colors text-base"
             >
               Start Your Project →
             </Link>
             <a
               href="tel:6614959030"
-              className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors inline-flex items-center gap-2 text-sm"
+              className="bg-white border border-dark text-dark font-bold px-9 py-4 rounded-full hover:bg-dark hover:text-white transition-colors inline-flex items-center gap-2 text-base"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

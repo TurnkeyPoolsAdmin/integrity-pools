@@ -24,7 +24,7 @@ export default function ServiceAreas() {
   return (
     <>
       {/* Hero with wave overlay */}
-      <section className="relative min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[48rem] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -36,18 +36,18 @@ export default function ServiceAreas() {
         {/* Wave overlay */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
-            <path d="M0 200c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeWidth="40" fill="none" />
-            <path d="M0 280c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeWidth="40" fill="none" />
-            <path d="M0 360c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeWidth="40" fill="none" />
-            <path d="M0 440c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeWidth="40" fill="none" />
+            <path d="M0 200c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
+            <path d="M0 280c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
+            <path d="M0 360c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
+            <path d="M0 440c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
           </svg>
         </div>
 
         <div className="relative z-10 text-center text-white py-20">
-          <p className="uppercase tracking-[0.3em] text-sm font-semibold mb-4">
+          <p className="uppercase tracking-[0.3em] text-[15px] font-bold mb-4">
             Service Areas
           </p>
-          <h2 className="text-5xl md:text-7xl font-heading font-bold leading-tight">
+          <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold leading-[1.1] tracking-tight mb-10">
             Proudly Serving
             <br />
             Southern California

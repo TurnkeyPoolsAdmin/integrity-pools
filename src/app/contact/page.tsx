@@ -32,7 +32,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <p className="text-3xl font-heading font-bold">30+</p>
-              <p className="text-gray-400 text-sm">Years in Business</p>
+              <p className="text-gray-400 text-sm">Years Combined Experience</p>
             </div>
             <div>
               <p className="text-3xl font-heading font-bold">1,600+</p>

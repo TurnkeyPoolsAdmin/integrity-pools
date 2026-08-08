@@ -1,11 +1,11 @@
 export default function CTASection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left - Text */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark leading-snug mb-6">
               Ready To Transform Your Backyard?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
@@ -18,14 +18,14 @@ export default function CTASection() {
 
             {/* Hours box */}
             <div className="border-l-4 border-gray-200 pl-4 mb-8 max-w-xs">
-              <p className="text-xs uppercase tracking-widest font-semibold text-dark mb-1">Hours:</p>
+              <p className="text-xs uppercase tracking-normal font-normal text-gray-500 mb-1">Hours:</p>
               <p className="text-gray-600 text-sm">Mon-Sat: 9am-5pm</p>
               <p className="text-gray-600 text-sm">Sun: By Appointment</p>
             </div>
 
             <a
               href="tel:6614959030"
-              className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors inline-flex items-center gap-2 text-sm"
+              className="border border-dark text-dark font-medium px-6 py-3 rounded-full hover:bg-dark hover:text-white transition-colors inline-flex items-center gap-2 text-sm"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />

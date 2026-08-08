@@ -35,13 +35,13 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section className="py-20 bg-dark">
+    <section className="pt-20 pb-20 lg:pt-32 lg:pb-28 bg-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-14">
+        <div className="mb-14 lg:mb-24">
           <p className="text-secondary font-semibold uppercase tracking-widest text-sm mb-2">
             Our Process
           </p>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-white">
             How We Work With You
           </h2>
         </div>
@@ -53,28 +53,28 @@ export default function ProcessSteps() {
 
           <div className="space-y-16">
             {steps.map((s, i) => (
-              <div key={i} className="relative flex flex-col lg:flex-row items-center gap-8">
+              <div key={i} className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+                {/* Timeline dot */}
+                <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="w-4 h-4 rounded-full bg-secondary border-4 border-dark z-10" />
+                </div>
+
                 {/* Image - always on the left */}
-                <div className="lg:w-5/12">
-                  <div className="rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative z-10">
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
                     <img
                       src={s.img}
                       alt={s.title}
-                      className="w-full h-60 object-cover"
+                      className="w-full h-72 object-cover"
                     />
                   </div>
                 </div>
 
-                {/* Timeline dot */}
-                <div className="hidden lg:flex w-2/12 justify-center">
-                  <div className="w-4 h-4 rounded-full bg-secondary border-4 border-dark z-10" />
-                </div>
-
                 {/* Content - always on the right */}
-                <div className="lg:w-5/12">
+                <div className="lg:pl-10">
                   <p className="text-secondary font-semibold text-sm mb-1">{s.step}</p>
-                  <h3 className="text-2xl font-bold text-white mb-3">{s.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{s.desc}</p>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-3">{s.title}</h3>
+                  <p className="text-gray-400 leading-relaxed text-lg">{s.desc}</p>
                 </div>
               </div>
             ))}

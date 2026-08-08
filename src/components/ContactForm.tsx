@@ -20,7 +20,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative mx-4 my-10 rounded-[2.5rem] bg-dark min-h-[700px] overflow-hidden">
       {/* Background photo + dark overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -28,7 +28,7 @@ export default function ContactForm() {
           backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.png')`,
         }}
       />
-      <div className="absolute inset-0 bg-dark/85" />
+      <div className="absolute inset-0 bg-dark/90" />
       {/* Wave pattern overlay */}
       <div className="absolute inset-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none">
@@ -40,20 +40,20 @@ export default function ContactForm() {
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-dark/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 lg:p-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="p-8 md:p-12 lg:p-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left side - text */}
             <div>
               <p className="text-white/60 uppercase tracking-[0.2em] text-sm font-semibold mb-4">
                 Contact Us
               </p>
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-tight mb-6">
                 Let&apos;s Talk About
                 <br />
                 Your Backyard
               </h2>
-              <p className="text-white/70 leading-relaxed max-w-md">
+              <p className="text-white font-medium leading-relaxed max-w-md">
                 Whether you&apos;re ready to break ground or just exploring
                 ideas, we&apos;re here. Tell us what you&apos;re envisioning and we&apos;ll
                 reach out within 24 hours.
@@ -173,7 +173,7 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="w-full bg-secondary hover:bg-secondary-light text-white font-semibold py-4 rounded-lg transition-colors text-sm"
+                  className="w-full bg-secondary hover:bg-secondary-light text-white font-bold py-4 rounded-full transition-colors text-sm"
                 >
                   Start Your Project →
                 </button>

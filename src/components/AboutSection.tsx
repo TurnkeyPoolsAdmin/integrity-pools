@@ -29,7 +29,7 @@ export default function AboutSection() {
             </div>
             {/* Quote card */}
             <div className="lg:w-2/3 bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-10">
-              <p className="text-dark text-lg md:text-xl font-medium leading-relaxed mb-6">
+              <p className="text-dark text-xl md:text-2xl font-bold leading-relaxed mb-6">
                 &ldquo;Integrity Pools does it all! I would recommend them to anyone looking
                 for a local, friendly and professional pool company to work with. We had our
                 pool done and still get compliments on how nice our pool is.&rdquo;
@@ -42,13 +42,13 @@ export default function AboutSection() {
       </section>
 
       {/* The Integrity Difference */}
-      <section className="py-20 bg-[#4dd4e6]">
+      <section className="py-32 bg-[#4dd4e6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Big heading */}
-          <h2 className="text-5xl md:text-7xl lg:text-[110px] font-heading font-bold text-white leading-none mb-12">
+          <h2 className="text-5xl md:text-7xl lg:text-[130px] font-heading font-extrabold text-[#f8f9f3] leading-[0.8] lg:leading-[120px] mb-12">
             The
             <br />
-            <span className="text-5xl md:text-7xl lg:text-[130px]">INTEGRITY</span>
+            <span className="text-5xl md:text-7xl lg:text-[150px]">INTEGRITY</span>
             <br />
             Difference
           </h2>
@@ -56,7 +56,7 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left: tagline + photo */}
             <div>
-              <p className="text-dark text-xl font-semibold mb-8">
+              <p className="text-[#f8f9f3]/90 text-2xl font-bold mb-8">
                 Most pool companies build pools. We build backyards.
               </p>
               <div className="relative inline-block">
@@ -106,13 +106,13 @@ export default function AboutSection() {
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
                   href="/contact"
-                  className="bg-dark text-white font-semibold px-8 py-3 rounded-full hover:bg-dark/80 transition-colors text-center text-sm"
+                  className="bg-dark text-white font-bold px-10 py-4 rounded-full hover:bg-dark/80 transition-colors text-center text-[15px]"
                 >
                   Start Your Project →
                 </Link>
                 <Link
                   href="/services"
-                  className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-sm"
+                  className="bg-white text-dark font-bold px-10 py-4 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-[15px]"
                 >
                   Meet The Team
                 </Link>

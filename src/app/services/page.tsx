@@ -46,7 +46,7 @@ export default function ServicesPage() {
             </h1>
             <p className="text-blue-200 text-lg leading-relaxed mb-8">
               Serving the Santa Clarita Valley, the Greater Los Angeles Area, and Ventura
-              County since 1990. From new builds to complete remodels, we handle every
+              County since 2012. From new builds to complete remodels, we handle every
               aspect of your outdoor transformation.
             </p>
             <Link href="/contact" className="btn-primary">

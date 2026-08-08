@@ -4,7 +4,7 @@ export default function AfterHeroBanner() {
       {/* Wave top transition */}
       <svg
         viewBox="0 0 1440 120"
-        className="w-full h-[60px] md:h-[100px] relative z-10"
+        className="w-full h-[40px] md:h-[60px] relative z-10"
         preserveAspectRatio="none"
       >
         <path
@@ -15,7 +15,7 @@ export default function AfterHeroBanner() {
 
       {/* Full-bleed backyard image band */}
       <div
-        className="h-[200px] md:h-[350px] bg-cover bg-center"
+        className="h-[160px] md:h-[230px] bg-cover bg-center"
         style={{
           backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.png')`,
         }}
@@ -24,7 +24,7 @@ export default function AfterHeroBanner() {
       {/* Wave bottom transition */}
       <svg
         viewBox="0 0 1440 120"
-        className="w-full h-[60px] md:h-[100px] relative z-10"
+        className="w-full h-[40px] md:h-[60px] relative z-10"
         preserveAspectRatio="none"
       >
         <path

@@ -29,38 +29,44 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="bg-dark text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-10">
+            C53 License #945615, #1154897
+          </p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left - tagline */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-[56px] font-heading font-extrabold leading-[1.1] tracking-tight">
                 Building Southern
                 <br />
                 California Backyards
                 <br />
-                Since 1990
+                Since 2012
               </h2>
             </div>
 
             {/* Middle - Contact */}
             <div>
-              <p className="uppercase tracking-[0.2em] text-sm font-semibold text-white/60 mb-4">
+              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-white/40 mb-4">
                 Contact Us
               </p>
-              <p className="text-white/80 mb-1">29441 The Old Rd, Castaic,</p>
-              <p className="text-white/80 mb-4">CA 91384</p>
-              <a href="tel:6614959030" className="text-white/80 hover:text-white transition-colors">
+              <p className="text-base font-medium text-white/70 mb-1">29441 The Old Rd, Castaic,</p>
+              <p className="text-base font-medium text-white/70 mb-4">CA 91384</p>
+              <a href="tel:6614959030" className="text-base font-medium text-white/70 hover:text-white transition-colors">
                 (661) 495-9030
               </a>
             </div>
 
             {/* Right - Nav */}
             <div>
+              <p className="uppercase tracking-[0.2em] text-xs font-semibold text-white/40 mb-4">
+                Explore
+              </p>
               <nav className="flex flex-col gap-3">
-                <Link href="/" className="text-white/80 hover:text-white transition-colors font-medium">Home</Link>
-                <Link href="/services" className="text-white/80 hover:text-white transition-colors font-medium">Services</Link>
-                <Link href="/financing" className="text-white/80 hover:text-white transition-colors font-medium">Financing</Link>
-                <Link href="/contact" className="text-white/80 hover:text-white transition-colors font-medium">Contact</Link>
+                <Link href="/" className="text-base font-medium text-white/70 hover:text-white transition-colors">Home</Link>
+                <Link href="/services" className="text-base font-medium text-white/70 hover:text-white transition-colors">Services</Link>
+                <Link href="/financing" className="text-base font-medium text-white/70 hover:text-white transition-colors">Financing</Link>
+                <Link href="/contact" className="text-base font-medium text-white/70 hover:text-white transition-colors">Contact</Link>
               </nav>
             </div>
           </div>
@@ -70,7 +76,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Map */}
               <div>
-                <p className="text-sm font-semibold text-white mb-3">Map &amp; Directions</p>
+                <p className="uppercase tracking-[0.2em] text-xs font-semibold text-white/40 mb-3">Map &amp; Directions</p>
                 <div className="rounded-lg overflow-hidden">
                   <iframe
                     src="https://maps.google.com/maps?q=29441+The+Old+Rd,+Castaic,+CA+91384&hl=en&z=15&output=embed"
