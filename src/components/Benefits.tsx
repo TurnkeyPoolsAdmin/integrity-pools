@@ -71,36 +71,15 @@ const benefits = [
 export default function Benefits() {
   return (
     <>
-      {/* Pool water wave divider with swimmer image */}
-      <div className="relative w-full overflow-hidden">
-        <div
-          className="h-[320px] md:h-[480px] bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/images/banner-img/pool-drone-001-06-1.png')`,
-          }}
+      {/* Pool water wave divider — Thomas's pre-masked swimmer PNG (transparent wavy edges baked in) */}
+      <div className="w-full bg-white">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/reviews-section-img/mask-group.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-auto"
         />
-        {/* Organic wavy top edge - photo flows out of the section above */}
-        <svg
-          viewBox="0 0 1440 110"
-          className="absolute top-0 left-0 w-full h-[60px] md:h-[110px] pointer-events-none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 0h1440v34c-72 36-158 54-262 42-124-15-206-64-330-58-112 5-176 50-288 58-124 9-198-30-310-40C152 26 76 50 0 84V0Z"
-            fill="#f8fafc"
-          />
-        </svg>
-        {/* Organic wavy bottom edge - photo flows into the section below */}
-        <svg
-          viewBox="0 0 1440 110"
-          className="absolute bottom-0 left-0 w-full h-[60px] md:h-[110px] pointer-events-none"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 110h1440V70c-76-38-162-52-266-40-120 14-202 56-326 54-112-2-180-46-292-54-124-9-202 28-314 38C146 76 74 56 0 30v80Z"
-            fill="#ffffff"
-          />
-        </svg>
       </div>
 
       {/* Benefits section */}

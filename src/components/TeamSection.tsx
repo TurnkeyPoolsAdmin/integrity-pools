@@ -13,7 +13,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#4dd4e6]">
+    <section className="py-20 lg:py-28 bg-[#26b6c6]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-14 lg:mb-20">
           <p className="text-white/80 uppercase tracking-[0.25em] text-sm font-normal mb-2">

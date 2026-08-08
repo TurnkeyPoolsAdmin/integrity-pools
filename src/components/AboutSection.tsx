@@ -4,22 +4,21 @@ export default function AboutSection() {
   return (
     <>
       {/* Featured testimonial with background image */}
-      <section className="relative min-h-[500px] flex items-center">
+      <section className="relative min-h-[585px] flex items-center">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/Everything-your-backyards-need/sept-24-2019-1.png')`,
+            backgroundImage: `url('/images/one-person-review-img/pool1.png')`,
           }}
         />
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end gap-8">
             {/* Location tag */}
-            <div className="lg:w-1/3">
-              <p className="text-white/80 uppercase tracking-widest text-xs font-semibold mb-2">
+            <div className="lg:w-1/3 lg:pb-6">
+              <p className="text-white uppercase tracking-widest text-xs font-semibold mb-2 [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
                 Project Location
               </p>
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
+              <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -28,7 +27,7 @@ export default function AboutSection() {
               </div>
             </div>
             {/* Quote card */}
-            <div className="lg:w-2/3 bg-white/95 backdrop-blur-sm rounded-2xl p-8 md:p-10">
+            <div className="lg:w-[55%] lg:ml-auto bg-white/95 backdrop-blur-sm rounded-lg p-8 md:p-12">
               <p className="text-dark text-xl md:text-2xl font-bold leading-relaxed mb-6">
                 &ldquo;Integrity Pools does it all! I would recommend them to anyone looking
                 for a local, friendly and professional pool company to work with. We had our
@@ -42,13 +41,13 @@ export default function AboutSection() {
       </section>
 
       {/* The Integrity Difference */}
-      <section className="py-32 bg-[#4dd4e6]">
+      <section className="py-32 bg-[#3bc2d1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Big heading */}
-          <h2 className="text-5xl md:text-7xl lg:text-[130px] font-heading font-extrabold text-[#f8f9f3] leading-[0.8] lg:leading-[120px] mb-12">
+          {/* Big heading — three uniform lines, tight leading, off-white (Thomas treatment) */}
+          <h2 className="text-6xl md:text-8xl lg:text-[140px] font-heading font-extrabold text-[#f8f9f3] leading-[0.95] tracking-tight mb-16">
             The
             <br />
-            <span className="text-5xl md:text-7xl lg:text-[150px]">INTEGRITY</span>
+            INTEGRITY
             <br />
             Difference
           </h2>
