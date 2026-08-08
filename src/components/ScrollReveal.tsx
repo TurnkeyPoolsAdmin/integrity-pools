@@ -29,11 +29,21 @@ export default function ScrollReveal() {
     );
     if (!sections.length) return;
 
+    const reveal = (el: HTMLElement) => {
+      el.setAttribute("data-reveal", "shown");
+    };
+
+    // If IntersectionObserver is unavailable, just show everything.
+    if (typeof IntersectionObserver === "undefined") {
+      sections.forEach(reveal);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            reveal(entry.target as HTMLElement);
             observer.unobserve(entry.target);
           }
         }
@@ -42,12 +52,27 @@ export default function ScrollReveal() {
     );
 
     for (const el of sections) {
-      if (el.classList.contains("is-visible")) continue;
-      el.setAttribute("data-reveal", "");
+      if (el.getAttribute("data-reveal") === "shown") continue;
+      el.setAttribute("data-reveal", "hidden");
       observer.observe(el);
     }
 
-    return () => observer.disconnect();
+    // Safety net: reveal anything already in view on the next frame, so
+    // above-the-fold content never waits on (or gets stuck behind) the observer.
+    const raf = requestAnimationFrame(() => {
+      for (const el of sections) {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) {
+          reveal(el);
+          observer.unobserve(el);
+        }
+      }
+    });
+
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+    };
   }, [pathname]);
 
   return null;
