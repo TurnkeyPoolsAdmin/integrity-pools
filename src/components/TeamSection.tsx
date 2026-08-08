@@ -1,16 +1,14 @@
 export default function TeamSection() {
   const team = [
     {
-      name: "Aaron Sternberg",
+      name: "Phil Bovard",
       role: "Head of Pricing and Design",
-      desc: "Aaron leads the estimating and design process for every new project. He ensures each pool is thoughtfully designed, accurately priced, and aligned with your vision and budget.",
-      img: "/images/ready-to-level-up-section-img/image-31.png",
+      desc: "Phil leads design and pricing for every project. Since 2012 he's helped hundreds of families turn a rough idea and a budget into a real plan they're excited about. No guesswork, no surprise numbers, just a design that fits the yard and the wallet.",
     },
     {
-      name: "Mark Pesin",
-      role: "Head of Project Management",
-      desc: "Mark ensures every project is executed smoothly from start to finish. He oversees permitting, timelines, coordination, and on-site quality to deliver pools that meet the highest standards.",
-      img: "/images/ready-to-level-up-section-img/mark-pesin.jpg",
+      name: "Matt Sheeran",
+      role: "Head of Customer Experience",
+      desc: "Matt owns the thing most pool companies forget: how it feels to be the customer. He's built our whole process around unreasonable hospitality. Clear updates, fast answers, and a team that treats your home like their own from the first call to the final swim.",
     },
   ];
 
@@ -31,12 +29,13 @@ export default function TeamSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
           {team.map((member) => (
             <div key={member.name}>
-              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 shadow-lg border-4 border-white/20">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
+              <div
+                className="w-40 h-40 rounded-full mb-6 shadow-lg border-4 border-white/20 bg-white/20 flex items-center justify-center"
+                aria-label={`${member.name} photo placeholder`}
+              >
+                <svg className="w-20 h-20 text-white/50" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z" />
+                </svg>
               </div>
               <div className="border-l-4 border-white pl-5">
                 <h3 className="text-xl font-bold text-white">{member.name}</h3>

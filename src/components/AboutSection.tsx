@@ -60,11 +60,14 @@ export default function AboutSection() {
                 Most pool companies build pools. We build backyards.
               </p>
               <div className="relative inline-block">
-                <img
-                  src="/images/the-thomas-difference/thomas-person.png"
-                  alt="Company founder"
-                  className="w-48 h-48 rounded-full object-cover"
-                />
+                <div
+                  className="w-48 h-48 rounded-full bg-white/20 border-4 border-white/30 flex items-center justify-center"
+                  aria-label="Founder photo placeholder"
+                >
+                  <svg className="w-24 h-24 text-white/50" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z" />
+                  </svg>
+                </div>
                 {/* Wave accent behind photo */}
                 <div className="absolute -right-8 top-1/2 -translate-y-1/2 opacity-40">
                   <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -75,7 +78,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <div className="mt-4">
-                <p className="text-white text-xl font-bold">David Marsh</p>
+                <p className="text-white text-xl font-bold">Ryan Osborne</p>
                 <p className="text-white/70 text-sm">Founder, Integrity Pools</p>
               </div>
             </div>
@@ -83,17 +86,22 @@ export default function AboutSection() {
             {/* Right: description */}
             <div className="space-y-6 text-white text-lg leading-relaxed">
               <p>
-                That means thinking beyond the waterline. It&apos;s the patio that connects
-                your kitchen to your outdoor living space. The fire pit where you&apos;ll gather
-                on cool evenings. The spa tucked into the corner where you&apos;ll actually unwind.
+                Ryan started Integrity Pools in 2012 with one belief: building a pool
+                should feel as good as the finished pool looks. He&apos;d watched too many
+                families get burned by contractors who overpromised, went quiet, and left
+                them guessing.
               </p>
               <p>
-                Since 1990, we&apos;ve helped over 1,600 families across Los Angeles and Ventura
-                Counties turn underused outdoor space into the place they actually want to be.
+                So he built the opposite kind of company. One where you always know where
+                things stand, the price you&apos;re quoted is the price you pay, and the crew
+                treats your home like their own. Since then we&apos;ve helped hundreds of
+                families across Los Angeles and Ventura Counties turn an underused backyard
+                into the place they actually want to be.
               </p>
               <p>
-                David Marsh, our owner, still walks every job site. Not because he has to, but
-                because he cares how it turns out. That&apos;s the kind of company we&apos;ve always been.
+                Ryan still meets homeowners himself and walks every job site in person. Not
+                because he has to, but because he cares how it turns out. Empathy first,
+                integrity always. That&apos;s the whole company in three words.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
