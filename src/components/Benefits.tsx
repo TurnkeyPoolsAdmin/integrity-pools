@@ -3,7 +3,7 @@ import Link from "next/link";
 const benefits = [
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <circle cx="9" cy="7" r="3" />
         <circle cx="15" cy="7" r="3" />
         <path d="M3 21v-2a4 4 0 014-4h2" />
@@ -16,7 +16,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 18h18M4 18v-3a1 1 0 011-1h14a1 1 0 011 1v3" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M7 14V9l5-4 5 4v5" />
         <path strokeLinecap="round" d="M5 14l7-5.5L19 14" />
@@ -27,7 +27,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <rect x="2" y="6" width="20" height="12" rx="2" />
         <circle cx="12" cy="12" r="3" />
         <path strokeLinecap="round" d="M6 12h.01M18 12h.01" />
@@ -38,7 +38,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <rect x="4" y="4" width="16" height="16" rx="2" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
         <path strokeLinecap="round" d="M4 9h16" />
@@ -49,7 +49,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
         <circle cx="12" cy="12" r="3" />
       </svg>
@@ -59,7 +59,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+      <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
       </svg>
     ),
@@ -73,17 +73,33 @@ export default function Benefits() {
     <>
       {/* Pool water wave divider with swimmer image */}
       <div className="relative w-full overflow-hidden">
-        <svg viewBox="0 0 1440 120" className="w-full h-[80px] md:h-[120px] relative z-10" preserveAspectRatio="none">
-          <path d="M0 60C180 120 360 0 540 60C720 120 900 0 1080 60C1260 120 1440 0 1440 60V0H0V60Z" fill="#f8fafc" />
-        </svg>
         <div
-          className="h-[200px] md:h-[300px] bg-cover bg-center"
+          className="h-[320px] md:h-[480px] bg-cover bg-center"
           style={{
             backgroundImage: `url('/images/banner-img/pool-drone-001-06-1.png')`,
           }}
         />
-        <svg viewBox="0 0 1440 120" className="w-full h-[80px] md:h-[120px] relative z-10" preserveAspectRatio="none">
-          <path d="M0 60C180 0 360 120 540 60C720 0 900 120 1080 60C1260 0 1440 120 1440 60V120H0V60Z" fill="#ffffff" />
+        {/* Organic wavy top edge - photo flows out of the section above */}
+        <svg
+          viewBox="0 0 1440 110"
+          className="absolute top-0 left-0 w-full h-[60px] md:h-[110px] pointer-events-none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 0h1440v34c-72 36-158 54-262 42-124-15-206-64-330-58-112 5-176 50-288 58-124 9-198-30-310-40C152 26 76 50 0 84V0Z"
+            fill="#f8fafc"
+          />
+        </svg>
+        {/* Organic wavy bottom edge - photo flows into the section below */}
+        <svg
+          viewBox="0 0 1440 110"
+          className="absolute bottom-0 left-0 w-full h-[60px] md:h-[110px] pointer-events-none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 110h1440V70c-76-38-162-52-266-40-120 14-202 56-326 54-112-2-180-46-292-54-124-9-202 28-314 38C146 76 74 56 0 30v80Z"
+            fill="#ffffff"
+          />
         </svg>
       </div>
 
@@ -105,12 +121,12 @@ export default function Benefits() {
             {benefits.map((b, i) => (
               <div
                 key={i}
-                className="bg-dark rounded-2xl p-10 shadow-xl hover:bg-primary-light transition-colors group"
+                className="bg-dark rounded-2xl p-12 min-h-[26rem] shadow-xl hover:bg-primary-light transition-colors group flex flex-col"
               >
-                <div className="w-14 h-14 bg-secondary/20 rounded-full flex items-center justify-center mb-6 text-white/80 group-hover:text-white transition-colors">
+                <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mb-10 text-white/80 group-hover:text-white transition-colors">
                   {b.icon}
                 </div>
-                <h3 className="font-bold text-xl text-white mb-3">{b.title}</h3>
+                <h3 className="font-bold text-2xl text-white mb-5">{b.title}</h3>
                 <p className="text-gray-300 leading-relaxed text-[15px]">{b.desc}</p>
               </div>
             ))}

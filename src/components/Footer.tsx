@@ -5,9 +5,9 @@ export default function Footer() {
     <footer>
       {/* Large logo section */}
       <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-6 md:gap-10">
           {/* Wave icon */}
-          <svg width="120" height="140" viewBox="0 0 120 140" fill="none" className="flex-shrink-0">
+          <svg viewBox="0 0 120 140" fill="none" className="flex-shrink-0 w-[100px] h-[117px] md:w-[160px] md:h-[187px] lg:w-[190px] lg:h-[222px]">
             <path d="M10 20c15-12 30-12 45 0s30 12 45 0" stroke="#0f172a" strokeWidth="8" fill="none" />
             <path d="M10 45c15-12 30-12 45 0s30 12 45 0" stroke="#0f172a" strokeWidth="8" fill="none" />
             <path d="M10 70c15-12 30-12 45 0s30 12 45 0" stroke="#0f172a" strokeWidth="8" fill="none" />
@@ -17,10 +17,10 @@ export default function Footer() {
           </svg>
           {/* Company name */}
           <div>
-            <p className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-dark leading-none tracking-tight">
+            <p className="text-6xl md:text-8xl lg:text-[9.5rem] font-heading font-extrabold text-dark leading-none tracking-tight">
               INTEGRITY
             </p>
-            <p className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-dark tracking-[0.15em]">
+            <p className="text-3xl md:text-5xl lg:text-[4.3rem] font-heading font-extrabold text-dark tracking-[0.12em] leading-tight">
               POOLS &amp; HARDSCAPE
             </p>
           </div>
@@ -33,10 +33,10 @@ export default function Footer() {
           <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-10">
             C53 License #945615, #1154897
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,0.8fr)_minmax(0,0.7fr)] gap-12">
             {/* Left - tagline */}
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-[56px] font-heading font-extrabold leading-[1.1] tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-[56px] font-heading font-extrabold leading-[1.1] tracking-tight max-w-[15em]">
                 Building Southern
                 <br />
                 California Backyards

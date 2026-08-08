@@ -24,26 +24,27 @@ export default function ServiceAreas() {
   return (
     <>
       {/* Hero with wave overlay */}
-      <section className="relative min-h-[48rem] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[48rem] flex items-start justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.png')`,
           }}
         />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-black/30" />
 
-        {/* Wave overlay */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
-            <path d="M0 200c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
-            <path d="M0 280c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
-            <path d="M0 360c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
-            <path d="M0 440c60-40 120-40 180 0s120 40 180 0 120-40 180 0 120 40 180 0 120-40 180 0 120 40 180 0" stroke="white" strokeOpacity="0.22" strokeWidth="14" fill="none" />
+        {/* Wave overlay - five thick white stripes across the lower half */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 pointer-events-none">
+          <svg className="w-full h-full" viewBox="0 0 1200 300" preserveAspectRatio="none" fill="none">
+            <path d="M-40 45c75-38 150-38 225 0s150 38 225 0 150-38 225 0 150 38 225 0 150-38 225 0 150 38 225 0" stroke="white" strokeOpacity="0.9" strokeWidth="34" fill="none" />
+            <path d="M-40 105c75-38 150-38 225 0s150 38 225 0 150-38 225 0 150 38 225 0 150-38 225 0 150 38 225 0" stroke="white" strokeOpacity="0.9" strokeWidth="34" fill="none" />
+            <path d="M-40 165c75-38 150-38 225 0s150 38 225 0 150-38 225 0 150 38 225 0 150-38 225 0 150 38 225 0" stroke="white" strokeOpacity="0.9" strokeWidth="34" fill="none" />
+            <path d="M-40 225c75-38 150-38 225 0s150 38 225 0 150-38 225 0 150 38 225 0 150-38 225 0 150 38 225 0" stroke="white" strokeOpacity="0.9" strokeWidth="34" fill="none" />
+            <path d="M-40 285c75-38 150-38 225 0s150 38 225 0 150-38 225 0 150 38 225 0 150-38 225 0 150 38 225 0" stroke="white" strokeOpacity="0.9" strokeWidth="34" fill="none" />
           </svg>
         </div>
 
-        <div className="relative z-10 text-center text-white py-20">
+        <div className="relative z-10 text-center text-white pt-24 pb-20">
           <p className="uppercase tracking-[0.3em] text-[15px] font-bold mb-4">
             Service Areas
           </p>

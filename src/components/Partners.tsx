@@ -104,18 +104,14 @@ export default function Partners() {
                 Fluidra &mdash; industry leaders in reliability, efficiency, and
                 innovation.
               </p>
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
                 {partners.map((p) => (
-                  <div
+                  <img
                     key={p.name}
-                    className="bg-[#f2f8fb] rounded-lg shadow px-10 py-5 inline-flex items-center justify-center"
-                  >
-                    <img
-                      src={p.src}
-                      alt={p.name}
-                      className="h-10 w-auto object-contain"
-                    />
-                  </div>
+                    src={p.src}
+                    alt={p.name}
+                    className="h-9 w-auto object-contain"
+                  />
                 ))}
               </div>
             </div>

@@ -25,7 +25,7 @@ const testimonials = [
 
 function QuoteIcon() {
   return (
-    <svg className="w-8 h-8 text-secondary/30" fill="currentColor" viewBox="0 0 24 24">
+    <svg className="w-12 h-12 text-secondary/30" fill="currentColor" viewBox="0 0 24 24">
       <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
     </svg>
   );
@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               className="bg-white rounded-2xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
             >
               <QuoteIcon />
-              <p className="text-gray-700 mt-4 mb-6 leading-relaxed text-lg">
+              <p className="text-gray-700 mt-5 mb-6 leading-relaxed text-[17px]">
                 &ldquo;{t.text}&rdquo;
               </p>
               <p className="font-semibold text-dark">{t.name}</p>
@@ -87,14 +87,14 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.slice(3, 5).map((t, i) => (
             <div
               key={i + 3}
               className="bg-white rounded-2xl p-10 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
             >
               <QuoteIcon />
-              <p className="text-gray-700 mt-4 mb-6 leading-relaxed text-lg">
+              <p className="text-gray-700 mt-5 mb-6 leading-relaxed text-[17px]">
                 &ldquo;{t.text}&rdquo;
               </p>
               <p className="font-semibold text-dark">{t.name}</p>
