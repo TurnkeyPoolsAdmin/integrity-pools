@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const features = [
   {
@@ -52,71 +51,51 @@ const features = [
   },
 ];
 
-const featureTiles = [
-  { label: "Freeform Pools", img: "/images/photo-gallery/freeform-pools/20140116-121726.jpg" },
-  { label: "Spas & Spillovers", img: "/images/photo-gallery/spas/img-5286.jpg" },
-  { label: "Tanning Ledges", img: "/images/service-section-two-img/july-18-2022-1.png" },
-  { label: "Water Features", img: "/images/service-multi-section-img/0915171202a-1.png" },
-  { label: "Custom Hardscape", img: "/images/service-multi-section-img/aug-10-2020-1.png" },
-  { label: "Outdoor Living", img: "/images/our-work-banner-img/july-21-2022-1.png" },
-  { label: "Modern Designs", img: "/images/Ready-To-transform-your-backyard-section/dscn0269-1.png" },
-  { label: "Full Backyard Builds", img: "/images/banner-img/pool-drone-001-06-1.png" },
-  { label: "Expert Construction", img: "/images/photo-gallery/pool-building-process/1010171358-hdr.jpg" },
-];
-
 export default function SpecialFeatures() {
   return (
     <>
-      <section className="py-20 lg:py-32 bg-dark text-white">
+      {/* Blue brand section — Thomas layout: mark + heading left, plain icon list right */}
+      <section className="bg-secondary text-white pt-20 lg:pt-28 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left side - brand plate + heading */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Left - large wave mark + heading */}
             <div>
-              {/* Brand plate / wave mark */}
-              <div className="mb-6">
-                <div className="inline-flex items-center gap-3 bg-white/10 rounded-xl px-6 py-4 mb-6">
-                  <svg width="50" height="40" viewBox="0 0 50 40" fill="none">
-                    <path d="M0 8c8-8 16-8 24 0s16 8 24 0" stroke="white" strokeWidth="3" fill="none" />
-                    <path d="M0 18c8-8 16-8 24 0s16 8 24 0" stroke="white" strokeWidth="3" fill="none" />
-                    <path d="M0 28c8-8 16-8 24 0s16 8 24 0" stroke="white" strokeWidth="3" fill="none" />
-                  </svg>
-                  <span className="text-white font-heading font-bold text-xl tracking-wide">INTEGRITY</span>
-                </div>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-[1.1]">
+              <svg width="180" height="180" viewBox="0 0 50 50" fill="none" className="mb-10 w-32 h-32 lg:w-44 lg:h-44">
+                <path d="M4 8c6-6 12-6 18 0s12 6 18 0" stroke="white" strokeWidth="4" strokeLinecap="round" fill="none" />
+                <path d="M4 17c6-6 12-6 18 0s12 6 18 0" stroke="white" strokeWidth="4" strokeLinecap="round" fill="none" />
+                <path d="M13 26c4-4 8-4 12 0s8 4 12 0" stroke="white" strokeWidth="4" strokeLinecap="round" fill="none" />
+                <path d="M13 35c4-4 8-4 12 0" stroke="white" strokeWidth="4" strokeLinecap="round" fill="none" />
+              </svg>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-[#f8f9f3] leading-[1.15]">
                 What is Special
                 <br />
                 About Integrity
                 <br />
                 Pools?
               </h2>
-              <p className="text-white/80 text-lg lg:text-xl leading-relaxed mt-6 max-w-lg">
-                Tanning ledges, waterfalls, fire features, custom spas. Every detail
-                is designed, built, and finished by one team that answers to you.
-              </p>
             </div>
 
-            {/* Right side - feature list */}
-            <div className="space-y-6">
-              {features.map((f, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0">
-                    {f.icon}
+            {/* Right - plain white icon rows + CTAs */}
+            <div className="lg:pt-4">
+              <div className="space-y-7">
+                {features.map((f, i) => (
+                  <div key={i} className="flex items-center gap-5">
+                    <div className="w-9 flex-shrink-0 text-white [&>svg]:w-8 [&>svg]:h-8">{f.icon}</div>
+                    <p className="text-white font-semibold text-lg md:text-xl">{f.title}</p>
                   </div>
-                  <p className="text-white font-semibold text-lg md:text-xl">{f.title}</p>
-                </div>
-              ))}
+                ))}
+              </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 pt-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-10">
                 <Link
                   href="/contact"
-                  className="bg-dark border border-white/10 text-white font-bold px-8 py-4 rounded-full hover:bg-black transition-colors text-center text-base shadow-xl"
+                  className="bg-dark text-white font-bold px-8 py-4 rounded-full hover:bg-black transition-colors text-center text-base shadow-xl inline-flex items-center justify-center gap-2"
                 >
-                  Book Free Design Consultation →
+                  <span className="whitespace-nowrap">Book Free Design Consultation</span> <span>→</span>
                 </Link>
                 <a
                   href="tel:6614959030"
-                  className="border-2 border-white/40 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2 text-base"
+                  className="border border-white/70 text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors inline-flex items-center justify-center gap-2 text-base"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -126,32 +105,20 @@ export default function SpecialFeatures() {
               </div>
             </div>
           </div>
-
-          {/* Feature category image tiles */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-20 mt-16 lg:mt-24">
-            {featureTiles.map((t) => (
-              <div key={t.label} className="group">
-                <div className="relative h-40 md:h-52 rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src={t.img}
-                    alt={t.label}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <p className="text-white/90 font-semibold text-base mt-3">{t.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Wave transition out of Special Features */}
-      <div className="relative w-full overflow-hidden bg-dark">
-        <svg viewBox="0 0 1440 120" className="w-full h-[60px] md:h-[100px]" preserveAspectRatio="none">
-          <path d="M0 0C180 80 360 0 540 40C720 80 900 0 1080 40C1260 80 1440 0 1440 0V120H0V0Z" fill="white" />
-        </svg>
+      {/* Masked drone photo flowing out of the blue (Thomas's pre-masked asset);
+          transparent top scallops show the blue above, bottom scallops show the
+          dark of the next section */}
+      <div style={{ background: "linear-gradient(to bottom, var(--color-secondary) 50%, var(--color-dark) 50%)" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/what-is-special-section/mask-group.png"
+          alt=""
+          aria-hidden="true"
+          className="w-full h-auto"
+        />
       </div>
     </>
   );
