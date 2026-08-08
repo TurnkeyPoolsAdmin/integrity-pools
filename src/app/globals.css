@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a3a5c;
+  --color-primary-light: #2a5a8c;
+  --color-secondary: #0ea5e9;
+  --color-secondary-light: #38bdf8;
+  --color-accent: #f59e0b;
+  --color-accent-dark: #d97706;
+  --color-dark: #0f172a;
+  --color-gray-light: #f8fafc;
+  --color-gray-medium: #94a3b8;
+  --font-heading: 'Georgia', serif;
+  --font-body: 'system-ui', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.85) 0%,
+    rgba(15, 23, 42, 0.5) 50%,
+    rgba(15, 23, 42, 0.2) 100%
+  );
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-outline {
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
