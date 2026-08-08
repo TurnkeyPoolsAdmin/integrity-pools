@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
 import AfterHeroBanner from "@/components/AfterHeroBanner";
 import RecentProjects from "@/components/RecentProjects";
 import TestimonialsSection from "@/components/Testimonials";
@@ -18,7 +17,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
       <AfterHeroBanner />
       <RecentProjects />
       <TestimonialsSection />
