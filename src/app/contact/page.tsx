@@ -5,7 +5,7 @@ import WaveDivider from "@/components/WaveDivider";
 export const metadata: Metadata = {
   title: "Contact Us | Integrity Pools & Hardscapes",
   description:
-    "Get in touch with Integrity Pools for a free design consultation. Serving LA County, Ventura County, and Santa Clarita Valley.",
+    "Get in touch with Integrity Pools for a free design consultation. Serving Menifee, Murrieta, Temecula, Corona, and Riverside.",
 };
 
 export default function ContactPage() {

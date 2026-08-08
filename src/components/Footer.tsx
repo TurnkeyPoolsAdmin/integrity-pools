@@ -50,8 +50,8 @@ export default function Footer() {
               <p className="uppercase tracking-[0.2em] text-xs font-semibold text-white/40 mb-4">
                 Contact Us
               </p>
-              <p className="text-base font-medium text-white/70 mb-1">29441 The Old Rd, Castaic,</p>
-              <p className="text-base font-medium text-white/70 mb-4">CA 91384</p>
+              <p className="text-base font-medium text-white/70 mb-1">27450 Ynez Rd, Temecula,</p>
+              <p className="text-base font-medium text-white/70 mb-4">CA 92591</p>
               <a href="tel:6614959030" className="text-base font-medium text-white/70 hover:text-white transition-colors">
                 (661) 495-9030
               </a>
@@ -79,7 +79,7 @@ export default function Footer() {
                 <p className="uppercase tracking-[0.2em] text-xs font-semibold text-white/40 mb-3">Map &amp; Directions</p>
                 <div className="rounded-lg overflow-hidden">
                   <iframe
-                    src="https://maps.google.com/maps?q=29441+The+Old+Rd,+Castaic,+CA+91384&hl=en&z=15&output=embed"
+                    src="https://maps.google.com/maps?q=27450+Ynez+Rd,+Temecula,+CA+92591&hl=en&z=15&output=embed"
                     width="100%"
                     height="200"
                     style={{ border: 0 }}

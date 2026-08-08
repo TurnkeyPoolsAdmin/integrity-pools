@@ -42,11 +42,11 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-5xl font-heading font-bold mb-6">
-              Your Los Angeles Area Swimming Pool & Spa Contractors
+              Your Inland Empire Swimming Pool & Spa Contractors
             </h1>
             <p className="text-blue-200 text-lg leading-relaxed mb-8">
-              Serving the Santa Clarita Valley, the Greater Los Angeles Area, and Ventura
-              County since 2012. From new builds to complete remodels, we handle every
+              Serving Menifee, Murrieta, Temecula, Corona, and Riverside
+              since 2012. From new builds to complete remodels, we handle every
               aspect of your outdoor transformation.
             </p>
             <Link href="/contact" className="btn-primary">

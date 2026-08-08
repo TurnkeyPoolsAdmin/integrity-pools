@@ -59,7 +59,7 @@ export default function RecentProjects() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>Serving LA County, Ventura County, Santa Clarita Valley</span>
+            <span>Serving Menifee, Murrieta, Temecula, Corona, Riverside</span>
           </div>
         </div>
 
@@ -127,7 +127,7 @@ export default function RecentProjects() {
           </div>
           <p className="text-gray-600 max-w-md text-[15px] font-medium leading-relaxed mt-6 md:mt-0 md:text-right">
             Every backyard tells a story. Here&apos;s what we&apos;ve been building
-            for families across Los Angeles and Ventura Counties.
+            for families across the Inland Empire.
           </p>
         </div>
       </div>

@@ -1,15 +1,15 @@
 import Link from "next/link";
 
 const citiesLeft = [
-  "Bakersfield", "Beverly Hills", "Brentwood", "Burbank", "Calabasas",
-  "Camarillo", "Canyon Country", "Castaic", "Chatsworth", "Fillmore",
-  "Glendale", "Hollywood Hills",
+  "Menifee", "Murrieta", "Temecula", "Corona", "Riverside",
+  "Lake Elsinore", "Wildomar", "Winchester", "French Valley", "Canyon Lake",
+  "Norco", "Eastvale",
 ];
 
 const citiesRight = [
-  "Pacific Palisades", "Palmdale", "San Marino", "Santa Clarita",
-  "Sherman Oaks", "Sierra Madre", "Simi Valley", "South Pasadena",
-  "Thousand Oaks", "Valencia", "Ventura", "Victorville",
+  "Moreno Valley", "Perris", "Hemet", "Jurupa Valley", "Sun City",
+  "Temescal Valley", "Beaumont", "Banning", "San Jacinto", "Nuevo",
+  "Woodcrest", "Fallbrook",
 ];
 
 function CheckIcon() {
@@ -64,9 +64,9 @@ export default function ServiceAreas() {
               Areas Served
             </h3>
             <p className="text-gray-600 max-w-md leading-relaxed">
-              From our home base in Castaic, we&apos;ve built pools and outdoor
-              spaces across Los Angeles County, Ventura County, and the
-              Santa Clarita Valley. If you&apos;re within driving distance of our
+              From our home base in Temecula, we&apos;ve built pools and outdoor
+              spaces across the Inland Empire, from Menifee and Murrieta to
+              Corona and Riverside. If you&apos;re within driving distance of our
               showroom, we can help.
             </p>
           </div>
@@ -104,8 +104,8 @@ export default function ServiceAreas() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <p className="text-xl font-bold">29441 The Old Rd</p>
-                <p className="text-xl font-bold">Castaic, CA 91384</p>
+                <p className="text-xl font-bold">27450 Ynez Rd</p>
+                <p className="text-xl font-bold">Temecula, CA 92591</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link

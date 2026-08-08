@@ -24,7 +24,7 @@ export default function AboutSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                Los Angeles, CA
+                Temecula, CA
               </div>
             </div>
             {/* Quote card */}
@@ -95,7 +95,7 @@ export default function AboutSection() {
                 So he built the opposite kind of company. One where you always know where
                 things stand, the price you&apos;re quoted is the price you pay, and the crew
                 treats your home like their own. Since then we&apos;ve helped hundreds of
-                families across Los Angeles and Ventura Counties turn an underused backyard
+                families across the Inland Empire turn an underused backyard
                 into the place they actually want to be.
               </p>
               <p>
