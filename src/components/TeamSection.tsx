@@ -15,30 +15,34 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#4dd4e6]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-heading font-bold text-dark mb-4">
-            Ready To Level Up Your Yard Game
-          </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Meet the people who make it happen.
+        <div className="mb-14">
+          <p className="text-white/80 uppercase tracking-widest text-sm font-semibold mb-2">
+            Meet The Team
           </p>
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">
+            Ready To Level Up Your
+            <br />
+            Yard Game
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl">
           {team.map((member) => (
-            <div key={member.name} className="text-center">
-              <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 shadow-lg">
+            <div key={member.name}>
+              <div className="w-40 h-40 rounded-full overflow-hidden mb-6 shadow-lg border-4 border-white/20">
                 <img
                   src={member.img}
                   alt={member.name}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold text-dark">{member.name}</h3>
-              <p className="text-secondary font-medium mb-3">{member.role}</p>
-              <p className="text-gray-600 text-sm leading-relaxed max-w-sm mx-auto">
+              <div className="border-l-4 border-white pl-5">
+                <h3 className="text-xl font-bold text-white">{member.name}</h3>
+                <p className="text-white/70 text-sm mb-3">{member.role}</p>
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed mt-4 max-w-sm">
                 {member.desc}
               </p>
             </div>

@@ -1,24 +1,26 @@
 export default function Stats() {
-  const stats = [
-    { number: "30+", label: "Years Experience" },
-    { number: "1,600+", label: "Backyard Transformations" },
-    { number: "70+", label: "5-Star Google Reviews" },
-  ];
-
   return (
-    <section className="bg-primary py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <p className="text-5xl font-heading font-bold text-white mb-2">{stat.number}</p>
-              <p className="text-blue-200 text-lg">{stat.label}</p>
+    <section className="relative -mt-20 z-20 pb-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-dark/85 backdrop-blur-sm rounded-2xl py-10 px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
+            <div className="text-center py-4 md:py-0 md:px-6">
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">Over</p>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-1">30+</p>
+              <p className="text-white/70 text-sm">Years Experience</p>
             </div>
-          ))}
+            <div className="text-center py-4 md:py-0 md:px-6">
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">More Than</p>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-1">1,600+</p>
+              <p className="text-white/70 text-sm">Backyard Transformations</p>
+            </div>
+            <div className="text-center py-4 md:py-0 md:px-6">
+              <p className="text-white/60 text-xs uppercase tracking-widest mb-1">We Partner With</p>
+              <p className="text-4xl md:text-5xl font-heading font-bold text-white mb-1">Top</p>
+              <p className="text-white/70 text-sm">Designers In The Industry</p>
+            </div>
+          </div>
         </div>
-        <p className="text-center text-blue-200 mt-8 text-lg">
-          We Partner With The Best Designers In The Industry
-        </p>
       </div>
     </section>
   );

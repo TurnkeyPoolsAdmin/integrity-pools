@@ -1,40 +1,46 @@
-import Link from "next/link";
-
 export default function CTASection() {
   return (
-    <section className="relative py-24">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('https://thomaspools.us/assets/Ready-To-transform-your-backyard-section/DSCN0269%201.png')`,
-        }}
-      />
-      <div className="absolute inset-0 bg-dark/80" />
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-        <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-          Ready To Transform Your Backyard?
-        </h2>
-        <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-          You&apos;ve looked at the photos. You&apos;ve read the reviews. Now let&apos;s talk
-          about what&apos;s possible in your space. No commitment. No sales pitch.
-          Just a straightforward discussion about your backyard and your budget.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-          <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Book Free Consultation
-          </Link>
-          <a href="tel:6614959030" className="btn-secondary text-lg px-10 py-4">
-            Call (661) 495-9030
-          </a>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-8 justify-center text-sm text-white/60">
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left - Text */}
           <div>
-            <p className="font-semibold text-white">Hours</p>
-            <p>Mon - Sat: 9am - 5pm</p>
-            <p>Sun: By Appointment</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-dark leading-tight mb-6">
+              Ready To Transform Your Backyard?
+            </h2>
+            <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
+              You&apos;ve looked at the photos. You&apos;ve read the reviews. Now let&apos;s talk
+              about what&apos;s possible in your space. Whether you&apos;re starting from scratch or
+              updating what you already have, a quick conversation is the first step. No
+              commitment. No sales pitch. Just a straightforward discussion about your
+              backyard and your budget.
+            </p>
+
+            {/* Hours box */}
+            <div className="border-l-4 border-gray-200 pl-4 mb-8 max-w-xs">
+              <p className="text-xs uppercase tracking-widest font-semibold text-dark mb-1">Hours:</p>
+              <p className="text-gray-600 text-sm">Mon-Sat: 9am-5pm</p>
+              <p className="text-gray-600 text-sm">Sun: By Appointment</p>
+            </div>
+
+            <a
+              href="tel:6614959030"
+              className="border-2 border-dark text-dark font-semibold px-8 py-3 rounded-full hover:bg-dark hover:text-white transition-colors inline-flex items-center gap-2 text-sm"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              (661) 495-9030
+            </a>
+          </div>
+
+          {/* Right - Image */}
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img
+              src="https://thomaspools.us/assets/Ready-To-transform-your-backyard-section/DSCN0269%201.png"
+              alt="Beautiful backyard with pool"
+              className="w-full h-[400px] lg:h-[500px] object-cover"
+            />
           </div>
         </div>
       </div>
