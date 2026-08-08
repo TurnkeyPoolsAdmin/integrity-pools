@@ -6,24 +6,24 @@ import Image from "next/image";
 
 const projects = [
   {
-    src: "/images/our-work-banner-img/dscn0269-1.png",
-    alt: "Custom pool with water features and landscaping",
-  },
-  {
-    src: "/images/our-work-banner-img/july-21-2022-1.png",
-    alt: "Modern pool with bamboo and hardscape patio",
-  },
-  {
-    src: "/images/our-work-banner-img/img-7216-1.png",
-    alt: "Luxury backyard transformation with pool",
-  },
-  {
     src: "/images/photo-gallery/modern-pools/0000.jpg",
-    alt: "Modern geometric pool design",
+    alt: "Modern geometric pool with clean lines",
   },
   {
     src: "/images/photo-gallery/freeform-pools/20140116-121726.jpg",
     alt: "Freeform pool with natural surroundings",
+  },
+  {
+    src: "/images/photo-gallery/spas/img-5286.jpg",
+    alt: "Custom spa and water feature",
+  },
+  {
+    src: "/images/photo-gallery/outdoor-living/1102171046.jpg",
+    alt: "Outdoor living space with pool and patio",
+  },
+  {
+    src: "/images/photo-gallery/pool-building-process/1010171358-hdr.jpg",
+    alt: "Custom pool construction in progress",
   },
 ];
 
