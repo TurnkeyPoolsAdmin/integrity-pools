@@ -52,8 +52,8 @@ export default function Footer() {
               </p>
               <p className="text-base font-medium text-white/70 mb-1">27450 Ynez Rd, Temecula,</p>
               <p className="text-base font-medium text-white/70 mb-4">CA 92591</p>
-              <a href="tel:6614959030" className="text-base font-medium text-white/70 hover:text-white transition-colors">
-                (661) 495-9030
+              <a href="tel:9514447150" className="text-base font-medium text-white/70 hover:text-white transition-colors">
+                (951) 444-7150
               </a>
             </div>
 

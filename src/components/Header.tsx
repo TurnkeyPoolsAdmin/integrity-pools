@@ -53,11 +53,11 @@ export default function Header() {
 
           {/* Phone + CTA */}
           <div className="hidden md:flex items-center gap-5">
-            <a href="tel:6614959030" className="text-dark font-semibold flex items-center gap-2 text-[15px]">
+            <a href="tel:9514447150" className="text-dark font-semibold flex items-center gap-2 text-[15px]">
               <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              (661) 495-9030
+              (951) 444-7150
             </a>
             <Link
               href="/contact"
@@ -93,7 +93,7 @@ export default function Header() {
             <Link href="/" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Home</Link>
             <Link href="/services" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Services</Link>
             <Link href="/financing" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Financing</Link>
-            <a href="tel:6614959030" className="text-primary font-semibold py-2">(661) 495-9030</a>
+            <a href="tel:9514447150" className="text-primary font-semibold py-2">(951) 444-7150</a>
             <Link
               href="/contact"
               className="bg-primary text-white text-center px-6 py-2.5 rounded-full text-sm font-semibold mt-2"
