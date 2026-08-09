@@ -9,7 +9,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative h-[57.5rem] pt-5 flex flex-col justify-between overflow-hidden bg-primary">
+    <section className="relative isolate h-[57.5rem] pt-5 flex flex-col justify-between overflow-hidden bg-primary">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10 bg-primary">
         <Image
