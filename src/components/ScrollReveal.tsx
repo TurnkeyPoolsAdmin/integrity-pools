@@ -24,8 +24,16 @@ export default function ScrollReveal() {
     const root = document.documentElement;
     root.classList.add("reveal-ready");
 
+    // Animate each section's CONTENT, not the section itself, so full-bleed
+    // background colors/images stay painted and no white gap ever flashes.
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>("main section")
+    ).flatMap((section) =>
+      Array.from(section.children).filter((child): child is HTMLElement => {
+        if (!(child instanceof HTMLElement)) return false;
+        // Skip background/overlay layers (absolutely positioned)
+        return getComputedStyle(child).position !== "absolute";
+      })
     );
     if (!sections.length) return;
 
