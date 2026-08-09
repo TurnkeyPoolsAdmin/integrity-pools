@@ -5,31 +5,31 @@ const steps = [
     step: "Step 1",
     title: "Consultation",
     desc: "We visit your property, listen to your vision, and discuss what's realistic for your space and budget. No pressure. No obligation.",
-    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-3.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-3.webp",
   },
   {
     step: "Step 2",
     title: "Design",
     desc: "Our team creates detailed plans and 3D renderings so you can see exactly what you're getting before we break ground.",
-    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq.webp",
   },
   {
     step: "Step 3",
     title: "Permits & Prep",
     desc: "We handle all permitting and city requirements. You shouldn't have to navigate bureaucracy.",
-    img: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.png",
+    img: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.webp",
   },
   {
     step: "Step 4",
     title: "Construction",
     desc: "Our crews and trusted subcontractors execute the build while keeping you informed at every milestone.",
-    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.webp",
   },
   {
     step: "Step 5",
     title: "Final Walkthrough",
     desc: "We don't disappear after the last tile is set. We walk you through everything and make sure you're completely satisfied.",
-    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-2.png",
+    img: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-2.webp",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function ProcessSteps() {
                 {/* Image - always on the left */}
                 <div className="relative z-10">
                   <div className="rounded-2xl overflow-hidden shadow-2xl">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={s.img}
                       alt={s.title}
                       className="w-full h-72 object-cover"

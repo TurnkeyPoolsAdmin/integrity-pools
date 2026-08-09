@@ -4,8 +4,8 @@ export default function AfterHeroBanner() {
   return (
     <div className="bg-white py-5">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/after-home-banner-section/after-home-banner-img.png"
+      <img loading="lazy" decoding="async"
+        src="/images/after-home-banner-section/after-home-banner-img.webp"
         alt=""
         aria-hidden="true"
         className="w-full h-auto"

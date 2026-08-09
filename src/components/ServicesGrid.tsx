@@ -5,32 +5,32 @@ const services = [
   {
     title: "New Pool Construction",
     desc: "Custom-designed gunite and plaster pools built to your specifications. From classic rectangles to freeform lagoons.",
-    img: "/images/photo-gallery/modern-pools/0000.jpg",
+    img: "/images/photo-gallery/modern-pools/0000.webp",
   },
   {
     title: "Pool Remodeling",
     desc: "Outdated tile. Cracked plaster. Equipment from another decade. We bring aging pools back to life.",
-    img: "/images/Everything-your-backyards-need/img-7216-1.png",
+    img: "/images/Everything-your-backyards-need/img-7216-1.webp",
   },
   {
     title: "Landscaping",
     desc: "Standalone or integrated. Spillover designs. Therapeutic jets. The perfect complement to your pool or patio.",
-    img: "/images/Everything-your-backyards-need/july-7-2020-1.png",
+    img: "/images/Everything-your-backyards-need/july-7-2020-1.webp",
   },
   {
     title: "Hardscaping",
     desc: "Pavers, natural stone, concrete decking. The foundation that ties your entire outdoor space together.",
-    img: "/images/Everything-your-backyards-need/mar-16-2022-1.png",
+    img: "/images/Everything-your-backyards-need/mar-16-2022-1.webp",
   },
   {
     title: "Fire Features",
     desc: "Fire pits, fire bowls, and linear fire walls that extend your outdoor season into cooler months.",
-    img: "/images/Everything-your-backyards-need/sept-24-2019-1.png",
+    img: "/images/Everything-your-backyards-need/sept-24-2019-1.webp",
   },
   {
     title: "Outdoor Kitchens",
     desc: "Custom grills, countertops, and entertainment areas built for serious outdoor cooking.",
-    img: "/images/photo-gallery/outdoor-living/1102171046.jpg",
+    img: "/images/photo-gallery/outdoor-living/1102171046.webp",
   },
 ];
 

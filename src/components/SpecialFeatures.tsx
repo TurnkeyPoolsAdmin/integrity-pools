@@ -113,8 +113,8 @@ export default function SpecialFeatures() {
           dark of the next section */}
       <div style={{ background: "linear-gradient(to bottom, var(--color-secondary) 50%, var(--color-dark) 50%)" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/what-is-special-section/mask-group.png"
+        <img loading="lazy" decoding="async"
+          src="/images/what-is-special-section/mask-group.webp"
           alt=""
           aria-hidden="true"
           className="w-full h-auto"

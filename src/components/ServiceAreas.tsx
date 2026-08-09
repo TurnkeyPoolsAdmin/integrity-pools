@@ -28,7 +28,8 @@ export default function ServiceAreas() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/images/proudly-serving-section/burst-01-1.png')`,
+            backgroundImage: `url('/images/proudly-serving-section/burst-01-1.webp')`,
+            backgroundColor: "#1a2f42",
           }}
         />
         <div className="absolute inset-0 bg-black/30" />

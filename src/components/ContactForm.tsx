@@ -25,7 +25,8 @@ export default function ContactForm() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.png')`,
+          backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.webp')`,
+          backgroundColor: "#1a2f42",
         }}
       />
       <div className="absolute inset-0 bg-dark/90" />

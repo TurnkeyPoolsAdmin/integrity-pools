@@ -74,8 +74,8 @@ export default function Benefits() {
       {/* Pool water wave divider — Thomas's pre-masked swimmer PNG (transparent wavy edges baked in) */}
       <div className="w-full bg-white">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/reviews-section-img/mask-group.png"
+        <img loading="lazy" decoding="async"
+          src="/images/reviews-section-img/mask-group.webp"
           alt=""
           aria-hidden="true"
           className="w-full h-auto"

@@ -12,41 +12,41 @@ const categories = [
   {
     name: "Modern Pools",
     images: [
-      { src: "/images/photo-gallery/modern-pools/0000.jpg", alt: "Modern geometric pool" },
-      { src: "/images/our-work-banner-img/dscn0269-1.png", alt: "Custom modern pool design" },
-      { src: "/images/our-work-banner-img/july-21-2022-1.png", alt: "Contemporary backyard pool" },
+      { src: "/images/photo-gallery/modern-pools/0000.webp", alt: "Modern geometric pool" },
+      { src: "/images/our-work-banner-img/dscn0269-1.webp", alt: "Custom modern pool design" },
+      { src: "/images/our-work-banner-img/july-21-2022-1.webp", alt: "Contemporary backyard pool" },
     ],
   },
   {
     name: "Freeform Pools",
     images: [
-      { src: "/images/photo-gallery/freeform-pools/20140116-121726.jpg", alt: "Freeform pool with natural curves" },
-      { src: "/images/Everything-your-backyards-need/0721171355a-1.png", alt: "Natural shaped pool" },
-      { src: "/images/Everything-your-backyards-need/july-7-2020-1.png", alt: "Organic pool design" },
+      { src: "/images/photo-gallery/freeform-pools/20140116-121726.webp", alt: "Freeform pool with natural curves" },
+      { src: "/images/Everything-your-backyards-need/0721171355a-1.webp", alt: "Natural shaped pool" },
+      { src: "/images/Everything-your-backyards-need/july-7-2020-1.webp", alt: "Organic pool design" },
     ],
   },
   {
     name: "Spas & Water Features",
     images: [
-      { src: "/images/photo-gallery/spas/img-5286.jpg", alt: "Custom spa installation" },
-      { src: "/images/Everything-your-backyards-need/img-7216-1.png", alt: "Pool with water features" },
-      { src: "/images/our-work-banner-img/img-7216-1.png", alt: "Spa and pool combo" },
+      { src: "/images/photo-gallery/spas/img-5286.webp", alt: "Custom spa installation" },
+      { src: "/images/Everything-your-backyards-need/img-7216-1.webp", alt: "Pool with water features" },
+      { src: "/images/our-work-banner-img/img-7216-1.webp", alt: "Spa and pool combo" },
     ],
   },
   {
     name: "Outdoor Living",
     images: [
-      { src: "/images/photo-gallery/outdoor-living/1102171046.jpg", alt: "Outdoor living space" },
-      { src: "/images/Everything-your-backyards-need/sept-24-2019-1.png", alt: "Fire feature with pool" },
-      { src: "/images/Everything-your-backyards-need/mar-16-2022-1.png", alt: "Hardscape patio" },
+      { src: "/images/photo-gallery/outdoor-living/1102171046.webp", alt: "Outdoor living space" },
+      { src: "/images/Everything-your-backyards-need/sept-24-2019-1.webp", alt: "Fire feature with pool" },
+      { src: "/images/Everything-your-backyards-need/mar-16-2022-1.webp", alt: "Hardscape patio" },
     ],
   },
   {
     name: "Build Process",
     images: [
-      { src: "/images/photo-gallery/pool-building-process/1010171358-hdr.jpg", alt: "Pool construction in progress" },
-      { src: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.png", alt: "Excavation and prep" },
-      { src: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.png", alt: "Steel and plumbing phase" },
+      { src: "/images/photo-gallery/pool-building-process/1010171358-hdr.webp", alt: "Pool construction in progress" },
+      { src: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.webp", alt: "Excavation and prep" },
+      { src: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.webp", alt: "Steel and plumbing phase" },
     ],
   },
 ];

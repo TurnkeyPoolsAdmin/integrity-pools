@@ -2,15 +2,15 @@ export default function Partners() {
   const partners = [
     {
       name: "Pentair",
-      src: "/images/Logos/partners-logo/pentair-logo.png",
+      src: "/images/Logos/partners-logo/pentair-logo.webp",
     },
     {
       name: "Hayward",
-      src: "/images/Logos/partners-logo/hayward-logo.png",
+      src: "/images/Logos/partners-logo/hayward-logo.webp",
     },
     {
       name: "Fluidra",
-      src: "/images/Logos/partners-logo/fluidra-logo.png",
+      src: "/images/Logos/partners-logo/fluidra-logo.webp",
     },
   ];
 
@@ -106,7 +106,7 @@ export default function Partners() {
               </p>
               <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
                 {partners.map((p) => (
-                  <img
+                  <img loading="lazy" decoding="async"
                     key={p.name}
                     src={p.src}
                     alt={p.name}

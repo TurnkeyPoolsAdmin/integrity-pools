@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const stats = [
   { eyebrow: "Over", number: "30+", caption: "Years Combined Experience" },
@@ -8,14 +9,18 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="relative h-[57.5rem] pt-5 flex flex-col justify-between overflow-hidden">
+    <section className="relative h-[57.5rem] pt-5 flex flex-col justify-between overflow-hidden bg-primary">
       {/* Background Image */}
-      <div className="absolute inset-0 -z-10">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/images/banner-img/pool-drone-001-06-1.png')`,
-          }}
+      <div className="absolute inset-0 -z-10 bg-primary">
+        <Image
+          src="/images/banner-img/pool-drone-001-06-1.webp"
+          alt=""
+          aria-hidden="true"
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

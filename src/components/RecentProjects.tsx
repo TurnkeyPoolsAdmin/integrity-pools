@@ -6,23 +6,23 @@ import Image from "next/image";
 
 const projects = [
   {
-    src: "/images/photo-gallery/modern-pools/0000.jpg",
+    src: "/images/photo-gallery/modern-pools/0000.webp",
     alt: "Modern geometric pool with clean lines",
   },
   {
-    src: "/images/photo-gallery/freeform-pools/20140116-121726.jpg",
+    src: "/images/photo-gallery/freeform-pools/20140116-121726.webp",
     alt: "Freeform pool with natural surroundings",
   },
   {
-    src: "/images/photo-gallery/spas/img-5286.jpg",
+    src: "/images/photo-gallery/spas/img-5286.webp",
     alt: "Custom spa and water feature",
   },
   {
-    src: "/images/photo-gallery/outdoor-living/1102171046.jpg",
+    src: "/images/photo-gallery/outdoor-living/1102171046.webp",
     alt: "Outdoor living space with pool and patio",
   },
   {
-    src: "/images/photo-gallery/pool-building-process/1010171358-hdr.jpg",
+    src: "/images/photo-gallery/pool-building-process/1010171358-hdr.webp",
     alt: "Custom pool construction in progress",
   },
 ];
