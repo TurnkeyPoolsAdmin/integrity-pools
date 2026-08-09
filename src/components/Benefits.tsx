@@ -71,7 +71,7 @@ const benefits = [
 export default function Benefits() {
   return (
     <>
-      {/* Pool water wave divider — Thomas's pre-masked swimmer PNG (transparent wavy edges baked in) */}
+      {/* Pool water wave divider — pre-masked swimmer image (transparent wavy edges baked in) */}
       <div className="w-full bg-white">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img loading="lazy" decoding="async"

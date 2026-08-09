@@ -1,5 +1,5 @@
-/* Thin decorative strip between the hero and Recent Projects — matches
-   Thomas's ~145px white band: one full-width 1440x105 image + 20px padding. */
+/* Thin decorative strip between the hero and Recent Projects:
+   one full-width 1440x105 image + 20px padding. */
 export default function AfterHeroBanner() {
   return (
     <div className="bg-white py-5">

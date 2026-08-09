@@ -54,7 +54,7 @@ const features = [
 export default function SpecialFeatures() {
   return (
     <>
-      {/* Blue brand section — Thomas layout: mark + heading left, plain icon list right */}
+      {/* Blue brand section — mark + heading left, plain icon list right */}
       <section className="bg-secondary text-white pt-20 lg:pt-28 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -108,7 +108,7 @@ export default function SpecialFeatures() {
         </div>
       </section>
 
-      {/* Masked drone photo flowing out of the blue (Thomas's pre-masked asset);
+      {/* Masked drone photo flowing out of the blue (pre-masked asset);
           transparent top scallops show the blue above, bottom scallops show the
           dark of the next section */}
       <div style={{ background: "linear-gradient(to bottom, var(--color-secondary) 50%, var(--color-dark) 50%)" }}>

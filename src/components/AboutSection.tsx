@@ -44,7 +44,7 @@ export default function AboutSection() {
       {/* The Integrity Difference */}
       <section className="py-32 bg-[#3bc2d1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Big heading — three uniform lines, tight leading, off-white (Thomas treatment) */}
+          {/* Big heading — three uniform lines, tight leading, off-white */}
           <h2 className="text-6xl md:text-8xl lg:text-[140px] font-heading font-extrabold text-[#f8f9f3] leading-[0.95] tracking-tight mb-16">
             The
             <br />

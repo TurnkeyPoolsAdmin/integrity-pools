@@ -50,7 +50,7 @@ export default function Hero() {
           Reimagined.
         </h1>
 
-        {/* Thomas floats the CTA row right-of-center, right edge mirroring the copy's left inset */}
+        {/* CTA row floats right-of-center, right edge mirroring the copy's left inset */}
         <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-end gap-4 lg:mr-52">
           <Link
             href="/contact"
