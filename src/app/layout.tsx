@@ -14,10 +14,10 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Integrity Pools & Hardscapes | Custom Pools in Southern California",
   description:
-    "Custom pools, spas, hardscaping, and outdoor living spaces in Menifee, Murrieta, Temecula, Corona, and Riverside. 30+ years experience. Free consultations.",
+    "Custom pools and spas in Menifee, Murrieta, Temecula, Corona, and Riverside. 30+ years experience. Free consultations.",
   openGraph: {
     title: "Integrity Pools & Hardscapes",
-    description: "Your Backyard. Reimagined. Custom pools and outdoor living in Southern California.",
+    description: "Your Backyard. Reimagined. Custom pools and spas in Southern California.",
     type: "website",
   },
 };

@@ -10,7 +10,7 @@ import WaveDivider from "@/components/WaveDivider";
 export const metadata: Metadata = {
   title: "Services | Integrity Pools & Hardscapes",
   description:
-    "Pool construction, remodeling, hardscaping, fire features, outdoor kitchens, and spa installations across Southern California.",
+    "Pool construction, remodeling, spas, and poolside features across Southern California. Landscape partners on every project.",
 };
 
 const serviceDetails = [

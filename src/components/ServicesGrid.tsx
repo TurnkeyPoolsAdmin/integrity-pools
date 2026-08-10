@@ -13,23 +13,23 @@ const services = [
     img: "/images/Everything-your-backyards-need/img-7216-1.webp",
   },
   {
-    title: "Landscaping",
-    desc: "Standalone or integrated. Spillover designs. Therapeutic jets. The perfect complement to your pool or patio.",
+    title: "Spas & Water Features",
+    desc: "Standalone or integrated. Spillover designs. Therapeutic jets. The perfect complement to your pool.",
     img: "/images/Everything-your-backyards-need/july-7-2020-1.webp",
   },
   {
-    title: "Hardscaping",
-    desc: "Pavers, natural stone, concrete decking. The foundation that ties your entire outdoor space together.",
+    title: "Decking & Coping",
+    desc: "Pavers, natural stone, and concrete decking that tie your pool area together. Coordinated with our landscape partners.",
     img: "/images/Everything-your-backyards-need/mar-16-2022-1.webp",
   },
   {
     title: "Fire Features",
-    desc: "Fire pits, fire bowls, and linear fire walls that extend your outdoor season into cooler months.",
+    desc: "Fire pits, fire bowls, and linear fire walls. Built poolside through our landscape partners to extend your outdoor season.",
     img: "/images/Everything-your-backyards-need/sept-24-2019-1.webp",
   },
   {
     title: "Outdoor Kitchens",
-    desc: "Custom grills, countertops, and entertainment areas built for serious outdoor cooking.",
+    desc: "Custom grills, countertops, and entertainment areas. Delivered through our landscape partners, designed alongside your pool.",
     img: "/images/photo-gallery/outdoor-living/1102171046.webp",
   },
 ];
@@ -48,7 +48,7 @@ export default function ServicesGrid() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-dark leading-tight">
                 Everything Your
                 <br />
-                Backyard Needs
+                Pool Project Needs
               </h2>
             </div>
             {/* Decorative wave */}

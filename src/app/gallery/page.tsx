@@ -5,7 +5,7 @@ import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
   title: "Gallery | Integrity Pools & Hardscapes",
-  description: "Browse our portfolio of custom pools, spas, hardscaping, and outdoor living projects across Southern California.",
+  description: "Browse our portfolio of custom pools, spas, and poolside features across Southern California.",
 };
 
 const categories = [
@@ -34,7 +34,7 @@ const categories = [
     ],
   },
   {
-    name: "Outdoor Living",
+    name: "Poolside Features",
     images: [
       { src: "/images/photo-gallery/outdoor-living/1102171046.webp", alt: "Outdoor living space" },
       { src: "/images/Everything-your-backyards-need/sept-24-2019-1.webp", alt: "Fire feature with pool" },
@@ -59,8 +59,8 @@ export default function GalleryPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-heading font-bold mb-6">Our Work</h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Browse our portfolio of custom pools, spas, hardscaping, and outdoor
-            living projects built for families across Southern California.
+            Browse our portfolio of custom pools, spas, and poolside features
+            built for families across Southern California.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">

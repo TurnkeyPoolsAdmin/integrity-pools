@@ -57,7 +57,7 @@ export default function AboutSection() {
             {/* Left: tagline + photo */}
             <div>
               <p className="text-[#f8f9f3]/90 text-2xl font-bold mb-8">
-                Most pool companies build pools. We build backyards.
+                We build pools. And we bring the right people to finish the picture.
               </p>
               <div className="relative inline-block">
                 <div

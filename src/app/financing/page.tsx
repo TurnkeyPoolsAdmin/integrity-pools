@@ -6,7 +6,7 @@ import WaveDivider from "@/components/WaveDivider";
 export const metadata: Metadata = {
   title: "Financing | Integrity Pools & Hardscapes",
   description:
-    "Flexible financing options for your pool or outdoor living project. We work with top lending partners to fit your budget.",
+    "Flexible financing options for your pool project. We work with top lending partners to fit your budget.",
 };
 
 const partners = [

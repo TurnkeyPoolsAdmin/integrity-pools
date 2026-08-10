@@ -153,7 +153,7 @@ export default function ContactForm() {
                     <option value="Hardscaping" className="text-dark">Hardscaping</option>
                     <option value="Fire Features" className="text-dark">Fire Features</option>
                     <option value="Outdoor Kitchen" className="text-dark">Outdoor Kitchen</option>
-                    <option value="Full Backyard" className="text-dark">Full Backyard</option>
+                    <option value="Pool + Landscape" className="text-dark">Pool + Landscape</option>
                     <option value="Other" className="text-dark">Other</option>
                   </select>
                 </div>
