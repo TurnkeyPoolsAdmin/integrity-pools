@@ -40,7 +40,7 @@ export default function Partners() {
             <div className="bg-[#f2f8fb] rounded-lg px-10 py-5 inline-flex items-center gap-4 shadow w-full max-w-sm">
               <span className="text-3xl font-heading font-bold text-dark">1,600+</span>
               <span className="text-xs uppercase tracking-widest text-gray-600 font-semibold leading-tight">
-                Backyard<br />Transformations
+                Pool Projects<br />Completed
               </span>
             </div>
 
@@ -91,8 +91,7 @@ export default function Partners() {
               Not Shortcuts
             </h2>
             <p className="text-gray-600 font-medium leading-relaxed mb-10 max-w-lg">
-              Credentials matter. They&apos;re how you know a contractor takes
-              their work seriously. Here&apos;s what we bring to every project:
+              A pool is a major investment in your home. Our credentials, licensing, insurance, and equipment relationships help you know the work is being led by qualified pool professionals.
             </p>
 
             <div className="border-t border-gray-300 pt-8">
@@ -100,9 +99,7 @@ export default function Partners() {
                 Equipment Partners:
               </h3>
               <p className="text-gray-600 font-medium leading-relaxed mb-8">
-                We exclusively install equipment from Hayward, Pentair, and
-                Fluidra &mdash; industry leaders in reliability, efficiency, and
-                innovation.
+                We install systems from Hayward, Pentair, and Fluidra, giving homeowners proven options for pool circulation, heating, sanitation, lighting, and control.
               </p>
               <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
                 {partners.map((p) => (

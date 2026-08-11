@@ -10,8 +10,8 @@ const testimonials = [
     text: "Great to deal with and a big help with the learning process afterward.",
   },
   {
-    name: "Bree C.",
-    text: "Integrity Pools does it all! I would recommend them to anyone looking for a local, friendly and professional pool company to work with.",
+    name: "Greg & Janine",
+    text: "Excellent experience. They walk you through the whole process.",
   },
   {
     name: "Trish C.",
@@ -42,9 +42,9 @@ export default function TestimonialsSection() {
               Reviews
             </p>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-tight text-dark">
-              What Homeowners
+              Why Homeowners
               <br />
-              Are Saying
+              Trust Integrity
             </h2>
             <div className="flex items-center gap-2 mt-4">
               <div className="flex text-accent text-sm">
@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
                   <span key={i}>{star}</span>
                 ))}
               </div>
-              <span className="text-gray-500 text-sm italic">Over 70+ Google Reviews</span>
+              <span className="text-gray-500 text-sm italic">70+ Google Reviews</span>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 mt-6 md:mt-0">
@@ -60,7 +60,7 @@ export default function TestimonialsSection() {
               href="/contact"
               className="bg-secondary hover:bg-secondary-light text-white font-bold px-8 py-3.5 rounded-full transition-colors text-center text-base"
             >
-              Start Your Project →
+              Get My Free Pool Plan →
             </Link>
             <Link
               href="/testimonials"

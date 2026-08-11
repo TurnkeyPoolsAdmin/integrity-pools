@@ -6,14 +6,10 @@ export default function CTASection() {
           {/* Left - Text */}
           <div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark leading-snug mb-6">
-              Ready To Transform Your Backyard?
+              Ready to See What Is Possible in Your Yard?
             </h2>
             <p className="text-gray-600 leading-relaxed mb-8 max-w-lg">
-              You&apos;ve looked at the photos. You&apos;ve read the reviews. Now let&apos;s talk
-              about what&apos;s possible in your space. Whether you&apos;re starting from scratch or
-              updating what you already have, a quick conversation is the first step. No
-              commitment. No sales pitch. Just a straightforward discussion about your
-              backyard and your budget.
+              Start with a clear conversation about your property, priorities, and budget. We will help you understand the pool options that fit, the decisions that matter most, and how landscaping can be coordinated when it is part of the plan. No pressure and no vague sales pitch.
             </p>
 
             {/* Hours box */}

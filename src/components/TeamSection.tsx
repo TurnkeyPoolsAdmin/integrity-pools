@@ -2,13 +2,13 @@ export default function TeamSection() {
   const team = [
     {
       name: "Phil Bovard",
-      role: "Head of Pricing and Design",
-      desc: "Phil leads design and pricing for every project. Since 2012 he's helped hundreds of families turn a rough idea and a budget into a real plan they're excited about. No guesswork, no surprise numbers, just a design that fits the yard and the wallet.",
+      role: "Head of Pool Design and Pricing",
+      desc: "Phil leads pool design and pricing. He helps homeowners turn ideas, priorities, and budgets into a clear pool plan before major decisions are made. The goal is simple: fewer surprises, smarter choices, and a design the family will enjoy for years.",
     },
     {
       name: "Matt Sheeran",
       role: "Head of Customer Experience",
-      desc: "Matt owns the thing most pool companies forget: how it feels to be the customer. He's built our whole process around unreasonable hospitality. Clear updates, fast answers, and a team that treats your home like their own from the first call to the final swim.",
+      desc: "Matt leads the customer experience from the first call through the final swim. He built the process around clear updates, fast answers, and making sure homeowners always understand what is happening and what comes next.",
     },
   ];
 
@@ -20,9 +20,9 @@ export default function TeamSection() {
             Meet The Team
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight">
-            Ready To Level Up Your
+            Pool Experts Who Put
             <br />
-            Yard Game
+            Homeowners First
           </h2>
         </div>
 

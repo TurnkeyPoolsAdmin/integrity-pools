@@ -51,7 +51,7 @@ export default function RecentProjects() {
               Recent Work
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-none text-dark">
-              Recent Projects
+              Recent Pool Projects
             </h2>
           </div>
           <div className="flex items-center gap-2 text-gray-500 text-sm mt-4 md:mt-2">
@@ -59,7 +59,7 @@ export default function RecentProjects() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            <span>Serving Menifee, Murrieta, Temecula, Corona, Riverside</span>
+            <span>Custom pools, spas, remodels, and pool hardscapes across the Inland Empire</span>
           </div>
         </div>
 
@@ -116,7 +116,7 @@ export default function RecentProjects() {
               href="/contact"
               className="bg-secondary hover:bg-secondary-light text-white font-bold px-10 py-4 rounded-full transition-colors text-center text-base"
             >
-              Start Your Project →
+              Get My Free Pool Plan →
             </Link>
             <Link
               href="/gallery"
@@ -126,8 +126,7 @@ export default function RecentProjects() {
             </Link>
           </div>
           <p className="text-gray-600 max-w-md text-[15px] font-medium leading-relaxed mt-6 md:mt-0 md:text-right">
-            Every backyard tells a story. Here&apos;s what we&apos;ve been building
-            for families across the Inland Empire.
+            See how families across the Inland Empire turned their ideas into pools built for the way they live.
           </p>
         </div>
       </div>

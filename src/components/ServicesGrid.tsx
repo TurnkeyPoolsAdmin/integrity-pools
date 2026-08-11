@@ -4,32 +4,32 @@ import Image from "next/image";
 const services = [
   {
     title: "New Pool Construction",
-    desc: "Custom-designed gunite and plaster pools built to your specifications. From classic rectangles to freeform lagoons.",
+    desc: "Custom pools designed around your property, your priorities, and the way your family wants to enjoy the water.",
     img: "/images/photo-gallery/modern-pools/0000.webp",
   },
   {
     title: "Pool Remodeling",
-    desc: "Outdated tile. Cracked plaster. Equipment from another decade. We bring aging pools back to life.",
+    desc: "Update worn finishes, aging equipment, and outdated features so your existing pool looks better and works better.",
     img: "/images/Everything-your-backyards-need/img-7216-1.webp",
   },
   {
     title: "Spas & Water Features",
-    desc: "Standalone or integrated. Spillover designs. Therapeutic jets. The perfect complement to your pool.",
+    desc: "Integrated spas, spillovers, therapeutic jets, and water features that add comfort, movement, and a stronger focal point.",
     img: "/images/Everything-your-backyards-need/july-7-2020-1.webp",
   },
   {
-    title: "Decking & Coping",
-    desc: "Pavers, natural stone, and concrete decking that tie your pool area together. Coordinated with our landscape partners.",
+    title: "Pool Decking & Hardscapes",
+    desc: "Coping, pavers, concrete, and stonework that create a safe, comfortable connection between the pool and the yard.",
     img: "/images/Everything-your-backyards-need/mar-16-2022-1.webp",
   },
   {
     title: "Fire Features",
-    desc: "Fire pits, fire bowls, and linear fire walls. Built poolside through our landscape partners to extend your outdoor season.",
+    desc: "Fire bowls, fire pits, and linear features that add warmth, contrast, and evening atmosphere around the pool.",
     img: "/images/Everything-your-backyards-need/sept-24-2019-1.webp",
   },
   {
     title: "Outdoor Kitchens",
-    desc: "Custom grills, countertops, and entertainment areas. Delivered through our landscape partners, designed alongside your pool.",
+    desc: "Grills, counters, and gathering spaces planned to make outdoor meals and pool days easier to enjoy.",
     img: "/images/photo-gallery/outdoor-living/1102171046.webp",
   },
 ];
@@ -94,7 +94,7 @@ export default function ServicesGrid() {
             href="/contact"
             className="bg-secondary hover:bg-secondary-light text-white font-bold px-10 py-4 rounded-full transition-colors text-base"
           >
-            Start Your Project →
+            Get My Free Pool Plan →
           </Link>
           <a
             href="tel:9514447150"

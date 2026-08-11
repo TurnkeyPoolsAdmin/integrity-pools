@@ -11,8 +11,8 @@ const benefits = [
         <path strokeLinecap="round" d="M12 11v4m-2-2h4" />
       </svg>
     ),
-    title: "One Team, Start to Finish",
-    desc: "No handoffs. No confusion. Our team personally oversees every project from design through final walkthrough.",
+    title: "One Pool Team, Start to Finish",
+    desc: "Integrity leads your pool from the first design conversation through the final walkthrough, with clear ownership at every stage.",
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const benefits = [
       </svg>
     ),
     title: "Safety-First Construction",
-    desc: "Certified in pool safety systems and drowning prevention. Your family's protection is built into every design.",
+    desc: "Safety is considered from the beginning, so your pool is designed around the people who will use it every day.",
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const benefits = [
       </svg>
     ),
     title: "Financing That Works",
-    desc: "Flexible payment options so you can build the backyard you want on a timeline that makes sense.",
+    desc: "Explore flexible lending options that can help you build the pool you want on a payment plan that fits your budget.",
   },
   {
     icon: (
@@ -45,7 +45,7 @@ const benefits = [
       </svg>
     ),
     title: "PHTA Certified",
-    desc: "We hold the industry's top credential for pool construction professionals. Not all builders can say that.",
+    desc: "Your pool is led by professionals who meet recognized industry standards for pool construction knowledge and practice.",
   },
   {
     icon: (
@@ -54,8 +54,8 @@ const benefits = [
         <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    title: "Premium Equipment Partners",
-    desc: "We install Hayward, Pentair, and Fluidra systems, the most reliable names in pool technology.",
+    title: "Equipment Built for the Long Run",
+    desc: "We install systems from Hayward, Pentair, and Fluidra to make your pool easier to operate, maintain, and enjoy.",
   },
   {
     icon: (
@@ -63,8 +63,8 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
       </svg>
     ),
-    title: "Hand-Picked Landscape Partners",
-    desc: "Every Integrity project pairs our pool team with a hand-picked landscape partner. You get one vision, built by specialists who actually know each other.",
+    title: "Backyard Alignment Planning",
+    desc: "If landscaping is part of your vision, we can involve an independent specialist early so access, drainage, grades, utilities, and timing work together.",
   },
 ];
 
@@ -87,12 +87,12 @@ export default function Benefits() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="text-secondary font-bold uppercase tracking-[0.4em] text-xs mb-4">
-              Benefits Over The Others
+              A Better Way To Build
             </p>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-tight text-dark">
-              Why Homeowners
+              More Confidence
               <br />
-              Choose Integrity
+              Before We Ever Dig
             </h2>
           </div>
 
@@ -116,7 +116,7 @@ export default function Benefits() {
               href="/contact"
               className="bg-secondary hover:bg-secondary-light text-white font-bold px-9 py-4 rounded-full transition-colors text-base"
             >
-              Start Your Project →
+              Get My Free Pool Plan →
             </Link>
             <a
               href="tel:9514447150"

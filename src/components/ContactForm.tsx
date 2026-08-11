@@ -50,14 +50,12 @@ export default function ContactForm() {
                 Contact Us
               </p>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-tight mb-6">
-                Let&apos;s Talk About
+                Let&apos;s Build Your
                 <br />
-                Your Backyard
+                Pool Plan
               </h2>
               <p className="text-white font-medium leading-relaxed max-w-md">
-                Whether you&apos;re ready to break ground or just exploring
-                ideas, we&apos;re here. Tell us what you&apos;re envisioning and we&apos;ll
-                reach out within 24 hours.
+                Tell us what you want from your pool, spa, remodel, or pool-hardscape project. If landscaping is part of the larger plan, include that too so we can discuss coordination from the start. We will reach out within 24 hours.
               </p>
             </div>
 
@@ -150,10 +148,10 @@ export default function ContactForm() {
                     <option value="New Pool" className="text-dark">New Pool</option>
                     <option value="Pool Remodel" className="text-dark">Pool Remodel</option>
                     <option value="Spa / Hot Tub" className="text-dark">Spa / Hot Tub</option>
-                    <option value="Hardscaping" className="text-dark">Hardscaping</option>
+                    <option value="Pool Decking / Hardscape" className="text-dark">Pool Decking / Hardscape</option>
                     <option value="Fire Features" className="text-dark">Fire Features</option>
                     <option value="Outdoor Kitchen" className="text-dark">Outdoor Kitchen</option>
-                    <option value="Pool + Landscape" className="text-dark">Pool + Landscape</option>
+                    <option value="Pool + Landscape Coordination" className="text-dark">Pool + Landscape Coordination</option>
                     <option value="Other" className="text-dark">Other</option>
                   </select>
                 </div>
@@ -176,7 +174,7 @@ export default function ContactForm() {
                   type="submit"
                   className="w-full bg-secondary hover:bg-secondary-light text-white font-bold py-4 rounded-full transition-colors text-sm"
                 >
-                  Start Your Project →
+                  Get My Free Pool Plan →
                 </button>
               </form>
               )}

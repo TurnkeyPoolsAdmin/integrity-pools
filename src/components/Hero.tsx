@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 const stats = [
-  { eyebrow: "Over", number: "30+", caption: "Years Combined Experience" },
-  { eyebrow: "More Than", number: "1,600+", caption: "Backyard Transformations" },
-  { eyebrow: "We Partner With", number: "THE BEST", caption: "Designers In The Industry" },
+  { eyebrow: "", number: "30+", caption: "Years Combined Pool Experience" },
+  { eyebrow: "", number: "1,600+", caption: "Pool Projects Completed" },
+  { eyebrow: "", number: "", caption: "Planned With the Right Specialists From the Start" },
 ];
 
 export default function Hero() {
@@ -35,7 +35,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="text-white text-xs font-semibold uppercase tracking-widest">
-            Over 70+ Google Reviews
+            70+ Google Reviews
           </span>
         </div>
 
@@ -45,9 +45,9 @@ export default function Hero() {
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-8"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Your Backyard.
+          A Pool Built Right.
           <br />
-          Reimagined.
+          A Backyard Planned Together.
         </h1>
 
         {/* CTA row floats right-of-center, right edge mirroring the copy's left inset */}
@@ -56,13 +56,13 @@ export default function Hero() {
             href="/contact"
             className="bg-secondary hover:bg-secondary-light text-white font-bold text-base px-8 py-4 rounded-full transition-colors inline-flex items-center gap-2"
           >
-            Book Free Design Consultation <span>→</span>
+            Get My Free Pool Plan <span>→</span>
           </Link>
           <Link
             href="/gallery"
             className="border border-secondary text-white font-bold text-base px-8 py-4 rounded-full hover:border-white transition-colors inline-block text-center"
           >
-            View Our Work
+            See Our Pools
           </Link>
         </div>
       </div>
@@ -72,12 +72,16 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto bg-primary/60">
           <div className="grid grid-cols-3 divide-x divide-white/20">
             {stats.map((s) => (
-              <div key={s.number} className="text-center py-10 px-6">
-                <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] mb-1">
-                  {s.eyebrow}
-                </p>
-                <p className="text-5xl font-bold text-white mb-1">{s.number}</p>
-                <p className="text-white/80 text-xs uppercase tracking-widest">{s.caption}</p>
+              <div key={s.caption} className="text-center py-10 px-6">
+                {s.eyebrow && (
+                  <p className="text-white/60 text-[10px] uppercase tracking-[0.3em] mb-1">
+                    {s.eyebrow}
+                  </p>
+                )}
+                {s.number && (
+                  <p className="text-5xl font-bold text-white mb-1">{s.number}</p>
+                )}
+                <p className={`text-white/80 text-xs uppercase tracking-widest ${!s.number ? "text-lg font-semibold text-white mt-2" : ""}`}>{s.caption}</p>
               </div>
             ))}
           </div>

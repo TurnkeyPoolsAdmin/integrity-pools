@@ -8,25 +8,25 @@ import CTASection from "@/components/CTASection";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Services | Integrity Pools & Hardscapes",
+  title: "Pool Construction & Remodeling | Integrity Pools",
   description:
-    "Pool construction, remodeling, spas, and poolside features across Southern California. Landscape partners on every project.",
+    "Custom pools, pool remodeling, spas, smart pool systems, and pool hardscapes in Temecula and across the Inland Empire.",
 };
 
 const serviceDetails = [
   {
     title: "Pool Resurfacing & Remodeling",
-    desc: "Transform your existing pool with new plaster, tile, coping, and equipment upgrades. We handle complete remodels that bring aging pools back to life with modern finishes and energy-efficient systems.",
+    desc: "Give an aging pool a longer life and a cleaner look with updated plaster, tile, coping, and equipment. We help you decide which improvements matter most, what can stay, and where your budget will make the biggest difference.",
     img: "/images/service-multi-section-img/aug-10-2020-1.webp",
   },
   {
     title: "Smart Pool Technology",
-    desc: "Control your pool from your phone. We install and configure smart pool systems including iAquaLink and ScreenLogic so you can manage pumps, heaters, lighting, and more from anywhere.",
+    desc: "Control pumps, heaters, lighting, and water features from your phone. We install and configure smart systems that make daily pool ownership simpler and help equipment run more efficiently.",
     img: "/images/service-section-two-img/july-18-2022-1.webp",
   },
   {
     title: "Saltwater Pool Systems",
-    desc: "Softer water, less maintenance, no harsh chemicals. We design and convert pools to saltwater systems that are gentler on skin and easier to maintain year-round.",
+    desc: "Enjoy softer-feeling water and simpler chlorine management. We design new saltwater pools and convert compatible existing pools with equipment sized for reliable year-round use.",
     img: "/images/service-multi-section-img/0915171202a-1.webp",
   },
 ];
@@ -42,15 +42,13 @@ export default function ServicesPage() {
               Our Services
             </p>
             <h1 className="text-5xl font-heading font-bold mb-6">
-              Your Inland Empire Swimming Pool & Spa Contractors
+              Pool Experts for the Way Your Family Wants to Live
             </h1>
             <p className="text-blue-200 text-lg leading-relaxed mb-8">
-              Serving Menifee, Murrieta, Temecula, Corona, and Riverside
-              since 2012. From new builds to complete remodels, we handle every
-              aspect of your outdoor transformation.
+              Since 2012, Integrity has designed, built, and remodeled pools across the Inland Empire. We lead the pool, spa, equipment, and confirmed pool-hardscape scope, with early coordination when landscaping is part of the plan.
             </p>
             <Link href="/contact" className="btn-primary">
-              Get a Free Estimate
+              Get My Free Pool Plan
             </Link>
           </div>
         </div>

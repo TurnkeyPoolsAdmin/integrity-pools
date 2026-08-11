@@ -12,12 +12,12 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Integrity Pools & Hardscapes | Custom Pools in Southern California",
+  title: "Custom Pool Builder in Temecula | Integrity Pools",
   description:
-    "Custom pools and spas in Menifee, Murrieta, Temecula, Corona, and Riverside. 30+ years experience. Free consultations.",
+    "Custom pools, spas, remodels, and pool hardscapes in Temecula and across the Inland Empire. Start with a free pool planning conversation.",
   openGraph: {
-    title: "Integrity Pools & Hardscapes",
-    description: "Your Backyard. Reimagined. Custom pools and spas in Southern California.",
+    title: "Integrity Pools",
+    description: "Custom pools, spas, remodels, and pool hardscapes in Temecula and across the Inland Empire.",
     type: "website",
   },
 };

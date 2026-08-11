@@ -3,9 +3,9 @@ import ContactForm from "@/components/ContactForm";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Integrity Pools & Hardscapes",
+  title: "Plan Your Pool Project | Integrity Pools",
   description:
-    "Get in touch with Integrity Pools for a free design consultation. Serving Menifee, Murrieta, Temecula, Corona, and Riverside.",
+    "Start planning a new pool, remodel, spa, or pool-hardscape project with Integrity Pools in Temecula and the Inland Empire.",
 };
 
 export default function ContactPage() {
@@ -15,10 +15,10 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-32 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-heading font-bold mb-4">
-            What Are You Waiting For?
+            Start With a Clear Pool Plan
           </h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Contact us today to get one step closer to building your backyard paradise.
+            Tell us what you want from your pool and we will help you understand the options, priorities, and next steps for your property.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -32,15 +32,15 @@ export default function ContactPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <p className="text-3xl font-heading font-bold">30+</p>
-              <p className="text-gray-400 text-sm">Years Combined Experience</p>
+              <p className="text-gray-400 text-sm">Years Combined Pool Experience</p>
             </div>
             <div>
               <p className="text-3xl font-heading font-bold">1,600+</p>
-              <p className="text-gray-400 text-sm">Backyard Transformations</p>
+              <p className="text-gray-400 text-sm">Pool Projects Completed</p>
             </div>
             <div>
-              <p className="text-3xl font-heading font-bold">THE BEST</p>
-              <p className="text-gray-400 text-sm">Designers in the Industry</p>
+              <p className="text-3xl font-heading font-bold">THE RIGHT</p>
+              <p className="text-gray-400 text-sm">Specialists Aligned Early</p>
             </div>
             <div>
               <p className="text-3xl font-heading font-bold">70+</p>

@@ -4,8 +4,8 @@ import Image from "next/image";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Gallery | Integrity Pools & Hardscapes",
-  description: "Browse our portfolio of custom pools, spas, and poolside features across Southern California.",
+  title: "Custom Pool Gallery | Integrity Pools",
+  description: "Browse custom pools, spas, water features, remodels, and pool hardscapes completed by Integrity Pools across the Inland Empire.",
 };
 
 const categories = [
@@ -34,7 +34,7 @@ const categories = [
     ],
   },
   {
-    name: "Poolside Features",
+    name: "Pool Decking & Hardscapes",
     images: [
       { src: "/images/photo-gallery/outdoor-living/1102171046.webp", alt: "Outdoor living space" },
       { src: "/images/Everything-your-backyards-need/sept-24-2019-1.webp", alt: "Fire feature with pool" },
@@ -57,10 +57,9 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className="relative pt-32 pb-32 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-6">Our Work</h1>
+          <h1 className="text-5xl font-heading font-bold mb-6">Pools Built for Real Backyards</h1>
           <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Browse our portfolio of custom pools, spas, and poolside features
-            built for families across Southern California.
+            Explore pools, spas, water features, remodels, and pool hardscapes created around real homes, real priorities, and the way each family wanted to live.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -97,13 +96,13 @@ export default function GalleryPage() {
       <section className="py-16 bg-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-heading font-bold mb-4">
-            Like What You See?
+            See Something You Want in Your Yard?
           </h2>
           <p className="text-blue-200 mb-8 text-lg">
-            Let&apos;s talk about bringing this level of quality to your backyard.
+            Tell us what you like and we will help you understand how it could fit your property, priorities, and budget.
           </p>
           <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Start Your Project
+            Get My Free Pool Plan
           </Link>
         </div>
       </section>

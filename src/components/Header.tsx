@@ -63,7 +63,7 @@ export default function Header() {
               href="/contact"
               className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-light transition-colors"
             >
-              Contact Us
+              Plan My Pool
             </Link>
           </div>
 
@@ -99,7 +99,7 @@ export default function Header() {
               className="bg-primary text-white text-center px-6 py-2.5 rounded-full text-sm font-semibold mt-2"
               onClick={() => setMobileOpen(false)}
             >
-              Contact Us
+              Plan My Pool
             </Link>
           </nav>
         </div>

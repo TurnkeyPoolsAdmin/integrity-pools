@@ -3,32 +3,32 @@ import Link from "next/link";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Testimonials | Integrity Pools & Hardscapes",
+  title: "Pool Builder Reviews | Integrity Pools",
   description:
-    "Read what homeowners across Southern California say about working with Integrity Pools. 70+ five-star Google reviews.",
+    "Read what Inland Empire homeowners say about Integrity Pools, our craftsmanship, communication, and pool-building process.",
 };
 
 const allTestimonials = [
+  { name: "Greg & Janine", text: "Excellent experience. They walk you through the whole process." },
   { name: "Shirley O.", text: "I was nervous to take on this project and was so happy I chose Integrity Pools for the job!!" },
   { name: "Jason H.", text: "The Integrity team was great to deal with and a big help with the learning process afterward." },
-  { name: "Bree C.", text: "Integrity Pools does it all! I would recommend them to anyone looking for a local, friendly and professional pool company to work with." },
-  { name: "Trish C.", text: "I highly recommend Integrity Pools." },
-  { name: "Cali G.", text: "We will definitely call them back when we need any attention to our pool." },
+  { name: "Andy S.", text: "I highly recommend this team to help design and complete projects." },
   { name: "Nat T.", text: "Anything you need help with, they give you 200% effort." },
+  { name: "Kristi A.", text: "We couldn't be more pleased with the results!" },
   { name: "Debby J.", text: "Their crew is great and the showroom team is very helpful." },
+  { name: "Don F.", text: "Still looking great after 5 years!" },
   { name: "Danielle O.", text: "Integrity Pools was so great! Saved the day for me." },
   { name: "Dani C.", text: "It's so nice to have a GOOD pool company here in the valley!" },
-  { name: "Kristi A.", text: "We couldn't be more pleased with the results!" },
-  { name: "Erin M.", text: "I would highly recommend Integrity Pools!" },
+  { name: "Alissa D.", text: "I highly recommend them to anyone looking to build or remodel." },
   { name: "Jeff W.", text: "Fast, friendly and superior service, great job team." },
   { name: "Warren S.", text: "Thank you to the Integrity Pools team for your great service." },
   { name: "Pilar G.", text: "Keep up the top notch workmanship!" },
-  { name: "Logan M.", text: "Best pool builders around!" },
-  { name: "Alissa D.", text: "I highly recommend them to anyone looking to build or remodel." },
+  { name: "Erin M.", text: "I would highly recommend Integrity Pools!" },
   { name: "Carlos & Lindsey Q.", text: "Integrity Pools, you guys are the best." },
-  { name: "Don F.", text: "Still looking great after 5 years!" },
-  { name: "Greg & Janine", text: "Excellent experience. They walk you through the whole process." },
-  { name: "Andy S.", text: "I highly recommend this team to help design and complete projects." },
+  { name: "Cali G.", text: "We will definitely call them back when we need any attention to our pool." },
+  { name: "Trish C.", text: "I highly recommend Integrity Pools." },
+  { name: "Logan M.", text: "Best pool builders around!" },
+  { name: "Bree C.", text: "Integrity Pools does it all! I would recommend them to anyone looking for a local, friendly and professional pool company to work with." },
 ];
 
 export default function TestimonialsPage() {
@@ -38,15 +38,14 @@ export default function TestimonialsPage() {
       <section className="relative pt-32 pb-32 bg-primary text-white text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-heading font-bold mb-4">
-            What Homeowners Are Saying
+            Why Homeowners Trust Integrity
           </h1>
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="text-accent text-2xl">★★★★★</span>
-            <span className="text-blue-200 text-lg">Over 70+ Google Reviews</span>
+            <span className="text-blue-200 text-lg">70+ Google Reviews</span>
           </div>
           <p className="text-blue-200 max-w-2xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what real homeowners say about
-            working with us.
+            Building a pool is a major decision. Read what local homeowners say about our workmanship, communication, guidance, and support.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0">
@@ -79,13 +78,13 @@ export default function TestimonialsPage() {
       <section className="py-16 bg-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-heading font-bold mb-4">
-            Ready to Join Our Happy Homeowners?
+            Ready to Plan a Pool You Will Love?
           </h2>
           <p className="text-blue-200 mb-8 text-lg">
-            Start with a free, no-obligation design consultation.
+            Start with a free conversation about your property, priorities, budget, and next steps.
           </p>
           <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Book Your Consultation
+            Get My Free Pool Plan
           </Link>
         </div>
       </section>

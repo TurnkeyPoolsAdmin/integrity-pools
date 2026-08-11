@@ -50,9 +50,9 @@ export default function ServiceAreas() {
             Service Areas
           </p>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold leading-[1.1] tracking-tight mb-10">
-            Proudly Serving
+            Building Pools Across
             <br />
-            Southern California
+            the Inland Empire
           </h2>
         </div>
       </section>
@@ -66,10 +66,7 @@ export default function ServiceAreas() {
               Areas Served
             </h3>
             <p className="text-gray-600 max-w-md leading-relaxed">
-              From our home base in Temecula, we&apos;ve built pools and outdoor
-              spaces across the Inland Empire, from Menifee and Murrieta to
-              Corona and Riverside. If you&apos;re within driving distance of our
-              showroom, we can help.
+              From our Temecula home base, we build and remodel pools across the Inland Empire, including Menifee, Murrieta, Corona, and Riverside. If your property is within our service area, we can help you understand what is possible.
             </p>
           </div>
 
@@ -114,7 +111,7 @@ export default function ServiceAreas() {
                   href="/contact"
                   className="bg-dark text-white font-semibold px-6 py-3 rounded-full hover:bg-dark/80 transition-colors text-center text-sm"
                 >
-                  Start Your Project →
+                  Get My Free Pool Plan →
                 </Link>
                 <a
                   href="tel:9514447150"

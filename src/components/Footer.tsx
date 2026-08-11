@@ -39,7 +39,7 @@ export default function Footer() {
               <h2 className="text-3xl md:text-4xl lg:text-[56px] font-heading font-extrabold leading-[1.1] tracking-tight max-w-[15em]">
                 Building Southern
                 <br />
-                California Backyards
+                California Pools
                 <br />
                 Since 2012
               </h2>

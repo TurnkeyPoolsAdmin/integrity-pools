@@ -4,27 +4,27 @@ import ContactForm from "@/components/ContactForm";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Financing | Integrity Pools & Hardscapes",
+  title: "Pool Financing Options | Integrity Pools",
   description:
-    "Flexible financing options for your pool project. We work with top lending partners to fit your budget.",
+    "Explore financing options for a new pool, pool remodel, spa, or qualifying pool-hardscape project with Integrity Pools.",
 };
 
 const partners = [
   {
     name: "Paramount",
-    desc: "Competitive rates and flexible terms for pool and home improvement projects.",
+    desc: "Financing options for qualifying pool and home-improvement projects, with terms set by the lender.",
   },
   {
     name: "HFS Financial",
-    desc: "Specializing in swimming pool financing with quick approvals and low rates.",
+    desc: "Home-improvement financing programs that may be used for qualifying swimming pool projects.",
   },
   {
     name: "Lyon Financial",
-    desc: "Pool financing experts with programs designed specifically for backyard projects.",
+    desc: "Lending programs focused on swimming pools and other qualifying home-improvement projects.",
   },
   {
     name: "LightStream",
-    desc: "Unsecured loans with low, fixed rates and no fees for qualified borrowers.",
+    desc: "Unsecured home-improvement loans for qualified borrowers, subject to the lender's current terms.",
   },
 ];
 
@@ -39,12 +39,10 @@ export default function FinancingPage() {
               Financing
             </p>
             <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              Finance Your Dream Pool or Outdoor Space
+              Build the Pool You Want With a Payment Plan That Fits
             </h1>
             <p className="text-blue-200 text-lg leading-relaxed">
-              We work within your budget, offering financing options from trusted
-              lending partners so you can build the backyard you want on a timeline
-              that makes sense.
+              Explore lending options for a new pool, remodel, spa, or qualifying pool-hardscape project. We will help you connect the project scope and budget to the financing path that makes sense for you.
             </p>
           </div>
         </div>
@@ -61,8 +59,7 @@ export default function FinancingPage() {
               Our Financing Partners
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We&apos;ve partnered with industry-leading lenders to give you options that
-              fit your financial situation.
+              Compare programs from lenders that serve pool and home-improvement customers. Approval, rates, terms, and funding decisions are set by each lender.
             </p>
           </div>
 
@@ -94,18 +91,18 @@ export default function FinancingPage() {
               <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl font-bold">1</span>
               </div>
-              <h3 className="font-bold text-dark text-lg mb-2">Design Your Project</h3>
+              <h3 className="font-bold text-dark text-lg mb-2">Plan Your Pool</h3>
               <p className="text-gray-600 text-sm">
-                Meet with our team to plan your dream backyard and get a detailed estimate.
+                Meet with Integrity to define the pool scope, priorities, and estimated project budget.
               </p>
             </div>
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-2xl font-bold">2</span>
               </div>
-              <h3 className="font-bold text-dark text-lg mb-2">Choose Your Lender</h3>
+              <h3 className="font-bold text-dark text-lg mb-2">Explore Your Options</h3>
               <p className="text-gray-600 text-sm">
-                We help you compare options from our lending partners to find the best fit.
+                Review available lender programs and apply directly for the option you believe fits your needs.
               </p>
             </div>
             <div className="text-center p-6">
@@ -114,14 +111,14 @@ export default function FinancingPage() {
               </div>
               <h3 className="font-bold text-dark text-lg mb-2">Start Building</h3>
               <p className="text-gray-600 text-sm">
-                Once approved, we break ground. You enjoy your new backyard while paying over time.
+                After financing, contracts, design, and permits are complete, your pool can move into the construction schedule.
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Link href="/contact" className="btn-primary text-lg">
-              Get Started Today
+              Explore My Pool Options
             </Link>
           </div>
         </div>

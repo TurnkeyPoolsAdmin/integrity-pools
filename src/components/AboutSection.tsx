@@ -30,11 +30,9 @@ export default function AboutSection() {
             {/* Quote card */}
             <div className="lg:w-[55%] lg:ml-auto bg-white/95 backdrop-blur-sm rounded-lg p-8 md:p-12">
               <p className="text-dark text-xl md:text-2xl font-bold leading-relaxed mb-6">
-                &ldquo;Integrity Pools does it all! I would recommend them to anyone looking
-                for a local, friendly and professional pool company to work with. We had our
-                pool done and still get compliments on how nice our pool is.&rdquo;
+                &ldquo;We couldn&apos;t be more pleased with the results!&rdquo;
               </p>
-              <p className="font-bold text-dark">Bree C.</p>
+              <p className="font-bold text-dark">Kristi A.</p>
               <div className="text-accent text-sm mt-1">★★★★★</div>
             </div>
           </div>
@@ -57,7 +55,7 @@ export default function AboutSection() {
             {/* Left: tagline + photo */}
             <div>
               <p className="text-[#f8f9f3]/90 text-2xl font-bold mb-8">
-                We build pools. And we bring the right people to finish the picture.
+                We build the pool right, then help the rest of your plan fit around it.
               </p>
               <div className="relative inline-block">
                 <div
@@ -86,35 +84,26 @@ export default function AboutSection() {
             {/* Right: description */}
             <div className="space-y-6 text-white text-lg leading-relaxed">
               <p>
-                Ryan started Integrity Pools in 2012 with one belief: building a pool
-                should feel as good as the finished pool looks. He&apos;d watched too many
-                families get burned by contractors who overpromised, went quiet, and left
-                them guessing.
+                Ryan started Integrity Pools in 2012 with one belief: building a pool should feel as good as the finished pool looks. He had seen too many families deal with vague pricing, poor communication, and contractors who disappeared when questions came up.
               </p>
               <p>
-                So he built the opposite kind of company. One where you always know where
-                things stand, the price you&apos;re quoted is the price you pay, and the crew
-                treats your home like their own. Since then we&apos;ve helped hundreds of
-                families across the Inland Empire turn an underused backyard
-                into the place they actually want to be.
+                So he built a pool company around clear plans, honest conversations, and personal accountability. Integrity stays focused on the pool, spa, and pool-hardscape work it knows best. When a project also includes landscaping, the right independent specialist can be involved early so the plans work together before construction begins.
               </p>
               <p>
-                Ryan still meets homeowners himself and walks every job site in person. Not
-                because he has to, but because he cares how it turns out. Empathy first,
-                integrity always. That&apos;s the whole company in three words.
+                Ryan still meets homeowners and walks job sites in person. Customers know where the project stands, what happens next, and who is responsible. That is the Integrity difference.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <Link
                   href="/contact"
                   className="bg-dark text-white font-bold px-10 py-4 rounded-full hover:bg-dark/80 transition-colors text-center text-[15px]"
                 >
-                  Start Your Project →
+                  Get My Free Pool Plan →
                 </Link>
                 <Link
                   href="/services"
                   className="bg-white text-dark font-bold px-10 py-4 rounded-full hover:bg-dark hover:text-white transition-colors text-center text-[15px]"
                 >
-                  Meet The Team
+                  Explore Our Services
                 </Link>
               </div>
             </div>
