@@ -39,8 +39,8 @@ export default function ContactPage() {
               <p className="text-gray-400 text-sm">Pool Projects Completed</p>
             </div>
             <div>
-              <p className="text-3xl font-heading font-bold">THE RIGHT</p>
-              <p className="text-gray-400 text-sm">Specialists Aligned Early</p>
+              <p className="text-3xl font-heading font-bold">SINCE</p>
+              <p className="text-gray-400 text-sm">2012, Serving the Inland Empire</p>
             </div>
             <div>
               <p className="text-3xl font-heading font-bold">70+</p>
