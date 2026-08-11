@@ -28,9 +28,10 @@ export default function Hero() {
           priority
           fetchPriority="high"
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[65%_center]"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1220] via-[#0a1220]/80 to-[#0a1220]/10" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Main Content */}
@@ -69,13 +70,13 @@ export default function Hero() {
         </p>
 
         {/* Inline Lead Form */}
-        <div className="max-w-3xl">
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl">
+        <div className="max-w-2xl">
+          <div className="bg-[#0d1a2b]/80 backdrop-blur-md rounded-2xl p-6 sm:p-8 shadow-2xl border border-white/10">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="text-dark text-lg sm:text-xl font-bold">
-                Get Your <span className="text-secondary underline">Free</span> Design Consultation
+              <h2 className="text-white text-lg sm:text-xl font-bold">
+                Get Your <span className="text-secondary-light underline">Free</span> Design Consultation
               </h2>
-              <span className="hidden sm:flex items-center gap-1.5 text-gray-500 text-xs">
+              <span className="hidden sm:flex items-center gap-1.5 text-white/50 text-xs">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -90,10 +91,10 @@ export default function Hero() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="text-dark font-bold text-lg">
+                <p className="text-white font-bold text-lg">
                   Thanks{formData.name ? `, ${formData.name.split(" ")[0]}` : ""}!
                 </p>
-                <p className="text-gray-600 text-sm mt-1">
+                <p className="text-white/60 text-sm mt-1">
                   We will reach out within 24 hours.
                 </p>
               </div>
@@ -101,9 +102,9 @@ export default function Hero() {
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
                   <div>
-                    <label htmlFor="hero-name" className="sr-only">Full Name</label>
+                    <label htmlFor="hero-name" className="block text-white/70 text-xs font-semibold mb-1.5">Full Name</label>
                     <div className="relative">
-                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                       <input
@@ -113,14 +114,14 @@ export default function Hero() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Full Name"
-                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 text-dark text-sm placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none"
+                        className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/5 border border-white/15 text-white text-sm placeholder-white/40 focus:border-secondary-light focus:ring-1 focus:ring-secondary-light outline-none"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="hero-phone" className="sr-only">Phone Number</label>
+                    <label htmlFor="hero-phone" className="block text-white/70 text-xs font-semibold mb-1.5">Phone Number</label>
                     <div className="relative">
-                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                       <input
@@ -130,14 +131,14 @@ export default function Hero() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="(951) 555-0123"
-                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 text-dark text-sm placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none"
+                        className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/5 border border-white/15 text-white text-sm placeholder-white/40 focus:border-secondary-light focus:ring-1 focus:ring-secondary-light outline-none"
                       />
                     </div>
                   </div>
                   <div>
-                    <label htmlFor="hero-address" className="sr-only">Property Address</label>
+                    <label htmlFor="hero-address" className="block text-white/70 text-xs font-semibold mb-1.5">Property Address</label>
                     <div className="relative">
-                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -147,7 +148,7 @@ export default function Hero() {
                         value={formData.address}
                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                         placeholder="Property Address"
-                        className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 text-dark text-sm placeholder-gray-400 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none"
+                        className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/5 border border-white/15 text-white text-sm placeholder-white/40 focus:border-secondary-light focus:ring-1 focus:ring-secondary-light outline-none"
                       />
                     </div>
                   </div>
@@ -160,7 +161,7 @@ export default function Hero() {
                   Request My Free Design Consultation <span>→</span>
                 </button>
 
-                <p className="text-center text-gray-500 text-xs mt-3 flex items-center justify-center gap-1.5">
+                <p className="text-center text-white/50 text-xs mt-3 flex items-center justify-center gap-1.5">
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                   </svg>
@@ -176,7 +177,7 @@ export default function Hero() {
       <div className="relative z-10 mt-10 lg:mt-auto">
         {/* Trust Badges */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8">
+          <div className="max-w-2xl bg-[#0d1a2b]/80 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 lg:gap-8">
             {/* Google Reviews */}
             <div className="flex items-center gap-2">
               <div className="flex text-accent text-sm">★★★★★</div>
