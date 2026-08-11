@@ -86,7 +86,7 @@ export default function ProcessSteps() {
               href="/contact"
               className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-3 rounded-full transition-colors text-sm"
             >
-              Get My Free Pool Plan →
+              Request My Free Design Consultation →
             </Link>
             <a
               href="tel:9514447150"

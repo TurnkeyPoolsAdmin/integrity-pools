@@ -91,7 +91,7 @@ export default function SpecialFeatures() {
                   href="/contact"
                   className="bg-dark text-white font-bold px-8 py-4 rounded-full hover:bg-black transition-colors text-center text-base shadow-xl inline-flex items-center justify-center gap-2"
                 >
-                  <span className="whitespace-nowrap">Get My Free Pool Plan</span> <span>→</span>
+                  <span className="whitespace-nowrap">Request My Free Design Consultation</span> <span>→</span>
                 </Link>
                 <a
                   href="tel:9514447150"

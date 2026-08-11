@@ -97,7 +97,7 @@ export default function AboutSection() {
                   href="/contact"
                   className="bg-dark text-white font-bold px-10 py-4 rounded-full hover:bg-dark/80 transition-colors text-center text-[15px]"
                 >
-                  Get My Free Pool Plan →
+                  Request My Free Design Consultation →
                 </Link>
                 <Link
                   href="/services"

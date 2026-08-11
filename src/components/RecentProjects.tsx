@@ -116,7 +116,7 @@ export default function RecentProjects() {
               href="/contact"
               className="bg-secondary hover:bg-secondary-light text-white font-bold px-10 py-4 rounded-full transition-colors text-center text-base"
             >
-              Get My Free Pool Plan →
+              Request My Free Design Consultation →
             </Link>
             <Link
               href="/gallery"

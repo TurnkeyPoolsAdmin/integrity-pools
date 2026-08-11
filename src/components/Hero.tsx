@@ -4,7 +4,7 @@ import Image from "next/image";
 const stats = [
   { eyebrow: "", number: "30+", caption: "Years Combined Pool Experience" },
   { eyebrow: "", number: "1,600+", caption: "Pool Projects Completed" },
-  { eyebrow: "", number: "", caption: "Planned With the Right Specialists From the Start" },
+  { eyebrow: "", number: "", caption: "Serving Temecula to Riverside" },
 ];
 
 export default function Hero() {
@@ -45,9 +45,9 @@ export default function Hero() {
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-tight mb-8"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          A Pool Built Right.
+          Menifee&apos;s Trusted
           <br />
-          A Backyard Planned Together.
+          Custom Pool Builder
         </h1>
 
         {/* CTA row floats right-of-center, right edge mirroring the copy's left inset */}
@@ -56,7 +56,7 @@ export default function Hero() {
             href="/contact"
             className="bg-secondary hover:bg-secondary-light text-white font-bold text-base px-8 py-4 rounded-full transition-colors inline-flex items-center gap-2"
           >
-            Get My Free Pool Plan <span>→</span>
+            Request My Free Design Consultation <span>→</span>
           </Link>
           <Link
             href="/gallery"

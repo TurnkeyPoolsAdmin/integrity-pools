@@ -174,7 +174,7 @@ export default function ContactForm() {
                   type="submit"
                   className="w-full bg-secondary hover:bg-secondary-light text-white font-bold py-4 rounded-full transition-colors text-sm"
                 >
-                  Get My Free Pool Plan →
+                  Request My Free Design Consultation →
                 </button>
               </form>
               )}

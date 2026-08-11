@@ -111,7 +111,7 @@ export default function ServiceAreas() {
                   href="/contact"
                   className="bg-dark text-white font-semibold px-6 py-3 rounded-full hover:bg-dark/80 transition-colors text-center text-sm"
                 >
-                  Get My Free Pool Plan →
+                  Request My Free Design Consultation →
                 </Link>
                 <a
                   href="tel:9514447150"

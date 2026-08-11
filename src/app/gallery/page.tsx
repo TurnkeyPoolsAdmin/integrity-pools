@@ -102,7 +102,7 @@ export default function GalleryPage() {
             Tell us what you like and we will help you understand how it could fit your property, priorities, and budget.
           </p>
           <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Get My Free Pool Plan
+            Request My Free Design Consultation
           </Link>
         </div>
       </section>

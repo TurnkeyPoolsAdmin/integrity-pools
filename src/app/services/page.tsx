@@ -48,7 +48,7 @@ export default function ServicesPage() {
               Since 2012, Integrity has designed, built, and remodeled pools across the Inland Empire. We lead the pool, spa, equipment, and confirmed pool-hardscape scope, with early coordination when landscaping is part of the plan.
             </p>
             <Link href="/contact" className="btn-primary">
-              Get My Free Pool Plan
+              Request My Free Design Consultation
             </Link>
           </div>
         </div>

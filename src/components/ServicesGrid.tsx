@@ -94,7 +94,7 @@ export default function ServicesGrid() {
             href="/contact"
             className="bg-secondary hover:bg-secondary-light text-white font-bold px-10 py-4 rounded-full transition-colors text-base"
           >
-            Get My Free Pool Plan →
+            Request My Free Design Consultation →
           </Link>
           <a
             href="tel:9514447150"

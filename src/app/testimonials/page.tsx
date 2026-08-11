@@ -84,7 +84,7 @@ export default function TestimonialsPage() {
             Start with a free conversation about your property, priorities, budget, and next steps.
           </p>
           <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Get My Free Pool Plan
+            Request My Free Design Consultation
           </Link>
         </div>
       </section>
