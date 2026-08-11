@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Background Image + left-to-right ombre */}
       <div className="absolute inset-0 -z-10 bg-[#0a1220]">
         <Image
-          src="/images/banner-img/hero-handshake.png"
+          src="/images/banner-img/hero-poolside.jpg"
           alt=""
           aria-hidden="true"
           fill
