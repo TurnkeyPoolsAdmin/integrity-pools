@@ -214,9 +214,9 @@ export default function Hero() {
       </div>
 
       {/* Bottom Value Prop Strip — full-width dark bar */}
-      <div className="relative z-10 mt-10 lg:mt-auto w-full bg-[#0a1220]/90 backdrop-blur-md border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+      <div className="relative z-10 mt-10 lg:mt-auto w-full bg-[#0a1220] border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-16 lg:gap-24">
             {[
               {
                 icon: (
@@ -246,13 +246,13 @@ export default function Hero() {
                 subtitle: "Proudly Serving the Inland Empire Since 2012",
               },
             ].map((item) => (
-              <div key={item.title} className="flex items-center gap-3 py-4 sm:px-6 first:sm:pl-0 last:sm:pr-0">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-secondary-light">
+              <div key={item.title} className="flex items-center gap-2.5 py-3">
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary-light">
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-white text-sm font-bold">{item.title}</p>
-                  <p className="text-white/50 text-xs">{item.subtitle}</p>
+                  <p className="text-white text-[13px] font-bold leading-tight">{item.title}</p>
+                  <p className="text-white/50 text-[11px] leading-tight">{item.subtitle}</p>
                 </div>
               </div>
             ))}
