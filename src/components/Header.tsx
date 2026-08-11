@@ -51,20 +51,22 @@ export default function Header() {
             </Link>
           </nav>
 
-          {/* Phone + CTA */}
-          <div className="hidden md:flex items-center gap-5">
-            <a href="tel:9514447150" className="text-dark font-semibold flex items-center gap-2 text-[15px]">
-              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              (951) 444-7150
-            </a>
-            <Link
-              href="/contact"
-              className="bg-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-light transition-colors"
+          {/* Call CTA */}
+          <div className="hidden md:flex items-center">
+            <a
+              href="tel:9514447150"
+              className="flex items-center gap-3 bg-secondary hover:bg-secondary-light transition-colors rounded-full pl-4 pr-6 py-2"
             >
-              Plan My Pool
-            </Link>
+              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.85 21 3 13.15 3 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
+                </svg>
+              </span>
+              <span className="flex flex-col leading-tight">
+                <span className="text-white font-bold text-[15px]">(951) 444-7150</span>
+                <span className="text-white/80 text-[11px]">Call Now • Open 7 Days</span>
+              </span>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -93,14 +95,14 @@ export default function Header() {
             <Link href="/" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Home</Link>
             <Link href="/services" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Services</Link>
             <Link href="/financing" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Financing</Link>
-            <a href="tel:9514447150" className="text-primary font-semibold py-2">(951) 444-7150</a>
-            <Link
-              href="/contact"
-              className="bg-primary text-white text-center px-6 py-2.5 rounded-full text-sm font-semibold mt-2"
+            <a
+              href="tel:9514447150"
+              className="flex flex-col items-center bg-secondary text-white text-center px-6 py-2.5 rounded-full mt-2 leading-tight"
               onClick={() => setMobileOpen(false)}
             >
-              Plan My Pool
-            </Link>
+              <span className="font-bold text-sm">(951) 444-7150</span>
+              <span className="text-white/80 text-[11px]">Call Now • Open 7 Days</span>
+            </a>
           </nav>
         </div>
       )}
