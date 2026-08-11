@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,32 +29,29 @@ const projects = [
 
 export default function RecentProjects() {
   const [current, setCurrent] = useState(0);
+  const [slidePct, setSlidePct] = useState(50);
 
-  const maxIndex = Math.max(0, projects.length - 2);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    const update = () => setSlidePct(mq.matches ? 100 : 50);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  const maxIndex = Math.max(0, projects.length - (slidePct === 100 ? 1 : 2));
   const prev = () => setCurrent((c) => (c === 0 ? maxIndex : c - 1));
   const next = () => setCurrent((c) => (c >= maxIndex ? 0 : c + 1));
-
-  // Show 2 or 3 images depending on viewport (CSS handles which are visible)
-  const visible = projects.slice(current, current + 3);
-  // Wrap around if we're near the end
-  while (visible.length < 3) {
-    visible.push(projects[visible.length - (projects.length - current)]);
-  }
 
   return (
     <section className="pt-14 pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12">
-          <div>
-            <p className="text-secondary font-bold uppercase tracking-[0.175em] text-sm mb-3">
-              Recent Work
-            </p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-none text-dark">
-              Recent Pool Projects
-            </h2>
-          </div>
-          <div className="flex items-center gap-2 text-gray-500 text-sm mt-4 md:mt-2">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight leading-none text-dark">
+            Recent Pool Projects
+          </h2>
+          <div className="flex items-center gap-2 text-gray-500 text-sm mt-4 md:mt-0 md:pb-1.5">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -87,25 +84,32 @@ export default function RecentProjects() {
             </svg>
           </button>
 
-          {/* Photos - 2 visible on desktop, center card larger */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-            {visible.slice(0, 2).map((project, i) => (
-              <div
-                key={`${current}-${i}`}
-                className="rounded-2xl overflow-hidden shadow-lg group cursor-pointer transition-all duration-500"
-              >
-                <div className="relative h-72 md:h-96 overflow-hidden">
-                  <Image
-                    src={project.src}
-                    alt={project.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+          {/* Sliding track — 1 slide on mobile, 2 on desktop */}
+          <div className="overflow-hidden px-4">
+            <div
+              className="flex transition-transform duration-500 ease-in-out -mx-3"
+              style={{ transform: `translateX(-${current * slidePct}%)` }}
+            >
+              {projects.map((project) => (
+                <div
+                  key={project.src}
+                  className="w-full md:w-1/2 flex-shrink-0 px-3"
+                >
+                  <div className="rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+                    <div className="relative h-72 md:h-96 overflow-hidden">
+                      <Image
+                        src={project.src}
+                        alt={project.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
