@@ -213,10 +213,10 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom Value Prop Strip — full-width dark bar */}
-      <div className="relative z-10 mt-10 lg:mt-auto w-full bg-[#0a1220] border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-16 lg:gap-24">
+      {/* Bottom Value Prop Strip — aligned with the form column */}
+      <div className="relative z-10 mt-6 mb-8 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[590px]">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
             {[
               {
                 icon: (
@@ -243,16 +243,16 @@ export default function Hero() {
                   </svg>
                 ),
                 title: "Family Owned & Local",
-                subtitle: "Proudly Serving the Inland Empire Since 2012",
+                subtitle: "Serving the Inland Empire",
               },
             ].map((item) => (
-              <div key={item.title} className="flex items-center gap-2.5 py-3">
+              <div key={item.title} className="flex items-center gap-2 py-1">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary-light">
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-white text-[13px] font-bold leading-tight">{item.title}</p>
-                  <p className="text-white/50 text-[11px] leading-tight">{item.subtitle}</p>
+                  <p className="text-white text-[12px] font-bold leading-tight whitespace-nowrap">{item.title}</p>
+                  <p className="text-white/50 text-[10px] leading-tight whitespace-nowrap">{item.subtitle}</p>
                 </div>
               </div>
             ))}
