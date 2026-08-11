@@ -21,7 +21,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10 bg-primary">
         <Image
-          src="/images/banner-img/pool-drone-001-06-1.webp"
+          src="/images/banner-img/hero-handshake.png"
           alt=""
           aria-hidden="true"
           fill
