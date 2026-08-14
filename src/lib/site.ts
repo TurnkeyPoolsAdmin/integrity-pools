@@ -2,7 +2,7 @@
  * Single source of truth for site content.
  *
  * Layout/structure is modelled on aquapoolsandoutdoorliving.com, rebranded for
- * Integrity Pools & Hardscape (Temecula, CA).
+ * Integrity Pools & Hardscape (Menifee, CA).
  *
  * ITEMS MARKED "TODO(matt)" ARE PLACEHOLDERS AND MUST BE CONFIRMED
  * BEFORE THIS SITE GOES LIVE.
@@ -25,8 +25,9 @@ export const BUSINESS = {
   credential: "PHTA Certified Building Professional",
   ownerFirstName: "Ryan",
   ownerFullName: "Ryan Osborne",
-  serviceAreaLine: "Temecula, Murrieta & the Inland Empire",
+  serviceAreaLine: "Menifee, Murrieta & the Inland Empire",
   areasServedNames: [
+    "Menifee",
     "Temecula",
     "Murrieta",
     "Wildomar",
@@ -400,10 +401,17 @@ export type Area = {
 
 export const AREAS: Area[] = [
   {
+    slug: "menifee",
+    name: "Menifee",
+    blurb:
+      "Our home city. Newer construction with blank backyards, plus the older Sun City pockets that are ready for a remodel. We know the permit counter here.",
+    neighborhoods: ["Audie Murphy Ranch", "Heritage Lake", "Sun City"],
+  },
+  {
     slug: "temecula",
     name: "Temecula",
     blurb:
-      "Our home city. Wine country lots, Redhawk and Vail Ranch backyards, and a permit office we know by name.",
+      "Twenty minutes down the 215. Wine country lots, Redhawk and Vail Ranch backyards, and larger parcels that take a full outdoor living build.",
     neighborhoods: ["Redhawk", "Vail Ranch", "Meadowview", "Wine Country", "Harveston"],
   },
   {
@@ -419,13 +427,6 @@ export const AREAS: Area[] = [
     blurb:
       "Half-acre and one-acre parcels where there is room for the pool, the deck and the fire pit without crowding the house.",
     neighborhoods: ["The Farm", "Sycamore Ranch", "Windsong Valley"],
-  },
-  {
-    slug: "menifee",
-    name: "Menifee",
-    blurb:
-      "Newer construction with blank backyards. A pool, deck and lighting package turns one into a finished space in one contract.",
-    neighborhoods: ["Audie Murphy Ranch", "Heritage Lake", "Sun City"],
   },
   {
     slug: "lake-elsinore",
@@ -452,7 +453,7 @@ export const AREAS: Area[] = [
     slug: "french-valley",
     name: "French Valley",
     blurb:
-      "Between Temecula and Winchester, mostly newer homes with usable rear yards and straightforward access.",
+      "Between Menifee and Temecula, mostly newer homes with usable rear yards and straightforward access.",
     neighborhoods: ["French Valley", "Alta Murrieta edge"],
   },
   {
@@ -575,7 +576,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "modern-pool-spa",
     title: "Modern Pool & Spa",
-    city: "Temecula",
+    city: "Menifee",
     category: "Custom Pools",
     image: "/images/aqua/projects/pool-spa-02/pool-spa-02-03.webp",
     alt: "Modern rectangular pool with a raised spa and a stone deck",
@@ -623,7 +624,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "stone-terrace",
     title: "Stone Terrace & Patio",
-    city: "Temecula",
+    city: "Menifee",
     category: "Hardscapes",
     image: "/images/aqua/projects/hardscape-01/hardscape-01-01.webp",
     alt: "Paver terrace and seat walls wrapping a finished backyard",
@@ -631,7 +632,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "rock-waterfall",
     title: "Rock Waterfall",
-    city: "Menifee",
+    city: "Canyon Lake",
     category: "Water & Fire Features",
     image: "/images/aqua/projects/water-feature-01/water-feature-01-01.webp",
     alt: "Stacked stone waterfall spilling into the shallow end of a pool",
@@ -671,7 +672,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "evening-lighting",
     title: "Evening Lighting Scheme",
-    city: "Temecula",
+    city: "Menifee",
     category: "Outdoor Lighting",
     image: "/images/aqua/projects/outdoor-lighting-01/outdoor-lighting-01-01.webp",
     alt: "Backyard pool and planting lit with low-voltage fixtures after dark",
@@ -679,7 +680,7 @@ export const PROJECTS: Project[] = [
   {
     slug: "travertine-deck",
     title: "Travertine Pool Deck",
-    city: "Menifee",
+    city: "Temecula",
     category: "Hardscapes",
     image: "/images/aqua/projects/hardscape-04/hardscape-04-06.webp",
     alt: "Travertine pool decking and steps running down to the water",

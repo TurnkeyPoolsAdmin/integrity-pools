@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <Logo light />
           <p className="m-0 max-w-[280px] text-sm leading-[1.7] text-white/70">
-            Temecula Valley&apos;s custom gunite pool builder. Pools, spas, hardscape and lighting,
+            Menifee&apos;s custom gunite pool builder. Pools, spas, hardscape and lighting,
             all on one contract, from a company that still services pools every week.
           </p>
           <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/40">

@@ -16,19 +16,19 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(BUSINESS.url),
   title: {
-    default: `${BUSINESS.name} | Custom Pool Builder in Temecula & Murrieta, CA`,
+    default: `${BUSINESS.name} | Custom Pool Builder in Menifee & Murrieta, CA`,
     template: `%s | ${BUSINESS.name}`,
   },
   description:
-    "Custom gunite pools, spas, hardscape and outdoor lighting across Temecula, Murrieta and the Inland Empire. Free site visit, 3D design and an itemized quote.",
+    "Custom gunite pools, spas, hardscape and outdoor lighting across Menifee, Murrieta and the Inland Empire. Free site visit, 3D design and an itemized quote.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
     siteName: BUSINESS.name,
-    title: `${BUSINESS.name} | Custom Pool Builder in Temecula & Murrieta, CA`,
+    title: `${BUSINESS.name} | Custom Pool Builder in Menifee & Murrieta, CA`,
     description:
-      "Custom gunite pools, spas, hardscape and outdoor lighting across Temecula, Murrieta and the Inland Empire.",
+      "Custom gunite pools, spas, hardscape and outdoor lighting across Menifee, Murrieta and the Inland Empire.",
     type: "website",
     url: BUSINESS.url,
     images: [

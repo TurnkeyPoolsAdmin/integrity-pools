@@ -216,8 +216,8 @@ export function ServiceAreaSection() {
         <div>
           <SectionHeading
             eyebrow="Where We Work"
-            title="Temecula, Murrieta & the Inland Empire"
-            body="We stay within about an hour of the shop. That covers the Temecula Valley, out through Menifee and Lake Elsinore, north to Corona and Riverside, and south over the county line to Fallbrook. Close enough that our crews turn up on time and we can come back quickly if you need us."
+            title="Menifee, Murrieta & the Inland Empire"
+            body="We stay within about an hour of the shop. That covers Menifee and the Temecula Valley, out through Lake Elsinore and Perris, north to Corona and Riverside, and south over the county line to Fallbrook. Close enough that our crews turn up on time and we can come back quickly if you need us."
           />
           <a
             href={BUSINESS.phoneHref}
@@ -260,7 +260,7 @@ export function BuilderPartnersBanner() {
             Working With Custom Home Builders
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
-            Building custom homes or developing in the Temecula Valley? We take the entire exterior
+            Building custom homes or developing around Menifee and the Temecula Valley? We take the entire exterior
             scope off your critical path: pool, deck, walls, drainage and lighting, sequenced with
             your grading and electrical trades, on one contract with {BUSINESS.ownerFirstName} as
             your single point of contact.
@@ -363,7 +363,7 @@ export function FinalCta({
         </h2>
         <p className="mx-auto mb-10 mt-0 max-w-[600px] text-base leading-[1.7] text-slate">
           {body ??
-            `We build across Temecula, Murrieta, Menifee, Wildomar and the towns around them. Call or send the form and ${BUSINESS.ownerFirstName} will find a time to come and walk the yard with you.`}
+            `We build across Menifee, Murrieta, Temecula, Wildomar and the towns around them. Call or send the form and ${BUSINESS.ownerFirstName} will find a time to come and walk the yard with you.`}
         </p>
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />

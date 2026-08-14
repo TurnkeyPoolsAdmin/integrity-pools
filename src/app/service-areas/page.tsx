@@ -6,7 +6,7 @@ import { AREAS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Service Areas",
   description:
-    "Integrity Pools builds custom pools, spas and hardscape across Temecula, Murrieta, Wildomar, Menifee, Lake Elsinore, Corona, Riverside and more.",
+    "Integrity Pools builds custom pools, spas and hardscape across Menifee, Temecula, Murrieta, Wildomar, Lake Elsinore, Corona, Riverside and more.",
 };
 
 export default function ServiceAreasPage() {
@@ -14,7 +14,7 @@ export default function ServiceAreasPage() {
     <>
       <PageHero
         eyebrow="Where We Work"
-        title="Temecula, Murrieta & the Inland Empire"
+        title="Menifee, Murrieta & the Inland Empire"
         body="We stay within about an hour of the shop. Close enough that our crews turn up on time and we can come back quickly if you need us."
       />
       <section className="section-x bg-white py-[80px]">

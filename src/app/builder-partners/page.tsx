@@ -8,7 +8,7 @@ import { BUSINESS, SERVICES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Builder Partners",
   description:
-    "A pool partner for custom home builders and developers across the Temecula Valley. One scope, one schedule, one point of contact.",
+    "A pool partner for custom home builders and developers across Menifee and the Temecula Valley. One scope, one schedule, one point of contact.",
 };
 
 const WHY = [
@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: "What is your service area for builder work?",
-    a: "Roughly an hour of the shop: the Temecula Valley, out through Menifee and Lake Elsinore, north to Corona and Riverside, and south to Fallbrook.",
+    a: "Roughly an hour of the shop: Menifee and the Temecula Valley, out through Lake Elsinore and Perris, north to Corona and Riverside, and south to Fallbrook.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function BuilderPartnersPage() {
       <PageHero
         eyebrow="For Custom Home Builders"
         title="A Pool Partner for Custom Home Builders"
-        body={`Pool and exterior construction across the Temecula Valley, sequenced with your grading, utility and hardscape trades. ${BUSINESS.ownerFirstName} runs the scope and takes the calls.`}
+        body={`Pool and exterior construction across Menifee and the Temecula Valley, sequenced with your grading, utility and hardscape trades. ${BUSINESS.ownerFirstName} runs the scope and takes the calls.`}
       >
         <div className="mt-9 flex flex-wrap gap-3.5">
           <Button href="/contact" variant="cyan" size="lg">

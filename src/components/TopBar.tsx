@@ -14,7 +14,7 @@ export default function TopBar() {
         Give us a call {BUSINESS.phone}
       </a>
       <span className="hidden font-normal text-slate lg:block">
-        Serving <strong className="font-semibold text-navy">Temecula, Murrieta</strong> &amp; the
+        Serving <strong className="font-semibold text-navy">Menifee, Murrieta</strong> &amp; the
         Inland Empire
       </span>
     </div>

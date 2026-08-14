@@ -8,7 +8,7 @@ import { BUSINESS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell us about your backyard. Free site visit, free design and an itemised quote across Temecula, Murrieta and the Inland Empire.",
+    "Tell us about your backyard. Free site visit, free design and an itemised quote across Menifee, Murrieta and the Inland Empire.",
 };
 
 const NEXT_STEPS = [
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   Service Area
                 </p>
                 <p className="m-0 mt-1 text-sm leading-[1.7] text-slate">
-                  Temecula, Murrieta &amp; surrounding Inland Empire communities
+                  Menifee, Murrieta &amp; surrounding Inland Empire communities
                 </p>
               </div>
               <div>

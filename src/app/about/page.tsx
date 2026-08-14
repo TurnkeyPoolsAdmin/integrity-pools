@@ -40,7 +40,7 @@ export default function AboutPage() {
           </h1>
           <p className="m-0 text-[17px] leading-[1.8] text-slate">
             Integrity Pools builds gunite pools, spas and the outdoor living space that goes around
-            them, across the Temecula Valley and the wider Inland Empire. We only ever run a handful
+            them, across Menifee, the Temecula Valley and the wider Inland Empire. We only ever run a handful
             of projects at once. That is a deliberate choice, and it is the reason the same person
             stays on your build from the first walk-through to the day the water goes in.
           </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
               free that week.
             </p>
             <p className="m-0">
-              Today we build across Temecula, Murrieta, Wildomar, Menifee, Lake Elsinore, Corona,
+              Today we build across Menifee, Murrieta, Temecula, Wildomar, Lake Elsinore, Corona,
               Riverside and the communities in between.
             </p>
           </div>

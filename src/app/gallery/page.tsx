@@ -6,7 +6,7 @@ import { PROJECTS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Custom gunite pools, spas, hardscape and lighting built by Integrity Pools across Temecula, Murrieta and the Inland Empire.",
+    "Custom gunite pools, spas, hardscape and lighting built by Integrity Pools across Menifee, Murrieta and the Inland Empire.",
 };
 
 export default function GalleryPage() {
@@ -17,7 +17,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Our Work"
         title="Backyards We've Finished"
-        body="Every one of these started as an empty yard and a conversation. Photography is from real Integrity Pools projects across the Temecula Valley and Inland Empire."
+        body="Every one of these started as an empty yard and a conversation. Photography is from real Integrity Pools projects across Menifee, the Temecula Valley and the Inland Empire."
       >
         <ul className="m-0 mt-8 flex list-none flex-wrap gap-x-6 gap-y-2 p-0">
           {categories.map((c) => (

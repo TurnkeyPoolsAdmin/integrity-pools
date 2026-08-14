@@ -20,7 +20,7 @@ export async function generateMetadata({
   const service = serviceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.name} in Temecula, CA`,
+    title: `${service.name} in Menifee, CA`,
     description: service.heroBlurb.slice(0, 155),
   };
 }
@@ -58,7 +58,7 @@ export default async function ServicePage({
               </nav>
               <p className="eyebrow m-0 mb-4">{service.name} Design &amp; Construction</p>
               <h1 className="m-0 mb-6 text-[clamp(34px,4.1vw,50px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
-                {service.heroTitle} in Temecula, <span className="text-cyan">CA</span>
+                {service.heroTitle} in Menifee, <span className="text-cyan">CA</span>
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
                 {service.heroBlurb}
@@ -141,7 +141,7 @@ export default async function ServicePage({
             <SectionHeading
               className="max-w-[720px]"
               eyebrow="Project Gallery"
-              title={`${service.name} We've Built Near Temecula`}
+              title={`${service.name} We've Built Near Menifee`}
             />
             <Link
               href="/gallery"
@@ -174,12 +174,12 @@ export default async function ServicePage({
         </div>
       </section>
 
-      <Reviews light eyebrow="Temecula Valley Homeowners" title="In Their Words" />
+      <Reviews light eyebrow="Menifee & Temecula Valley Homeowners" title="In Their Words" />
 
       {/* FAQ */}
       <section className="section-x bg-white py-[100px]">
         <div className="mx-auto w-full max-w-[980px]">
-          <SectionHeading className="mb-10" eyebrow="FAQ" title={`${service.name} in Temecula`} />
+          <SectionHeading className="mb-10" eyebrow="FAQ" title={`${service.name} in Menifee`} />
           <Faq items={service.faqs} />
         </div>
       </section>
@@ -188,7 +188,7 @@ export default async function ServicePage({
       <section className="section-x bg-shell py-[90px]">
         <div className="mx-auto w-full max-w-[1400px]">
           <h2 className="m-0 mb-6 inline-block border-b-2 border-cyan pb-3.5 text-[15px] font-bold uppercase tracking-[1.5px] text-navy">
-            Other Services in Temecula
+            Other Services in Menifee
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {others.map((s) => (

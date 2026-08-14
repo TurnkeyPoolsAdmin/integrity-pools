@@ -76,16 +76,16 @@ export default function HomePage() {
         <div className="mx-auto grid w-full max-w-[1500px] items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="flex flex-col justify-center lg:pr-5">
             <p className="m-0 mb-6 text-[13px] font-semibold uppercase tracking-[2.5px] text-cyan">
-              Temecula&apos;s Custom Pool Builder
+              Menifee&apos;s Custom Pool Builder
             </p>
             <h1 className="m-0 mb-7 text-[clamp(40px,5.5vw,62px)] font-extrabold uppercase leading-[1.05] tracking-[-0.5px] text-navy">
               <span className="block">Pools, Spas</span>
               <span className="block">&amp; Hardscape</span>
-              <span className="block text-cyan">in Temecula, CA</span>
+              <span className="block text-cyan">in Menifee, CA</span>
             </h1>
             <p className="m-0 mb-10 max-w-[500px] text-[17px] leading-[1.75] text-slate">
               We design and build custom gunite pools, spas, hardscape and outdoor lighting for
-              homeowners across Temecula, Murrieta and the Inland Empire.
+              homeowners across Menifee, Murrieta and the Inland Empire.
             </p>
             <div className="flex flex-wrap gap-3.5">
               <Button href="/contact" size="lg">

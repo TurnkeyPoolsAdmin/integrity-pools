@@ -285,7 +285,7 @@ export default function QuoteWizard() {
       <>
         <section className="section-x bg-white py-[90px] text-center">
           <div className="mx-auto max-w-[860px]">
-            <p className="eyebrow m-0 mb-5">For Temecula Valley Homeowners Only</p>
+            <p className="eyebrow m-0 mb-5">For Menifee & Temecula Valley Homeowners Only</p>
             <h1 className="m-0 mb-7 text-[clamp(34px,5.2vw,58px)] font-extrabold uppercase leading-[1.06] tracking-[-0.5px] text-navy">
               Get an Accurate Price for Your{" "}
               <span className="text-cyan">Custom Pool Project</span>

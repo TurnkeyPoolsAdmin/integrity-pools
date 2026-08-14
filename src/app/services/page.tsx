@@ -4,7 +4,7 @@ import { FinalCta, PageHero, ProcessSteps, WhatWeBuild } from "@/components/sect
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Custom gunite pools, plunge pools, spas, remodels, water and fire features, hardscape, lighting and equipment across the Temecula Valley.",
+    "Custom gunite pools, plunge pools, spas, remodels, water and fire features, hardscape, lighting and equipment across Menifee and the Temecula Valley.",
 };
 
 export default function ServicesPage() {
