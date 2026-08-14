@@ -18,7 +18,7 @@ const WHY = [
   },
   {
     title: "Point of Contact",
-    body: "One person runs the whole scope and takes the call directly. Crew booking, sequencing and problems all go through him.",
+    body: "Ryan runs the whole scope and takes the call directly. Crew booking, sequencing and problems all go through him.",
   },
   {
     title: "Trade Coordination",
@@ -76,7 +76,7 @@ export default function BuilderPartnersPage() {
       <PageHero
         eyebrow="For Custom Home Builders"
         title="A Pool Partner for Custom Home Builders"
-        body="Pool and exterior construction across the Temecula Valley, sequenced with your grading, utility and hardscape trades. One person runs the scope and takes the calls."
+        body={`Pool and exterior construction across the Temecula Valley, sequenced with your grading, utility and hardscape trades. ${BUSINESS.ownerFirstName} runs the scope and takes the calls.`}
       >
         <div className="mt-9 flex flex-wrap gap-3.5">
           <Button href="/contact" variant="cyan" size="lg">

@@ -55,8 +55,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "GeneralContractor",
               name: BUSINESS.name,
+              legalName: BUSINESS.legalName,
               url: BUSINESS.url,
               telephone: BUSINESS.phone,
+              founder: { "@type": "Person", name: BUSINESS.ownerFullName },
               address: {
                 "@type": "PostalAddress",
                 streetAddress: BUSINESS.street,

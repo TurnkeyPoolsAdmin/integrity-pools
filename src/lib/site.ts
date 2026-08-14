@@ -23,7 +23,8 @@ export const BUSINESS = {
   since: 2012,
   license: "C-53 Lic. #945615 & #1154897",
   credential: "PHTA Certified Building Professional",
-  ownerFirstName: "[OWNER NAME]", // TODO(matt): the name customers should ask for
+  ownerFirstName: "Ryan",
+  ownerFullName: "Ryan Osborne",
   serviceAreaLine: "Temecula, Murrieta & the Inland Empire",
   areasServedNames: [
     "Temecula",
@@ -86,7 +87,7 @@ export const SERVICES: Service[] = [
       "Custom gunite pool with a wide sun deck built by Integrity Pools in Temecula, CA",
     heroTitle: "Custom Pools",
     heroBlurb:
-      "Gunite pools engineered for Southern California soil, sun and setbacks. You see the design before we dig, the quote is broken out line by line, and the same crew is in your yard from excavation to startup.",
+      "Gunite pools engineered for Southern California soil, sun and setbacks. You see the design before we dig, the quote is broken out line by line, and Ryan runs the build himself from excavation to startup.",
     intro:
       "Here is what is typically included in an Integrity custom pool build. Every yard is different, so your estimate documents carry the full inclusion list after we walk the site together.",
     inclusions: [
@@ -511,7 +512,7 @@ export const PROCESS = [
 export const EXPECTATIONS = [
   {
     title: "Single Point of Contact",
-    body: "No telephone game with office staff. Once your project starts you get one number, and it is the person running your build.",
+    body: "No telephone game with office staff. Once your project starts you get one number, and it is Ryan's. He runs your build and he takes the call.",
   },
   {
     title: "Design Before You Commit",

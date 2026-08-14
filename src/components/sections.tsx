@@ -260,7 +260,8 @@ export function BuilderPartnersBanner() {
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
             Building custom homes or developing in the Temecula Valley? We take the entire exterior
             scope off your critical path: pool, deck, walls, drainage and lighting, sequenced with
-            your grading and electrical trades, on one contract and one point of contact.
+            your grading and electrical trades, on one contract with {BUSINESS.ownerFirstName} as
+            your single point of contact.
           </p>
           <Button href="/builder-partners" variant="cyan" className="mt-2 self-start">
             Builder Partners
@@ -360,7 +361,7 @@ export function FinalCta({
         </h2>
         <p className="mx-auto mb-10 mt-0 max-w-[600px] text-base leading-[1.7] text-slate">
           {body ??
-            "We build across Temecula, Murrieta, Menifee, Wildomar and the towns around them. Call or send the form and we will find a time to come and walk the yard with you."}
+            `We build across Temecula, Murrieta, Menifee, Wildomar and the towns around them. Call or send the form and ${BUSINESS.ownerFirstName} will find a time to come and walk the yard with you.`}
         </p>
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />

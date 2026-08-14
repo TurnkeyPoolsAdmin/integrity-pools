@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const RULES = [
   {
     title: "Answer the Phone",
-    body: "You get a direct number, not a call queue. Most build problems are small and fixable when they are raised the same week.",
+    body: "Ryan's number is on the paperwork and he answers it directly. Most build problems are small and fixable when they are raised the same week.",
   },
   {
     title: "Show It Before You Build It",
@@ -62,6 +62,30 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* TODO(matt): a real headshot of Ryan would sit well on the left of this block. */}
+      <section className="section-x bg-shell py-[90px]">
+        <div className="mx-auto grid w-full max-w-[1400px] gap-16 lg:grid-cols-[0.85fr_1.15fr]">
+          <SectionHeading eyebrow="The Owner" title={BUSINESS.ownerFullName} />
+          <div className="flex flex-col gap-5 text-base leading-[1.8] text-slate">
+            <p className="m-0">
+              {BUSINESS.ownerFirstName} has been building pools in Southern California since{" "}
+              {BUSINESS.since}. He designs the projects himself, prices them himself, and stays on
+              them from the first walk-through to the day the water goes in.
+            </p>
+            <p className="m-0">
+              He is the number on your paperwork. Not an account manager, not a call centre. When
+              something needs deciding on your build, you are talking to the person who can decide
+              it.
+            </p>
+            <p className="m-0">
+              He is also the ceiling on how much work we take on. Every build goes across his desk
+              and onto his schedule, which caps how many can run at once. We would rather turn work
+              away than stretch a crew across more yards than it can properly cover.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="section-x bg-white py-[90px]">
         <div className="mx-auto grid w-full max-w-[1400px] gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <SectionHeading eyebrow="Our Story" title="Two Halves of One Business" />
@@ -79,14 +103,10 @@ export default function AboutPage() {
               three years.
             </p>
             <p className="m-0">
-              Around the owner sits a settled group of gunite crews, masons and finish trades, most
-              of them on our jobs for years. That is why the stonework looks the same standard from
-              one backyard to the next. You are not getting whichever crew was free that week.
-            </p>
-            <p className="m-0">
-              He is also the ceiling on how much we take on. Every build goes across his desk and
-              onto his schedule, which caps how many can run at once. We would rather turn work away
-              than stretch a crew across more yards than it can properly cover.
+              Around {BUSINESS.ownerFirstName} sits a settled group of gunite crews, masons and
+              finish trades, most of them on our jobs for years. That is why the stonework looks the
+              same standard from one backyard to the next. You are not getting whichever crew was
+              free that week.
             </p>
             <p className="m-0">
               Today we build across Temecula, Murrieta, Wildomar, Menifee, Lake Elsinore, Corona,
