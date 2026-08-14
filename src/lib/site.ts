@@ -55,7 +55,7 @@ export const BUSINESS = {
 
 export const STATS = [
   // Matches Aqua's three-stat rhythm: a short number, then a two-word label.
-  { value: "30+", label: "Years Experience" }, // TODO(matt): confirm the exact figure
+  { value: "30+", label: "Years Experience" }, // confirmed by Matt 2026-08-14
   { value: "43", label: "Five-Star Reviews" }, // verified 2026-08-14, all 5 star
   { value: "6–8 wks", label: "Average Build" }, // confirmed by Matt 2026-08-14
 ];
