@@ -55,7 +55,7 @@ export const BUSINESS = {
 
 export const STATS = [
   { value: "Since 2012", label: "Building SoCal Pools" },
-  { value: "70+", label: "Five-Star Reviews" }, // TODO(matt): confirm current count
+  { value: "43", label: "Five-Star Reviews" }, // verified 2026-08-14, all 5 star
   { value: "8-12 wks", label: "Average Build" }, // TODO(matt): confirm your real build window
 ];
 
@@ -677,26 +677,32 @@ export const PROJECTS: Project[] = [
 /* ------------------------------------------------------------------ */
 
 /**
- * TODO(matt): THESE ARE PLACEHOLDERS.
- * Replace all three with verbatim Google reviews (name + text) before launch.
+ * Real, verbatim Google reviews, pulled 2026-08-14 from the LeadConnector review
+ * widget on integritypoolcareca.com (43 reviews, all 5 star).
+ *
+ * NOTE(matt): every review Integrity has is for the SERVICE side of the business.
+ * There are no reviews from pool BUILD customers yet. These carry trust in the
+ * meantime because they name Ryan and speak to responsiveness and fair pricing,
+ * but three build reviews would be far stronger. Ask your last three build
+ * clients.
  */
 export const REVIEWS = [
   {
     quote:
-      "Placeholder review text. Replace this with a real, verbatim Google review from an Integrity customer before this site goes live.",
-    name: "Customer Name",
+      "My pool need help electrically and new components, plus pool needed to be drained and refilled. My pool service at the time seemed like I was getting way over charged. I meet up with Ryan from Integrity Pool Care and his knowledge and price was what I was looking for. Very happy with the service. Definitely a 5 star. I highly recommend them.",
+    name: "Mark Wagner",
     source: "Google review",
   },
   {
     quote:
-      "Placeholder review text. Replace this with a real, verbatim Google review from an Integrity customer before this site goes live.",
-    name: "Customer Name",
+      "Great service! I never worry about my pool being in good shape. Ryan responds almost immediately every time I have a question, even on weekends. I highly recommend Integrity Pool Care.",
+    name: "Cathy Hackworth",
     source: "Google review",
   },
   {
     quote:
-      "Placeholder review text. Replace this with a real, verbatim Google review from an Integrity customer before this site goes live.",
-    name: "Customer Name",
+      "This is the best pool service I have ever had. They are professional, always complete the work on time and are very knowledgeable about all of our pool equipment needs. Excellent company.",
+    name: "Janine Vogel",
     source: "Google review",
   },
 ];
