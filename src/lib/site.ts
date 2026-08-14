@@ -57,7 +57,7 @@ export const STATS = [
   // Matches Aqua's three-stat rhythm: a short number, then a two-word label.
   { value: "30+", label: "Years Experience" }, // TODO(matt): confirm the exact figure
   { value: "43", label: "Five-Star Reviews" }, // verified 2026-08-14, all 5 star
-  { value: "8–12 wks", label: "Average Build" }, // TODO(matt): confirm your real build window
+  { value: "6–8 wks", label: "Average Build" }, // confirmed by Matt 2026-08-14
 ];
 
 /* ------------------------------------------------------------------ */
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "How long does a custom pool take to build?",
-        a: "Eight to twelve weeks from dig to swim on a typical build. You get the schedule at contract and a phone call the same day if anything moves it, rather than finding out from an empty jobsite.",
+        a: "Six to eight weeks from dig to swim on a typical build. You get the schedule at contract and a phone call the same day if anything moves it, rather than finding out from an empty jobsite.",
       },
       {
         q: "What does a custom pool cost?",
@@ -527,7 +527,7 @@ export const PROCESS = [
   },
   {
     title: "Construction",
-    body: "Eight to twelve weeks from dig to swim on a typical build, with updates as we move through each phase.",
+    body: "Six to eight weeks from dig to swim on a typical build, with updates as we move through each phase.",
   },
   {
     title: "Startup & Care",
@@ -764,7 +764,7 @@ export const HOME_FAQS = [
   },
   {
     q: "How long does a pool build take?",
-    a: "Eight to twelve weeks from dig to swim is typical in our area. Soil conditions, weather and the inspection queue move that window in either direction. We set a target date at contract and call if it changes.",
+    a: "Six to eight weeks from dig to swim is typical. Soil conditions, weather and the inspection queue move that window in either direction. We set a target date at contract and call if it changes.",
   },
   {
     q: "How long do permits and HOA approval take?",

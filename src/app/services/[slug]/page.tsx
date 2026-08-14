@@ -77,7 +77,7 @@ export default async function ServicePage({
                   <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/40">
                     Typical Timeline
                   </dt>
-                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">8-12 weeks, dig to dive</dd>
+                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">6–8 weeks, dig to dive</dd>
                 </div>
                 <div>
                   <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/40">
