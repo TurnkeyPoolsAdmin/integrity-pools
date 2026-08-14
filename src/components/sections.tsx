@@ -41,8 +41,8 @@ export function WhatWeBuild() {
         <SectionHeading
           className="mb-[50px] max-w-[720px]"
           eyebrow="What We Build"
-          title="Everything in the yard, on one contract"
-          body="No juggling three contractors to finish one backyard. With Integrity it is one point of contact, one project manager and one contract across the whole build. Here is what we take on."
+          title="Everything that touches the pool"
+          body="Pool construction, pool remodeling and the hardscape around them. That is the whole list, and it is narrow on purpose. The shell, the deck and the equipment are one job, so they should be one crew on one contract, not three companies blaming each other."
         />
         <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
           {SERVICES.map((s) => (

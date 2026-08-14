@@ -12,8 +12,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Everything in the Yard, One Contract"
-        body="Pool, spa, deck, walls, features and lighting from one company with its own crews. One schedule, one warranty, one number to call."
+        title="Pool Construction, Remodeling & Hardscape"
+        body="A narrow list, run deep. New gunite builds, remodels of tired pools, and the decking, walls and lighting that finish the space, all from one company with its own crews. One schedule, one warranty, one number to call."
       />
       <WhatWeBuild />
       <ProcessSteps />

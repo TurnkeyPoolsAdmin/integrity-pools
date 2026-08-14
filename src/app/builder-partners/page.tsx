@@ -164,7 +164,7 @@ export default function BuilderPartnersPage() {
             className="mb-10 max-w-[720px]"
             eyebrow="Scope"
             title="What We Can Carry On One Contract"
-            body="Pool, spa, features, hardscape, drainage and lighting on one contract. One sub to schedule and one number to call, instead of five of each."
+            body="Pool, spa, features, hardscape and lighting on one contract. One sub to schedule and one number to call, instead of five of each."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => (
