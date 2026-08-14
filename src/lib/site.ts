@@ -39,6 +39,8 @@ export const BUSINESS = {
     "Corona",
     "Riverside",
     "Fallbrook",
+    "Sun City",
+    "Murrieta Hot Springs",
   ],
   social: {
     facebook: "https://www.facebook.com/integritypoolcare", // TODO(matt): confirm
@@ -456,6 +458,20 @@ export const AREAS: Area[] = [
     blurb:
       "Just over the county line. Rural parcels, long driveways and views that set the whole design.",
     neighborhoods: ["Fallbrook", "De Luz"],
+  },
+  {
+    slug: "sun-city",
+    name: "Sun City",
+    blurb:
+      "A lot of original 1960s and 1970s pools here. Remodels, replaster and equipment upgrades are most of what we do in this pocket.",
+    neighborhoods: ["Sun City", "Cherry Hills"],
+  },
+  {
+    slug: "murrieta-hot-springs",
+    name: "Murrieta Hot Springs",
+    blurb:
+      "Established east-side neighbourhoods with mature yards, where access planning decides how the build runs.",
+    neighborhoods: ["Murrieta Hot Springs", "Alta Murrieta", "Vineyard Knolls"],
   },
 ];
 

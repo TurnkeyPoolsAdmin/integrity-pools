@@ -48,12 +48,12 @@ const HERO_TILES = [
 ];
 
 const RECENT = [
-  { i: 0, className: "col-span-2 row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
+  { i: 2, className: "col-span-2 row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
   { i: 9, className: "", sizes: "(max-width: 1024px) 50vw, 350px" },
-  { i: 5, className: "row-span-2", sizes: "(max-width: 1024px) 50vw, 350px" },
+  { i: 11, className: "row-span-2", sizes: "(max-width: 1024px) 50vw, 350px" },
   { i: 10, className: "", sizes: "(max-width: 1024px) 50vw, 350px" },
-  { i: 6, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
-  { i: 4, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
+  { i: 3, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
+  { i: 12, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
 ];
 
 export default function HomePage() {
