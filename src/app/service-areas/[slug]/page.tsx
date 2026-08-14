@@ -30,8 +30,9 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   const area = areaBySlug(slug);
   if (!area) notFound();
 
+  const HERO_IMAGE = "/images/photo-gallery/modern-pools/0000.webp";
   const nearby = AREAS.filter((a) => a.slug !== area.slug);
-  const gallery = PROJECTS.slice(0, 6);
+  const gallery = PROJECTS.filter((p) => p.image !== HERO_IMAGE).slice(0, 6);
 
   return (
     <>
@@ -49,7 +50,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 </Link>
               </nav>
               <p className="eyebrow m-0 mb-4">Serving {area.name}, CA</p>
-              <h1 className="m-0 mb-6 text-[clamp(32px,4.6vw,52px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
+              <h1 className="m-0 mb-6 text-[clamp(34px,4.1vw,50px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
                 Custom Pool Builder in <span className="text-cyan">{area.name}</span>
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
@@ -143,18 +144,18 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         </div>
       </section>
 
-      <Reviews />
-
-      <section className="section-x bg-white py-[100px]">
+      <section className="section-x bg-shell py-[100px]">
         <div className="mx-auto w-full max-w-[980px]">
           <SectionHeading className="mb-10" eyebrow="FAQ" title="Common Questions" />
           <Faq items={HOME_FAQS.slice(0, 5)} />
         </div>
       </section>
 
-      <section className="section-x bg-shell py-[80px]">
+      <Reviews light />
+
+      <section className="section-x bg-white py-[90px]">
         <div className="mx-auto w-full max-w-[1400px]">
-          <h2 className="m-0 mb-6 text-[22px] font-bold uppercase tracking-[0.5px] text-navy">
+          <h2 className="m-0 mb-6 inline-block border-b-2 border-cyan pb-3.5 text-[15px] font-bold uppercase tracking-[1.5px] text-navy">
             We Also Build In
           </h2>
           <div className="flex flex-wrap gap-2.5">
@@ -172,6 +173,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       </section>
 
       <FinalCta
+        bg="bg-shell"
         title={`Build in ${area.name}`}
         body={`Tell us about the yard. We walk the site, talk through what is realistic in ${area.name}, and send an itemised proposal with a design.`}
       />

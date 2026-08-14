@@ -21,12 +21,24 @@ export const metadata: Metadata = {
   },
   description:
     "Custom gunite pools, spas, hardscape and outdoor lighting across Temecula, Murrieta and the Inland Empire. Free site visit, 3D design and an itemized quote.",
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
-    title: `${BUSINESS.name}`,
+    siteName: BUSINESS.name,
+    title: `${BUSINESS.name} | Custom Pool Builder in Temecula & Murrieta, CA`,
     description:
       "Custom gunite pools, spas, hardscape and outdoor lighting across Temecula, Murrieta and the Inland Empire.",
     type: "website",
     url: BUSINESS.url,
+    images: [
+      {
+        url: "/images/banner-img/hero-poolside.jpg",
+        width: 2000,
+        height: 1125,
+        alt: "Custom gunite pool and spa built by Integrity Pools in Temecula, CA",
+      },
+    ],
   },
 };
 

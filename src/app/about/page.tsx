@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="section-x pb-14 pt-20">
         <div className="mx-auto w-full max-w-[900px]">
           <p className="eyebrow m-0 mb-5">About Integrity Pools</p>
-          <h1 className="m-0 mb-7 text-[clamp(34px,5vw,56px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-navy">
+          <h1 className="m-0 mb-6 max-w-[900px] text-[clamp(38px,5.2vw,60px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-navy">
             Owner-Run, and Small on Purpose
           </h1>
           <p className="m-0 text-[17px] leading-[1.8] text-slate">
@@ -44,21 +44,6 @@ export default function AboutPage() {
             of projects at once. That is a deliberate choice, and it is the reason the same person
             stays on your build from the first walk-through to the day the water goes in.
           </p>
-        </div>
-      </section>
-
-      <section className="section-x pb-4 pt-4">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <div className="relative h-[280px] overflow-hidden rounded-lg sm:h-[420px]">
-            <Image
-              src="/images/banner-img/pool-drone-001-06-1.webp"
-              alt="Aerial view of a finished Integrity Pools backyard in Temecula, CA"
-              fill
-              sizes="100vw"
-              priority
-              className="object-cover"
-            />
-          </div>
         </div>
       </section>
 
@@ -86,9 +71,31 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="section-x pb-4 pt-16">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <div className="relative h-[280px] overflow-hidden rounded-lg sm:h-[420px]">
+            <Image
+              src="/images/banner-img/pool-drone-001-06-1.webp"
+              alt="Aerial view of a finished Integrity Pools backyard in Temecula, CA"
+              fill
+              sizes="100vw"
+              priority
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="section-x bg-white py-[90px]">
         <div className="mx-auto grid w-full max-w-[1400px] gap-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <SectionHeading eyebrow="Our Story" title="Two Halves of One Business" />
+          <div className="flex flex-col">
+            <h2 className="m-0 inline-block self-start border-b-2 border-cyan pb-3.5 text-[15px] font-bold uppercase tracking-[1.5px] text-navy">
+              Our Story
+            </h2>
+            <p className="m-0 mt-6 text-[clamp(24px,2.6vw,32px)] font-bold uppercase leading-[1.2] text-navy">
+              Two Halves of One Business
+            </p>
+          </div>
           <div className="flex flex-col gap-5 text-base leading-[1.8] text-slate">
             <p className="m-0">
               A pool, a patio and a lighting plan usually mean three companies, three contracts and

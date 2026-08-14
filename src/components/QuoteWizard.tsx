@@ -25,16 +25,16 @@ const HOW_IT_WORKS = [
     body: "Tell us your target pool size and the features you want. Takes about 2 minutes.",
   },
   {
-    title: "Tell us your timeline",
-    body: "Whether you're ready now or just exploring, we tailor the process to you.",
+    title: "We run the numbers",
+    body: "Our pricing engine builds a personalised range from our actual internal build pricing.",
   },
   {
-    title: "Confirm your location",
-    body: "We check that your property is inside our Temecula and Murrieta service area.",
+    title: "Review your breakdown",
+    body: "See every cost itemised: pool model, equipment, decking, and more.",
   },
   {
-    title: "Get your estimate",
-    body: "A real price range built from our actual build pricing, instantly, with no rep required.",
+    title: "Book if you're ready",
+    body: "Schedule a free consultation with our team whenever it suits you. No pressure.",
   },
 ];
 
@@ -285,14 +285,13 @@ export default function QuoteWizard() {
       <>
         <section className="section-x bg-white py-[90px] text-center">
           <div className="mx-auto max-w-[860px]">
-            <p className="eyebrow m-0 mb-5">For Temecula &amp; Murrieta Homeowners</p>
+            <p className="eyebrow m-0 mb-5">For Temecula Valley Homeowners Only</p>
             <h1 className="m-0 mb-7 text-[clamp(34px,5.2vw,58px)] font-extrabold uppercase leading-[1.06] tracking-[-0.5px] text-navy">
               Get an Accurate Price for Your{" "}
               <span className="text-cyan">Custom Pool Project</span>
             </h1>
             <p className="mx-auto m-0 mb-10 max-w-[560px] text-[17px] leading-[1.75] text-slate">
-              A real price range built from our actual build pricing. Two minutes, no rep, no
-              obligation.
+              See real numbers based on our actual build pricing. No rep required.
             </p>
             <button
               type="button"
@@ -320,23 +319,41 @@ export default function QuoteWizard() {
 
         <section className="section-x bg-shell py-[100px]">
           <div className="mx-auto w-full max-w-[1400px]">
-            <div className="mb-[50px] max-w-[720px]">
+            <div className="mx-auto mb-[50px] max-w-[720px] text-center">
               <p className="eyebrow m-0 mb-4">How It Works</p>
               <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-navy">
-                Your estimate in four steps
+                Your estimate in 4 simple steps
               </h2>
             </div>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-0 border-t-2 border-line-cool lg:grid-cols-4">
+            {/* Numbered vertical timeline, alternating sides — mirrors the reference layout */}
+            <div className="mx-auto max-w-[900px]">
               {HOW_IT_WORKS.map((s, i) => (
                 <div
                   key={s.title}
-                  className="-mt-0.5 flex flex-col gap-3 border-t-2 border-cyan pb-2.5 pt-6 sm:pr-6 sm:pt-8"
+                  className="grid grid-cols-[44px_1fr] gap-x-5 sm:grid-cols-[1fr_44px_1fr] sm:gap-x-8"
                 >
-                  <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">
-                    {s.title}
-                  </h3>
-                  <p className="m-0 text-sm leading-[1.7] text-slate">{s.body}</p>
+                  <div className="relative row-span-1 flex flex-col items-center sm:col-start-2">
+                    <span className="z-[1] flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(27,134,200,0.35)]">
+                      {i + 1}
+                    </span>
+                    {i < HOW_IT_WORKS.length - 1 ? (
+                      <span aria-hidden="true" className="w-px flex-1 bg-line-cool" />
+                    ) : null}
+                  </div>
+                  <div
+                    className={`pb-12 ${
+                      i % 2 === 0
+                        ? "sm:col-start-1 sm:row-start-1 sm:text-right"
+                        : "sm:col-start-3 sm:row-start-1 sm:text-left"
+                    }`}
+                  >
+                    <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">
+                      {s.title}
+                    </h3>
+                    <p className="m-0 mt-2 max-w-[340px] text-sm leading-[1.7] text-slate sm:inline-block">
+                      {s.body}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -524,7 +541,7 @@ export default function QuoteWizard() {
         step={3}
         kicker="Step 3 of 5"
         title="When are you planning to build?"
-        sub="This helps us give you a realistic timeline rather than a generic one."
+        sub="This helps us provide the best service timeline for you."
         onBack={() => setScreen(2)}
         onContinue={() => setScreen(4)}
         continueDisabled={!timeline}
@@ -551,7 +568,7 @@ export default function QuoteWizard() {
         step={4}
         kicker="Step 4 of 5"
         title="Where is the property?"
-        sub="We use this to confirm we serve your area and to allow for local access and permitting."
+        sub="We'll use this to confirm we serve your area and tailor your estimate."
         onBack={() => setScreen(3)}
         onContinue={() => setScreen(5)}
         continueDisabled={address.trim().length < 8}
@@ -563,7 +580,7 @@ export default function QuoteWizard() {
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          placeholder="Street, city and ZIP"
+          placeholder="Start typing your address…"
           className={INPUT_CLS}
         />
         {served === true ? (
@@ -590,7 +607,7 @@ export default function QuoteWizard() {
         step={5}
         kicker="Step 5 of 5"
         title="Where should we send your estimate?"
-        sub="Your range is ready. Tell us where to send a copy and we will show it on screen straight away."
+        sub="Your personalised custom pool estimate will be ready in seconds."
         onBack={() => setScreen(4)}
       >
         <form
@@ -682,38 +699,46 @@ export default function QuoteWizard() {
 
           <div className="mt-10 rounded-lg border border-line bg-shell p-6 text-left sm:p-8">
             <p className="m-0 mb-4 text-[13px] font-bold uppercase tracking-[1.5px] text-navy">
-              Your project
+              Your breakdown
             </p>
-            <ul className="m-0 flex list-none flex-col gap-3 p-0">
+            <ul className="m-0 flex list-none flex-col p-0">
               {pool ? (
-                <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
-                  <span className="mt-1 shrink-0 text-cyan">
-                    <CheckIcon className="h-3.5 w-3.5" />
+                <li className="flex items-baseline justify-between gap-4 border-b border-line py-3 text-sm text-slate">
+                  <span>
+                    {pool.name} gunite pool <span className="text-muted">({pool.size})</span>
                   </span>
-                  {pool.name} gunite pool ({pool.size})
+                  <span className="shrink-0 font-bold text-navy">{formatUsd(pool.basePrice)}</span>
                 </li>
               ) : null}
-              <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
-                <span className="mt-1 shrink-0 text-cyan">
-                  <CheckIcon className="h-3.5 w-3.5" />
+              <li className="flex items-baseline justify-between gap-4 border-b border-line py-3 text-sm text-slate">
+                <span>
+                  {decking
+                    ? `${decking.name} decking, approx ${sqft} sqft`
+                    : "No decking (quoted separately)"}
                 </span>
-                {decking
-                  ? `${decking.name} decking, approx ${sqft} sqft`
-                  : "No decking (quoted separately)"}
+                <span className="shrink-0 font-bold text-navy">
+                  {decking ? formatUsd(decking.pricePerSqft * sqft) : "—"}
+                </span>
               </li>
               {chosenFeatures.map((f) => (
                 <li
                   key={f.id}
-                  className="flex items-start gap-3 text-sm leading-[1.65] text-slate"
+                  className="flex items-baseline justify-between gap-4 border-b border-line py-3 text-sm text-slate"
                 >
-                  <span className="mt-1 shrink-0 text-cyan">
-                    <CheckIcon className="h-3.5 w-3.5" />
-                  </span>
-                  {f.name}
+                  <span>{f.name}</span>
+                  <span className="shrink-0 font-bold text-navy">{formatUsd(f.price)}</span>
                 </li>
               ))}
+              <li className="flex items-baseline justify-between gap-4 py-3 text-sm">
+                <span className="font-bold uppercase tracking-[0.5px] text-navy">
+                  Estimated range
+                </span>
+                <span className="shrink-0 font-extrabold text-cyan">
+                  {formatUsd(estimate.low)} – {formatUsd(estimate.high)}
+                </span>
+              </li>
               {address ? (
-                <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
+                <li className="flex items-start gap-3 pt-3 text-sm leading-[1.65] text-slate">
                   <span className="mt-1 shrink-0 text-cyan">
                     <CheckIcon className="h-3.5 w-3.5" />
                   </span>
@@ -728,13 +753,22 @@ export default function QuoteWizard() {
             access, slope and soil, which we confirm in a free design consultation.
           </p>
 
-          <a
-            href={BUSINESS.phoneHref}
-            className="inline-flex items-center justify-center gap-2.5 rounded bg-navy px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
-          >
-            <PhoneIcon className="h-4 w-4" />
-            Call {BUSINESS.phone} to talk it through
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-3.5">
+            <a
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2.5 rounded bg-cyan px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-navy"
+            >
+              <ArrowIcon className="h-4 w-4" />
+              Book a Free Consultation
+            </a>
+            <a
+              href={BUSINESS.phoneHref}
+              className="inline-flex items-center justify-center gap-2.5 rounded bg-navy px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              Call {BUSINESS.phone}
+            </a>
+          </div>
         </div>
       </div>
     </section>

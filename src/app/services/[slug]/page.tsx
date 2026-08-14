@@ -35,7 +35,7 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const others = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4);
-  const gallery = PROJECTS.slice(0, 6);
+  const gallery = PROJECTS.filter((p) => p.image !== service.image).slice(0, 6);
 
   return (
     <>
@@ -54,7 +54,7 @@ export default async function ServicePage({
                 </Link>
               </nav>
               <p className="eyebrow m-0 mb-4">{service.name} Design &amp; Construction</p>
-              <h1 className="m-0 mb-6 text-[clamp(32px,4.6vw,52px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
+              <h1 className="m-0 mb-6 text-[clamp(34px,4.1vw,50px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
                 {service.heroTitle} in Temecula, <span className="text-cyan">CA</span>
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
@@ -184,7 +184,7 @@ export default async function ServicePage({
       {/* Cross links */}
       <section className="section-x bg-shell py-[90px]">
         <div className="mx-auto w-full max-w-[1400px]">
-          <h2 className="m-0 mb-8 text-[22px] font-bold uppercase tracking-[0.5px] text-navy">
+          <h2 className="m-0 mb-6 inline-block border-b-2 border-cyan pb-3.5 text-[15px] font-bold uppercase tracking-[1.5px] text-navy">
             Other Services in Temecula
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -202,7 +202,7 @@ export default async function ServicePage({
             ))}
           </div>
 
-          <h2 className="m-0 mb-6 mt-14 text-[22px] font-bold uppercase tracking-[0.5px] text-navy">
+          <h2 className="m-0 mb-6 mt-14 block w-fit border-b-2 border-cyan pb-3.5 text-[15px] font-bold uppercase tracking-[1.5px] text-navy">
             {service.name} Nearby
           </h2>
           <div className="flex flex-wrap gap-2.5">

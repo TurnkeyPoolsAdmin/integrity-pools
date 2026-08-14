@@ -416,7 +416,7 @@ export function PageHero({
           </nav>
         ) : null}
         {eyebrow ? <p className="eyebrow m-0 mb-4">{eyebrow}</p> : null}
-        <h1 className="m-0 max-w-[900px] text-[clamp(32px,4.8vw,54px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
+        <h1 className="m-0 max-w-[900px] text-[clamp(34px,4.5vw,52px)] font-extrabold uppercase leading-[1.1] tracking-[-0.5px] text-white">
           {title}
         </h1>
         {body ? (

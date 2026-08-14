@@ -15,13 +15,21 @@ import Faq from "@/components/Faq";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
 import { BUSINESS, HOME_FAQS, PROJECTS } from "@/lib/site";
 
-const HERO_TILES = [
+const HERO_TILES: {
+  src: string;
+  alt: string;
+  label: string;
+  className: string;
+  sizes: string;
+  priority?: boolean;
+  imgClassName?: string;
+}[] = [
   {
     src: "/images/photo-gallery/modern-pools/0000.webp",
     alt: "Modern gunite pool with a raised spa and water wall built in Temecula, CA",
     label: "Custom Pools",
     className: "col-span-2",
-    sizes: "(max-width: 1024px) 100vw, 460px",
+    sizes: "(max-width: 1024px) 100vw, 1040px",
     priority: true,
   },
   {
@@ -29,21 +37,22 @@ const HERO_TILES = [
     alt: "Vanishing edge spa overlooking the valley in Murrieta, CA",
     label: "Pools & Spas",
     className: "lg:row-span-2",
-    sizes: "(max-width: 1024px) 50vw, 230px",
+    sizes: "(max-width: 1024px) 50vw, 400px",
+    imgClassName: "object-[25%_center]",
   },
   {
-    src: "/images/Everything-your-backyards-need/0721171355a-1.webp",
-    alt: "Rock waterfall spilling into a freeform pool in the Inland Empire",
-    label: "Water Features",
+    src: "/images/one-person-review-img/pool1.webp",
+    alt: "Gunite pool and raised spa with a paver patio in the Inland Empire",
+    label: "Pools & Patios",
     className: "",
-    sizes: "(max-width: 1024px) 50vw, 230px",
+    sizes: "(max-width: 1024px) 50vw, 520px",
   },
   {
-    src: "/images/our-work-banner-img/dscn0269-1.webp",
-    alt: "Stone terrace and pool decking built around a custom pool",
+    src: "/images/Everything-your-backyards-need/img-7216-1.webp",
+    alt: "Circular fire pit lounge overlooking the Temecula valley",
     label: "Hardscape",
     className: "hidden lg:block",
-    sizes: "230px",
+    sizes: "420px",
   },
 ];
 
@@ -98,7 +107,7 @@ export default function HomePage() {
                   fill
                   sizes={t.sizes}
                   priority={t.priority}
-                  className="object-cover"
+                  className={`object-cover ${t.imgClassName ?? ""}`}
                 />
                 <span className="absolute bottom-3 left-3 rounded-[3px] bg-navy/85 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[1px] text-white">
                   {t.label}
