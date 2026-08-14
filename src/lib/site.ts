@@ -582,12 +582,12 @@ export const PROJECTS: Project[] = [
     alt: "Aerial view of a pool with fire bowls and a spa spilling over",
   },
   {
-    slug: "hillside-infinity",
-    title: "Hillside Infinity Pool",
+    slug: "hillside-pool-spa",
+    title: "Pool, Spa & Patio",
     city: "Lake Elsinore",
     category: "Custom Pools",
-    image: "/images/proudly-serving-section/burst-01-1.webp",
-    alt: "Infinity edge pool set on a hillside with a valley view",
+    image: "/images/one-person-review-img/pool1.webp",
+    alt: "Pool and raised spa with a paver patio behind a two-storey home",
   },
   {
     slug: "hardscape-terrace",
