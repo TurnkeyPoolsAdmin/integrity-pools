@@ -1,111 +1,167 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Logo from "./Logo";
+import { BUSINESS, NAV, SERVICES } from "@/lib/site";
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    setMobileOpen(false);
+    setServicesOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
   }, []);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const linkCls = (href: string) =>
+    `block px-4 py-3 text-[13px] font-semibold uppercase tracking-[0.5px] transition-colors hover:text-cyan ${
+      isActive(href) ? "text-cyan" : "text-navy"
+    }`;
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/85 backdrop-blur-md shadow-md"
-          : "bg-white shadow-sm"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            {/* Wave icon */}
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" className="text-primary">
-              <rect width="40" height="40" rx="4" fill="currentColor" />
-              <path d="M8 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              <path d="M8 22c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              <path d="M8 30c2-2 4-2 6 0s4 2 6 0 4-2 6 0 4 2 6 0" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-            </svg>
-            <span className="text-primary font-heading font-bold text-xl tracking-wide">
-              INTEGRITY
-            </span>
-          </Link>
+    <>
+      <header className="section-x relative z-[1000] flex items-center justify-between gap-6 bg-white py-5">
+        <Logo />
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/" className="text-dark hover:text-secondary font-medium transition-colors text-[15px]">
-              Home
-            </Link>
-            <Link href="/services" className="text-dark hover:text-secondary font-medium transition-colors text-[15px]">
-              Services
-            </Link>
-            <Link href="/financing" className="text-dark hover:text-secondary font-medium transition-colors text-[15px]">
-              Financing
-            </Link>
-          </nav>
+        <nav aria-label="Main navigation" className="hidden items-center lg:flex">
+          <ul className="m-0 flex list-none items-center gap-0.5 p-0">
+            {NAV.map((item) =>
+              item.dropdown ? (
+                <li key={item.href} className="relative" ref={dropdownRef}>
+                  <button
+                    type="button"
+                    aria-expanded={servicesOpen}
+                    onClick={() => setServicesOpen((v) => !v)}
+                    className={`flex cursor-pointer items-center gap-1.5 border-none bg-none px-4 py-3 text-[13px] font-semibold uppercase tracking-[0.5px] transition-colors hover:text-cyan ${
+                      isActive(item.href) ? "text-cyan" : "text-navy"
+                    }`}
+                  >
+                    {item.label}
+                    <svg
+                      className={`h-3 w-3 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                      aria-hidden="true"
+                    >
+                      <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  {servicesOpen ? (
+                    <div className="absolute left-0 top-full z-50 mt-2 w-[280px] overflow-hidden rounded-lg border border-line bg-white py-2 shadow-[0_18px_50px_rgba(26,42,58,0.14)]">
+                      <Link
+                        href="/services"
+                        className="block px-5 py-2.5 text-[13px] font-bold uppercase tracking-[0.5px] text-navy transition-colors hover:bg-shell hover:text-cyan"
+                      >
+                        All Services
+                      </Link>
+                      <div className="my-1 border-t border-line" />
+                      {SERVICES.map((s) => (
+                        <Link
+                          key={s.slug}
+                          href={`/services/${s.slug}`}
+                          className="block px-5 py-2.5 text-[13px] font-medium text-slate transition-colors hover:bg-shell hover:text-cyan"
+                        >
+                          {s.name}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : null}
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link href={item.href} className={linkCls(item.href)}>
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
 
-          {/* Call CTA */}
-          <div className="hidden md:flex items-center">
-            <a
-              href="tel:9514447150"
-              className="flex items-center gap-3 bg-secondary hover:bg-secondary-light transition-colors rounded-full pl-4 pr-6 py-2"
+        <Link
+          href="/quote"
+          className="hidden shrink-0 items-center justify-center rounded bg-navy px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.5px] text-white transition-colors hover:bg-cyan lg:inline-flex"
+        >
+          Request a Quote
+        </Link>
+
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+          className="flex h-11 w-11 shrink-0 cursor-pointer flex-col justify-center gap-1.5 border-none bg-none p-2.5 lg:hidden"
+        >
+          <span className="block h-0.5 w-6 bg-navy" />
+          <span className="block h-0.5 w-6 bg-navy" />
+          <span className="block h-0.5 w-6 bg-navy" />
+        </button>
+      </header>
+
+      {mobileOpen ? (
+        <div className="section-x border-b border-line bg-white pb-6 lg:hidden">
+          <ul className="m-0 flex list-none flex-col p-0">
+            {NAV.filter((n) => !n.dropdown).map((item) => (
+              <li key={item.href} className="border-b border-line">
+                <Link
+                  href={item.href}
+                  className="block py-3.5 text-sm font-semibold uppercase tracking-[0.5px] text-navy"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mb-2 mt-6 text-[11px] font-bold uppercase tracking-[1.5px] text-muted">
+            Services
+          </p>
+          <ul className="m-0 grid list-none grid-cols-2 gap-x-4 p-0">
+            {SERVICES.map((s) => (
+              <li key={s.slug}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="block py-2 text-[13px] font-medium text-slate"
+                >
+                  {s.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 flex flex-col gap-3">
+            <Link
+              href="/quote"
+              className="inline-flex items-center justify-center rounded bg-navy px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.5px] text-white"
             >
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white/15 flex items-center justify-center">
-                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.85 21 3 13.15 3 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
-                </svg>
-              </span>
-              <span className="flex flex-col leading-tight">
-                <span className="text-white font-bold text-[15px]">(951) 444-7150</span>
-                <span className="text-white/80 text-[11px]">Call Now • Open 7 Days</span>
-              </span>
+              Request a Quote
+            </Link>
+            <a
+              href={BUSINESS.phoneHref}
+              className="inline-flex items-center justify-center rounded border-2 border-line-strong px-7 py-3 text-[13px] font-bold uppercase tracking-[0.5px] text-navy"
+            >
+              {BUSINESS.phone}
             </a>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
         </div>
-      </div>
-
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-t">
-          <nav className="flex flex-col px-4 py-4 gap-3">
-            <Link href="/" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Home</Link>
-            <Link href="/services" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Services</Link>
-            <Link href="/financing" className="text-dark py-2 font-medium" onClick={() => setMobileOpen(false)}>Financing</Link>
-            <a
-              href="tel:9514447150"
-              className="flex flex-col items-center bg-secondary text-white text-center px-6 py-2.5 rounded-full mt-2 leading-tight"
-              onClick={() => setMobileOpen(false)}
-            >
-              <span className="font-bold text-sm">(951) 444-7150</span>
-              <span className="text-white/80 text-[11px]">Call Now • Open 7 Days</span>
-            </a>
-          </nav>
-        </div>
-      )}
-    </header>
+      ) : null}
+    </>
   );
 }

@@ -1,6 +1,28 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand */
+  --color-navy: #1a2f42;
+  --color-cyan: #1b86c8;
+  --color-cyan-dark: #146a9f;
+  --color-cyan-pale: #f2fafd;
+  --color-cyan-mist: #e6f4fb;
+  --color-cyan-light: #8fcbe9;
+
+  /* Text */
+  --color-ink: #3c4d5e;
+  --color-slate: #5a6a7a;
+  --color-muted: #8a99a8;
+  --color-faint: #c3ced8;
+
+  /* Lines + surfaces */
+  --color-line: #e8edf2;
+  --color-line-strong: #e2e9f0;
+  --color-line-cool: #dfe7ef;
+  --color-shell: #f7f9fc;
+  --color-shell-deep: #f0f5f9;
+
+  /* Legacy aliases kept so the /quote wizard keeps its styling */
   --color-primary: #1a2f42;
   --color-primary-light: #2a5a8c;
   --color-secondary: #1b86c8;
@@ -8,10 +30,11 @@
   --color-accent: #f59e0b;
   --color-accent-dark: #d97706;
   --color-dark: #1a2f42;
-  --color-gray-light: #f8fafc;
+  --color-gray-light: #f7f9fc;
   --color-gray-medium: #94a3b8;
-  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, Menlo, monospace;
 }
 
 html {
@@ -19,101 +42,44 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--color-dark);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+  background: #fff;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 800;
+/* Horizontal page gutter used by every section */
+.section-x {
+  padding-inline: 18px;
+}
+@media (min-width: 621px) {
+  .section-x {
+    padding-inline: 28px;
+  }
+}
+@media (min-width: 1001px) {
+  .section-x {
+    padding-inline: 60px;
+  }
 }
 
-.hero-overlay {
-  background: linear-gradient(
-    to right,
-    rgba(15, 23, 42, 0.85) 0%,
-    rgba(15, 23, 42, 0.5) 50%,
-    rgba(15, 23, 42, 0.2) 100%
-  );
-}
-
-.service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.btn-primary {
-  background-color: var(--color-accent);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
+.eyebrow {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  font-size: 13px;
   font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-}
-.btn-primary:hover {
-  background-color: var(--color-accent-dark);
 }
 
-.btn-secondary {
-  border: 2px solid white;
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.btn-outline {
-  border: 2px solid var(--color-secondary);
-  color: var(--color-secondary);
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-.btn-outline:hover {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-/* ---------- Scroll reveal (fade + rise) ---------- */
-/* Only active once JS adds .reveal-ready to <html>, so no-JS shows everything.
-   A single rule (data-reveal="hidden") controls opacity so there is no
-   cascade fight — revealing just swaps the attribute value. */
-.reveal-ready [data-reveal] {
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.reveal-ready [data-reveal="hidden"] {
-  opacity: 0;
-  transform: translateY(28px);
+.numeral {
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  color: var(--color-cyan);
+  font-size: 12px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal-ready [data-reveal="hidden"] {
-    opacity: 1;
-    transform: none;
-  }
   html {
     scroll-behavior: auto;
   }
-}
-
-/* ---------- Card lift on hover ---------- */
-.card-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-lift:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 30px -12px rgba(15, 23, 42, 0.25);
 }

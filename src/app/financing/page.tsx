@@ -1,130 +1,105 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import ContactForm from "@/components/ContactForm";
-import WaveDivider from "@/components/WaveDivider";
+import Faq from "@/components/Faq";
+import { FinalCta, PageHero } from "@/components/sections";
+import { Button, CheckIcon, SectionHeading } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Pool Financing Options | Integrity Pools",
+  title: "Financing",
   description:
-    "Explore financing options for a new pool, pool remodel, spa, or qualifying pool-hardscape project with Integrity Pools.",
+    "Estimate an affordable monthly payment on your custom pool project. Soft credit check, no impact on your score.",
 };
 
-const partners = [
+const POINTS = [
   {
-    name: "Paramount",
-    desc: "Financing options for qualifying pool and home-improvement projects, with terms set by the lender.",
+    title: "Soft credit check",
+    body: "Checking a rate is a soft pull, so it will not touch your credit score.",
   },
   {
-    name: "HFS Financial",
-    desc: "Home-improvement financing programs that may be used for qualifying swimming pool projects.",
+    title: "Monthly payment estimates",
+    body: "See what a given scope works out to per month before you commit to it.",
   },
   {
-    name: "Lyon Financial",
-    desc: "Lending programs focused on swimming pools and other qualifying home-improvement projects.",
+    title: "Applies to the whole yard",
+    body: "Pool, hardscape, features and lighting can all be financed as one project.",
   },
   {
-    name: "LightStream",
-    desc: "Unsecured home-improvement loans for qualified borrowers, subject to the lender's current terms.",
+    title: "Decide after the design",
+    body: "Get the design and the itemised quote first, then work out how you want to pay for it.",
+  },
+];
+
+const FAQS = [
+  {
+    q: "Does checking a rate affect my credit?",
+    a: "No. A rate check is a soft pull. Only a full application, once you decide to proceed, involves a hard pull.",
+  },
+  {
+    q: "What can be financed?",
+    a: "The whole project. Pool shell, equipment, decking, walls, features and lighting can all sit on one loan rather than being split up.",
+  },
+  {
+    q: "Do I need to finance through you?",
+    a: "No. Plenty of clients use a HELOC, a cash-out refinance or their own funds. The lending partners are there as an option, not a requirement.",
+  },
+  {
+    q: "How much do I need to put down?",
+    a: "That depends on the lender and the product. We can walk you through the options once we know the project scope.",
   },
 ];
 
 export default function FinancingPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-32 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-secondary-light font-semibold uppercase tracking-wider text-sm mb-3">
-              Financing
-            </p>
-            <h1 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-              Build the Pool You Want With a Payment Plan That Fits
-            </h1>
-            <p className="text-blue-200 text-lg leading-relaxed">
-              Explore lending options for a new pool, remodel, spa, or qualifying pool-hardscape project. We will help you connect the project scope and budget to the financing path that makes sense for you.
-            </p>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <WaveDivider color="#ffffff" />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Financing"
+        title="Pool Financing Without the Wait"
+        body="Get the backyard you want now and spread the cost. Our lending partners can estimate an affordable monthly payment on your project in a few minutes."
+      />
 
-      {/* Financing Partners */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-heading font-bold text-dark mb-4">
-              Our Financing Partners
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Compare programs from lenders that serve pool and home-improvement customers. Approval, rates, terms, and funding decisions are set by each lender.
-            </p>
+      <section className="section-x bg-white py-[100px]">
+        <div className="mx-auto grid w-full max-w-[1400px] items-start gap-16 lg:grid-cols-[1fr_0.9fr]">
+          <div>
+            <SectionHeading
+              eyebrow="How It Works"
+              title="Three Minutes to a Number"
+              body="Tell the lender roughly what you are building and what your finances look like. You get a monthly payment estimate back straight away, with no impact on your credit score. Bring that number to the design conversation and we will build to it."
+            />
+            <div className="mt-9 flex flex-wrap gap-3.5">
+              {/* TODO(matt): swap in your real lending partner links */}
+              <Button href="/contact" size="lg">
+                Talk to Us About Financing
+              </Button>
+              <Button href="/quote" variant="outline" size="lg">
+                Get an Instant Estimate
+              </Button>
+            </div>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {partners.map((p) => (
-              <div
-                key={p.name}
-                className="bg-gray-light rounded-xl p-8 card-lift"
-              >
-                <h3 className="text-2xl font-bold text-dark mb-3">{p.name}</h3>
-                <p className="text-gray-600 leading-relaxed">{p.desc}</p>
+          <div className="flex flex-col gap-5 rounded-lg border border-line bg-shell p-8 sm:p-10">
+            {POINTS.map((p) => (
+              <div key={p.title} className="flex items-start gap-3.5">
+                <span className="mt-1 shrink-0 text-cyan">
+                  <CheckIcon />
+                </span>
+                <div>
+                  <p className="m-0 mb-1 text-sm font-bold uppercase tracking-[0.5px] text-navy">
+                    {p.title}
+                  </p>
+                  <p className="m-0 text-sm leading-[1.65] text-slate">{p.body}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 bg-gray-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-heading font-bold text-dark mb-4">
-              How Financing Works
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">1</span>
-              </div>
-              <h3 className="font-bold text-dark text-lg mb-2">Plan Your Pool</h3>
-              <p className="text-gray-600 text-sm">
-                Meet with Integrity to define the pool scope, priorities, and estimated project budget.
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">2</span>
-              </div>
-              <h3 className="font-bold text-dark text-lg mb-2">Explore Your Options</h3>
-              <p className="text-gray-600 text-sm">
-                Review available lender programs and apply directly for the option you believe fits your needs.
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl font-bold">3</span>
-              </div>
-              <h3 className="font-bold text-dark text-lg mb-2">Start Building</h3>
-              <p className="text-gray-600 text-sm">
-                After financing, contracts, design, and permits are complete, your pool can move into the construction schedule.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/contact" className="btn-primary text-lg">
-              Explore My Pool Options
-            </Link>
-          </div>
+      <section className="section-x bg-shell py-[100px]">
+        <div className="mx-auto w-full max-w-[980px]">
+          <SectionHeading className="mb-10" eyebrow="FAQ" title="Financing Questions" />
+          <Faq items={FAQS} />
         </div>
       </section>
 
-      <ContactForm />
+      <FinalCta />
     </>
   );
 }

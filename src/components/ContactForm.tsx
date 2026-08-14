@@ -1,187 +1,244 @@
 "use client";
 
 import { useState } from "react";
+import { SERVICES } from "@/lib/site";
+
+const LEAD_EMAIL = "mattbsheeran@gmail.com"; // TODO(matt): switch to Integrity's real lead inbox
+
+const PROJECT_OPTIONS = [...SERVICES.map((s) => s.name), "Not sure yet"];
+
+const BUDGETS = ["Under $75k", "$75k - $125k", "$125k - $200k", "$200k+", "Not sure yet"];
+
+const TIMELINES = ["ASAP", "This season", "Next season", "Just exploring"];
+
+const STEPS = ["Project", "Budget", "Details"];
+
+function Chip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`cursor-pointer rounded border px-4 py-3 text-left text-[13px] font-semibold transition-colors ${
+        active
+          ? "border-cyan bg-cyan-mist text-navy"
+          : "border-line-strong bg-white text-slate hover:border-cyan hover:text-navy"
+      }`}
+    >
+      <span className={active ? "text-cyan" : "text-faint"}>&#10003;</span> {children}
+    </button>
+  );
+}
+
+function Field({
+  label,
+  value,
+  onChange,
+  type = "text",
+  required,
+}: {
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  type?: string;
+  required?: boolean;
+}) {
+  return (
+    <label className="flex flex-col gap-2">
+      <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
+        {label}
+        {required ? " *" : ""}
+      </span>
+      <input
+        type={type}
+        value={value}
+        required={required}
+        onChange={(e) => onChange(e.target.value)}
+        className="rounded border border-line-strong px-4 py-3 text-sm text-navy outline-none focus:border-cyan"
+      />
+    </label>
+  );
+}
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    projectType: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
+  const [step, setStep] = useState(0);
+  const [projects, setProjects] = useState<string[]>([]);
+  const [budget, setBudget] = useState("");
+  const [timeline, setTimeline] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [notes, setNotes] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const toggle = (v: string) =>
+    setProjects((p) => (p.includes(v) ? p.filter((x) => x !== v) : [...p, v]));
+
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Demo: no backend wired up yet. Show an inline confirmation.
-    // Drop a real endpoint (GHL, email, etc.) into this handler when ready.
-    setSubmitted(true);
+    setStatus("sending");
+    try {
+      const res = await fetch(`https://formsubmit.co/ajax/${LEAD_EMAIL}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: "New Integrity Pools website enquiry",
+          Name: name,
+          Email: email,
+          Phone: phone,
+          Address: address,
+          Projects: projects.join(", ") || "Not specified",
+          Budget: budget || "Not specified",
+          Timeline: timeline || "Not specified",
+          Notes: notes,
+        }),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
   };
 
-  return (
-    <section className="relative mx-4 my-10 rounded-[2.5rem] bg-dark min-h-[700px] overflow-hidden">
-      {/* Background photo + dark overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('/images/Ready-To-transform-your-backyard-section/dscn0269-1.webp')`,
-          backgroundColor: "#1a2f42",
-        }}
-      />
-      <div className="absolute inset-0 bg-dark/90" />
-      {/* Wave pattern overlay */}
-      <div className="absolute inset-0 opacity-10">
-        <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" fill="none">
-          <path d="M0 100c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />
-          <path d="M0 200c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />
-          <path d="M0 300c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />
-          <path d="M0 400c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />
-          <path d="M0 500c40-30 80-30 120 0s80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0 80 30 120 0 80-30 120 0" stroke="white" strokeWidth="20" fill="none" />
-        </svg>
+  if (status === "sent") {
+    return (
+      <div className="flex flex-col items-start gap-4 rounded-lg border border-line bg-white p-10">
+        <p className="eyebrow m-0">Thank you</p>
+        <h2 className="m-0 text-[26px] font-bold uppercase leading-[1.2] text-navy">
+          Your request is in
+        </h2>
+        <p className="m-0 text-base leading-[1.75] text-slate">
+          We will come back to you within one business day to book the site visit. If it is urgent,
+          call us and we will pick up.
+        </p>
       </div>
+    );
+  }
 
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="p-8 md:p-12 lg:p-14">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            {/* Left side - text */}
-            <div>
-              <p className="text-white/60 uppercase tracking-[0.2em] text-sm font-semibold mb-4">
-                Contact Us
-              </p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-tight mb-6">
-                Let&apos;s Build Your
-                <br />
-                Pool Plan
-              </h2>
-              <p className="text-white font-medium leading-relaxed max-w-md">
-                Tell us what you want from your pool, spa, remodel, or pool-hardscape project. If landscaping is part of the larger plan, include that too so we can discuss coordination from the start. We will reach out within 24 hours.
-              </p>
+  return (
+    <form onSubmit={submit} className="rounded-lg border border-line bg-white p-6 sm:p-10">
+      <ol className="m-0 mb-8 flex list-none gap-2 p-0">
+        {STEPS.map((s, i) => (
+          <li
+            key={s}
+            className={`flex flex-1 items-center gap-2 border-t-2 pt-3 text-[11px] font-bold uppercase tracking-[1.2px] ${
+              i <= step ? "border-cyan text-navy" : "border-line-cool text-faint"
+            }`}
+          >
+            <span className="numeral">{i + 1}</span>
+            {s}
+          </li>
+        ))}
+      </ol>
+
+      {step === 0 ? (
+        <div>
+          <p className="m-0 mb-1 text-[19px] font-bold text-navy">
+            What are you thinking about building?
+          </p>
+          <p className="m-0 mb-6 text-sm text-slate">Pick everything that applies.</p>
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            {PROJECT_OPTIONS.map((o) => (
+              <Chip key={o} active={projects.includes(o)} onClick={() => toggle(o)}>
+                {o}
+              </Chip>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {step === 1 ? (
+        <div className="flex flex-col gap-8">
+          <div>
+            <p className="m-0 mb-1 text-[19px] font-bold text-navy">
+              Roughly what budget are you working to?
+            </p>
+            <p className="m-0 mb-5 text-sm text-slate">
+              A range is fine. It helps us design something you would actually build.
+            </p>
+            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+              {BUDGETS.map((b) => (
+                <Chip key={b} active={budget === b} onClick={() => setBudget(b)}>
+                  {b}
+                </Chip>
+              ))}
             </div>
-
-            {/* Right side - form */}
-            <div>
-              {submitted ? (
-                <div className="bg-white/10 border border-white/20 rounded-2xl p-8 md:p-10 text-center">
-                  <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mx-auto mb-5">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-heading font-bold text-white mb-3">
-                    Thanks{formData.name ? `, ${formData.name.split(" ")[0]}` : ""}!
-                  </h3>
-                  <p className="text-white/70 leading-relaxed max-w-sm mx-auto">
-                    We got your request and will reach out within 24 hours to talk
-                    through your project.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: "", email: "", phone: "", projectType: "", message: "" });
-                    }}
-                    className="mt-6 text-secondary-light font-semibold text-sm hover:underline"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-                    Full Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
-                    placeholder="Enter Name"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-                      Email*
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
-                      placeholder="Enter Email"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-                      Phone*
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      required
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all"
-                      placeholder="Enter Phone"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="projectType" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-                    Project Type
-                  </label>
-                  <select
-                    id="projectType"
-                    value={formData.projectType}
-                    onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all appearance-none"
-                  >
-                    <option value="" className="text-dark">Select</option>
-                    <option value="New Pool" className="text-dark">New Pool</option>
-                    <option value="Pool Remodel" className="text-dark">Pool Remodel</option>
-                    <option value="Spa / Hot Tub" className="text-dark">Spa / Hot Tub</option>
-                    <option value="Pool Decking / Hardscape" className="text-dark">Pool Decking / Hardscape</option>
-                    <option value="Fire Features" className="text-dark">Fire Features</option>
-                    <option value="Outdoor Kitchen" className="text-dark">Outdoor Kitchen</option>
-                    <option value="Pool + Landscape Coordination" className="text-dark">Pool + Landscape Coordination</option>
-                    <option value="Other" className="text-dark">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-                    Tell Us About Your Project
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-secondary focus:ring-1 focus:ring-secondary outline-none transition-all resize-none"
-                    placeholder="Enter Project Details"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-secondary hover:bg-secondary-light text-white font-bold py-4 rounded-full transition-colors text-sm"
-                >
-                  Request My Free Design Consultation →
-                </button>
-              </form>
-              )}
+          </div>
+          <div>
+            <p className="m-0 mb-5 text-[19px] font-bold text-navy">When would you like to start?</p>
+            <div className="grid grid-cols-2 gap-2.5">
+              {TIMELINES.map((t) => (
+                <Chip key={t} active={timeline === t} onClick={() => setTimeline(t)}>
+                  {t}
+                </Chip>
+              ))}
             </div>
           </div>
         </div>
+      ) : null}
+
+      {step === 2 ? (
+        <div className="flex flex-col gap-4">
+          <p className="m-0 mb-1 text-[19px] font-bold text-navy">Where do we send it?</p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Name" value={name} onChange={setName} required />
+            <Field label="Phone" value={phone} onChange={setPhone} type="tel" required />
+          </div>
+          <Field label="Email" value={email} onChange={setEmail} type="email" required />
+          <Field label="Project address" value={address} onChange={setAddress} />
+          <label className="flex flex-col gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
+              Anything else we should know?
+            </span>
+            <textarea
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              rows={4}
+              className="rounded border border-line-strong px-4 py-3 text-sm text-navy outline-none focus:border-cyan"
+            />
+          </label>
+          {status === "error" ? (
+            <p className="m-0 text-sm font-semibold text-red-700">
+              Something went wrong sending that. Please call us instead.
+            </p>
+          ) : null}
+        </div>
+      ) : null}
+
+      <div className="mt-8 flex items-center justify-between gap-4">
+        <button
+          type="button"
+          onClick={() => setStep((s) => Math.max(0, s - 1))}
+          disabled={step === 0}
+          className="cursor-pointer border-none bg-transparent text-[13px] font-bold uppercase tracking-[1px] text-slate disabled:cursor-default disabled:opacity-30"
+        >
+          Back
+        </button>
+        {step < 2 ? (
+          <button
+            type="button"
+            onClick={() => setStep((s) => Math.min(2, s + 1))}
+            className="inline-flex cursor-pointer items-center justify-center rounded bg-navy px-9 py-4 text-[13px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
+          >
+            Continue
+          </button>
+        ) : (
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="inline-flex cursor-pointer items-center justify-center rounded bg-cyan px-9 py-4 text-[13px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-navy disabled:opacity-60"
+          >
+            {status === "sending" ? "Sending..." : "Send Request"}
+          </button>
+        )}
       </div>
-    </section>
+    </form>
   );
 }

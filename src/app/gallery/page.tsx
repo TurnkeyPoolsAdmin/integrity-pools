@@ -1,111 +1,72 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
-import WaveDivider from "@/components/WaveDivider";
+import { FinalCta, PageHero } from "@/components/sections";
+import { PROJECTS } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Custom Pool Gallery | Integrity Pools",
-  description: "Browse custom pools, spas, water features, remodels, and pool hardscapes completed by Integrity Pools across the Inland Empire.",
+  title: "Gallery",
+  description:
+    "Custom gunite pools, spas, hardscape and lighting built by Integrity Pools across Temecula, Murrieta and the Inland Empire.",
 };
 
-const categories = [
-  {
-    name: "Modern Pools",
-    images: [
-      { src: "/images/photo-gallery/modern-pools/0000.webp", alt: "Modern geometric pool" },
-      { src: "/images/our-work-banner-img/dscn0269-1.webp", alt: "Custom modern pool design" },
-      { src: "/images/our-work-banner-img/july-21-2022-1.webp", alt: "Contemporary backyard pool" },
-    ],
-  },
-  {
-    name: "Freeform Pools",
-    images: [
-      { src: "/images/photo-gallery/freeform-pools/20140116-121726.webp", alt: "Freeform pool with natural curves" },
-      { src: "/images/Everything-your-backyards-need/0721171355a-1.webp", alt: "Natural shaped pool" },
-      { src: "/images/Everything-your-backyards-need/july-7-2020-1.webp", alt: "Organic pool design" },
-    ],
-  },
-  {
-    name: "Spas & Water Features",
-    images: [
-      { src: "/images/photo-gallery/spas/img-5286.webp", alt: "Custom spa installation" },
-      { src: "/images/Everything-your-backyards-need/img-7216-1.webp", alt: "Pool with water features" },
-      { src: "/images/our-work-banner-img/img-7216-1.webp", alt: "Spa and pool combo" },
-    ],
-  },
-  {
-    name: "Pool Decking & Hardscapes",
-    images: [
-      { src: "/images/photo-gallery/outdoor-living/1102171046.webp", alt: "Outdoor living space" },
-      { src: "/images/Everything-your-backyards-need/sept-24-2019-1.webp", alt: "Fire feature with pool" },
-      { src: "/images/Everything-your-backyards-need/mar-16-2022-1.webp", alt: "Hardscape patio" },
-    ],
-  },
-  {
-    name: "Build Process",
-    images: [
-      { src: "/images/photo-gallery/pool-building-process/1010171358-hdr.webp", alt: "Pool construction in progress" },
-      { src: "/images/how-we-wrok-with-you/unsplash-ucmh1mnp5fo.webp", alt: "Excavation and prep" },
-      { src: "/images/how-we-wrok-with-you/unsplash-miwgogarydq-1.webp", alt: "Steel and plumbing phase" },
-    ],
-  },
-];
-
 export default function GalleryPage() {
+  const categories = Array.from(new Set(PROJECTS.map((p) => p.category)));
+
   return (
     <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-32 bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-heading font-bold mb-6">Pools Built for Real Backyards</h1>
-          <p className="text-blue-200 text-lg max-w-2xl mx-auto">
-            Explore pools, spas, water features, remodels, and pool hardscapes created around real homes, real priorities, and the way each family wanted to live.
-          </p>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <WaveDivider color="#ffffff" />
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title="Backyards We've Finished"
+        body="Every one of these started as an empty yard and a conversation. Photography is from real Integrity Pools projects across the Temecula Valley and Inland Empire."
+      >
+        <ul className="m-0 mt-8 flex list-none flex-wrap gap-x-6 gap-y-2 p-0">
+          {categories.map((c) => (
+            <li
+              key={c}
+              className="text-[11px] font-semibold uppercase tracking-[1.5px] text-white/50"
+            >
+              {c}
+            </li>
+          ))}
+        </ul>
+      </PageHero>
 
-      {/* Gallery Sections */}
-      {categories.map((cat) => (
-        <section key={cat.name} className="py-16 even:bg-gray-light odd:bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-heading font-bold text-dark mb-8">{cat.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {cat.images.map((img, i) => (
-                <div key={i} className="rounded-xl overflow-hidden shadow-md group cursor-pointer">
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-                  </div>
+      <section className="section-x bg-white py-[80px]">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((p) => (
+              <figure
+                key={p.slug}
+                className="group m-0 overflow-hidden rounded-lg border border-line bg-white"
+              >
+                <div className="relative h-[240px] overflow-hidden">
+                  <Image
+                    src={p.image}
+                    alt={p.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 430px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
                 </div>
-              ))}
-            </div>
+                <figcaption className="flex items-center justify-between gap-3 px-5 py-4">
+                  <span className="text-sm font-bold uppercase tracking-[0.5px] text-navy">
+                    {p.title}
+                  </span>
+                  <span className="text-[11px] font-semibold uppercase tracking-[1.2px] text-cyan">
+                    {p.city}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
-        </section>
-      ))}
-
-      {/* CTA */}
-      <section className="py-16 bg-primary text-white text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-heading font-bold mb-4">
-            See Something You Want in Your Yard?
-          </h2>
-          <p className="text-blue-200 mb-8 text-lg">
-            Tell us what you like and we will help you understand how it could fit your property, priorities, and budget.
-          </p>
-          <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Request My Free Design Consultation
-          </Link>
         </div>
       </section>
+
+      <FinalCta
+        bg="bg-shell"
+        title="Want One of These?"
+        body="Send us the yard. We walk the site, talk through what is realistic, and come back with an itemised proposal and a design."
+      />
     </>
   );
 }
