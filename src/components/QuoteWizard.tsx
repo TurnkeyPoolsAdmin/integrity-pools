@@ -12,8 +12,12 @@ import {
   computeEstimate,
   formatUsd,
 } from "@/lib/quotePricing";
+import { BUSINESS } from "@/lib/site";
+import { ArrowIcon, CheckIcon, PhoneIcon } from "./ui";
 
 type Screen = "landing" | 1 | 2 | 3 | 4 | 5 | "result";
+
+const LEAD_EMAIL = "mattbsheeran@gmail.com"; // TODO(matt): switch to Integrity's real lead inbox
 
 const HOW_IT_WORKS = [
   {
@@ -26,11 +30,11 @@ const HOW_IT_WORKS = [
   },
   {
     title: "Confirm your location",
-    body: "We check that your property is inside our Murrieta & Temecula Valley service area.",
+    body: "We check that your property is inside our Temecula and Murrieta service area.",
   },
   {
     title: "Get your estimate",
-    body: "See a real price range based on our actual build pricing — instantly, no rep required.",
+    body: "A real price range built from our actual build pricing, instantly, with no rep required.",
   },
 ];
 
@@ -49,52 +53,85 @@ const FAQS = [
   },
   {
     q: "Will someone call me afterward?",
-    a: "We'll follow up once to see if you'd like to talk through your numbers. If not, no problem — no pressure, ever.",
+    a: "We will follow up once to see if you would like to talk through your numbers. If not, no problem. No pressure, ever.",
   },
   {
-    q: "I don't get it… What's in it for you?",
-    a: "Serious shoppers with realistic numbers make better projects. We'd rather show you real pricing up front than waste your time with a sales dance.",
+    q: "I don't get it. What's in it for you?",
+    a: "Serious shoppers with realistic numbers make better projects. We would rather show you real pricing up front than waste your time with a sales dance.",
   },
   {
     q: "How accurate is the estimate?",
-    a: "It's a real range built from our actual build pricing. Your final quote depends on your yard's access, slope, and soil — we confirm those at your design consultation.",
+    a: "It is a real range built from our actual build pricing. Your final quote depends on your yard's access, slope and soil, which we confirm at your design consultation.",
   },
-  {
-    q: "How long does this take?",
-    a: "About 2 minutes.",
-  },
+  { q: "How long does this take?", a: "About two minutes." },
   {
     q: "Do I need to know exactly what I want?",
-    a: "Not at all. Pick the closest options — everything can be refined later during your design consultation.",
+    a: "Not at all. Pick the closest options. Everything can be refined later during your design consultation.",
   },
 ];
 
+/* ------------------------------------------------------------------ */
+/* Shared bits                                                         */
+/* ------------------------------------------------------------------ */
+
 function Stepper({ step }: { step: number }) {
   return (
-    <div className="flex items-center justify-center gap-0 mb-6">
+    <div className="mb-8 grid grid-cols-5 gap-2">
       {[1, 2, 3, 4, 5].map((n) => (
-        <div key={n} className="flex items-center">
-          <div
-            className={`h-3.5 w-3.5 rounded-full border-2 transition-colors ${
-              n < step
-                ? "bg-secondary border-secondary"
-                : n === step
-                ? "bg-secondary border-secondary scale-125"
-                : "bg-white border-gray-300"
-            }`}
-          />
-          {n < 5 && (
-            <div
-              className={`h-0.5 w-10 sm:w-14 ${
-                n < step ? "bg-secondary" : "bg-gray-300"
-              }`}
-            />
-          )}
-        </div>
+        <div
+          key={n}
+          className={`h-[3px] rounded-full transition-colors ${
+            n <= step ? "bg-cyan" : "bg-line-cool"
+          }`}
+        />
       ))}
     </div>
   );
 }
+
+function SelectCard({
+  selected,
+  onClick,
+  title,
+  meta,
+  body,
+  className = "",
+}: {
+  selected: boolean;
+  onClick: () => void;
+  title: string;
+  meta?: string;
+  body?: string;
+  className?: string;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`relative cursor-pointer rounded-lg border p-5 text-left transition-colors ${
+        selected
+          ? "border-cyan bg-cyan-pale"
+          : "border-line-strong bg-white hover:border-cyan"
+      } ${className}`}
+    >
+      {selected ? (
+        <span className="absolute right-4 top-4 flex h-5 w-5 items-center justify-center rounded-full bg-cyan text-white">
+          <CheckIcon className="h-3 w-3" />
+        </span>
+      ) : null}
+      <p className="m-0 pr-7 text-[14px] font-bold uppercase tracking-[0.5px] text-navy">{title}</p>
+      {meta ? (
+        <p className="m-0 mt-1 text-[11px] font-semibold uppercase tracking-[1.2px] text-muted">
+          {meta}
+        </p>
+      ) : null}
+      {body ? <p className="m-0 mt-2 text-sm leading-[1.6] text-slate">{body}</p> : null}
+    </button>
+  );
+}
+
+const INPUT_CLS =
+  "w-full rounded border border-line-strong px-4 py-3 text-sm text-navy outline-none transition-colors focus:border-cyan";
 
 function StepShell({
   step,
@@ -118,54 +155,45 @@ function StepShell({
   continueLabel?: string;
 }) {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-12">
-      <Stepper step={step} />
-      <p className="text-center text-xs font-semibold tracking-widest text-secondary uppercase mb-3">
-        {kicker}
-      </p>
-      <h1 className="text-center text-4xl sm:text-5xl font-extrabold text-primary mb-4">
-        {title}
-      </h1>
-      <p className="text-center text-gray-500 mb-8 max-w-xl mx-auto">{sub}</p>
-      {children}
-      <div className="border-t border-gray-200 mt-10 pt-6 flex items-center justify-between">
-        <button
-          type="button"
-          onClick={onBack}
-          className="text-gray-500 hover:text-primary font-medium"
-        >
-          ← Back
-        </button>
-        {onContinue && (
+    <section className="section-x bg-shell py-[70px]">
+      <div className="mx-auto w-full max-w-[820px] rounded-lg border border-line bg-white p-6 sm:p-12">
+        <Stepper step={step} />
+        <p className="eyebrow m-0 mb-4">{kicker}</p>
+        <h1 className="m-0 mb-5 text-[clamp(28px,4vw,40px)] font-extrabold uppercase leading-[1.12] text-navy">
+          {title}
+        </h1>
+        <p className="m-0 mb-9 text-base leading-[1.75] text-slate">{sub}</p>
+        {children}
+        <div className="mt-10 flex items-center justify-between gap-4 border-t border-line pt-7">
           <button
             type="button"
-            onClick={onContinue}
-            disabled={continueDisabled}
-            className={`px-8 py-3 rounded-lg font-semibold text-white transition-colors ${
-              continueDisabled
-                ? "bg-secondary/40 cursor-not-allowed"
-                : "bg-secondary hover:bg-secondary-light"
-            }`}
+            onClick={onBack}
+            className="cursor-pointer border-none bg-transparent text-[13px] font-bold uppercase tracking-[1px] text-slate transition-colors hover:text-navy"
           >
-            {continueLabel}
+            Back
           </button>
-        )}
+          {onContinue ? (
+            <button
+              type="button"
+              onClick={onContinue}
+              disabled={continueDisabled}
+              className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded bg-navy px-9 py-4 text-[13px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan disabled:cursor-not-allowed disabled:bg-faint"
+            >
+              {continueLabel}
+              <ArrowIcon className="h-4 w-4" />
+            </button>
+          ) : null}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function CheckBadge() {
-  return (
-    <span className="absolute top-3 right-3 h-5 w-5 rounded-full bg-secondary text-white flex items-center justify-center text-xs">
-      ✓
-    </span>
-  );
-}
+/* ------------------------------------------------------------------ */
 
 export default function QuoteWizard() {
   const [screen, setScreen] = useState<Screen>("landing");
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   // Step 1
   const [poolId, setPoolId] = useState<string | null>(null);
@@ -200,8 +228,7 @@ export default function QuoteWizard() {
 
   const step1Done =
     !!poolId &&
-    (deckingId === "none" ||
-      (!!deckingId && (useExact ? sqft > 0 : !!coverageId)));
+    (deckingId === "none" || (!!deckingId && (useExact ? sqft > 0 : !!coverageId)));
 
   const estimate = useMemo(
     () =>
@@ -215,9 +242,7 @@ export default function QuoteWizard() {
   );
 
   const toggleFeature = (id: string) =>
-    setFeatureIds((prev) =>
-      prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]
-    );
+    setFeatureIds((prev) => (prev.includes(id) ? prev.filter((f) => f !== id) : [...prev, id]));
 
   const contactValid =
     name.trim().length > 1 &&
@@ -235,7 +260,7 @@ export default function QuoteWizard() {
       deckingId && deckingId !== "none"
         ? DECKING_MATERIALS.find((m) => m.id === deckingId)?.name
         : "None";
-    fetch("https://formsubmit.co/ajax/mattbsheeran@gmail.com", {
+    fetch(`https://formsubmit.co/ajax/${LEAD_EMAIL}`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify({
@@ -248,11 +273,8 @@ export default function QuoteWizard() {
         Decking: deckName,
         "Decking sqft": sqft || 0,
         Features: featureNames || "None",
-        Timeline:
-          TIMELINES.find((t) => t.id === timeline)?.label ?? "",
-        "Estimate range": `${formatUsd(estimate.low)} – ${formatUsd(
-          estimate.high
-        )}`,
+        Timeline: TIMELINES.find((t) => t.id === timeline)?.label ?? "",
+        "Estimate range": `${formatUsd(estimate.low)} - ${formatUsd(estimate.high)}`,
       }),
     }).catch(() => {});
   };
@@ -260,86 +282,105 @@ export default function QuoteWizard() {
   /* ---------------- Landing ---------------- */
   if (screen === "landing") {
     return (
-      <div>
-        <section className="py-20 px-4 text-center">
-          <p className="text-xs font-semibold tracking-widest text-secondary uppercase mb-4">
-            — For Murrieta &amp; Temecula Valley Homeowners —
-          </p>
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-primary max-w-3xl mx-auto mb-6">
-            Get an Accurate Price for Your Custom Pool Project
-          </h1>
-          <p className="text-gray-500 max-w-xl mx-auto mb-8">
-            See real numbers based on our actual pricing data. No rep required.
-          </p>
-          <button
-            type="button"
-            onClick={() => setScreen(1)}
-            className="bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors"
-          >
-            Get my Instant Quote
-          </button>
-          <div className="flex items-center justify-center gap-6 mt-8 text-sm text-gray-500">
-            <span>⚡ Instant estimate</span>
-            <span>✓ No obligation</span>
-            <span>👥 Real pricing</span>
+      <>
+        <section className="section-x bg-white py-[90px] text-center">
+          <div className="mx-auto max-w-[860px]">
+            <p className="eyebrow m-0 mb-5">For Temecula &amp; Murrieta Homeowners</p>
+            <h1 className="m-0 mb-7 text-[clamp(34px,5.2vw,58px)] font-extrabold uppercase leading-[1.06] tracking-[-0.5px] text-navy">
+              Get an Accurate Price for Your{" "}
+              <span className="text-cyan">Custom Pool Project</span>
+            </h1>
+            <p className="mx-auto m-0 mb-10 max-w-[560px] text-[17px] leading-[1.75] text-slate">
+              A real price range built from our actual build pricing. Two minutes, no rep, no
+              obligation.
+            </p>
+            <button
+              type="button"
+              onClick={() => setScreen(1)}
+              className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded bg-navy px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
+            >
+              <ArrowIcon />
+              Get My Instant Quote
+            </button>
+            <ul className="m-0 mt-8 flex list-none flex-wrap items-center justify-center gap-x-8 gap-y-3 p-0">
+              {["Instant estimate", "No obligation", "Real pricing"].map((t) => (
+                <li
+                  key={t}
+                  className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.5px] text-muted"
+                >
+                  <span className="shrink-0 text-cyan">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  {t}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        <section className="bg-gray-light py-16 px-4">
-          <p className="text-center text-xs font-semibold tracking-widest text-secondary uppercase mb-3">
-            — How It Works —
-          </p>
-          <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-primary mb-12">
-            Your estimate in 4 simple steps
-          </h2>
-          <div className="max-w-2xl mx-auto space-y-10">
-            {HOW_IT_WORKS.map((s, i) => (
-              <div key={s.title} className="flex items-start gap-6">
-                <div className="h-12 w-12 shrink-0 rounded-full bg-secondary/10 text-secondary font-bold flex items-center justify-center">
-                  {i + 1}
-                </div>
-                <div>
-                  <h3 className="font-bold text-primary text-lg mb-1">
+        <section className="section-x bg-shell py-[100px]">
+          <div className="mx-auto w-full max-w-[1400px]">
+            <div className="mb-[50px] max-w-[720px]">
+              <p className="eyebrow m-0 mb-4">How It Works</p>
+              <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-navy">
+                Your estimate in four steps
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-0 border-t-2 border-line-cool lg:grid-cols-4">
+              {HOW_IT_WORKS.map((s, i) => (
+                <div
+                  key={s.title}
+                  className="-mt-0.5 flex flex-col gap-3 border-t-2 border-cyan pb-2.5 pt-6 sm:pr-6 sm:pt-8"
+                >
+                  <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
+                  <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">
                     {s.title}
                   </h3>
-                  <p className="text-gray-500">{s.body}</p>
+                  <p className="m-0 text-sm leading-[1.7] text-slate">{s.body}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="py-16 px-4">
-          <p className="text-center text-xs font-semibold tracking-widest text-secondary uppercase mb-3">
-            — Common Questions —
-          </p>
-          <h2 className="text-center text-3xl sm:text-4xl font-extrabold text-primary mb-10">
-            Good to know before you start
-          </h2>
-          <div className="max-w-xl mx-auto space-y-3">
-            {FAQS.map((f, i) => (
-              <div
-                key={f.q}
-                className="border border-gray-200 rounded-xl bg-white"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-5 py-4 text-left font-medium text-primary"
-                >
-                  {f.q}
-                  <span className="text-gray-400 text-xl">
-                    {openFaq === i ? "−" : "+"}
-                  </span>
-                </button>
-                {openFaq === i && (
-                  <p className="px-5 pb-4 text-gray-500">{f.a}</p>
-                )}
-              </div>
-            ))}
+        <section className="section-x bg-white py-[100px]">
+          <div className="mx-auto w-full max-w-[980px]">
+            <div className="mb-10">
+              <p className="eyebrow m-0 mb-4">Common Questions</p>
+              <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-navy">
+                Good to know before you start
+              </h2>
+            </div>
+            <div className="border-t border-line-cool">
+              {FAQS.map((f, i) => (
+                <div key={f.q} className="border-b border-line-cool">
+                  <h3 className="m-0">
+                    <button
+                      type="button"
+                      aria-expanded={openFaq === i}
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="flex w-full cursor-pointer items-center justify-between gap-6 border-none bg-transparent py-[26px] text-left text-[17px] font-semibold text-navy transition-colors hover:text-cyan"
+                    >
+                      {f.q}
+                      <span
+                        aria-hidden="true"
+                        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-shell text-base font-bold leading-none text-cyan"
+                      >
+                        {openFaq === i ? "–" : "+"}
+                      </span>
+                    </button>
+                  </h3>
+                  {openFaq === i ? (
+                    <p className="m-0 pb-7 pr-0 text-[15px] leading-[1.8] text-slate md:pr-[60px]">
+                      {f.a}
+                    </p>
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-      </div>
+      </>
     );
   }
 
@@ -350,137 +391,95 @@ export default function QuoteWizard() {
         step={1}
         kicker="Step 1 of 5"
         title="Choose your pool"
-        sub="Select the model that best fits your yard and vision. All sizes are approximate and include both freeform and geometric layouts. We can refine during your consultation."
+        sub="Pick the model that best fits your yard. Sizes are approximate and cover both freeform and geometric layouts. We refine all of it at your consultation."
         onBack={() => setScreen("landing")}
         onContinue={() => setScreen(2)}
         continueDisabled={!step1Done}
       >
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid gap-3 sm:grid-cols-2">
           {POOL_MODELS.map((p) => (
-            <button
+            <SelectCard
               key={p.id}
-              type="button"
+              selected={poolId === p.id}
               onClick={() => setPoolId(p.id)}
-              className={`relative text-left border rounded-xl p-5 transition-colors ${
-                poolId === p.id
-                  ? "border-secondary ring-1 ring-secondary"
-                  : "border-gray-200 hover:border-gray-300"
-              }`}
-            >
-              {poolId === p.id && <CheckBadge />}
-              <p className="font-bold text-primary">{p.name}</p>
-              <p className="text-sm text-gray-400 mb-2">{p.size}</p>
-              <p className="text-sm text-gray-500">{p.description}</p>
-            </button>
+              title={p.name}
+              meta={p.size}
+              body={p.description}
+            />
           ))}
         </div>
 
-        {poolId && (
-          <div className="mt-8 border-l-4 border-secondary bg-gray-light rounded-r-xl p-6">
-            <p className="font-bold text-primary mb-1">Add pool decking?</p>
-            <p className="text-sm text-gray-500 mb-4">
-              Choose a material and coverage. We&apos;ll calculate the area
-              based on your pool size.
+        {poolId ? (
+          <div className="mt-9 border-l-2 border-cyan bg-shell p-6 sm:p-8">
+            <p className="m-0 mb-1 text-base font-bold uppercase tracking-[0.5px] text-navy">
+              Add pool decking?
             </p>
-            <button
-              type="button"
+            <p className="m-0 mb-5 text-sm leading-[1.7] text-slate">
+              Choose a material and coverage. We work out the area from your pool size.
+            </p>
+            <SelectCard
+              className="mb-4 w-full"
+              selected={deckingId === "none"}
               onClick={() => {
                 setDeckingId("none");
                 setCoverageId(null);
                 setUseExact(false);
               }}
-              className={`relative w-full text-left border rounded-xl p-4 mb-4 bg-white transition-colors ${
-                deckingId === "none"
-                  ? "border-secondary ring-1 ring-secondary"
-                  : "border-gray-200 hover:border-gray-300"
-              }`}
-            >
-              {deckingId === "none" && <CheckBadge />}
-              <p className="font-bold text-primary">No decking</p>
-              <p className="text-sm text-gray-500">
-                Skip decking for now — we can quote it separately.
-              </p>
-            </button>
-            <div className="grid sm:grid-cols-3 gap-3">
+              title="No decking"
+              body="Skip decking for now. We can quote it separately."
+            />
+            <div className="grid gap-3 sm:grid-cols-3">
               {DECKING_MATERIALS.map((m) => (
-                <button
+                <SelectCard
                   key={m.id}
-                  type="button"
+                  selected={deckingId === m.id}
                   onClick={() => setDeckingId(m.id)}
-                  className={`relative text-left border rounded-xl p-4 bg-white transition-colors ${
-                    deckingId === m.id
-                      ? "border-secondary ring-1 ring-secondary"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  {deckingId === m.id && <CheckBadge />}
-                  <p className="font-bold text-primary text-sm mb-1">
-                    {m.name}
-                  </p>
-                  <p className="text-xs text-gray-500">{m.description}</p>
-                </button>
+                  title={m.name}
+                  body={m.description}
+                />
               ))}
             </div>
 
-            {deckingId && deckingId !== "none" && pool && (
-              <div className="mt-5">
-                <p className="font-bold text-primary mb-3">How much decking?</p>
-                <div className="grid sm:grid-cols-2 gap-3">
+            {deckingId && deckingId !== "none" && pool ? (
+              <div className="mt-6">
+                <p className="m-0 mb-4 text-base font-bold uppercase tracking-[0.5px] text-navy">
+                  How much decking?
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
                   {DECKING_COVERAGE.map((c) => (
-                    <button
+                    <SelectCard
                       key={c.id}
-                      type="button"
+                      selected={!useExact && coverageId === c.id}
                       onClick={() => {
                         setCoverageId(c.id);
                         setUseExact(false);
                       }}
-                      className={`relative text-left border rounded-xl p-4 bg-white transition-colors ${
-                        !useExact && coverageId === c.id
-                          ? "border-secondary ring-1 ring-secondary"
-                          : "border-gray-200 hover:border-gray-300"
-                      }`}
-                    >
-                      {!useExact && coverageId === c.id && <CheckBadge />}
-                      <p className="font-semibold text-primary text-sm">
-                        {c.label}
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        ≈ {deckingSqft(pool, c.apronFt)} sqft
-                      </p>
-                    </button>
+                      title={c.label}
+                      meta={`approx ${deckingSqft(pool, c.apronFt)} sqft`}
+                    />
                   ))}
-                  <button
-                    type="button"
+                  <SelectCard
+                    className="sm:col-span-2"
+                    selected={useExact}
                     onClick={() => setUseExact(true)}
-                    className={`relative text-left border rounded-xl p-4 bg-white sm:col-span-2 transition-colors ${
-                      useExact
-                        ? "border-secondary ring-1 ring-secondary"
-                        : "border-gray-200 hover:border-gray-300"
-                    }`}
-                  >
-                    {useExact && <CheckBadge />}
-                    <p className="font-semibold text-primary text-sm">
-                      Enter exact sqft
-                    </p>
-                    <p className="text-xs text-gray-400">
-                      I know the square footage I need.
-                    </p>
-                  </button>
+                    title="Enter exact sqft"
+                    meta="I know the square footage I need"
+                  />
                 </div>
-                {useExact && (
+                {useExact ? (
                   <input
                     type="number"
                     min={0}
                     value={exactSqft}
                     onChange={(e) => setExactSqft(e.target.value)}
                     placeholder="e.g. 800"
-                    className="mt-3 w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary"
+                    className={`mt-3 ${INPUT_CLS}`}
                   />
-                )}
+                ) : null}
               </div>
-            )}
+            ) : null}
           </div>
-        )}
+        ) : null}
       </StepShell>
     );
   }
@@ -491,32 +490,25 @@ export default function QuoteWizard() {
       <StepShell
         step={2}
         kicker="Step 2 of 5"
-        title="Personalize your pool"
-        sub="Select the features and upgrades you'd like. Each is individually priced; simply spec out your project the way you want it."
+        title="Personalise your pool"
+        sub="Pick the features and upgrades you want. Each one is priced individually, so you can spec the project the way you would actually build it."
         onBack={() => setScreen(1)}
         onContinue={() => setScreen(3)}
       >
         {FEATURE_GROUPS.map((g) => (
           <div key={g.label} className="mb-8">
-            <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-3">
+            <p className="m-0 mb-3 text-[11px] font-bold uppercase tracking-[1.5px] text-muted">
               {g.label}
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid gap-3 sm:grid-cols-2">
               {g.options.map((o) => (
-                <button
+                <SelectCard
                   key={o.id}
-                  type="button"
+                  selected={featureIds.includes(o.id)}
                   onClick={() => toggleFeature(o.id)}
-                  className={`relative text-left border rounded-xl p-5 transition-colors ${
-                    featureIds.includes(o.id)
-                      ? "border-secondary ring-1 ring-secondary"
-                      : "border-gray-200 hover:border-gray-300"
-                  }`}
-                >
-                  {featureIds.includes(o.id) && <CheckBadge />}
-                  <p className="font-bold text-primary mb-1">{o.name}</p>
-                  <p className="text-sm text-gray-500">{o.description}</p>
-                </button>
+                  title={o.name}
+                  body={o.description}
+                />
               ))}
             </div>
           </div>
@@ -532,27 +524,20 @@ export default function QuoteWizard() {
         step={3}
         kicker="Step 3 of 5"
         title="When are you planning to build?"
-        sub="This helps us provide the best service timeline for you."
+        sub="This helps us give you a realistic timeline rather than a generic one."
         onBack={() => setScreen(2)}
         onContinue={() => setScreen(4)}
         continueDisabled={!timeline}
       >
-        <div className="space-y-3">
+        <div className="flex flex-col gap-3">
           {TIMELINES.map((t) => (
-            <button
+            <SelectCard
               key={t.id}
-              type="button"
+              selected={timeline === t.id}
               onClick={() => setTimeline(t.id)}
-              className={`relative w-full text-left border rounded-xl p-5 transition-colors ${
-                timeline === t.id
-                  ? "border-secondary ring-1 ring-secondary"
-                  : "border-gray-200 hover:border-gray-300"
-              }`}
-            >
-              {timeline === t.id && <CheckBadge />}
-              <p className="font-bold text-primary">{t.label}</p>
-              <p className="text-sm text-gray-500">{t.sub}</p>
-            </button>
+              title={t.label}
+              body={t.sub}
+            />
           ))}
         </div>
       </StepShell>
@@ -566,32 +551,34 @@ export default function QuoteWizard() {
         step={4}
         kicker="Step 4 of 5"
         title="Where is the property?"
-        sub="We'll use this to confirm we serve your area and tailor your estimate."
+        sub="We use this to confirm we serve your area and to allow for local access and permitting."
         onBack={() => setScreen(3)}
         onContinue={() => setScreen(5)}
         continueDisabled={address.trim().length < 8}
       >
-        <label className="block text-sm font-semibold text-primary mb-2">
+        <label className="mb-2 block text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
           Property address
         </label>
         <input
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          placeholder="Street, city, and ZIP…"
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary"
+          placeholder="Street, city and ZIP"
+          className={INPUT_CLS}
         />
-        {served === true && (
-          <div className="mt-4 rounded-lg bg-emerald-50 text-emerald-700 px-4 py-3 text-sm">
-            ✓ We serve this area.
+        {served === true ? (
+          <div className="mt-4 flex items-center gap-2.5 rounded border border-cyan bg-cyan-pale px-4 py-3 text-sm font-semibold text-navy">
+            <span className="text-cyan">
+              <CheckIcon className="h-4 w-4" />
+            </span>
+            We serve this area.
           </div>
-        )}
-        {served === false && (
-          <div className="mt-4 rounded-lg bg-amber-50 text-amber-700 px-4 py-3 text-sm">
-            We may be outside our usual service area — continue anyway and
-            we&apos;ll confirm.
+        ) : null}
+        {served === false ? (
+          <div className="mt-4 rounded border border-line-strong bg-shell px-4 py-3 text-sm text-slate">
+            This may be outside our usual service area. Continue anyway and we will confirm.
           </div>
-        )}
+        ) : null}
       </StepShell>
     );
   }
@@ -603,7 +590,7 @@ export default function QuoteWizard() {
         step={5}
         kicker="Step 5 of 5"
         title="Where should we send your estimate?"
-        sub="Your personalized custom pool estimate will be ready in seconds."
+        sub="Your range is ready. Tell us where to send a copy and we will show it on screen straight away."
         onBack={() => setScreen(4)}
       >
         <form
@@ -614,59 +601,56 @@ export default function QuoteWizard() {
               setScreen("result");
             }
           }}
-          className="space-y-5"
+          className="flex flex-col gap-5"
         >
-          <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+          <label className="flex flex-col gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
               Full name
-            </label>
+            </span>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Jane Smith"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary"
+              className={INPUT_CLS}
             />
-          </div>
-          <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+          </label>
+          <label className="flex flex-col gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
               Email address
-            </label>
+            </span>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="jane@example.com"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary"
+              className={INPUT_CLS}
             />
-          </div>
-          <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+          </label>
+          <label className="flex flex-col gap-2">
+            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
               Phone number
-            </label>
+            </span>
             <input
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="(555) 000-0000"
-              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-secondary"
+              className={INPUT_CLS}
             />
-          </div>
-          <p className="text-xs text-gray-400">
-            By continuing you agree to our privacy policy and consent to be
-            contacted by Integrity Pools regarding your pool project.
+          </label>
+          <p className="m-0 text-xs leading-[1.7] text-muted">
+            By continuing you agree to our privacy policy and consent to be contacted by{" "}
+            {BUSINESS.name} about your pool project.
           </p>
           <div className="flex justify-end">
             <button
               type="submit"
               disabled={!contactValid}
-              className={`px-8 py-3 rounded-lg font-semibold text-white transition-colors ${
-                contactValid
-                  ? "bg-secondary hover:bg-secondary-light"
-                  : "bg-secondary/40 cursor-not-allowed"
-              }`}
+              className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded bg-cyan px-9 py-4 text-[13px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-navy disabled:cursor-not-allowed disabled:bg-faint"
             >
-              Get my estimate
+              Get My Estimate
+              <ArrowIcon className="h-4 w-4" />
             </button>
           </div>
         </form>
@@ -682,50 +666,77 @@ export default function QuoteWizard() {
     deckingId && deckingId !== "none"
       ? DECKING_MATERIALS.find((m) => m.id === deckingId)
       : null;
+  const firstName = name.trim().split(" ")[0];
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-      <p className="text-xs font-semibold tracking-widest text-secondary uppercase mb-3">
-        Your Instant Estimate
-      </p>
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-primary mb-4">
-        {name.split(" ")[0] ? `${name.split(" ")[0]}, here's` : "Here's"} your
-        estimated range
-      </h1>
-      <p className="text-5xl sm:text-6xl font-extrabold text-secondary my-8">
-        {formatUsd(estimate.low)} – {formatUsd(estimate.high)}
-      </p>
-      <div className="text-left bg-gray-light rounded-xl p-6 mb-8">
-        <p className="font-bold text-primary mb-3">Your project</p>
-        <ul className="space-y-2 text-gray-600 text-sm">
-          {pool && (
-            <li>
-              • {pool.name} gunite pool ({pool.size})
-            </li>
-          )}
-          <li>
-            •{" "}
-            {decking
-              ? `${decking.name} decking, ≈ ${sqft} sqft`
-              : "No decking (quoted separately)"}
-          </li>
-          {chosenFeatures.map((f) => (
-            <li key={f.id}>• {f.name}</li>
-          ))}
-          {address && <li>• {address}</li>}
-        </ul>
+    <section className="section-x bg-shell py-[80px]">
+      <div className="mx-auto w-full max-w-[820px]">
+        <div className="rounded-lg border border-line bg-white p-6 text-center sm:p-12">
+          <p className="eyebrow m-0 mb-5">Your Instant Estimate</p>
+          <h1 className="m-0 mb-8 text-[clamp(28px,4vw,42px)] font-extrabold uppercase leading-[1.12] text-navy">
+            {firstName ? `${firstName}, here's` : "Here's"} your estimated range
+          </h1>
+          <p className="m-0 text-[clamp(36px,6vw,60px)] font-extrabold leading-none text-cyan">
+            {formatUsd(estimate.low)} – {formatUsd(estimate.high)}
+          </p>
+
+          <div className="mt-10 rounded-lg border border-line bg-shell p-6 text-left sm:p-8">
+            <p className="m-0 mb-4 text-[13px] font-bold uppercase tracking-[1.5px] text-navy">
+              Your project
+            </p>
+            <ul className="m-0 flex list-none flex-col gap-3 p-0">
+              {pool ? (
+                <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
+                  <span className="mt-1 shrink-0 text-cyan">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  {pool.name} gunite pool ({pool.size})
+                </li>
+              ) : null}
+              <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
+                <span className="mt-1 shrink-0 text-cyan">
+                  <CheckIcon className="h-3.5 w-3.5" />
+                </span>
+                {decking
+                  ? `${decking.name} decking, approx ${sqft} sqft`
+                  : "No decking (quoted separately)"}
+              </li>
+              {chosenFeatures.map((f) => (
+                <li
+                  key={f.id}
+                  className="flex items-start gap-3 text-sm leading-[1.65] text-slate"
+                >
+                  <span className="mt-1 shrink-0 text-cyan">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  {f.name}
+                </li>
+              ))}
+              {address ? (
+                <li className="flex items-start gap-3 text-sm leading-[1.65] text-slate">
+                  <span className="mt-1 shrink-0 text-cyan">
+                    <CheckIcon className="h-3.5 w-3.5" />
+                  </span>
+                  {address}
+                </li>
+              ) : null}
+            </ul>
+          </div>
+
+          <p className="mx-auto m-0 mb-9 mt-8 max-w-[560px] text-sm leading-[1.75] text-slate">
+            This range is based on our standard build pricing. Your exact quote depends on yard
+            access, slope and soil, which we confirm in a free design consultation.
+          </p>
+
+          <a
+            href={BUSINESS.phoneHref}
+            className="inline-flex items-center justify-center gap-2.5 rounded bg-navy px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
+          >
+            <PhoneIcon className="h-4 w-4" />
+            Call {BUSINESS.phone} to talk it through
+          </a>
+        </div>
       </div>
-      <p className="text-gray-500 text-sm max-w-lg mx-auto mb-8">
-        This range is based on our standard build pricing. Your exact quote
-        depends on yard access, slope, and soil — we&apos;ll confirm everything
-        in a free design consultation.
-      </p>
-      <a
-        href="tel:9514447150"
-        className="inline-block bg-secondary hover:bg-secondary-light text-white font-semibold px-8 py-4 rounded-lg text-lg transition-colors"
-      >
-        Call (951) 444-7150 to talk it through
-      </a>
-    </div>
+    </section>
   );
 }
