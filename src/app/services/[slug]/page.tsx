@@ -64,7 +64,7 @@ export default async function ServicePage({
                 {service.heroBlurb}
               </p>
               <div className="flex flex-wrap gap-3.5">
-                <Button href="/quote" variant="cyan" size="lg">
+                <Button href="/contact" variant="cyan" size="lg">
                   <ArrowIcon />
                   Request a Quote
                 </Button>

@@ -11,7 +11,7 @@ const COMPANY_LINKS = [
   { label: "Builder Partners", href: "/builder-partners" },
   { label: "Financing", href: "/financing" },
   { label: "Contact", href: "/contact" },
-  { label: "Request a Quote", href: "/quote" },
+  { label: "Request a Quote", href: "/contact" },
 ];
 
 function ColumnHeading({ children }: { children: React.ReactNode }) {

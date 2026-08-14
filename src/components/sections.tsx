@@ -316,7 +316,7 @@ export function FinancingSection() {
           </p>
           <div className="flex flex-wrap gap-3.5">
             <Button href="/financing">Check Your Rate</Button>
-            <Button href="/quote" variant="outline">
+            <Button href="/contact" variant="outline">
               Get an Instant Estimate
             </Button>
           </div>

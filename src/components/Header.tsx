@@ -98,7 +98,7 @@ export default function Header() {
         </nav>
 
         <Link
-          href="/quote"
+          href="/contact"
           className="hidden shrink-0 items-center justify-center rounded bg-navy px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.5px] text-white transition-colors hover:bg-cyan lg:inline-flex"
         >
           Request a Quote
@@ -148,7 +148,7 @@ export default function Header() {
           </ul>
           <div className="mt-6 flex flex-col gap-3">
             <Link
-              href="/quote"
+              href="/contact"
               className="inline-flex items-center justify-center rounded bg-navy px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.5px] text-white"
             >
               Request a Quote
