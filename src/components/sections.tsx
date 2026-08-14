@@ -269,8 +269,8 @@ export function BuilderPartnersBanner() {
         </div>
         <div className="relative min-h-[340px] overflow-hidden">
           <Image
-            src="/images/banner-img/hero-poolside.jpg"
-            alt="Finished pool and spa on an Integrity Pools builder project in Temecula, CA"
+            src="/images/aqua/projects/pool-spa-17/pool-spa-17-04.webp"
+            alt="Finished pool and spa with a travertine deck on a builder project"
             fill
             sizes="(max-width: 1024px) 100vw, 700px"
             className="object-cover"

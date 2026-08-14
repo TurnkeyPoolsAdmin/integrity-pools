@@ -75,8 +75,8 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[1400px]">
           <div className="relative h-[280px] overflow-hidden rounded-lg sm:h-[420px]">
             <Image
-              src="/images/banner-img/pool-drone-001-06-1.webp"
-              alt="Aerial view of a finished Integrity Pools backyard in Temecula, CA"
+              src="/images/aqua/projects/custom-pool-01/custom-pool-01-01.webp"
+              alt="Finished backyard pool, spa and deck at dusk"
               fill
               sizes="100vw"
               priority

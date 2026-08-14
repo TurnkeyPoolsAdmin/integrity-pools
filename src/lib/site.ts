@@ -63,11 +63,33 @@ export const STATS = [
 /* Services                                                            */
 /* ------------------------------------------------------------------ */
 
+/**
+ * PHOTOGRAPHY NOTE (2026-08-14)
+ *
+ * Every image under /images/aqua/ is Aqua Pools & Outdoor Living's own
+ * photography, mirrored from aquapoolsandoutdoorliving.com and self-hosted so
+ * the demo renders exactly like the reference site. Slot-for-slot the same
+ * photo Aqua uses in the same position wherever their service list overlaps
+ * ours.
+ *
+ * These are Aqua's copyrighted photos of Aqua's builds. They are here so the
+ * layout can be evaluated with real photography. They MUST be replaced with
+ * Integrity's own photography before this site is pointed at a public domain.
+ * Alt text is deliberately descriptive only and never claims Integrity built
+ * the pool shown.
+ *
+ * Integrity's real photos are still in the repo under /images/photo-gallery,
+ * /images/banner-img, etc. and can be swapped back in at any time.
+ */
+
 export type Service = {
   slug: string;
   name: string;
   short: string;
+  /** Card image on the What We Build grid. */
   image: string;
+  /** Large hero on the service page. Falls back to `image`. */
+  heroImage?: string;
   imageAlt: string;
   heroTitle: string;
   heroBlurb: string;
@@ -82,9 +104,9 @@ export const SERVICES: Service[] = [
     name: "Custom Pools",
     short:
       "Make it your own. Gunite pools shaped to your yard: spa, benches, tanning ledge, vanishing edge. If you can picture it, we can pour it.",
-    image: "/images/photo-gallery/freeform-pools/20140116-121726.webp",
-    imageAlt:
-      "Custom gunite pool with a wide sun deck built by Integrity Pools in Temecula, CA",
+    image: "/images/aqua/projects/pool-spa-14/pool-spa-14-06.webp",
+    heroImage: "/images/aqua/projects/custom-pool-02/custom-pool-02-02.webp",
+    imageAlt: "Custom gunite pool and spa with a wide stone sun deck at dusk",
     heroTitle: "Custom Pools",
     heroBlurb:
       "Gunite pools engineered for Southern California soil, sun and setbacks. You see the design before we dig, the quote is broken out line by line, and Ryan runs the build himself from excavation to startup.",
@@ -128,8 +150,9 @@ export const SERVICES: Service[] = [
     name: "Plunge Pools",
     short:
       "Compact custom concrete pools for smaller lots and tighter budgets, built to the same shell and equipment spec as a full-size build.",
-    image: "/images/service-section-two-img/july-18-2022-1.webp",
-    imageAlt: "Compact plunge pool with a clean concrete deck in Murrieta, CA",
+    image: "/images/aqua/projects/plunge-pool-04/plunge-pool-04-05.webp",
+    heroImage: "/images/aqua/projects/plunge-pool-08/plunge-pool-08-07.webp",
+    imageAlt: "Compact plunge pool with a raised spa and a clean paver deck",
     heroTitle: "Plunge Pools",
     heroBlurb:
       "A small yard is not a reason to skip the pool. A plunge pool gets you cold water, warm water and somewhere to sit, on a footprint that still leaves you a yard.",
@@ -165,8 +188,9 @@ export const SERVICES: Service[] = [
     name: "Spas & Hot Tubs",
     short:
       "Raised, spillover and standalone gunite spas, tied straight into the pool's plumbing and automation.",
-    image: "/images/Everything-your-backyards-need/july-7-2020-1.webp",
-    imageAlt: "Raised spa with a rock waterfall spilling into the pool below",
+    image: "/images/aqua/projects/custom-pool-03/custom-pool-03-01.webp",
+    heroImage: "/images/aqua/projects/pool-spa-16/pool-spa-16-03.webp",
+    imageAlt: "Raised gunite spa spilling over into the pool below",
     heroTitle: "Spas & Hot Tubs",
     heroBlurb:
       "A built spa is part of the pool, not a plastic tub parked next to it. Same shell, same equipment pad, same finish, one control on your phone.",
@@ -197,8 +221,9 @@ export const SERVICES: Service[] = [
     name: "Pool Remodels",
     short:
       "Replaster, retile, new coping, new equipment. Bring a tired 1990s pool back to something you want to swim in.",
-    image: "/images/Everything-your-backyards-need/sept-24-2019-1.webp",
-    imageAlt: "Remodelled pool with new coping, tile and surrounding planting",
+    image: "/images/aqua/projects/pool-spa-13/pool-spa-13-01.webp",
+    heroImage: "/images/aqua/projects/pool-spa-13/pool-spa-13-03.webp",
+    imageAlt: "Pool with new waterline tile, coping and resurfaced decking",
     heroTitle: "Pool Remodels",
     heroBlurb:
       "Plaster does not last forever, and neither does 30-year-old tile. A remodel is the cheapest way to get a new pool without digging one.",
@@ -229,8 +254,9 @@ export const SERVICES: Service[] = [
     name: "Water & Fire Features",
     short:
       "Waterfalls, sheer descents, grottos, bubblers and fire bowls, engineered into the plumbing from the start rather than added on.",
-    image: "/images/Everything-your-backyards-need/0721171355a-1.webp",
-    imageAlt: "Rock waterfall feature spilling into a freeform pool",
+    image: "/images/aqua/projects/pool-spa-12/pool-spa-12-01.webp",
+    heroImage: "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
+    imageAlt: "Fire bowls and a spillway feature built into the pool edge",
     heroTitle: "Water & Fire Features",
     heroBlurb:
       "The parts of the pool people remember. Get them into the plan early and they are plumbed properly. Add them later and you are cutting deck.",
@@ -261,8 +287,9 @@ export const SERVICES: Service[] = [
     name: "Hardscapes",
     short:
       "More usable yard: pool decking, patios, retaining walls, steps and seat walls in paver, travertine or natural stone.",
-    image: "/images/our-work-banner-img/dscn0269-1.webp",
-    imageAlt: "Stone pool decking and retaining walls with mature planting",
+    image: "/images/aqua/projects/hardscape-02/hardscape-02-01.webp",
+    heroImage: "/images/aqua/projects/hardscape-02/hardscape-02-02.webp",
+    imageAlt: "Paver patio, seat walls and pool decking around a finished yard",
     heroTitle: "Hardscapes",
     heroBlurb:
       "The pool is the centrepiece. The hardscape is what makes the yard usable around it. Both on one contract and one schedule.",
@@ -293,8 +320,9 @@ export const SERVICES: Service[] = [
     name: "Outdoor Lighting",
     short:
       "Low-voltage path, wall, tree and in-pool lighting, so the yard is still worth being in after the sun drops.",
-    image: "/images/photo-gallery/outdoor-living/1102171046.webp",
-    imageAlt: "Backyard pool and hardscape lit in the evening",
+    image: "/images/aqua/projects/infinity-edge-01/infinity-edge-01-02.webp",
+    heroImage: "/images/aqua/projects/landscape-09/landscape-09-01.webp",
+    imageAlt: "Backyard pool and hardscape lit low after sunset",
     heroTitle: "Outdoor Lighting",
     heroBlurb:
       "A backyard you only use in daylight is half a backyard. Lighting is the cheapest line on the quote and the one people notice most.",
@@ -325,8 +353,9 @@ export const SERVICES: Service[] = [
     name: "Equipment & Automation",
     short:
       "Variable-speed pumps, cartridge filtration, heaters, salt systems and app control, specified per project rather than by brand contract.",
-    image: "/images/photo-gallery/pool-building-process/1010171358-hdr.webp",
-    imageAlt: "Pool equipment pad and plumbing during construction",
+    image: "/images/aqua/projects/under-construction/under-construction-03.webp",
+    heroImage: "/images/aqua/projects/under-construction/under-construction-02.webp",
+    imageAlt: "Pool plumbing and equipment pad during construction",
     heroTitle: "Equipment & Automation",
     heroBlurb:
       "We also service pools in this valley, which means we install the equipment we are willing to be called back out to fix.",
@@ -543,132 +572,148 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
-    slug: "modern-pool-spa-temecula",
+    slug: "modern-pool-spa",
     title: "Modern Pool & Spa",
     city: "Temecula",
     category: "Custom Pools",
-    image: "/images/photo-gallery/modern-pools/0000.webp",
-    alt: "Modern rectangular pool with raised spa and water wall in Temecula, CA",
+    image: "/images/aqua/projects/pool-spa-02/pool-spa-02-03.webp",
+    alt: "Modern rectangular pool with a raised spa and a stone deck",
   },
   {
-    slug: "vanishing-edge-spa-murrieta",
+    slug: "vanishing-edge-spa",
     title: "Vanishing Edge Spa",
     city: "Murrieta",
     category: "Spas",
-    image: "/images/photo-gallery/spas/img-5286.webp",
-    alt: "Vanishing edge spa overlooking the valley in Murrieta, CA",
+    image: "/images/aqua/projects/pool-spa-16/pool-spa-16-02.webp",
+    alt: "Vanishing edge spa set into a raised deck above the pool",
   },
   {
-    slug: "aerial-geometric-build",
+    slug: "geometric-pool-deck",
     title: "Geometric Pool & Deck",
     city: "Temecula",
     category: "Custom Pools",
-    image: "/images/banner-img/pool-drone-001-06-1.webp",
-    alt: "Aerial view of a geometric pool, spa and deck built by Integrity Pools",
+    image: "/images/aqua/projects/custom-pool-01/custom-pool-01-05.webp",
+    alt: "Geometric gunite pool with a wide surrounding deck",
   },
   {
-    slug: "freeform-lawn-pool",
+    slug: "freeform-pool-lawn",
     title: "Freeform Pool & Lawn",
     city: "Murrieta",
     category: "Custom Pools",
-    image: "/images/photo-gallery/freeform-pools/20140116-121726.webp",
-    alt: "Freeform gunite pool with a wide lawn and Spanish-style home",
+    image: "/images/aqua/projects/custom-pool-02/custom-pool-02-02.webp",
+    alt: "Freeform gunite pool bordered by lawn and planting",
   },
   {
-    slug: "evening-fire-and-water",
+    slug: "fire-water-terrace",
     title: "Fire & Water Terrace",
     city: "Wildomar",
     category: "Water & Fire Features",
-    image: "/images/photo-gallery/outdoor-living/1102171046.webp",
-    alt: "Aerial view of a pool with fire bowls and a spa spilling over",
+    image: "/images/aqua/projects/pool-spa-12/pool-spa-12-01.webp",
+    alt: "Pool terrace with fire bowls and a spillover spa",
   },
   {
-    slug: "hillside-pool-spa",
-    title: "Pool, Spa & Patio",
+    slug: "hillside-lagoon",
+    title: "Hillside Lagoon Pool",
     city: "Lake Elsinore",
     category: "Custom Pools",
-    image: "/images/one-person-review-img/pool1.webp",
-    alt: "Pool and raised spa with a paver patio behind a two-storey home",
+    image: "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
+    alt: "Lagoon-style pool with boulder edging on a sloped lot",
   },
   {
-    slug: "hardscape-terrace",
-    title: "Stone Terrace & Planting",
+    slug: "stone-terrace",
+    title: "Stone Terrace & Patio",
     city: "Temecula",
     category: "Hardscapes",
-    image: "/images/our-work-banner-img/dscn0269-1.webp",
-    alt: "Stone terrace and retaining walls around a pool with mature planting",
+    image: "/images/aqua/projects/hardscape-01/hardscape-01-01.webp",
+    alt: "Paver terrace and seat walls wrapping a finished backyard",
   },
   {
-    slug: "rock-waterfall-spa",
-    title: "Rock Waterfall & Spa",
+    slug: "rock-waterfall",
+    title: "Rock Waterfall",
     city: "Menifee",
     category: "Water & Fire Features",
-    image: "/images/Everything-your-backyards-need/july-7-2020-1.webp",
-    alt: "Natural rock waterfall spilling from a raised spa into the pool",
+    image: "/images/aqua/projects/water-feature-01/water-feature-01-01.webp",
+    alt: "Stacked stone waterfall spilling into the shallow end of a pool",
   },
   {
-    slug: "lagoon-planting",
+    slug: "lagoon-pool-garden",
     title: "Lagoon Pool & Garden",
     city: "Riverside",
     category: "Custom Pools",
-    image: "/images/Everything-your-backyards-need/sept-24-2019-1.webp",
-    alt: "Lagoon-style pool surrounded by mature planting and boulders",
+    image: "/images/aqua/projects/lagoon-pool-02/lagoon-pool-02-03.webp",
+    alt: "Lagoon pool surrounded by mature planting and stone",
   },
   {
-    slug: "turf-and-spa",
-    title: "Turf, Spa & Deck",
-    city: "Winchester",
-    category: "Hardscapes",
-    image: "/images/Everything-your-backyards-need/mar-16-2022-1.webp",
-    alt: "Rectangular pool with a raised spa, artificial turf and paver deck",
-  },
-  {
-    slug: "bamboo-privacy-pool",
-    title: "Bamboo Privacy Pool",
-    city: "Murrieta",
-    category: "Custom Pools",
-    image: "/images/our-work-banner-img/july-21-2022-1.webp",
-    alt: "Pool screened by bamboo with turf and stepping stones",
-  },
-  {
-    slug: "glass-house-pool",
-    title: "Glass House Pool",
+    slug: "infinity-edge",
+    title: "Infinity Edge Pool",
     city: "Corona",
     category: "Custom Pools",
-    image: "/images/service-multi-section-img/0915171202a-1.webp",
-    alt: "Long rectangular pool alongside a modern glass-fronted home",
+    image: "/images/aqua/projects/infinity-edge-01/infinity-edge-01-04.webp",
+    alt: "Infinity edge pool looking out over a valley view",
   },
   {
-    slug: "brick-deck-classic",
-    title: "Classic Kidney & Brick Deck",
-    city: "Hemet",
-    category: "Pool Remodels",
-    image: "/images/service-multi-section-img/aug-10-2020-1.webp",
-    alt: "Classic kidney-shaped pool with brick coping and deck",
-  },
-  {
-    slug: "adu-yard-pool",
-    title: "Compact Yard Pool",
-    city: "Menifee",
+    slug: "paver-deck-plunge",
+    title: "Plunge Pool & Paver Deck",
+    city: "Winchester",
     category: "Plunge Pools",
-    image: "/images/service-section-two-img/july-18-2022-1.webp",
-    alt: "Compact rectangular pool in a smaller backyard beside an ADU",
+    image: "/images/aqua/projects/plunge-pool-08/plunge-pool-08-01.webp",
+    alt: "Compact plunge pool set into a paver deck",
   },
   {
-    slug: "under-construction",
+    slug: "spillover-spa",
+    title: "Spillover Spa & Pool",
+    city: "Canyon Lake",
+    category: "Spas",
+    image: "/images/aqua/projects/plunge-pool-04/plunge-pool-04-02.webp",
+    alt: "Raised spillover spa beside a compact gunite pool",
+  },
+  {
+    slug: "evening-lighting",
+    title: "Evening Lighting Scheme",
+    city: "Temecula",
+    category: "Outdoor Lighting",
+    image: "/images/aqua/projects/outdoor-lighting-01/outdoor-lighting-01-01.webp",
+    alt: "Backyard pool and planting lit with low-voltage fixtures after dark",
+  },
+  {
+    slug: "travertine-deck",
+    title: "Travertine Pool Deck",
+    city: "Menifee",
+    category: "Hardscapes",
+    image: "/images/aqua/projects/hardscape-04/hardscape-04-06.webp",
+    alt: "Travertine pool decking and steps running down to the water",
+  },
+  {
+    slug: "steel-and-plumbing",
     title: "Steel & Plumbing Stage",
     city: "Temecula",
     category: "The Build",
-    image: "/images/photo-gallery/pool-building-process/1010171358-hdr.webp",
-    alt: "Rebar cage and plumbing in place before gunite",
+    image: "/images/aqua/projects/under-construction/under-construction-03.webp",
+    alt: "Rebar cage and plumbing runs in place before gunite",
   },
   {
-    slug: "fire-pit-lounge",
-    title: "Fire Pit Lounge",
-    city: "Temecula",
-    category: "Hardscapes",
-    image: "/images/Everything-your-backyards-need/img-7216-1.webp",
-    alt: "Circular fire pit lounge with loungers overlooking the valley",
+    slug: "grotto-feature",
+    title: "Grotto & Waterfall",
+    city: "Murrieta",
+    category: "Water & Fire Features",
+    image: "/images/aqua/projects/water-feature-02/water-feature-02-01.webp",
+    alt: "Grotto bench tucked behind a stone waterfall",
+  },
+  {
+    slug: "courtyard-plunge",
+    title: "Courtyard Plunge Pool",
+    city: "French Valley",
+    category: "Plunge Pools",
+    image: "/images/aqua/projects/plunge-pool-05/plunge-pool-05-01.webp",
+    alt: "Small plunge pool built into a walled courtyard",
+  },
+  {
+    slug: "classic-pool-spa",
+    title: "Classic Pool & Spa",
+    city: "Hemet",
+    category: "Pool Remodels",
+    image: "/images/aqua/projects/pool-spa-13/pool-spa-13-01.webp",
+    alt: "Refinished pool and spa with new tile and coping",
   },
 ];
 

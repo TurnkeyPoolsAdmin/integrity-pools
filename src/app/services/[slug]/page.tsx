@@ -35,7 +35,10 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const others = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4);
-  const gallery = PROJECTS.filter((p) => p.image !== service.image).slice(0, 6);
+  const heroSrc = service.heroImage ?? service.image;
+  const gallery = PROJECTS.filter(
+    (p) => p.image !== service.image && p.image !== heroSrc
+  ).slice(0, 6);
 
   return (
     <>
@@ -94,7 +97,7 @@ export default async function ServicePage({
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.35)] lg:h-[440px]">
               <Image
-                src={service.image}
+                src={heroSrc}
                 alt={service.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"

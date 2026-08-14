@@ -30,7 +30,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   const area = areaBySlug(slug);
   if (!area) notFound();
 
-  const HERO_IMAGE = "/images/photo-gallery/modern-pools/0000.webp";
+  const HERO_IMAGE = "/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp";
   const nearby = AREAS.filter((a) => a.slug !== area.slug);
   const gallery = PROJECTS.filter((p) => p.image !== HERO_IMAGE).slice(0, 6);
 
@@ -75,7 +75,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.35)] lg:h-[420px]">
               <Image
-                src="/images/photo-gallery/modern-pools/0000.webp"
+                src={HERO_IMAGE}
                 alt={`Custom pool built by Integrity Pools near ${area.name}, CA`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
