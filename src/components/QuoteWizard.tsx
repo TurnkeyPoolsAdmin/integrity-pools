@@ -12,7 +12,7 @@ import {
   computeEstimate,
   formatUsd,
 } from "@/lib/quotePricing";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, REVIEWS } from "@/lib/site";
 import { ArrowIcon, CheckIcon, PhoneIcon } from "./ui";
 
 type Screen = "landing" | 1 | 2 | 3 | 4 | 5 | "result";
@@ -355,6 +355,82 @@ export default function QuoteWizard() {
                     </p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust: recent work photo strip (placeholder images — swap before launch) */}
+        <section className="section-x bg-white py-[100px]">
+          <div className="mx-auto w-full max-w-[1400px]">
+            <div className="mx-auto mb-[50px] max-w-[720px] text-center">
+              <p className="eyebrow m-0 mb-4">Recent Work</p>
+              <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-navy">
+                Built by the crew you&apos;ll actually meet
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+              {[
+                "/images/aqua/projects/custom-pool-01/custom-pool-01-01.webp",
+                "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
+                "/images/aqua/projects/infinity-edge-01/infinity-edge-01-01.webp",
+                "/images/aqua/projects/hardscape-01/hardscape-01-01.webp",
+              ].map((src) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={src}
+                  src={src}
+                  alt="Recent pool project"
+                  loading="lazy"
+                  className="aspect-[4/3] w-full rounded object-cover"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust: stats + real Google reviews */}
+        <section className="section-x bg-navy py-[100px]">
+          <div className="mx-auto w-full max-w-[1400px]">
+            <div className="mx-auto mb-[50px] max-w-[720px] text-center">
+              <p className="eyebrow m-0 mb-4">Why Homeowners Trust Us</p>
+              <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-white">
+                43 five-star Google reviews
+              </h2>
+            </div>
+            <div className="mx-auto mb-12 grid max-w-[860px] grid-cols-1 gap-6 text-center sm:grid-cols-3">
+              {[
+                ["30+", "Years Experience"],
+                ["43", "Five-Star Reviews"],
+                ["6–8 wks", "Average Build"],
+              ].map(([num, label]) => (
+                <div key={label}>
+                  <p className="m-0 text-4xl font-extrabold text-cyan">{num}</p>
+                  <p className="m-0 mt-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-white/70">
+                    {label}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+              {REVIEWS.map((r) => (
+                <figure
+                  key={r.name}
+                  className="m-0 flex flex-col rounded bg-white/[0.06] p-7"
+                >
+                  <p aria-label="5 out of 5 stars" className="m-0 mb-4 text-cyan">
+                    ★★★★★
+                  </p>
+                  <blockquote className="m-0 flex-1 text-[15px] leading-[1.8] text-white/85">
+                    &ldquo;{r.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="mt-5 text-[13px] font-semibold uppercase tracking-[1px] text-white">
+                    {r.name}
+                    <span className="ml-2 font-normal normal-case tracking-normal text-white/60">
+                      {r.source}
+                    </span>
+                  </figcaption>
+                </figure>
               ))}
             </div>
           </div>
