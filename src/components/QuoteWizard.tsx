@@ -224,6 +224,39 @@ export default function QuoteWizard() {
     /.+@.+\..+/.test(email) &&
     phone.replace(/\D/g, "").length >= 10;
 
+  // Email the lead to the business inbox. Fire-and-forget: the visitor
+  // sees their estimate even if the email service hiccups.
+  const sendLead = () => {
+    const featureNames = FEATURE_GROUPS.flatMap((g) => g.options)
+      .filter((o) => featureIds.includes(o.id))
+      .map((o) => o.name)
+      .join(", ");
+    const deckName =
+      deckingId && deckingId !== "none"
+        ? DECKING_MATERIALS.find((m) => m.id === deckingId)?.name
+        : "None";
+    fetch("https://formsubmit.co/ajax/mattbsheeran@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `New pool quote lead: ${name}`,
+        Name: name,
+        Email: email,
+        Phone: phone,
+        Address: address,
+        Pool: pool ? `${pool.name} (${pool.size})` : "",
+        Decking: deckName,
+        "Decking sqft": sqft || 0,
+        Features: featureNames || "None",
+        Timeline:
+          TIMELINES.find((t) => t.id === timeline)?.label ?? "",
+        "Estimate range": `${formatUsd(estimate.low)} – ${formatUsd(
+          estimate.high
+        )}`,
+      }),
+    }).catch(() => {});
+  };
+
   /* ---------------- Landing ---------------- */
   if (screen === "landing") {
     return (
@@ -576,7 +609,10 @@ export default function QuoteWizard() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            if (contactValid) setScreen("result");
+            if (contactValid) {
+              sendLead();
+              setScreen("result");
+            }
           }}
           className="space-y-5"
         >
