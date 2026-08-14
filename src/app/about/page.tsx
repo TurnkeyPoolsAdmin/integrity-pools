@@ -127,7 +127,9 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[1400px] section-x grid grid-cols-3 gap-4 py-12 sm:gap-8">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="m-0 text-[24px] font-extrabold text-white sm:text-[34px]">{s.value}</p>
+              <p className="m-0 whitespace-nowrap text-[21px] font-extrabold text-white sm:text-[34px]">
+                {s.value}
+              </p>
               <p className="m-0 mt-1.5 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/50 sm:text-[11px]">
                 {s.label}
               </p>

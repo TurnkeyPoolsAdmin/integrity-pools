@@ -19,7 +19,9 @@ export function StatsBar() {
       <div className="mx-auto w-full max-w-[1400px] section-x grid grid-cols-3 gap-4 py-7 sm:gap-8">
         {STATS.map((s) => (
           <div key={s.label} className="text-center">
-            <p className="m-0 text-[22px] font-extrabold text-navy sm:text-[30px]">{s.value}</p>
+            <p className="m-0 whitespace-nowrap text-[20px] font-extrabold text-navy sm:text-[30px]">
+              {s.value}
+            </p>
             <p className="m-0 mt-1 text-[10px] font-semibold uppercase tracking-[1.5px] text-slate sm:text-[11px]">
               {s.label}
             </p>

@@ -54,9 +54,10 @@ export const BUSINESS = {
 /* ------------------------------------------------------------------ */
 
 export const STATS = [
-  { value: "Since 2012", label: "Building SoCal Pools" },
+  // Matches Aqua's three-stat rhythm: a short number, then a two-word label.
+  { value: "30+", label: "Years Experience" }, // TODO(matt): confirm the exact figure
   { value: "43", label: "Five-Star Reviews" }, // verified 2026-08-14, all 5 star
-  { value: "8-12 wks", label: "Average Build" }, // TODO(matt): confirm your real build window
+  { value: "8–12 wks", label: "Average Build" }, // TODO(matt): confirm your real build window
 ];
 
 /* ------------------------------------------------------------------ */
