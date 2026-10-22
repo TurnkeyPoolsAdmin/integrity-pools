@@ -8,14 +8,13 @@ import { BUSINESS, NAV, SERVICES } from "@/lib/site";
 
 export default function Header() {
   const pathname = usePathname();
+  return <HeaderContent key={pathname} pathname={pathname} />;
+}
+
+function HeaderContent({ pathname }: { pathname: string }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
-
-  useEffect(() => {
-    setMobileOpen(false);
-    setServicesOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
