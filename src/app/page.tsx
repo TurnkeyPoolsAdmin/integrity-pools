@@ -40,15 +40,23 @@ export default function HomePage() {
             </div>
             <p className="mt-5 text-xs font-medium tracking-wide text-slate">Free site visit · Free design and quote · No obligation</p>
           </div>
-          <div className="hero-photo relative overflow-hidden">
-            <Image src="/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp"
-              alt="Gunite pool and spa with an outdoor living space alongside"
-              fill sizes="(max-width: 1023px) 100vw, 55vw" loading="eager" fetchPriority="high"
-              className="object-cover object-[55%_center]" />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-7 pb-7 pt-20">
-              <Link href="/gallery" className="flex items-center justify-between gap-4 text-white">
-                <span className="text-sm font-medium tracking-wide">Custom pools. Room to unwind.</span>
-                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60"><ArrowIcon /></span>
+          <div className="flex flex-col overflow-hidden bg-navy">
+            <div className="hero-photo relative flex-1">
+              <Image src="/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp"
+                alt="Gunite pool and spa with an outdoor living space alongside"
+                fill sizes="(max-width: 1023px) 100vw, 55vw" loading="eager" fetchPriority="high"
+                className="object-cover object-[55%_center]" />
+            </div>
+            <div className="px-6 py-7 text-white sm:px-9 sm:py-8">
+              <h2 className="m-0 max-w-[530px] font-sans text-[26px] font-bold leading-[1.2] tracking-[-0.3px] sm:text-[30px]">
+                See your pool design before you commit.
+              </h2>
+              <p className="mb-4 mt-3 max-w-[510px] text-base leading-[1.6] text-white">
+                Get a free 3D design and itemized quote. Work directly with Ryan throughout your build.
+              </p>
+              <Link href="/contact" className="inline-flex min-h-11 items-center gap-3 text-base font-bold underline decoration-white/60 underline-offset-[6px] transition-colors hover:text-cyan-light">
+                Book a free site visit
+                <ArrowIcon className="h-5 w-5 shrink-0" />
               </Link>
             </div>
           </div>

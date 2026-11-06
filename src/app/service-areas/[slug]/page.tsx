@@ -136,7 +136,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                   sizes="(max-width: 1024px) 50vw, 430px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                <span className="absolute bottom-3 left-3 rounded-[3px] bg-navy/85 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[1px] text-white">
+                <span className="photo-caption">
                   {p.city} &middot; {p.category}
                 </span>
               </Link>
