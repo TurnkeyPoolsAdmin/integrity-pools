@@ -42,8 +42,8 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
         <SectionHeading
           className="mb-[50px] max-w-[720px]"
           eyebrow="What We Build"
-          title="Your pool, spa and patio, planned together"
-          body="Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with a dedicated project manager coordinating your build and keeping you informed."
+          title={featured ? "Build around the way you want to spend your time" : "Your pool, spa and patio, planned together"}
+          body={featured ? "Make room for family swims, add a spa beside the patio or fit a plunge pool into a smaller yard. Our team plans the pool, decking and lighting together so the space works for the way you will use it." : "Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with a dedicated project manager coordinating your build and keeping you informed."}
         />
         <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${featured ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {shown.map((s) => (
@@ -97,13 +97,14 @@ export function WhatToExpect() {
     <section className="section-x bg-navy py-[100px] text-white">
       <div className="mx-auto grid w-full max-w-[1400px] items-start gap-[70px] lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionHeading light eyebrow="Working With Us" title="A dedicated team for your build and first year" />
+          <SectionHeading light eyebrow="Why Choose Integrity" title="Know who is responsible for your project" />
           <p className="m-0 mb-8 mt-5 text-base leading-[1.75] text-white/70">
-            See how your pool will fit your yard before you commit. Review each cost in your quote.
-            Your dedicated project manager coordinates the build, and our service team handles startup and your included year of pool care.
+            Choosing a pool builder means trusting a team with your home and your budget.
+            You deserve to know who will answer your questions, coordinate the work and care for
+            the finished pool. Here is how we take that responsibility.
           </p>
-          <Button href="/about" variant="cyan">
-            More About Us
+          <Button href="/contact" variant="cyan">
+            Get My Free Consultation
           </Button>
         </div>
         <div className="grid grid-cols-1 gap-px bg-white/10 sm:grid-cols-2">
@@ -132,18 +133,20 @@ export function ProcessSteps({
   title = "From your first site visit to your first swim",
   body,
   bg = "bg-shell",
+  steps = PROCESS,
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
   bg?: string;
+  steps?: { title: string; body: string }[];
 }) {
   return (
     <section className={`section-x ${bg} py-[100px]`}>
       <div className="mx-auto w-full max-w-[1400px]">
         <SectionHeading className="mb-[50px] max-w-[720px]" eyebrow={eyebrow} title={title} body={body} />
         <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 border-t-2 border-line-cool sm:gap-x-0 lg:grid-cols-5">
-          {PROCESS.map((p, i) => (
+          {steps.map((p, i) => (
             <div
               key={p.title}
               className="-mt-0.5 flex flex-col gap-3 border-t-2 border-cyan pb-2.5 pt-6 sm:pr-6 sm:pt-8"
@@ -166,16 +169,18 @@ export function ProcessSteps({
 export function Reviews({
   eyebrow = "Reviews",
   title = "What our pool-care customers say",
+  body = "These reviews are from Integrity Pool Care customers. They describe service and equipment work, not new pool construction.",
   light = false,
 }: {
   eyebrow?: string;
   title?: string;
+  body?: string;
   light?: boolean;
 }) {
   return (
     <section className={`section-x py-[100px] ${light ? "bg-navy text-white" : "bg-shell"}`}>
       <div className="mx-auto w-full max-w-[1400px]">
-        <SectionHeading className="mb-11 max-w-[720px]" eyebrow={eyebrow} title={title} light={light} body="These reviews are from Integrity Pool Care customers. They describe service and equipment work, not new pool construction." />
+        <SectionHeading className="mb-11 max-w-[720px]" eyebrow={eyebrow} title={title} light={light} body={body} />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {REVIEWS.map((r, i) => (
             <figure
@@ -225,9 +230,9 @@ export function ServiceAreaSection() {
       <div className="mx-auto grid w-full max-w-[1400px] items-center gap-16 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <SectionHeading
-            eyebrow="Where We Work"
+            eyebrow="Is Your Home in Our Service Area?"
             title="Menifee, Murrieta & the Inland Empire"
-            body="We build across Menifee, the Temecula Valley and nearby communities, from Riverside and Corona to Fallbrook. Your site visit includes a review of access, slope and drainage so the plan fits your property."
+            body="We visit homes across Menifee, the Temecula Valley and nearby communities, from Riverside and Corona to Fallbrook. A slope or a smaller yard is a reason to review the site together. Your free visit helps us understand what your property needs."
           />
           <a
             href={BUSINESS.phoneHref}
@@ -267,15 +272,15 @@ export function BuilderPartnersBanner() {
         <div className="flex flex-col justify-center gap-5 bg-navy px-8 py-12 text-white sm:px-14 sm:py-16">
           <p className="eyebrow m-0">For Custom Home Builders</p>
           <h2 className="display-heading m-0 text-[clamp(36px,4vw,48px)] leading-[1.12]">
-            Pool construction that fits your home build
+            Building a home? Plan the pool with it.
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
-            Get one plan for the pool, deck, walls, drainage and lighting. Your dedicated project
-            manager coordinates our crews with your grading and electrical trades. Our team
-            handles drawings, permits and inspection scheduling.
+            Bring the pool into the plan while access, grading and utilities are being decided.
+            Your dedicated project manager coordinates our crews with your home builder&apos;s
+            trades. Our team handles pool drawings, permits and inspection scheduling.
           </p>
           <Button href="/builder-partners" variant="cyan" className="mt-2 self-start">
-            Builder Partners
+            Explore Builder Partnerships
           </Button>
         </div>
         <div className="relative min-h-[340px] overflow-hidden">
@@ -316,16 +321,17 @@ export function FinancingSection() {
         <div>
           <p className="eyebrow m-0 mb-4">Financing</p>
           <h2 className="display-heading m-0 mb-5 text-[clamp(36px,4vw,52px)] leading-[1.12] text-navy">
-            Plan your project budget before you build
+            Make the budget work on paper first
           </h2>
           <p className="m-0 mb-7 max-w-[560px] text-base leading-[1.75] text-slate">
-            Start with a free design and itemized quote so you can see what each part costs.
-            Ask our team about financing options when you discuss your project.
+            Your pool price depends on your yard, its access and the features you choose.
+            Start with an itemized quote, then compare where your money goes. We can discuss
+            changes to the design and financing options before you make a commitment.
           </p>
           <div className="flex flex-wrap gap-3.5">
-            <Button href="/financing">Ask About Financing</Button>
-            <Button href="/contact" variant="outline">
-              Request a Quote
+            <Button href="/contact">Get My Free Consultation</Button>
+            <Button href="/financing" variant="outline">
+              Explore Financing
             </Button>
           </div>
         </div>
@@ -356,11 +362,13 @@ export function FinalCta({
   title = "Start With a Site Visit",
   body,
   bg = "bg-white",
+  ctaLabel = "Get Your Free Consultation",
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
   bg?: string;
+  ctaLabel?: string;
 }) {
   return (
     <section className={`section-x ${bg} py-[100px] text-center`}>
@@ -378,7 +386,7 @@ export function FinalCta({
         </p>
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />
-          Get Your Free Consultation
+          {ctaLabel}
         </Button>
         <ul className="m-0 mt-7 flex list-none flex-wrap items-center justify-center gap-x-8 gap-y-3 p-0">
           {["Free site visit", "Free design and quote", "No obligation"].map((t) => (

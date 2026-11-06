@@ -18,6 +18,22 @@ import { FIRST_YEAR_CARE, HOME_FAQS, PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
 
+// Each existing section advances a different buying decision. The consultation
+// section explains the free first step; the team section explains why to choose us.
+const CONSULTATION_STEPS = [
+  { title: "Tell us your ideas", body: "Share your city, the features you want and your budget goals. Our team will arrange a free visit to your yard." },
+  { title: "Walk the yard", body: "Show us how you want to use the space. We take measurements and review access, slope and drainage." },
+  { title: "See your 3D design", body: "See where the pool, spa and patio could go in your own yard. Review the layout and tell us what you want to change." },
+  { title: "Review your quote", body: "See the pool, equipment, decking and features priced separately. Choose where to spend and where to adjust." },
+  { title: "Decide when ready", body: "Review the design and price before committing to a build. The site visit, design and quote are free, with no obligation." },
+];
+
+const SALES_FAQS = [
+  { q: "Do I need a finished plan before I contact you?", a: "No. Bring your ideas, questions and budget goals. We review your yard, prepare a 3D design and provide an itemized quote so you can decide what works for you." },
+  { q: "Does the free consultation commit me to a build?", a: "No. Your site visit, design and quote are free, with no obligation to build. You can review the layout and costs before deciding." },
+  ...HOME_FAQS,
+];
+
 export default function HomePage() {
   return (
     <>
@@ -30,12 +46,12 @@ export default function HomePage() {
               <span className="text-cyan">in Menifee, CA</span>
             </h1>
             <p className="mb-7 mt-5 max-w-[480px] text-base leading-[1.65] sm:mt-7 sm:text-[17px] sm:leading-[1.75] text-slate">
-              We design and build custom gunite pools, spas, hardscape and outdoor lighting for
-              homeowners across Menifee, Murrieta and the Inland Empire. Every new pool includes
-              professional startup and one year of free pool service.
+              See your new backyard in 3D before you commit. Get a clear quote and a dedicated
+              project manager to guide your build. Every new pool includes professional startup
+              and one year of free pool service.
             </p>
             <div className="flex flex-wrap items-center gap-5">
-              <Button href="/contact" size="lg" className="px-6 sm:px-9">Start Your Project<ArrowIcon /></Button>
+              <Button href="/contact" size="lg" className="px-6 sm:px-9">Get My Free Consultation<ArrowIcon /></Button>
               <Link href="/gallery" className="inline-flex min-h-12 items-center gap-2 border-b border-navy text-sm font-semibold text-navy hover:text-cyan">
                 View Gallery<ArrowIcon className="h-4 w-4" />
               </Link>
@@ -65,18 +81,22 @@ export default function HomePage() {
         </div>
       </section>
       <StatsBar />
-      <FirstYearCare />
+      <FirstYearCare
+        title="Protect your new pool from the first fill"
+        summary="Your new pool is a major investment. Its first weeks need close attention as the finish cures and the water is balanced. That is why every new Integrity pool includes professional startup and one year of free service. Our team handles the chemistry and routine maintenance while you get to enjoy your pool."
+        ctaLabel="Get My Free Consultation"
+      />
       <WhatWeBuild featured />
 
-      {/* Recent work */}
+      {/* Help the buyer picture the result. Reference images are not project proof. */}
       <section className="section-x bg-white py-[100px]">
         <div className="mx-auto w-full max-w-[1400px]">
           <div className="mb-11 flex flex-wrap items-end justify-between gap-8">
             <SectionHeading
               className="max-w-[640px]"
               eyebrow="Design Ideas"
-              title="Explore pool shapes, spas and finishes"
-              body="Save the ideas you like, then ask our design team how they could fit your yard. These reference photos show design options, not completed Integrity projects."
+              title="Picture what could work in your backyard"
+              body="A place to swim, room to gather or a spa for quiet evenings. Save the features you like and bring them to your free design consultation. These reference photos show design options, not completed Integrity projects."
             />
             <Link
               href="/gallery"
@@ -108,9 +128,18 @@ export default function HomePage() {
       </section>
 
       <WhatToExpect />
-      <ProcessSteps body="Our team takes your project from site measurements and design review through construction, startup and your first year of care, with a dedicated project manager coordinating the work. Here is what happens at each step." />
+      <ProcessSteps
+        eyebrow="Your Free Consultation"
+        title="Find out what fits your yard and budget"
+        body="You do not need a finished plan to get started. Bring your ideas and questions. We will help you turn them into a design and a quote you can evaluate before you decide to build."
+        steps={CONSULTATION_STEPS}
+      />
 
-      <Reviews />
+      <Reviews
+        eyebrow="Hear From Our Customers"
+        title="See why homeowners trust our pool-care team"
+        body="Your included year of service puts pool care at the heart of our offer. Read what Integrity Pool Care customers say about communication, maintenance and equipment work. These reviews cover pool care, not new pool construction."
+      />
       <ServiceAreaSection />
       <BuilderPartnersBanner />
       <FinancingSection />
@@ -118,12 +147,17 @@ export default function HomePage() {
       {/* FAQ */}
       <section className="section-x bg-shell py-[100px]">
         <div className="mx-auto w-full max-w-[980px]">
-          <SectionHeading className="mb-10" eyebrow="FAQ" title="Common Questions" />
-          <Faq items={HOME_FAQS} />
+          <SectionHeading className="mb-10" eyebrow="Before You Decide" title="Get answers before you take the next step" />
+          <Faq items={SALES_FAQS} />
         </div>
       </section>
 
-      <FinalCta />
+      <FinalCta
+        eyebrow="Start With a Free Consultation"
+        title="See your pool design. Know your price."
+        body="Tell us about your yard and the pool you have in mind. Our team will arrange your free site visit, then prepare a 3D design and itemized quote. You can review the layout, ask questions and decide whether Integrity is the right builder for you."
+        ctaLabel="Get My Free Consultation"
+      />
 
       <script
         type="application/ld+json"
@@ -131,7 +165,7 @@ export default function HomePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: HOME_FAQS.map((f) => ({
+            mainEntity: SALES_FAQS.map((f) => ({
               "@type": "Question",
               name: f.q,
               acceptedAnswer: { "@type": "Answer", text: f.a },

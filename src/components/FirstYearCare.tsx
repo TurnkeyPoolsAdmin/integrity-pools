@@ -1,7 +1,11 @@
 import { FIRST_YEAR_CARE } from "@/lib/site";
 import { ArrowIcon, Button } from "./ui";
 
-export default function FirstYearCare() {
+export default function FirstYearCare({
+  title = FIRST_YEAR_CARE.headline,
+  summary = FIRST_YEAR_CARE.summary,
+  ctaLabel = "Plan your pool with us",
+}: { title?: string; summary?: string; ctaLabel?: string }) {
   return (
     <section id="first-year-care" className="section-x bg-shell py-[80px] sm:py-[100px]">
       <div className="mx-auto w-full max-w-[1400px]">
@@ -9,12 +13,12 @@ export default function FirstYearCare() {
           <div>
             <p className="eyebrow m-0 mb-4">Included with every new pool</p>
             <h2 className="display-heading m-0 max-w-[680px] text-[clamp(36px,4.3vw,58px)] leading-[1.1] text-navy">
-              {FIRST_YEAR_CARE.headline}
+              {title}
             </h2>
             <p className="mb-7 mt-5 max-w-[640px] text-lg leading-[1.7] text-slate">
-              {FIRST_YEAR_CARE.summary}
+              {summary}
             </p>
-            <Button href="/contact">Plan your pool with us<ArrowIcon /></Button>
+            <Button href="/contact">{ctaLabel}<ArrowIcon /></Button>
           </div>
           <div className="rounded-xl border border-line bg-white p-6 sm:p-8">
             <h3 className="m-0 font-sans text-2xl font-semibold leading-snug text-navy">

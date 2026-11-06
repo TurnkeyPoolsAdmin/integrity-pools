@@ -579,20 +579,20 @@ export const PROCESS = [
 
 export const EXPECTATIONS = [
   {
-    title: "Your dedicated project manager",
-    body: "Every project has a dedicated project manager. They coordinate our crews, keep you informed and serve as your point of contact for questions and decisions.",
+    title: "A person to turn to",
+    body: "Your dedicated project manager is your point of contact for questions and decisions. You know who to call and who is keeping you informed.",
   },
   {
-    title: "Design Before You Commit",
-    body: "Your free 3D design shows the pool, spa and surrounding space in your yard. Review and revise the layout before you commit.",
+    title: "Crews working to one plan",
+    body: "Your project manager coordinates the pool, decking, equipment and lighting work. You can discuss the whole project with one person.",
   },
   {
-    title: "See what each part costs",
-    body: "Your quote lists the pool, equipment, decking and features separately. Compare proposals and adjust the plan with a clear view of each cost.",
+    title: "Your approval before digging",
+    body: "You review the design and itemized quote before committing. We revise the layout with you, and construction begins after you approve the plan.",
   },
   {
-    title: "One year of free pool service",
-    body: "Every new pool includes professional startup and a full year of service. Our team manages water chemistry and routine maintenance to help protect your finish and equipment.",
+    title: "A team for the first year",
+    body: "Our pool-care team handles startup and your included year of service. You have expert help with chemistry and maintenance as you get to know your new pool.",
   },
 ];
 
