@@ -2,14 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   AREAS,
-  BUSINESS,
   EXPECTATIONS,
   PROCESS,
   REVIEWS,
   SERVICES,
   STATS,
 } from "@/lib/site";
-import { ArrowIcon, Button, CheckIcon, ChatIcon, PhoneIcon, SectionHeading } from "./ui";
+import { ArrowIcon, Button, CheckIcon, ChatIcon, SectionHeading } from "./ui";
 
 /* ---------------- Stats bar ---------------- */
 
@@ -34,6 +33,12 @@ export function StatsBar() {
 
 /* ---------------- What we build ---------------- */
 
+const FEATURED_DESCRIPTIONS: Record<string, string> = {
+  "custom-pools": "Choose the shape, depth and features that suit your yard.",
+  "plunge-pools": "A compact concrete pool for smaller spaces, with room to cool off and relax.",
+  "pool-remodels": "Refresh worn finishes, update equipment and give your existing pool a new look.",
+};
+
 export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
   const shown = featured ? SERVICES.filter((s) => ["custom-pools", "plunge-pools", "pool-remodels"].includes(s.slug)) : SERVICES;
   return (
@@ -42,8 +47,8 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
         <SectionHeading
           className="mb-[50px] max-w-[720px]"
           eyebrow="What We Build"
-          title={featured ? "Build around the way you want to spend your time" : "Your pool, spa and patio, planned together"}
-          body={featured ? "Make room for family swims, add a spa beside the patio or fit a plunge pool into a smaller yard. Our team plans the pool, decking and lighting together so the space works for the way you will use it." : "Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with a dedicated project manager coordinating your build and keeping you informed."}
+          title={featured ? "New pools and pool remodels" : "Your pool, spa and patio, planned together"}
+          body={featured ? undefined : "Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with a dedicated project manager coordinating your build and keeping you informed."}
         />
         <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${featured ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {shown.map((s) => (
@@ -66,7 +71,7 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
                   {s.name}
                 </h3>
                 <p className="m-0 flex-1 text-base leading-[1.7] text-slate">
-                  {s.short}
+                  {featured ? FEATURED_DESCRIPTIONS[s.slug] : s.short}
                 </p>
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[1.5px] text-cyan">
                   Learn More
@@ -231,20 +236,20 @@ export function ServiceAreaSection() {
         <div>
           <SectionHeading
             eyebrow="Is Your Home in Our Service Area?"
-            title="Menifee, Murrieta & the Inland Empire"
-            body="We visit homes across Menifee, the Temecula Valley and nearby communities, from Riverside and Corona to Fallbrook. A slope or a smaller yard is a reason to review the site together. Your free visit helps us understand what your property needs."
+            title="Building pools across Menifee, Murrieta and the Inland Empire"
+            body="We serve the Temecula Valley and surrounding communities, from Riverside and Corona to Fallbrook."
           />
           <a
-            href={BUSINESS.phoneHref}
+            href="#service-area-cities"
             className="mt-7 inline-flex items-center gap-2.5 text-base font-bold text-navy transition-colors hover:text-cyan"
           >
             <span className="text-cyan">
-              <PhoneIcon />
+              <ArrowIcon />
             </span>
-            Not sure if you&apos;re in range? Call us.
+            Check Your Area
           </a>
         </div>
-        <div className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3">
+        <div id="service-area-cities" className="grid scroll-mt-28 grid-cols-2 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-3">
           {AREAS.map((a) => (
             <Link
               key={a.slug}
@@ -270,14 +275,13 @@ export function BuilderPartnersBanner() {
     <section className="section-x bg-shell py-[100px]">
       <div className="mx-auto grid w-full max-w-[1400px] gap-0 overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(4,34,66,0.10)] lg:grid-cols-2">
         <div className="flex flex-col justify-center gap-5 bg-navy px-8 py-12 text-white sm:px-14 sm:py-16">
-          <p className="eyebrow m-0">For Custom Home Builders</p>
+          <p className="eyebrow m-0">Building a New Home?</p>
           <h2 className="display-heading m-0 text-[clamp(36px,4vw,48px)] leading-[1.12]">
-            Building a home? Plan the pool with it.
+            Plan your home and pool together.
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
-            Bring the pool into the plan while access, grading and utilities are being decided.
-            Your dedicated project manager coordinates our crews with your home builder&apos;s
-            trades. Our team handles pool drawings, permits and inspection scheduling.
+            Bring the pool into your plans while access, grading and utilities are being decided.
+            We coordinate pool drawings, permits and construction with your home builder.
           </p>
           <Button href="/builder-partners" variant="cyan" className="mt-2 self-start">
             Explore Builder Partnerships
@@ -299,56 +303,36 @@ export function BuilderPartnersBanner() {
 
 /* ---------------- Financing ---------------- */
 
-const FINANCE_POINTS = [
-  {
-    title: "See the project cost",
-    body: "Review the pool, equipment, decking and features as separate lines in your quote.",
-  },
-  {
-    title: "Adjust the plan",
-    body: "Compare sizes, materials and features with our team to match your budget.",
-  },
-  {
-    title: "Ask about financing",
-    body: "Discuss financing for your planned work. Rates and terms depend on the lender.",
-  },
-];
-
 export function FinancingSection() {
   return (
-    <section className="section-x bg-white py-[100px]">
+    <section id="pool-financing" className="section-x scroll-mt-24 bg-white py-[100px]">
       <div className="mx-auto grid w-full max-w-[1400px] items-center gap-16 lg:grid-cols-[1fr_0.85fr]">
         <div>
-          <p className="eyebrow m-0 mb-4">Financing</p>
+          <p className="eyebrow m-0 mb-4">Pool Financing</p>
           <h2 className="display-heading m-0 mb-5 text-[clamp(36px,4vw,52px)] leading-[1.12] text-navy">
-            Make the budget work on paper first
+            The pool you want. A way to make it possible.
           </h2>
           <p className="m-0 mb-7 max-w-[560px] text-base leading-[1.75] text-slate">
-            Your pool price depends on your yard, its access and the features you choose.
-            Start with an itemized quote, then compare where your money goes. We can discuss
-            changes to the design and financing options before you make a commitment.
+            You don’t have to figure out the budget on your own. Tell us what you have in mind,
+            and we’ll help you explore your pool design, project cost and financing options together.
           </p>
           <div className="flex flex-wrap gap-3.5">
-            <Button href="/contact">Get My Free Consultation</Button>
-            <Button href="/financing" variant="outline">
-              Explore Financing
-            </Button>
+            <Button href="/financing">Explore Pool Financing</Button>
           </div>
+          <p className="mb-0 mt-5 text-sm leading-relaxed text-slate">
+            Financing is subject to lender approval. Rates and terms vary.
+          </p>
         </div>
         <div className="flex flex-col gap-5 rounded-lg border border-line bg-shell p-8 sm:p-10">
-          {FINANCE_POINTS.map((p) => (
-            <div key={p.title} className="flex items-start gap-3.5">
-              <span className="mt-1 shrink-0 text-cyan">
-                <CheckIcon />
-              </span>
-              <div>
-                <p className="m-0 mb-1 text-sm font-bold uppercase tracking-[0.5px] text-navy">
-                  {p.title}
-                </p>
-                <p className="m-0 text-sm leading-[1.65] text-slate">{p.body}</p>
-              </div>
-            </div>
-          ))}
+          <div className="flex items-start gap-3.5">
+            <span className="mt-1 shrink-0 text-cyan">
+              <CheckIcon />
+            </span>
+            <p className="m-0 text-base leading-[1.75] text-slate">
+              Financing can spread the cost over time. Explore what that could look like
+              for your project before you decide to build.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -363,12 +347,16 @@ export function FinalCta({
   body,
   bg = "bg-white",
   ctaLabel = "Get Your Free Consultation",
+  includeCare = true,
+  assurances = ["Free site visit", "Free design and quote", "No obligation"],
 }: {
   eyebrow?: string;
   title?: string;
   body?: string;
   bg?: string;
   ctaLabel?: string;
+  includeCare?: boolean;
+  assurances?: string[];
 }) {
   return (
     <section className={`section-x ${bg} py-[100px] text-center`}>
@@ -381,15 +369,15 @@ export function FinalCta({
           {body ??
             `We build across Menifee, Murrieta, Temecula, Wildomar and the towns around them. Call or send the form and our team will arrange a time to walk the yard with you.`}
         </p>
-        <p className="mx-auto mb-8 mt-0 max-w-[600px] text-base font-semibold leading-relaxed text-navy">
+        {includeCare ? <p className="mx-auto mb-8 mt-0 max-w-[600px] text-base font-semibold leading-relaxed text-navy">
           Every new pool includes professional startup and one year of free pool service.
-        </p>
+        </p> : null}
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />
           {ctaLabel}
         </Button>
         <ul className="m-0 mt-7 flex list-none flex-wrap items-center justify-center gap-x-8 gap-y-3 p-0">
-          {["Free site visit", "Free design and quote", "No obligation"].map((t) => (
+          {assurances.map((t) => (
             <li
               key={t}
               className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.5px] text-muted"

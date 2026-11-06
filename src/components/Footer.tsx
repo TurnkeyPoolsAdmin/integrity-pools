@@ -29,8 +29,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <Logo light />
           <p className="m-0 max-w-[280px] text-sm leading-[1.7] text-white/70">
-            Custom pool construction in Menifee and the Inland Empire. A dedicated project manager
-            coordinates your build. Every new pool includes professional startup and one year of free pool service.
+            Custom pools, spas and pool remodels in Menifee and the Inland Empire.
           </p>
           <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/70">
             {BUSINESS.license}

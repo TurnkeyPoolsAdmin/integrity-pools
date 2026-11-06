@@ -10,16 +10,11 @@ import {
 } from "@/components/sections";
 import Faq from "@/components/Faq";
 import FirstYearCare from "@/components/FirstYearCare";
+import BuildProcess from "@/components/BuildProcess";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { CUSTOMER_PORTAL, HOME_FAQS, PROJECTS } from "@/lib/site";
+import { PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
-
-const BUILD_QUALITY = [
-  { title: "Skilled craftspeople", body: "chosen for the quality of their work." },
-  { title: "Carefully selected materials", body: "including genuine PebbleTec finishes." },
-  { title: "Daily construction checks", body: "by your dedicated project manager." },
-];
 
 const CONSULTATION_STEPS = [
   { title: "Walk the yard together.", body: "We take measurements, review access and discuss how you want to use the space." },
@@ -28,10 +23,10 @@ const CONSULTATION_STEPS = [
 ];
 
 const SALES_FAQS = [
-  { q: "Do I need a finished plan before I contact you?", a: "No. Bring your ideas, questions and budget goals. We review your yard, prepare a 3D design and provide an itemized quote so you can decide what works for you." },
-  { q: "Does the free consultation commit me to a build?", a: "No. Your site visit, design and quote are free, with no obligation to build. You can review the layout and costs before deciding." },
-  CUSTOMER_PORTAL.faq,
-  ...HOME_FAQS,
+  { q: "How long does construction take?", a: "A typical build takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule. We review the target timeline with you before construction." },
+  { q: "Do you handle permits and HOA submissions?", a: "Yes. We prepare the drawings, handle submissions and schedule inspections. Approval times depend on the city and your HOA." },
+  { q: "What type of pools do you build?", a: "We build custom concrete pools using gunite, which lets us shape the pool around your yard and chosen features. We do not build fiberglass pools." },
+  { q: "What warranty comes with my pool?", a: "Coverage depends on the finish, equipment and installation. Your written warranty terms explain what is covered, for how long and any care requirements." },
 ];
 
 export default function HomePage() {
@@ -68,23 +63,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="section-x bg-shell py-[80px] sm:py-[100px]">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <SectionHeading
-            className="max-w-[720px]"
-            title="Built Right, From the Ground Up"
-            body="We’re particular about who builds your pool and what goes into it. With pool building and service experience dating back to 2012, our team brings a practiced eye to the work."
-          />
-          <ul className="m-0 mt-10 grid list-none gap-5 p-0 md:grid-cols-3">
-            {BUILD_QUALITY.map((point) => (
-              <li key={point.title} className="border-t-2 border-aqua pt-6">
-                <h3 className="m-0 font-sans text-xl font-semibold leading-snug text-navy">{point.title}</h3>
-                <p className="mb-0 mt-3 text-base leading-[1.7] text-slate">{point.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      <BuildProcess />
 
       {/* Help the buyer picture the result. Reference images are not project proof. */}
       <section className="section-x bg-white py-[100px]">
@@ -154,6 +133,13 @@ export default function HomePage() {
                 <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">{step.title}</h3>
                 <p className="m-0 text-base leading-[1.7] text-slate">{step.body}</p>
+                {i === 2 ? (
+                  <p className="mb-0 mt-2 text-base leading-[1.7] text-slate">
+                    <Link href="#pool-financing" className="font-semibold text-cyan underline underline-offset-4">Thinking about financing?</Link>{" "}
+                    We can discuss options during your free consultation, so you can consider
+                    the design and how you’ll pay for it together.
+                  </p>
+                ) : null}
               </div>
             ))}
           </div>
@@ -173,26 +159,27 @@ export default function HomePage() {
       <WhatWeBuild featured />
       <Reviews
         eyebrow="Hear From Our Customers"
-        title="See why homeowners trust our pool-care team"
-        body="Your included year of service puts pool care at the heart of our offer. Read what Integrity Pool Care customers say about communication, maintenance and equipment work. These reviews cover pool care, not new pool construction."
+        title="What our pool-care customers say"
+        body="These reviews come from Integrity Pool Care customers and cover maintenance, repairs and service, not new pool construction."
       />
+      <FinancingSection />
       <ServiceAreaSection />
       <BuilderPartnersBanner />
-      <FinancingSection />
 
       {/* FAQ */}
       <section className="section-x bg-shell py-[100px]">
         <div className="mx-auto w-full max-w-[980px]">
-          <SectionHeading className="mb-10" eyebrow="Before You Decide" title="Get answers before you take the next step" />
+          <SectionHeading className="mb-10" eyebrow="Common Questions" title="A few more things worth knowing" />
           <Faq items={SALES_FAQS} />
         </div>
       </section>
 
       <FinalCta
-        eyebrow="Start With a Free Consultation"
-        title="See your pool design. Know your price."
-        body="Tell us about your yard and the pool you have in mind. Our team will arrange your free site visit, then prepare a 3D design and itemized quote. You can review the layout, ask questions and decide whether Integrity is the right builder for you."
+        title="Let’s talk about the pool you have in mind."
+        body="Tell us where you’re building and what you’d like to create. We’ll arrange a time to visit your yard."
         ctaLabel="Get My Free Consultation"
+        includeCare={false}
+        assurances={["No obligation to build."]}
       />
 
       <script
