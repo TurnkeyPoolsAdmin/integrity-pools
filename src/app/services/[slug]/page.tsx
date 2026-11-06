@@ -89,9 +89,9 @@ export default async function ServicePage({
                 </div>
                 <div>
                   <dt className="m-0 text-sm font-medium text-white/70">
-                    Your Contact
+                    Project Support
                   </dt>
-                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">Ryan Osborne</dd>
+                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">Dedicated project manager</dd>
                 </div>
               </dl>
             </div>
@@ -228,7 +228,7 @@ export default async function ServicePage({
 
       <FinalCta
         title={`Get a Quote for Your ${service.name} Project`}
-        body="Book a free site visit with Ryan. Review what fits your yard and budget, then receive a design and itemized proposal before you decide."
+        body="Book a free site visit with our team. Review what fits your yard and budget, then receive a design and itemized proposal before you decide."
       />
     </>
   );

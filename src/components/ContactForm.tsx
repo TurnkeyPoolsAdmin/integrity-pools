@@ -201,7 +201,7 @@ export default function ContactForm() {
 
       {step === 2 ? (
         <div className="flex flex-col gap-4">
-          <p className="m-0 mb-1 text-[19px] font-bold text-navy">How can Ryan reach you?</p>
+          <p className="m-0 mb-1 text-[19px] font-bold text-navy">How can our team reach you?</p>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field autoComplete="name" label="Name" value={name} onChange={setName} required />
             <Field autoComplete="tel" label="Phone" value={phone} onChange={setPhone} type="tel" required />

@@ -51,7 +51,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Book your free site visit"
-        body="Tell us what you want to build or update. Ryan will discuss your plans and arrange a free site visit, followed by a design and itemized proposal. There is no obligation to build."
+        body="Tell us what you want to build or update. Our team will discuss your plans and arrange a free site visit, followed by a design and itemized proposal. There is no obligation to build."
       />
 
       <section className="section-x bg-shell pb-[90px] pt-[70px]">

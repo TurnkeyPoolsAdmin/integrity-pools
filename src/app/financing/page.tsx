@@ -6,7 +6,7 @@ import { Button, CheckIcon, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Financing",
   description:
-    "Start with a free design and itemized quote from Integrity Pools. Discuss project costs and financing questions with Ryan.",
+    "Start with a free design and itemized quote from Integrity Pools. Discuss project costs and financing questions with our team.",
 };
 
 const POINTS = [
@@ -39,11 +39,11 @@ const FAQS = [
   },
   {
     q: "Do I need to finance through you?",
-    a: "No. You can arrange your own payment source. Discuss the project payment schedule with Ryan before signing a construction contract.",
+    a: "No. You can arrange your own payment source. Discuss the project payment schedule with our team before signing a construction contract.",
   },
   {
     q: "How much do I need to put down?",
-    a: "Ask the lender about its down payment requirements and Ryan about the construction payment schedule. These are confirmed separately.",
+    a: "Ask the lender about its down payment requirements and our team about the construction payment schedule. These are confirmed separately.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function FinancingPage() {
       <PageHero
         eyebrow="Financing"
         title="Start with a clear project budget"
-        body="A free design and itemized quote help you see the total cost before you make a decision. Ask Ryan about financing options for the work you are planning."
+        body="A free design and itemized quote help you see the total cost before you make a decision. Ask our team about financing options for the work you are planning."
       />
 
       <section className="section-x bg-white py-[100px]">
@@ -62,7 +62,7 @@ export default function FinancingPage() {
             <SectionHeading
               eyebrow="How It Works"
               title="Get the design and quote first"
-              body="Review the pool, equipment, decking and features as separate costs. Ryan can help you compare design choices and adjust the plan to your budget. A lender will confirm any financing offer and its terms."
+              body="Review the pool, equipment, decking and features as separate costs. Our team can help you compare design choices and adjust the plan to your budget. A lender will confirm any financing offer and its terms."
             />
             <div className="mt-9 flex flex-wrap gap-3.5">
               {/* TODO(matt): swap in your real lending partner links */}

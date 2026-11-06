@@ -13,7 +13,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Pool Construction, Remodeling & Hardscape"
-        body="Build a custom pool, remodel an existing one or complete the space around it. Integrity coordinates design, permits and construction, with an itemized quote and Ryan as your direct contact."
+        body="Build a custom pool, remodel an existing one or complete the space around it. Integrity coordinates design, permits and construction, with an itemized quote and a dedicated project manager for your project."
       />
       <WhatWeBuild />
       <ProcessSteps />

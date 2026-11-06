@@ -107,7 +107,7 @@ export const DECKING_MATERIALS: DeckingMaterial[] = [
     id: "bluestone",
     name: "Bluestone Pavers",
     description:
-      "Stone pavers in blue-gray tones. Compare samples, finishes and layout options with Ryan.",
+      "Stone pavers in blue-gray tones. Compare samples, finishes and layout options with our design team.",
     pricePerSqft: 32,
   },
   {
@@ -150,7 +150,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
         id: "salt",
         name: "Saltwater System",
         description:
-          "A salt system that generates chlorine in the pool equipment. Ryan can explain its care needs and running costs.",
+          "A salt system that generates chlorine in the pool equipment. Our team can explain its care needs and running costs.",
         price: 2500,
       },
       {

@@ -94,7 +94,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             className="mb-[50px] max-w-[720px]"
             eyebrow="What We Build"
             title={`Pools & Outdoor Living in ${area.name}`}
-            body={`Plan your pool, spa and surrounding patio with one builder serving ${area.name}. Ryan coordinates the design and construction, with each part priced in your proposal.`}
+            body={`Plan your pool, spa and surrounding patio with one builder serving ${area.name}. Our team handles design and construction, with each part priced in your proposal and a dedicated project manager coordinating the work.`}
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => (
@@ -121,7 +121,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             className="mb-11 max-w-[720px]"
             eyebrow="Design Inspiration"
             title="Ideas for your pool and patio"
-            body="Reference photos show design options, not completed Integrity projects. Ask Ryan which ideas fit your property."
+            body="Reference photos show design options, not completed Integrity projects. Ask our team which ideas fit your property."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((p) => (

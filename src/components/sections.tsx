@@ -43,7 +43,7 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
           className="mb-[50px] max-w-[720px]"
           eyebrow="What We Build"
           title="Your pool, spa and patio, planned together"
-          body="Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with Ryan as your direct contact from design through completion."
+          body="Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with a dedicated project manager coordinating your build and keeping you informed."
         />
         <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${featured ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {shown.map((s) => (
@@ -100,7 +100,7 @@ export function WhatToExpect() {
           <SectionHeading light eyebrow="Working With Us" title="Know the design, the price and who to call" />
           <p className="m-0 mb-8 mt-5 text-base leading-[1.75] text-white/70">
             See how your pool will fit your yard before you commit. Review each cost in your quote.
-            Work directly with Ryan when you have a question or need to make a decision.
+            Your dedicated project manager keeps you informed and coordinates the team behind your build.
           </p>
           <Button href="/about" variant="cyan">
             More About Us
@@ -270,9 +270,9 @@ export function BuilderPartnersBanner() {
             Pool construction that fits your home build
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
-            Get one plan for the pool, deck, walls, drainage and lighting. {BUSINESS.ownerFirstName}
-            coordinates the pool schedule with your grading and electrical work, and handles
-            drawings, permits and inspection scheduling.
+            Get one plan for the pool, deck, walls, drainage and lighting. Your dedicated project
+            manager coordinates our crews with your grading and electrical trades. Our team
+            handles drawings, permits and inspection scheduling.
           </p>
           <Button href="/builder-partners" variant="cyan" className="mt-2 self-start">
             Builder Partners
@@ -301,7 +301,7 @@ const FINANCE_POINTS = [
   },
   {
     title: "Adjust the plan",
-    body: "Compare sizes, materials and features with Ryan to match your budget.",
+    body: "Compare sizes, materials and features with our team to match your budget.",
   },
   {
     title: "Ask about financing",
@@ -320,7 +320,7 @@ export function FinancingSection() {
           </h2>
           <p className="m-0 mb-7 max-w-[560px] text-base leading-[1.75] text-slate">
             Start with a free design and itemized quote so you can see what each part costs.
-            Ask Ryan about financing options when you discuss your project.
+            Ask our team about financing options when you discuss your project.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <Button href="/financing">Ask About Financing</Button>
@@ -371,7 +371,7 @@ export function FinalCta({
         </h2>
         <p className="mx-auto mb-10 mt-0 max-w-[600px] text-base leading-[1.7] text-slate">
           {body ??
-            `We build across Menifee, Murrieta, Temecula, Wildomar and the towns around them. Call or send the form and ${BUSINESS.ownerFirstName} will find a time to come and walk the yard with you.`}
+            `We build across Menifee, Murrieta, Temecula, Wildomar and the towns around them. Call or send the form and our team will arrange a time to walk the yard with you.`}
         </p>
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />

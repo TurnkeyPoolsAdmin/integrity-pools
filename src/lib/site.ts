@@ -106,14 +106,14 @@ export const SERVICES: Service[] = [
     slug: "custom-pools",
     name: "Custom Pools",
     short:
-      "See your custom pool in a free 3D design. Choose the shape, depth, seating and finishes with Ryan before construction starts.",
+      "See your custom pool in a free 3D design. Choose the shape, depth, seating and finishes with our design team before construction starts.",
     image: "/images/aqua/projects/pool-spa-14/pool-spa-14-06.webp",
     heroImage: "/images/aqua/projects/custom-pool-02/custom-pool-02-02.webp",
     imageAlt: "Curved pool with stone decking",
     heroImageAlt: "Curved pool with underwater lights and an illuminated stone wall",
     heroTitle: "Custom Pools",
     heroBlurb:
-      "Gunite pools engineered for Southern California soil, sun and setbacks. You see the design before we dig, the quote is broken out line by line, and Ryan runs the build himself from excavation to startup.",
+      "Gunite pools engineered for Southern California soil, sun and setbacks. Review your design and itemized quote before we dig. A dedicated project manager coordinates your build and keeps you informed from excavation through startup.",
     intro:
       "Here is what is typically included in an Integrity custom pool build. Every yard is different, so your estimate documents carry the full inclusion list after we walk the site together.",
     inclusions: [
@@ -129,7 +129,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "How long does a custom pool take to build?",
-        a: "A typical new pool takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule. Ryan reviews the timeline with you before construction starts.",
+        a: "A typical new pool takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule. Your project manager reviews the timeline with you before construction starts.",
       },
       {
         q: "What does a custom pool cost?",
@@ -160,7 +160,7 @@ export const SERVICES: Service[] = [
     heroImageAlt: "Compact pool with blue underwater lighting beside a patio",
     heroTitle: "Plunge Pools",
     heroBlurb:
-      "Fit a pool into a smaller yard with a layout designed around your space. Ryan reviews access, seating and heating options, then shows you the design and costs before you decide.",
+      "Fit a pool into a smaller yard with a layout designed around your space. Our team reviews access, seating and heating options, then shows you the design and costs before you decide.",
     intro:
       "A plunge pool is a full gunite build in a smaller shell. Nothing about the structure or the equipment is downgraded.",
     inclusions: [
@@ -212,7 +212,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Built-in spa or a portable hot tub?",
-        a: "A built-in spa can share the pool design, finishes and controls. A portable tub is a separate unit. Ryan can price a built-in spa with your pool so you can compare options.",
+        a: "A built-in spa can share the pool design, finishes and controls. A portable tub is a separate unit. Our team can price a built-in spa with your pool so you can compare options.",
       },
       {
         q: "How much does it add to a pool build?",
@@ -420,7 +420,7 @@ export const AREAS: Area[] = [
     slug: "murrieta",
     name: "Murrieta",
     blurb:
-      "Get a pool layout sized to your Murrieta yard. Ryan reviews space for swimming, seating and decking during your free site visit.",
+      "Get a pool layout sized to your Murrieta yard. Our team reviews space for swimming, seating and decking during your free site visit.",
     neighborhoods: ["Copper Canyon", "Bear Creek", "The Colony", "Central Murrieta"],
   },
   {
@@ -518,7 +518,7 @@ export const areaBySlug = (slug: string) => AREAS.find((a) => a.slug === slug);
 export const PROCESS = [
   {
     title: "Consultation",
-    body: "We walk the yard together, take measurements, and talk through how you actually want to use the space.",
+    body: "Our team walks the yard with you, takes measurements and discusses how you want to use the space.",
   },
   {
     title: "Quote & 3D Design",
@@ -530,7 +530,7 @@ export const PROCESS = [
   },
   {
     title: "Construction",
-    body: "A typical new pool takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule.",
+    body: "Your project manager coordinates crews and updates. A typical new pool takes six to eight weeks after excavation begins, depending on site conditions, weather and inspections.",
   },
   {
     title: "Startup & Care",
@@ -544,8 +544,8 @@ export const PROCESS = [
 
 export const EXPECTATIONS = [
   {
-    title: "Work directly with Ryan",
-    body: "Ryan runs your build and is your direct contact for questions, decisions and schedule updates.",
+    title: "Your dedicated project manager",
+    body: "Every project has a dedicated project manager. They coordinate our crews, keep you informed and serve as your point of contact for questions and decisions.",
   },
   {
     title: "Design Before You Commit",
@@ -768,7 +768,7 @@ export const HOME_FAQS = [
   },
   {
     q: "Is financing available?",
-    a: "Ask Ryan about financing options for your project. Start with the design and itemized quote; a lender will confirm eligibility, rates, terms and credit-check requirements.",
+    a: "Ask our team about financing options for your project. Start with the design and itemized quote; a lender will confirm eligibility, rates, terms and credit-check requirements.",
   },
 ];
 

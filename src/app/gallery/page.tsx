@@ -15,7 +15,7 @@ export default function GalleryPage() {
       <PageHero
         eyebrow="Design Inspiration"
         title="Find ideas for your pool and patio"
-        body="Explore layouts, materials and features to discuss with Ryan. These reference photos show design options, not completed Integrity projects."
+        body="Explore layouts, materials and features to discuss with our design team. These reference photos show design options, not completed Integrity projects."
       />
 
       <section className="section-x bg-white py-[80px]">
@@ -27,7 +27,7 @@ export default function GalleryPage() {
       <FinalCta
         bg="bg-shell"
         title="See your ideas in a design for your yard"
-        body="Tell Ryan which layouts and features you like. Your free site visit leads to a 3D design and itemized quote based on your property."
+        body="Tell our team which layouts and features you like. Your free site visit leads to a 3D design and itemized quote based on your property."
       />
     </>
   );

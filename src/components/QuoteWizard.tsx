@@ -612,7 +612,7 @@ export default function QuoteWizard() {
         step={3}
         kicker="Step 3 of 5"
         title="When are you planning to build?"
-        sub="Tell us your target start date. Ryan will confirm current availability when you discuss the project."
+        sub="Tell us your target start date. Our team will confirm current availability when you discuss the project."
         onBack={() => setScreen(2)}
         onContinue={() => setScreen(4)}
         continueDisabled={!timeline}

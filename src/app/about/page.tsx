@@ -7,13 +7,13 @@ import { BUSINESS, STATS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Work directly with owner Ryan Osborne on your pool design and build. Free 3D design, itemized pricing and ongoing pool care in Menifee and the Inland Empire.",
+    "Choose Integrity Pools for a dedicated project manager, coordinated construction and ongoing pool care. Serving Menifee and the Inland Empire.",
 };
 
 const RULES = [
   {
-    title: "Answer the Phone",
-    body: "Ryan is your direct contact for questions, schedule updates and decisions about your build.",
+    title: "A Dedicated Project Manager",
+    body: "Every project has a dedicated project manager to coordinate the work and keep you informed. You know who to contact with questions or changes.",
   },
   {
     title: "Show It Before You Build It",
@@ -21,11 +21,11 @@ const RULES = [
   },
   {
     title: "Price and Schedule Up Front",
-    body: "Review each cost and the target schedule before construction starts. Ryan keeps you informed as the build progresses.",
+    body: "Review each cost and the target schedule before construction starts. Your project manager keeps you informed as the build progresses.",
   },
   {
     title: "Keep It One Project",
-    body: "Coordinate the pool, decking, features and lighting in one plan, with Ryan managing the construction schedule.",
+    body: "Coordinate the pool, decking, features and lighting in one plan, with your project manager coordinating the crews and schedule.",
   },
 ];
 
@@ -36,34 +36,34 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[900px]">
           <p className="eyebrow m-0 mb-5">About Integrity Pools</p>
           <h1 className="display-heading m-0 mb-6 max-w-[900px] text-[clamp(46px,5.5vw,72px)] leading-[1.08] text-navy">
-            Work with Ryan from design to first swim
+            A team behind your pool. A clear point of contact.
           </h1>
           <p className="m-0 text-[17px] leading-[1.8] text-slate">
             Integrity Pools builds gunite pools, spas and the outdoor living space that goes around
-            them, across Menifee, the Temecula Valley and the wider Inland Empire. Owner Ryan Osborne
-            is your direct contact for the design, pricing and construction. You know who to call
-            when you have questions or need to make a decision.
+            them, across Menifee, the Temecula Valley and the wider Inland Empire. Every project has a
+            dedicated project manager, backed by our design, construction and pool-care team.
+            You have a clear point of contact and a team working together to complete your pool.
           </p>
         </div>
       </section>
 
-      {/* TODO(matt): a real headshot of Ryan would sit well on the left of this block. */}
       <section className="section-x bg-shell py-[90px]">
         <div className="mx-auto grid w-full max-w-[1400px] gap-16 lg:grid-cols-[0.85fr_1.15fr]">
-          <SectionHeading eyebrow="The Owner" title={BUSINESS.ownerFullName} />
+          <SectionHeading eyebrow="Your Project Team" title="Your project manager keeps the work connected" />
           <div className="flex flex-col gap-5 text-base leading-[1.8] text-slate">
             <p className="m-0">
-              {BUSINESS.ownerFirstName} has been building pools in Southern California since{" "}
-              {BUSINESS.since}. He designs the projects himself, prices them himself, and stays on
-              them from the first walk-through to the day the water goes in.
+              Building a pool brings together design, permits, excavation, plumbing and finishes.
+              Your dedicated project manager coordinates these stages with our team and keeps
+              you informed about the schedule and upcoming decisions.
             </p>
             <p className="m-0">
-              Ryan reviews your layout, explains the costs and coordinates the build. You can discuss
-              changes directly with the person managing your project.
+              Our team helps you compare layouts, materials and features. Your project manager
+              is your point of contact for questions and changes, and coordinates the right
+              people for each stage of the work.
             </p>
             <p className="m-0">
               Before construction starts, you review the design, the itemized proposal and the schedule
-              with Ryan. Your approval sets the plan for the work ahead.
+              with our team. Your approval sets the plan for the work ahead.
             </p>
           </div>
         </div>
@@ -105,8 +105,8 @@ export default function AboutPage() {
               You can continue with weekly service after the build.
             </p>
             <p className="m-0">
-              {BUSINESS.ownerFirstName} coordinates the crews and trades involved in your pool,
-              stonework and finishes. Questions about the work go directly to him.
+              Your project manager coordinates the crews and trades involved in your pool,
+              stonework and finishes, then connects you with our pool-care team at startup.
             </p>
             <p className="m-0">
               Today we build across Menifee, Murrieta, Temecula, Wildomar, Lake Elsinore, Corona,
@@ -156,8 +156,8 @@ export default function AboutPage() {
       <ProcessSteps eyebrow="Our Process" title="The steps from design to startup" />
 
       <FinalCta
-        title="Meet Ryan and discuss your project"
-        body="Book a free site visit to discuss your layout, budget and questions. Ryan will review the property and prepare a design and itemized quote so you can decide with clear information."
+        title="Meet the team behind your pool"
+        body="Book a free site visit to discuss your layout, budget and questions. Our team will review the property and prepare a design and itemized quote so you can decide with clear information."
       />
     </>
   );

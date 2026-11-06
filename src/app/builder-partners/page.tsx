@@ -17,8 +17,8 @@ const WHY = [
     body: "A committed window at contract, with notice the same day if weather or an inspection moves it.",
   },
   {
-    title: "Point of Contact",
-    body: "Ryan runs the whole scope and takes the call directly. Crew booking, sequencing and problems all go through him.",
+    title: "Dedicated Project Manager",
+    body: "A dedicated project manager coordinates our crews, tracks the pool schedule and serves as your point of contact for questions and changes.",
   },
   {
     title: "Trade Coordination",
@@ -76,7 +76,7 @@ export default function BuilderPartnersPage() {
       <PageHero
         eyebrow="For Custom Home Builders"
         title="A Pool Partner for Custom Home Builders"
-        body={`Pool and exterior construction across Menifee and the Temecula Valley, sequenced with your grading, utility and hardscape trades. ${BUSINESS.ownerFirstName} runs the scope and takes the calls.`}
+        body={`Pool and exterior construction across Menifee and the Temecula Valley, sequenced with your grading, utility and hardscape trades. A dedicated project manager coordinates our team and keeps you informed.`}
       >
         <div className="mt-9 flex flex-wrap gap-3.5">
           <Button href="/contact" variant="cyan" size="lg">
@@ -95,7 +95,7 @@ export default function BuilderPartnersPage() {
             className="mb-[50px] max-w-[720px]"
             eyebrow="Why Builders Call Us"
             title="Coordinate the pool with your home build"
-            body="Ryan coordinates access, utilities, permits and pool construction with your team so you can plan the work before crews arrive."
+            body="Your project manager coordinates access, utilities, permits and pool construction with your team so you can plan the work before crews arrive."
           />
           <div className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
             {WHY.map((w, i) => (
@@ -155,7 +155,7 @@ export default function BuilderPartnersPage() {
       <ProcessSteps
         bg="bg-white"
         eyebrow="How It Runs"
-        title="Plan the pool schedule with Ryan"
+        title="Plan the pool schedule with your project manager"
       />
 
       <section className="section-x bg-shell py-[90px]">
@@ -164,7 +164,7 @@ export default function BuilderPartnersPage() {
             className="mb-10 max-w-[720px]"
             eyebrow="Scope"
             title="Pool and outdoor construction services"
-            body="Plan the pool, spa, features, decking and lighting together. Ryan coordinates the pool work and is your direct contact throughout the build."
+            body="Plan the pool, spa, features, decking and lighting together. Your project manager coordinates our crews and is your point of contact throughout the build."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => (
@@ -193,7 +193,7 @@ export default function BuilderPartnersPage() {
       <FinalCta
         bg="bg-shell"
         title="Request a Plan Review"
-        body="Contact Ryan to arrange a plan review. We will discuss pricing, access, utilities and the construction schedule, then prepare a proposal based on your drawings."
+        body="Contact our team to arrange a plan review. We will discuss pricing, access, utilities and the construction schedule, then prepare a proposal based on your drawings."
       />
     </>
   );

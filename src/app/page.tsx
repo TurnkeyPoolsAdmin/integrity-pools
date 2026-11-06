@@ -52,7 +52,7 @@ export default function HomePage() {
                 See your pool design before you commit.
               </h2>
               <p className="mb-4 mt-3 max-w-[510px] text-base leading-[1.6] text-white">
-                Get a free 3D design and itemized quote. Work directly with Ryan throughout your build.
+                Get a free 3D design and itemized quote. Your dedicated project manager coordinates the team and keeps you informed throughout your build.
               </p>
               <Link href="/contact" className="inline-flex min-h-11 items-center gap-3 text-base font-bold underline decoration-white/60 underline-offset-[6px] transition-colors hover:text-cyan-light">
                 Book a free site visit
@@ -73,7 +73,7 @@ export default function HomePage() {
               className="max-w-[640px]"
               eyebrow="Design Ideas"
               title="Explore pool shapes, spas and finishes"
-              body="Save the ideas you like, then ask Ryan how they could fit your yard. These reference photos show design options, not completed Integrity projects."
+              body="Save the ideas you like, then ask our design team how they could fit your yard. These reference photos show design options, not completed Integrity projects."
             />
             <Link
               href="/gallery"
@@ -105,7 +105,7 @@ export default function HomePage() {
       </section>
 
       <WhatToExpect />
-      <ProcessSteps body="Ryan guides your project from site measurements and design review through construction and startup. Here is what happens at each step." />
+      <ProcessSteps body="Our team takes your project from site measurements and design review through construction and startup, with a dedicated project manager coordinating the work. Here is what happens at each step." />
 
       <Reviews />
       <ServiceAreaSection />
