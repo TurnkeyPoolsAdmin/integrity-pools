@@ -8,7 +8,7 @@ import { BUSINESS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell us about your backyard. Free site visit, free design and an itemised quote across Menifee, Murrieta and the Inland Empire.",
+    "Tell us about your backyard. Free site visit, free design and an itemized quote across Menifee, Murrieta and the Inland Empire.",
 };
 
 const NEXT_STEPS = [
@@ -18,18 +18,18 @@ const NEXT_STEPS = [
   },
   {
     title: "The Site Visit",
-    body: "Usually within a week. Grade, access, drainage and utilities get checked, and what is realistic is covered on the spot.",
+    body: "We review slope, access, drainage and utilities, take measurements and discuss what fits your property.",
   },
   {
     title: "The Proposal",
-    body: "An itemised, fixed-scope proposal with a design concept. No deposit required to see it.",
+    body: "An itemized, fixed-scope proposal with a design concept. No deposit required to see it.",
   },
 ];
 
 const CONTACT_FAQS = [
   {
     q: "What does the consultation include?",
-    a: "A site visit, a design concept and an itemised proposal, at no cost and with no obligation to proceed.",
+    a: "A site visit, a design concept and an itemized proposal, at no cost and with no obligation to proceed.",
   },
   {
     q: "Do I need to be home for the site visit?",
@@ -50,8 +50,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Let's Talk About Your Backyard"
-        body="A few quick questions and we will come back with real numbers. No pressure, no obligation, and no sales visit you have to sit through."
+        title="Book your free site visit"
+        body="Tell us what you want to build or update. Ryan will discuss your plans and arrange a free site visit, followed by a design and itemized proposal. There is no obligation to build."
       />
 
       <section className="section-x bg-shell pb-[90px] pt-[70px]">

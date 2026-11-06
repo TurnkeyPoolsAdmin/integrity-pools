@@ -29,8 +29,8 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <Logo light />
           <p className="m-0 max-w-[280px] text-sm leading-[1.7] text-white/70">
-            Menifee&apos;s custom gunite pool builder. Pools, spas, hardscape and lighting,
-            all on one contract, from a company that still services pools every week.
+            Custom pool construction in Menifee and the Inland Empire. Work directly with Ryan
+            on your design and build, with pool care available after startup.
           </p>
           <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/70">
             {BUSINESS.license}
@@ -159,6 +159,11 @@ export default function Footer() {
         </div>
       </div>
 
+      <div className="section-x mx-auto max-w-[1400px] pb-8">
+        <p className="m-0 max-w-[760px] text-sm leading-relaxed text-white/80">
+          Design reference photography: Aqua Pools &amp; Outdoor Living. These photos show design ideas, not completed Integrity Pools projects.
+        </p>
+      </div>
       <div className="border-t border-white/10">
         <div className="mx-auto w-full max-w-[1400px] section-x flex flex-wrap items-center justify-between gap-5 py-6">
           <p className="m-0 text-[13px] text-white/50">

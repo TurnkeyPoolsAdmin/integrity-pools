@@ -15,7 +15,7 @@ export default function ServiceAreasPage() {
       <PageHero
         eyebrow="Where We Work"
         title="Menifee, Murrieta & the Inland Empire"
-        body="We stay within about an hour of the shop. Close enough that our crews turn up on time and we can come back quickly if you need us."
+        body="Find your city below. Integrity provides custom pool construction, remodeling and hardscape, with a free site visit to review your property and discuss your plans."
       />
       <section className="section-x bg-white py-[80px]">
         <div className="mx-auto grid w-full max-w-[1400px] gap-4 sm:grid-cols-2 lg:grid-cols-3">

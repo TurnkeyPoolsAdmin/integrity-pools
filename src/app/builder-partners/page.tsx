@@ -29,8 +29,8 @@ const WHY = [
     body: "Drawings, permits, barrier compliance and inspection scheduling are handled on our side, including the re-inspection if one comes back.",
   },
   {
-    title: "Full Exterior Scope",
-    body: "Pool, hardscape, walls, drainage, features and lighting on one contract. One schedule and one warranty.",
+    title: "Pool and Exterior Work",
+    body: "Pool, decking, walls, drainage, features and lighting coordinated in one plan, with each responsibility set out in the proposal.",
   },
   {
     title: "Site Conditions",
@@ -58,7 +58,7 @@ const FAQS = [
   },
   {
     q: "Can you build from our plans and elevations?",
-    a: "Send them and we will price against them. Any conflict between the pool design and the grade or setbacks comes back during pricing, not during the dig.",
+    a: "Yes. We review your plans, elevations and setbacks during pricing, then flag questions to resolve before construction starts.",
   },
   {
     q: "How do you handle change orders?",
@@ -81,7 +81,7 @@ export default function BuilderPartnersPage() {
         <div className="mt-9 flex flex-wrap gap-3.5">
           <Button href="/contact" variant="cyan" size="lg">
             <ArrowIcon />
-            Send Us a Set of Plans
+            Request a Plan Review
           </Button>
           <Button href={BUSINESS.phoneHref} variant="ghostLight" size="lg">
             {BUSINESS.phone}
@@ -94,8 +94,8 @@ export default function BuilderPartnersPage() {
           <SectionHeading
             className="mb-[50px] max-w-[720px]"
             eyebrow="Why Builders Call Us"
-            title="Where a Pool Sub Fits Into Your Schedule"
-            body="Six parts of the job that land on your critical path, and how we keep each one off it."
+            title="Coordinate the pool with your home build"
+            body="Ryan coordinates access, utilities, permits and pool construction with your team so you can plan the work before crews arrive."
           />
           <div className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
             {WHY.map((w, i) => (
@@ -118,7 +118,7 @@ export default function BuilderPartnersPage() {
             className="mb-[50px] max-w-[760px]"
             eyebrow="Off Your Plate"
             title="What We Take On"
-            body="Everything below is our responsibility on a partnered build. Anything not on the list is worth settling at plan review, because the worst time to find a gap in scope is at rough-in."
+            body="We review these responsibilities with you during plan review and document the agreed work in your proposal."
           />
           <div className="grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
             {TAKE_ON.map((t) => (
@@ -137,15 +137,15 @@ export default function BuilderPartnersPage() {
         <div className="mx-auto grid w-full max-w-[1400px] items-center gap-14 lg:grid-cols-2">
           <SectionHeading
             eyebrow="Design Support"
-            title="Renderings You Can Put In Front of a Buyer"
-            body="Every quote includes a design of the actual lot. On a spec or pre-sale build that rendering is yours to use as a selling asset, because a buyer commits to a backyard far more readily when they can see it."
+            title="Help buyers see the planned backyard"
+            body="A 3D design shows the pool and surrounding space on the actual lot. Review the layout, materials and features with your buyer before construction starts."
           />
           <div>
             <Link
               href="/gallery"
               className="inline-flex items-center gap-2 border-b-2 border-cyan pb-1 text-xs font-bold uppercase tracking-[1.5px] text-navy transition-colors hover:text-cyan"
             >
-              See renderings and builds
+              Explore pool design ideas
               <ArrowIcon className="h-3 w-3" />
             </Link>
           </div>
@@ -155,7 +155,7 @@ export default function BuilderPartnersPage() {
       <ProcessSteps
         bg="bg-white"
         eyebrow="How It Runs"
-        title="The Same Five Steps, Coordinated With You"
+        title="Plan the pool schedule with Ryan"
       />
 
       <section className="section-x bg-shell py-[90px]">
@@ -163,8 +163,8 @@ export default function BuilderPartnersPage() {
           <SectionHeading
             className="mb-10 max-w-[720px]"
             eyebrow="Scope"
-            title="What We Can Carry On One Contract"
-            body="Pool, spa, features, hardscape and lighting on one contract. One sub to schedule and one number to call, instead of five of each."
+            title="Pool and outdoor construction services"
+            body="Plan the pool, spa, features, decking and lighting together. Ryan coordinates the pool work and is your direct contact throughout the build."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => (
@@ -192,8 +192,8 @@ export default function BuilderPartnersPage() {
 
       <FinalCta
         bg="bg-shell"
-        title="Send Us a Set of Plans"
-        body="Send them over and we will price the pool against your drawings, then mark exactly where it lands on your critical path. Any conflict with the grade or the setbacks comes back to you during pricing, not during the dig."
+        title="Request a Plan Review"
+        body="Contact Ryan to arrange a plan review. We will discuss pricing, access, utilities and the construction schedule, then prepare a proposal based on your drawings."
       />
     </>
   );

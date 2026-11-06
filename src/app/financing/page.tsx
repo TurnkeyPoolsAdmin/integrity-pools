@@ -6,44 +6,44 @@ import { Button, CheckIcon, SectionHeading } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Financing",
   description:
-    "Estimate an affordable monthly payment on your custom pool project. Soft credit check, no impact on your score.",
+    "Start with a free design and itemized quote from Integrity Pools. Discuss project costs and financing questions with Ryan.",
 };
 
 const POINTS = [
   {
-    title: "Soft credit check",
-    body: "Checking a rate is a soft pull, so it will not touch your credit score.",
+    title: "See each cost",
+    body: "Review separate prices for the pool, equipment, decking and features.",
   },
   {
-    title: "Monthly payment estimates",
-    body: "See what a given scope works out to per month before you commit to it.",
+    title: "Compare design choices",
+    body: "Discuss how pool size, finishes and optional features affect your budget.",
   },
   {
-    title: "Applies to the whole yard",
-    body: "Pool, hardscape, features and lighting can all be financed as one project.",
+    title: "Discuss financing",
+    body: "Ask about financing for the work in your proposal. Availability and terms depend on the lender.",
   },
   {
     title: "Decide after the design",
-    body: "Get the design and the itemised quote first, then work out how you want to pay for it.",
+    body: "Get the design and the itemized quote first, then work out how you want to pay for it.",
   },
 ];
 
 const FAQS = [
   {
     q: "Does checking a rate affect my credit?",
-    a: "No. A rate check is a soft pull. Only a full application, once you decide to proceed, involves a hard pull.",
+    a: "Ask the lender which type of credit check it uses before you submit personal information. The process depends on the lender and the application.",
   },
   {
     q: "What can be financed?",
-    a: "The whole project. Pool shell, equipment, decking, walls, features and lighting can all sit on one loan rather than being split up.",
+    a: "Confirm eligible work with the lender using your itemized proposal, which lists the pool, equipment and any decking or features you choose.",
   },
   {
     q: "Do I need to finance through you?",
-    a: "No. Plenty of clients use a HELOC, a cash-out refinance or their own funds. The lending partners are there as an option, not a requirement.",
+    a: "No. You can arrange your own payment source. Discuss the project payment schedule with Ryan before signing a construction contract.",
   },
   {
     q: "How much do I need to put down?",
-    a: "That depends on the lender and the product. We can walk you through the options once we know the project scope.",
+    a: "Ask the lender about its down payment requirements and Ryan about the construction payment schedule. These are confirmed separately.",
   },
 ];
 
@@ -52,8 +52,8 @@ export default function FinancingPage() {
     <>
       <PageHero
         eyebrow="Financing"
-        title="Pool Financing Without the Wait"
-        body="Get the backyard you want now and spread the cost. Our lending partners can estimate an affordable monthly payment on your project in a few minutes."
+        title="Start with a clear project budget"
+        body="A free design and itemized quote help you see the total cost before you make a decision. Ask Ryan about financing options for the work you are planning."
       />
 
       <section className="section-x bg-white py-[100px]">
@@ -61,8 +61,8 @@ export default function FinancingPage() {
           <div>
             <SectionHeading
               eyebrow="How It Works"
-              title="Three Minutes to a Number"
-              body="Tell the lender roughly what you are building and what your finances look like. You get a monthly payment estimate back straight away, with no impact on your credit score. Bring that number to the design conversation and we will build to it."
+              title="Get the design and quote first"
+              body="Review the pool, equipment, decking and features as separate costs. Ryan can help you compare design choices and adjust the plan to your budget. A lender will confirm any financing offer and its terms."
             />
             <div className="mt-9 flex flex-wrap gap-3.5">
               {/* TODO(matt): swap in your real lending partner links */}

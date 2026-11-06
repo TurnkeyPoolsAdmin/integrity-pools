@@ -38,7 +38,7 @@ export default function HomePage() {
                 View Gallery<ArrowIcon className="h-4 w-4" />
               </Link>
             </div>
-            <p className="mt-5 text-xs font-medium tracking-wide text-slate">Free site visit · Free design and quote · No obligation</p>
+            <p className="mt-5 text-sm font-medium leading-relaxed text-slate">Free site visit · Free design and quote · No obligation</p>
           </div>
           <div className="flex flex-col overflow-hidden bg-navy">
             <div className="hero-photo relative flex-1">
@@ -71,8 +71,9 @@ export default function HomePage() {
           <div className="mb-11 flex flex-wrap items-end justify-between gap-8">
             <SectionHeading
               className="max-w-[640px]"
-              eyebrow="Recent Work"
-              title="Backyards We've Finished"
+              eyebrow="Design Ideas"
+              title="Explore pool shapes, spas and finishes"
+              body="Save the ideas you like, then ask Ryan how they could fit your yard. These reference photos show design options, not completed Integrity projects."
             />
             <Link
               href="/gallery"
@@ -92,9 +93,9 @@ export default function HomePage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                   </div>
                   <div className="mt-4 flex items-center justify-between gap-3">
-                    <div><p className="text-xs font-medium tracking-wide text-cyan">{p.category}</p>
-                    <h3 className="mt-1 text-xl font-medium text-navy">{p.title}</h3></div>
-                    <ArrowIcon className="h-5 w-5 text-cyan" />
+                    <div><p className="text-base font-medium text-cyan">{p.category}</p>
+                    <h3 className="mt-1 font-sans text-xl font-semibold leading-snug text-navy">{p.title}</h3></div>
+                    <ArrowIcon className="h-5 w-5 shrink-0 text-cyan" />
                   </div>
                 </Link>
               );
@@ -104,7 +105,7 @@ export default function HomePage() {
       </section>
 
       <WhatToExpect />
-      <ProcessSteps body="We have worked hard to make the process as smooth and streamlined as we can. Here is how a typical Integrity backyard build runs." />
+      <ProcessSteps body="Ryan guides your project from site measurements and design review through construction and startup. Here is what happens at each step." />
 
       <Reviews />
       <ServiceAreaSection />

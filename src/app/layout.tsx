@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: "/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp",
         width: 2000,
         height: 1125,
-        alt: "Custom gunite pool and spa built by Integrity Pools in Temecula, CA",
+        alt: "Pool and spa design with a stone deck",
       },
     ],
   },

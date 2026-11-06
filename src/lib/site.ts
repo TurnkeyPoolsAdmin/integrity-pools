@@ -57,8 +57,8 @@ export const BUSINESS = {
 export const STATS = [
   // Matches Aqua's three-stat rhythm: a short number, then a two-word label.
   { value: "30+", label: "Years Experience" }, // confirmed by Matt 2026-08-14
-  { value: "43", label: "Five-Star Reviews" }, // verified 2026-08-14, all 5 star
-  { value: "6–8 wks", label: "Average Build" }, // confirmed by Matt 2026-08-14
+  { value: "43", label: "5-star pool-care reviews" }, // verified 2026-08-14, all 5 star
+  { value: "6–8 wks", label: "Typical new pool build" }, // confirmed by Matt 2026-08-14
 ];
 
 /* ------------------------------------------------------------------ */
@@ -93,6 +93,7 @@ export type Service = {
   /** Large hero on the service page. Falls back to `image`. */
   heroImage?: string;
   imageAlt: string;
+  heroImageAlt?: string;
   heroTitle: string;
   heroBlurb: string;
   intro: string;
@@ -105,10 +106,11 @@ export const SERVICES: Service[] = [
     slug: "custom-pools",
     name: "Custom Pools",
     short:
-      "Make it your own. Gunite pools shaped to your yard: spa, benches, tanning ledge, vanishing edge. If you can picture it, we can pour it.",
+      "See your custom pool in a free 3D design. Choose the shape, depth, seating and finishes with Ryan before construction starts.",
     image: "/images/aqua/projects/pool-spa-14/pool-spa-14-06.webp",
     heroImage: "/images/aqua/projects/custom-pool-02/custom-pool-02-02.webp",
-    imageAlt: "Custom gunite pool and spa with a wide stone sun deck at dusk",
+    imageAlt: "Curved pool with stone decking",
+    heroImageAlt: "Curved pool with underwater lights and an illuminated stone wall",
     heroTitle: "Custom Pools",
     heroBlurb:
       "Gunite pools engineered for Southern California soil, sun and setbacks. You see the design before we dig, the quote is broken out line by line, and Ryan runs the build himself from excavation to startup.",
@@ -127,7 +129,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "How long does a custom pool take to build?",
-        a: "Six to eight weeks from dig to swim on a typical build. You get the schedule at contract and a phone call the same day if anything moves it, rather than finding out from an empty jobsite.",
+        a: "A typical new pool takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule. Ryan reviews the timeline with you before construction starts.",
       },
       {
         q: "What does a custom pool cost?",
@@ -143,7 +145,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Do you build fiberglass pools?",
-        a: "No. We build gunite only. A sprayed concrete shell can take any shape your yard calls for and it is the right structure for our soil.",
+        a: "No. We build gunite only. A sprayed concrete shell lets us customize the shape, depth and features to your yard. The structure is designed for the site conditions.",
       },
     ],
   },
@@ -154,10 +156,11 @@ export const SERVICES: Service[] = [
       "Compact custom concrete pools for smaller lots and tighter budgets, built to the same shell and equipment spec as a full-size build.",
     image: "/images/aqua/projects/plunge-pool-04/plunge-pool-04-05.webp",
     heroImage: "/images/aqua/projects/plunge-pool-08/plunge-pool-08-07.webp",
-    imageAlt: "Compact plunge pool with a raised spa and a clean paver deck",
+    imageAlt: "Compact rectangular pool with built-in steps and stone decking",
+    heroImageAlt: "Compact pool with blue underwater lighting beside a patio",
     heroTitle: "Plunge Pools",
     heroBlurb:
-      "A small yard is not a reason to skip the pool. A plunge pool gets you cold water, warm water and somewhere to sit, on a footprint that still leaves you a yard.",
+      "Fit a pool into a smaller yard with a layout designed around your space. Ryan reviews access, seating and heating options, then shows you the design and costs before you decide.",
     intro:
       "A plunge pool is a full gunite build in a smaller shell. Nothing about the structure or the equipment is downgraded.",
     inclusions: [
@@ -177,7 +180,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Is a plunge pool cheaper than a full pool?",
-        a: "Usually, but not proportionally. The permit, the equipment and the crew mobilisation cost roughly the same, so the saving is mostly in shell size, deck and finish.",
+        a: "Usually, but not proportionally. The permit, the equipment and the crew mobilization cost roughly the same, so the saving is mostly in shell size, deck and finish.",
       },
       {
         q: "Can it be heated year round?",
@@ -190,12 +193,11 @@ export const SERVICES: Service[] = [
     name: "Spas & Hot Tubs",
     short:
       "Raised, spillover and standalone gunite spas, tied straight into the pool's plumbing and automation.",
-    image: "/images/aqua/projects/custom-pool-03/custom-pool-03-01.webp",
-    heroImage: "/images/aqua/projects/pool-spa-16/pool-spa-16-03.webp",
-    imageAlt: "Raised gunite spa spilling over into the pool below",
+    image: "/images/aqua/projects/pool-spa-13/pool-spa-13-03.webp",
+    imageAlt: "Raised square spa beside a rectangular pool",
     heroTitle: "Spas & Hot Tubs",
     heroBlurb:
-      "A built spa is part of the pool, not a plastic tub parked next to it. Same shell, same equipment pad, same finish, one control on your phone.",
+      "Plan your spa seating, jets and heating around how you will use it. Integrity coordinates the spa with your pool design, plumbing and controls.",
     intro: "What goes into an Integrity spa build.",
     inclusions: [
       { title: "Gunite Structure", body: "Sprayed and steel-reinforced like the pool itself." },
@@ -210,7 +212,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Built-in spa or a portable hot tub?",
-        a: "A built spa costs more up front and adds to the home. A portable tub is cheaper and moves with you. If you are already building a pool, the built spa is almost always the better value.",
+        a: "A built-in spa can share the pool design, finishes and controls. A portable tub is a separate unit. Ryan can price a built-in spa with your pool so you can compare options.",
       },
       {
         q: "How much does it add to a pool build?",
@@ -222,14 +224,15 @@ export const SERVICES: Service[] = [
     slug: "pool-remodels",
     name: "Pool Remodels",
     short:
-      "Replaster, retile, new coping, new equipment. Bring a tired 1990s pool back to something you want to swim in.",
+      "Update worn plaster, tile, pool edging and equipment. Get a clear proposal for the repairs and finishes your pool needs.",
     image: "/images/aqua/projects/pool-spa-13/pool-spa-13-01.webp",
     heroImage: "/images/aqua/projects/pool-spa-13/pool-spa-13-03.webp",
-    imageAlt: "Pool with new waterline tile, coping and resurfaced decking",
+    imageAlt: "Rectangular pool and raised spa with stone decking",
+    heroImageAlt: "Raised square spa with built-in seating beside a pool",
     heroTitle: "Pool Remodels",
     heroBlurb:
-      "Plaster does not last forever, and neither does 30-year-old tile. A remodel is the cheapest way to get a new pool without digging one.",
-    intro: "The scopes we most often carry on a remodel.",
+      "Refresh your pool without starting from scratch. We review the existing surface, structure and equipment, then price repairs and upgrades separately so you can choose what to change.",
+    intro: "Repairs and upgrades we can include in your remodel proposal.",
     inclusions: [
       { title: "Chip & Replaster", body: "Old surface removed to the shell, new finish applied." },
       { title: "Waterline Tile", body: "Old tile off, new tile set and grouted." },
@@ -237,7 +240,7 @@ export const SERVICES: Service[] = [
       { title: "Deck Resurfacing", body: "New pavers, travertine or overlay across the deck." },
       { title: "Equipment Upgrade", body: "Variable-speed pump, cartridge filter, modern heater." },
       { title: "Automation Retrofit", body: "Phone control added to an older pad." },
-      { title: "LED Conversion", body: "Old incandescent niches converted to colour LED." },
+      { title: "LED Conversion", body: "Old incandescent niches converted to color LED." },
       { title: "Structural Repair", body: "Cracks, hollow spots and plumbing leaks addressed first." },
     ],
     faqs: [
@@ -256,18 +259,17 @@ export const SERVICES: Service[] = [
     name: "Water & Fire Features",
     short:
       "Waterfalls, sheer descents, grottos, bubblers and fire bowls, engineered into the plumbing from the start rather than added on.",
-    image: "/images/aqua/projects/pool-spa-12/pool-spa-12-01.webp",
-    heroImage: "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
-    imageAlt: "Fire bowls and a spillway feature built into the pool edge",
+    image: "/images/aqua/projects/water-feature-01/water-feature-01-01.webp",
+    imageAlt: "Rock waterfall surrounded by garden plants",
     heroTitle: "Water & Fire Features",
     heroBlurb:
-      "The parts of the pool people remember. Get them into the plan early and they are plumbed properly. Add them later and you are cutting deck.",
+      "Choose waterfalls, bubblers or fire bowls during design. Integrity plans the plumbing, gas lines and controls with the pool so you can see how each feature fits and what it costs.",
     intro: "Features we design and build into the shell.",
     inclusions: [
       { title: "Sheer Descents", body: "Clean sheet of water off a raised wall." },
       { title: "Rock Waterfalls", body: "Natural stone stacked and grouted over a plumbed core." },
       { title: "Grottos", body: "Cave and bench behind the falls, engineered and inspected." },
-      { title: "Bubblers", body: "On the tanning ledge, where the kids end up anyway." },
+      { title: "Bubblers", body: "Small water jets set into a shallow pool ledge." },
       { title: "Deck Jets", body: "Arcs across the water, valved so you can turn them down." },
       { title: "Fire Bowls", body: "Gas run at rough-in, not surface-mounted after." },
       { title: "Fire & Water Combo", body: "Bowls that spill water and burn at the same time." },
@@ -294,7 +296,7 @@ export const SERVICES: Service[] = [
     imageAlt: "Paver patio, seat walls and pool decking around a finished yard",
     heroTitle: "Hardscapes",
     heroBlurb:
-      "The pool is the centrepiece. The hardscape is what makes the yard usable around it. Both on one contract and one schedule.",
+      "Plan space for walking, dining and seating around your pool. Integrity coordinates decking, walls, steps and drainage with the pool layout and construction schedule.",
     intro: "What we build in stone and concrete.",
     inclusions: [
       { title: "Pool Decking", body: "Paver, travertine, natural stone or broom-finish concrete." },
@@ -303,7 +305,7 @@ export const SERVICES: Service[] = [
       { title: "Seat Walls", body: "Built-in seating around the fire pit and the deck edge." },
       { title: "Steps & Landings", body: "Grade changes handled properly, not with a temporary step." },
       { title: "Fire Pits", body: "Gas or wood, built into the hardscape." },
-      { title: "Drainage", body: "Deck drains and area drains that take water somewhere sensible." },
+      { title: "Drainage", body: "Drain locations and runoff routes planned with the deck layout." },
       { title: "Driveways & Walks", body: "Front-of-house work on the same contract." },
     ],
     faqs: [
@@ -321,14 +323,14 @@ export const SERVICES: Service[] = [
     slug: "outdoor-lighting",
     name: "Outdoor Lighting",
     short:
-      "Low-voltage path, wall, tree and in-pool lighting, so the yard is still worth being in after the sun drops.",
+      "Light pool edges, paths, steps and seating areas. Plan the fixtures and controls alongside your pool and patio.",
     image: "/images/aqua/projects/infinity-edge-01/infinity-edge-01-02.webp",
-    heroImage: "/images/aqua/projects/landscape-09/landscape-09-01.webp",
+    heroImage: "/images/aqua/projects/infinity-edge-01/infinity-edge-01-02.webp",
     imageAlt: "Backyard pool and hardscape lit low after sunset",
     heroTitle: "Outdoor Lighting",
     heroBlurb:
-      "A backyard you only use in daylight is half a backyard. Lighting is the cheapest line on the quote and the one people notice most.",
-    intro: "The lighting scopes we carry.",
+      "Make paths, steps and pool features easier to see after dark. Integrity plans fixture locations and controls with your pool and patio, with lighting priced separately in your quote.",
+    intro: "Lighting options to include in your project.",
     inclusions: [
       { title: "In-Pool LED", body: "Colour-changing niches on their own automation channel." },
       { title: "Path Lighting", body: "Low-voltage runs along walks and steps." },
@@ -357,11 +359,11 @@ export const SERVICES: Service[] = [
       "Variable-speed pumps, cartridge filtration, heaters, salt systems and app control, specified per project rather than by brand contract.",
     image: "/images/aqua/projects/under-construction/under-construction-03.webp",
     heroImage: "/images/aqua/projects/under-construction/under-construction-02.webp",
-    imageAlt: "Pool plumbing and equipment pad during construction",
+    imageAlt: "Unfinished concrete pool shell with built-in steps and seating",
     heroTitle: "Equipment & Automation",
     heroBlurb:
-      "We also service pools in this valley, which means we install the equipment we are willing to be called back out to fix.",
-    intro: "What goes on an Integrity equipment pad.",
+      "Choose pumps, filters, heaters and controls sized for your pool. Integrity installs the equipment, shows you how to use it and offers ongoing pool care after startup.",
+    intro: "Equipment and controls selected for your pool and how you use it.",
     inclusions: [
       { title: "Variable-Speed Pump", body: "Runs slow and quiet most of the day, cuts the power bill." },
       { title: "Cartridge Filtration", body: "Sized above the pool volume so it is not working flat out." },
@@ -379,7 +381,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Salt or chlorine?",
-        a: "Salt for most residential builds. It is gentler on skin and easier to keep stable. It still makes chlorine, it just makes it on site.",
+        a: "A salt system generates chlorine at the pool. We can explain the equipment cost and care needs of each option during your design review.",
       },
     ],
   },
@@ -404,105 +406,105 @@ export const AREAS: Area[] = [
     slug: "menifee",
     name: "Menifee",
     blurb:
-      "Our home city. Newer construction with blank backyards, plus the older Sun City pockets that are ready for a remodel. We know the permit counter here.",
+      "Plan a new pool or update an existing one in Menifee. Your free site visit covers the layout, access, drainage and any HOA requirements.",
     neighborhoods: ["Audie Murphy Ranch", "Heritage Lake", "Sun City"],
   },
   {
     slug: "temecula",
     name: "Temecula",
     blurb:
-      "Twenty minutes down the 215. Wine country lots, Redhawk and Vail Ranch backyards, and larger parcels that take a full outdoor living build.",
+      "Design your pool and patio around your Temecula property. We review the available space, slope and access before preparing your proposal.",
     neighborhoods: ["Redhawk", "Vail Ranch", "Meadowview", "Wine Country", "Harveston"],
   },
   {
     slug: "murrieta",
     name: "Murrieta",
     blurb:
-      "Ten minutes up the 15. Larger lots on the west side, tighter tract yards on the east, and we build in both.",
+      "Get a pool layout sized to your Murrieta yard. Ryan reviews space for swimming, seating and decking during your free site visit.",
     neighborhoods: ["Copper Canyon", "Bear Creek", "The Colony", "Central Murrieta"],
   },
   {
     slug: "wildomar",
     name: "Wildomar",
     blurb:
-      "Half-acre and one-acre parcels where there is room for the pool, the deck and the fire pit without crowding the house.",
+      "Plan your pool, patio and features together in Wildomar. We check access and drainage before pricing the work.",
     neighborhoods: ["The Farm", "Sycamore Ranch", "Windsong Valley"],
   },
   {
     slug: "lake-elsinore",
     name: "Lake Elsinore",
     blurb:
-      "Hillside lots with a view worth designing around, and grades that make the retaining plan as important as the pool plan.",
+      "Plan your Lake Elsinore pool around the slope and views of your property. We review access, drainage and any retaining walls needed for the layout.",
     neighborhoods: ["Tuscany Hills", "Canyon Hills", "Rosetta Canyon"],
   },
   {
     slug: "canyon-lake",
     name: "Canyon Lake",
     blurb:
-      "Gated community work with access constraints we plan for up front, including HOA submissions and gate scheduling.",
+      "Plan your Canyon Lake pool with HOA requirements and site access in mind. Drawings and construction access are reviewed before work begins.",
     neighborhoods: ["Canyon Lake POA"],
   },
   {
     slug: "winchester",
     name: "Winchester",
     blurb:
-      "Fast-growing tracts with new backyards waiting on a plan. We handle the builder-grade grading you inherited.",
+      "Turn your Winchester backyard into a planned pool and patio space. We review grading, drainage and access before preparing the design.",
     neighborhoods: ["Winchester Ranch", "Morgan Hill"],
   },
   {
     slug: "french-valley",
     name: "French Valley",
     blurb:
-      "Between Menifee and Temecula, mostly newer homes with usable rear yards and straightforward access.",
+      "Get a pool design for your French Valley property. Your site visit covers layout, access and room for the deck and seating you want.",
     neighborhoods: ["French Valley", "Alta Murrieta edge"],
   },
   {
     slug: "perris",
     name: "Perris",
     blurb:
-      "Larger inland lots where budget goes further and the shade structure matters as much as the water.",
+      "Plan a custom pool or remodel in Perris. We review the yard and your budget, then price the pool, decking and features separately.",
     neighborhoods: ["May Ranch", "Green Valley"],
   },
   {
     slug: "hemet",
     name: "Hemet",
     blurb:
-      "Established neighbourhoods with a lot of tired 1980s and 1990s pools. Remodel country as much as new build country.",
+      "Build a new pool or update your existing pool in Hemet. We assess the site or existing pool before recommending the work to include.",
     neighborhoods: ["East Hemet", "Seven Hills"],
   },
   {
     slug: "corona",
     name: "Corona",
     blurb:
-      "North end of our range. Hillside builds with real grade changes and retaining that has to be engineered properly.",
+      "Plan your Corona pool around the site conditions. We review slopes, drainage, access and retaining needs before pricing construction.",
     neighborhoods: ["South Corona", "Sierra Del Oro", "Eagle Glen"],
   },
   {
     slug: "riverside",
     name: "Riverside",
     blurb:
-      "Older, larger lots with mature planting. Access planning matters more here than anywhere else we work.",
+      "Plan a pool or remodel for your Riverside property. We review equipment access and existing landscaping during the site visit.",
     neighborhoods: ["Woodcrest", "Orangecrest", "Canyon Crest"],
   },
   {
     slug: "fallbrook",
     name: "Fallbrook",
     blurb:
-      "Just over the county line. Rural parcels, long driveways and views that set the whole design.",
+      "Design your Fallbrook pool around the space, slope and views of your property. Access and drainage are part of the site review.",
     neighborhoods: ["Fallbrook", "De Luz"],
   },
   {
     slug: "sun-city",
     name: "Sun City",
     blurb:
-      "A lot of original 1960s and 1970s pools here. Remodels, replaster and equipment upgrades are most of what we do in this pocket.",
+      "Update your Sun City pool with new finishes, tile or equipment. We review its condition and price the recommended work separately.",
     neighborhoods: ["Sun City", "Cherry Hills"],
   },
   {
     slug: "murrieta-hot-springs",
     name: "Murrieta Hot Springs",
     blurb:
-      "Established east-side neighbourhoods with mature yards, where access planning decides how the build runs.",
+      "Plan your Murrieta Hot Springs pool or remodel around the existing yard. Access, utilities and landscaping are reviewed before construction.",
     neighborhoods: ["Murrieta Hot Springs", "Alta Murrieta", "Vineyard Knolls"],
   },
 ];
@@ -520,7 +522,7 @@ export const PROCESS = [
   },
   {
     title: "Quote & 3D Design",
-    body: "An itemised quote and a rendering of your yard, drawn to the measurements taken on site.",
+    body: "An itemized quote and a rendering of your yard, drawn to the measurements taken on site.",
   },
   {
     title: "Design Review",
@@ -528,7 +530,7 @@ export const PROCESS = [
   },
   {
     title: "Construction",
-    body: "Six to eight weeks from dig to swim on a typical build, with updates as we move through each phase.",
+    body: "A typical new pool takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule.",
   },
   {
     title: "Startup & Care",
@@ -542,20 +544,20 @@ export const PROCESS = [
 
 export const EXPECTATIONS = [
   {
-    title: "Single Point of Contact",
-    body: "No telephone game with office staff. Once your project starts you get one number, and it is Ryan's. He runs your build and he takes the call.",
+    title: "Work directly with Ryan",
+    body: "Ryan runs your build and is your direct contact for questions, decisions and schedule updates.",
   },
   {
     title: "Design Before You Commit",
-    body: "Every quote comes with a rendering of the space, so you know the exact layout and how it all fits together before you sign anything.",
+    body: "Your free 3D design shows the pool, spa and surrounding space in your yard. Review and revise the layout before you commit.",
   },
   {
-    title: "Itemised Quotes",
-    body: "The proposal is broken out line by line, so you can see what each part costs and make a true apples-to-apples comparison with another builder.",
+    title: "See what each part costs",
+    body: "Your quote lists the pool, equipment, decking and features separately. Compare proposals and adjust the plan with a clear view of each cost.",
   },
   {
-    title: "We Are Still Here After",
-    body: "We service pools in this valley every week. When we put something in the ground we are the ones who get called back to it, which is a strong reason to build it right.",
+    title: "Pool care after construction",
+    body: "We balance the water at startup and show you how the equipment works. Weekly pool care is available after your build.",
   },
 ];
 
@@ -566,7 +568,6 @@ export const EXPECTATIONS = [
 export type Project = {
   slug: string;
   title: string;
-  city: string;
   category: string;
   image: string;
   alt: string;
@@ -576,146 +577,128 @@ export const PROJECTS: Project[] = [
   {
     slug: "modern-pool-spa",
     title: "Modern Pool & Spa",
-    city: "Menifee",
     category: "Custom Pools",
     image: "/images/aqua/projects/pool-spa-02/pool-spa-02-03.webp",
     alt: "Modern rectangular pool with a raised spa and a stone deck",
   },
   {
     slug: "vanishing-edge-spa",
-    title: "Vanishing Edge Spa",
-    city: "Murrieta",
+    title: "Pool, Spa & Patio",
     category: "Spas",
     image: "/images/aqua/projects/pool-spa-16/pool-spa-16-02.webp",
-    alt: "Vanishing edge spa set into a raised deck above the pool",
+    alt: "Pool and round spa beside a wide patio and two-story home",
   },
   {
     slug: "geometric-pool-deck",
     title: "Geometric Pool & Deck",
-    city: "Temecula",
     category: "Custom Pools",
     image: "/images/aqua/projects/custom-pool-01/custom-pool-01-05.webp",
     alt: "Geometric gunite pool with a wide surrounding deck",
   },
   {
     slug: "freeform-pool-lawn",
-    title: "Freeform Pool & Lawn",
-    city: "Murrieta",
+    title: "Curved Pool with Evening Lighting",
     category: "Custom Pools",
     image: "/images/aqua/projects/custom-pool-02/custom-pool-02-02.webp",
-    alt: "Freeform gunite pool bordered by lawn and planting",
+    alt: "Curved pool with underwater lighting and an illuminated stone wall",
   },
   {
     slug: "fire-water-terrace",
-    title: "Fire & Water Terrace",
-    city: "Wildomar",
-    category: "Water & Fire Features",
+    title: "Round Spa with Built-in Seating",
+    category: "Spas",
     image: "/images/aqua/projects/pool-spa-12/pool-spa-12-01.webp",
-    alt: "Pool terrace with fire bowls and a spillover spa",
+    alt: "Round spa with curved bench seating beside a pool",
   },
   {
     slug: "hillside-lagoon",
-    title: "Hillside Lagoon Pool",
-    city: "Lake Elsinore",
+    title: "Curved Pool & Stone Patio",
     category: "Custom Pools",
     image: "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
-    alt: "Lagoon-style pool with boulder edging on a sloped lot",
+    alt: "Curved pool surrounded by a stone patio and trees",
   },
   {
     slug: "stone-terrace",
-    title: "Stone Terrace & Patio",
-    city: "Menifee",
+    title: "Patio with a Fire Pit & Seat Wall",
     category: "Hardscapes",
     image: "/images/aqua/projects/hardscape-01/hardscape-01-01.webp",
-    alt: "Paver terrace and seat walls wrapping a finished backyard",
+    alt: "Patio seating around a fire pit with a curved stone seat wall",
   },
   {
     slug: "rock-waterfall",
-    title: "Rock Waterfall",
-    city: "Canyon Lake",
+    title: "Garden Waterfall",
     category: "Water & Fire Features",
     image: "/images/aqua/projects/water-feature-01/water-feature-01-01.webp",
-    alt: "Stacked stone waterfall spilling into the shallow end of a pool",
+    alt: "Small rock waterfall surrounded by garden plants",
   },
   {
     slug: "lagoon-pool-garden",
-    title: "Lagoon Pool & Garden",
-    city: "Riverside",
+    title: "Curved Pool Edge & Stone Deck",
     category: "Custom Pools",
     image: "/images/aqua/projects/lagoon-pool-02/lagoon-pool-02-03.webp",
-    alt: "Lagoon pool surrounded by mature planting and stone",
+    alt: "Close view of a curved pool edge with stone decking",
   },
   {
     slug: "infinity-edge",
     title: "Infinity Edge Pool",
-    city: "Corona",
     category: "Custom Pools",
     image: "/images/aqua/projects/infinity-edge-01/infinity-edge-01-04.webp",
-    alt: "Infinity edge pool looking out over a valley view",
+    alt: "Pool with an infinity edge facing a wooded landscape",
   },
   {
     slug: "paver-deck-plunge",
     title: "Plunge Pool & Paver Deck",
-    city: "Winchester",
     category: "Plunge Pools",
     image: "/images/aqua/projects/plunge-pool-08/plunge-pool-08-01.webp",
     alt: "Compact plunge pool set into a paver deck",
   },
   {
     slug: "spillover-spa",
-    title: "Spillover Spa & Pool",
-    city: "Canyon Lake",
-    category: "Spas",
+    title: "Compact Pool with Bench Seating",
+    category: "Plunge Pools",
     image: "/images/aqua/projects/plunge-pool-04/plunge-pool-04-02.webp",
-    alt: "Raised spillover spa beside a compact gunite pool",
+    alt: "Narrow pool with built-in seating and stone decking",
   },
   {
     slug: "evening-lighting",
-    title: "Evening Lighting Scheme",
-    city: "Menifee",
+    title: "Path & Garden Lighting",
     category: "Outdoor Lighting",
     image: "/images/aqua/projects/outdoor-lighting-01/outdoor-lighting-01-01.webp",
-    alt: "Backyard pool and planting lit with low-voltage fixtures after dark",
+    alt: "Garden lights along a walkway after dark",
   },
   {
     slug: "travertine-deck",
-    title: "Travertine Pool Deck",
-    city: "Temecula",
+    title: "Covered Patio",
     category: "Hardscapes",
     image: "/images/aqua/projects/hardscape-04/hardscape-04-06.webp",
-    alt: "Travertine pool decking and steps running down to the water",
+    alt: "Covered patio with columns and a ceiling fan beside a house",
   },
   {
     slug: "steel-and-plumbing",
-    title: "Steel & Plumbing Stage",
-    city: "Temecula",
+    title: "Concrete Pool Shell in Progress",
     category: "The Build",
     image: "/images/aqua/projects/under-construction/under-construction-03.webp",
-    alt: "Rebar cage and plumbing runs in place before gunite",
+    alt: "Unfinished concrete pool shell with built-in steps and seating",
   },
   {
     slug: "grotto-feature",
-    title: "Grotto & Waterfall",
-    city: "Murrieta",
+    title: "Garden Water Feature",
     category: "Water & Fire Features",
     image: "/images/aqua/projects/water-feature-02/water-feature-02-01.webp",
-    alt: "Grotto bench tucked behind a stone waterfall",
+    alt: "Small rock water feature among garden plants beside a house",
   },
   {
     slug: "courtyard-plunge",
-    title: "Courtyard Plunge Pool",
-    city: "French Valley",
+    title: "Small Pool with Stone Surround",
     category: "Plunge Pools",
     image: "/images/aqua/projects/plunge-pool-05/plunge-pool-05-01.webp",
-    alt: "Small plunge pool built into a walled courtyard",
+    alt: "Small rounded pool with stone edging in a wooded garden",
   },
   {
     slug: "classic-pool-spa",
-    title: "Classic Pool & Spa",
-    city: "Hemet",
-    category: "Pool Remodels",
+    title: "Rectangular Pool & Raised Spa",
+    category: "Custom Pools",
     image: "/images/aqua/projects/pool-spa-13/pool-spa-13-01.webp",
-    alt: "Refinished pool and spa with new tile and coping",
+    alt: "Rectangular pool with a raised spa and stone deck",
   },
 ];
 
@@ -761,7 +744,7 @@ export const REVIEWS = [
 export const HOME_FAQS = [
   {
     q: "How do you price a project?",
-    a: "Every proposal is itemised: shell, equipment, decking and each remaining line priced separately, so one part can change without re-pricing the rest. Pricing comes after the site visit and design, since access, soil and grade move the number more than anything else.",
+    a: "Every proposal is itemized: shell, equipment, decking and each remaining line priced separately, so one part can change without re-pricing the rest. Pricing comes after the site visit and design, since access, soil and grade move the number more than anything else.",
   },
   {
     q: "How long does a pool build take?",
@@ -777,15 +760,15 @@ export const HOME_FAQS = [
   },
   {
     q: "Do you build fiberglass pools?",
-    a: "No. We build gunite only. A sprayed concrete shell takes whatever shape your yard calls for and it is the right structure for Inland Empire soil.",
+    a: "No. We build gunite only. A sprayed concrete shell lets us customize the shape, depth and features. Your design accounts for the site conditions.",
   },
   {
     q: "Do you service the pool after it is built?",
-    a: "Yes, and that is the part most builders cannot say. Our service crew balances the water through startup and can stay on it weekly after that.",
+    a: "Yes. Our service crew balances the water through startup, and weekly pool care is available afterward.",
   },
   {
     q: "Is financing available?",
-    a: "Yes. Checking a rate takes a few minutes and runs a soft credit check, so it will not affect your score. Financing covers the whole project, including decking and lighting.",
+    a: "Ask Ryan about financing options for your project. Start with the design and itemized quote; a lender will confirm eligibility, rates, terms and credit-check requirements.",
   },
 ];
 

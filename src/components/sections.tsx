@@ -19,10 +19,10 @@ export function StatsBar() {
       <div className="mx-auto w-full max-w-[1400px] section-x grid grid-cols-3 gap-4 py-7 sm:gap-8">
         {STATS.map((s) => (
           <div key={s.label} className="text-center">
-            <p className="m-0 whitespace-nowrap text-[20px] font-extrabold text-navy sm:text-[30px]">
+            <p className="m-0 whitespace-nowrap text-[18px] font-extrabold text-navy sm:text-[30px]">
               {s.value}
             </p>
-            <p className="m-0 mt-1 text-[10px] font-semibold uppercase tracking-[1.5px] text-slate sm:text-[11px]">
+            <p className="m-0 mt-1 text-sm font-medium leading-normal text-slate">
               {s.label}
             </p>
           </div>
@@ -42,8 +42,8 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
         <SectionHeading
           className="mb-[50px] max-w-[720px]"
           eyebrow="What We Build"
-          title="Everything that touches the pool"
-          body="Pool construction, pool remodeling and the hardscape around them. That is the whole list, and it is narrow on purpose. The shell, the deck and the equipment are one job, so they should be one crew on one contract, not three companies blaming each other."
+          title="Your pool, spa and patio, planned together"
+          body="Build a new pool or update the one you have. Integrity coordinates the pool, decking, equipment and lighting, with Ryan as your direct contact from design through completion."
         />
         <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${featured ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
           {shown.map((s) => (
@@ -65,7 +65,7 @@ export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
                 <h3 className="m-0 text-[22px] font-semibold leading-tight tracking-[-0.4px] text-navy">
                   {s.name}
                 </h3>
-                <p className="m-0 flex-1 text-[15px] leading-[1.7] text-slate">
+                <p className="m-0 flex-1 text-base leading-[1.7] text-slate">
                   {s.short}
                 </p>
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[1.5px] text-cyan">
@@ -97,10 +97,10 @@ export function WhatToExpect() {
     <section className="section-x bg-navy py-[100px] text-white">
       <div className="mx-auto grid w-full max-w-[1400px] items-start gap-[70px] lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionHeading light eyebrow="Working With Us" title="What to Expect on a Build" />
+          <SectionHeading light eyebrow="Working With Us" title="Know the design, the price and who to call" />
           <p className="m-0 mb-8 mt-5 text-base leading-[1.75] text-white/70">
-            Handing six figures to a contractor and letting them dig up your yard is nerve-wracking.
-            We have built the whole process around removing the parts that make it feel that way.
+            See how your pool will fit your yard before you commit. Review each cost in your quote.
+            Work directly with Ryan when you have a question or need to make a decision.
           </p>
           <Button href="/about" variant="cyan">
             More About Us
@@ -116,7 +116,7 @@ export function WhatToExpect() {
               <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-white">
                 {e.title}
               </h3>
-              <p className="m-0 text-sm leading-[1.7] text-white/65">{e.body}</p>
+              <p className="m-0 text-base leading-[1.7] text-white/80">{e.body}</p>
             </div>
           ))}
         </div>
@@ -129,7 +129,7 @@ export function WhatToExpect() {
 
 export function ProcessSteps({
   eyebrow = "How It Works",
-  title = "How a Build Runs",
+  title = "From your first site visit to your first swim",
   body,
   bg = "bg-shell",
 }: {
@@ -152,7 +152,7 @@ export function ProcessSteps({
               <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">
                 {p.title}
               </h3>
-              <p className="m-0 text-sm leading-[1.7] text-slate">{p.body}</p>
+              <p className="m-0 text-base leading-[1.7] text-slate">{p.body}</p>
             </div>
           ))}
         </div>
@@ -165,7 +165,7 @@ export function ProcessSteps({
 
 export function Reviews({
   eyebrow = "Reviews",
-  title = "What Clients Say",
+  title = "What our pool-care customers say",
   light = false,
 }: {
   eyebrow?: string;
@@ -175,7 +175,7 @@ export function Reviews({
   return (
     <section className={`section-x py-[100px] ${light ? "bg-navy text-white" : "bg-shell"}`}>
       <div className="mx-auto w-full max-w-[1400px]">
-        <SectionHeading className="mb-11 max-w-[720px]" eyebrow={eyebrow} title={title} light={light} />
+        <SectionHeading className="mb-11 max-w-[720px]" eyebrow={eyebrow} title={title} light={light} body="These reviews are from Integrity Pool Care customers. They describe service and equipment work, not new pool construction." />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {REVIEWS.map((r, i) => (
             <figure
@@ -202,8 +202,8 @@ export function Reviews({
                   {r.name}
                 </p>
                 <p
-                  className={`m-0 mt-[3px] text-xs tracking-[0.5px] ${
-                    light ? "text-white/50" : "text-slate"
+                  className={`m-0 mt-[3px] text-sm leading-normal ${
+                    light ? "text-white/80" : "text-slate"
                   }`}
                 >
                   {r.source}
@@ -227,7 +227,7 @@ export function ServiceAreaSection() {
           <SectionHeading
             eyebrow="Where We Work"
             title="Menifee, Murrieta & the Inland Empire"
-            body="We stay within about an hour of the shop. That covers Menifee and the Temecula Valley, out through Lake Elsinore and Perris, north to Corona and Riverside, and south over the county line to Fallbrook. Close enough that our crews turn up on time and we can come back quickly if you need us."
+            body="We build across Menifee, the Temecula Valley and nearby communities, from Riverside and Corona to Fallbrook. Your site visit includes a review of access, slope and drainage so the plan fits your property."
           />
           <a
             href={BUSINESS.phoneHref}
@@ -267,13 +267,12 @@ export function BuilderPartnersBanner() {
         <div className="flex flex-col justify-center gap-5 bg-navy px-8 py-12 text-white sm:px-14 sm:py-16">
           <p className="eyebrow m-0">For Custom Home Builders</p>
           <h2 className="display-heading m-0 text-[clamp(36px,4vw,48px)] leading-[1.12]">
-            Working With Custom Home Builders
+            Pool construction that fits your home build
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
-            Building custom homes or developing around Menifee and the Temecula Valley? We take the entire exterior
-            scope off your critical path: pool, deck, walls, drainage and lighting, sequenced with
-            your grading and electrical trades, on one contract with {BUSINESS.ownerFirstName} as
-            your single point of contact.
+            Get one plan for the pool, deck, walls, drainage and lighting. {BUSINESS.ownerFirstName}
+            coordinates the pool schedule with your grading and electrical work, and handles
+            drawings, permits and inspection scheduling.
           </p>
           <Button href="/builder-partners" variant="cyan" className="mt-2 self-start">
             Builder Partners
@@ -297,16 +296,16 @@ export function BuilderPartnersBanner() {
 
 const FINANCE_POINTS = [
   {
-    title: "Soft credit check",
-    body: "Checking a rate is a soft pull, so it will not touch your credit score.",
+    title: "See the project cost",
+    body: "Review the pool, equipment, decking and features as separate lines in your quote.",
   },
   {
-    title: "Monthly payment estimates",
-    body: "See what a given scope works out to per month before you commit to it.",
+    title: "Adjust the plan",
+    body: "Compare sizes, materials and features with Ryan to match your budget.",
   },
   {
-    title: "Applies to the whole yard",
-    body: "Pool, hardscape, features and lighting can all be financed as one project.",
+    title: "Ask about financing",
+    body: "Discuss financing for your planned work. Rates and terms depend on the lender.",
   },
 ];
 
@@ -317,15 +316,14 @@ export function FinancingSection() {
         <div>
           <p className="eyebrow m-0 mb-4">Financing</p>
           <h2 className="display-heading m-0 mb-5 text-[clamp(36px,4vw,52px)] leading-[1.12] text-navy">
-            Pool Financing Without the Wait
+            Plan your project budget before you build
           </h2>
           <p className="m-0 mb-7 max-w-[560px] text-base leading-[1.75] text-slate">
-            Get the backyard you want now and spread the cost. Our lending partners can estimate an
-            affordable monthly payment on your project in a few minutes. It is fast, simple, and it
-            does not affect your credit.
+            Start with a free design and itemized quote so you can see what each part costs.
+            Ask Ryan about financing options when you discuss your project.
           </p>
           <div className="flex flex-wrap gap-3.5">
-            <Button href="/financing">Check Your Rate</Button>
+            <Button href="/financing">Ask About Financing</Button>
             <Button href="/contact" variant="outline">
               Request a Quote
             </Button>
@@ -416,7 +414,7 @@ export function PageHero({
     <section className="section-x bg-navy pb-[60px] pt-[70px] text-white">
       <div className="mx-auto w-full max-w-[1400px]">
         {crumbs?.length ? (
-          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap gap-2 text-xs text-white/50">
+          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap gap-2 text-xs text-white/80">
             {crumbs.map((c, i) => (
               <span key={c.href} className="flex gap-2">
                 <Link href={c.href} className="transition-colors hover:text-cyan">

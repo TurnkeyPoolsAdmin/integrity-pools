@@ -12,7 +12,7 @@ import {
   computeEstimate,
   formatUsd,
 } from "@/lib/quotePricing";
-import { BUSINESS, REVIEWS } from "@/lib/site";
+import { BUSINESS, REVIEWS, STATS } from "@/lib/site";
 import { ArrowIcon, CheckIcon, PhoneIcon } from "./ui";
 
 type Screen = "landing" | 1 | 2 | 3 | 4 | 5 | "result";
@@ -21,16 +21,16 @@ const LEAD_EMAIL = "mattbsheeran@gmail.com"; // TODO(matt): switch to Integrity'
 
 const HOW_IT_WORKS = [
   {
-    title: "Share your vision",
+    title: "Choose your pool and features",
     body: "Tell us your target pool size and the features you want. Takes about 2 minutes.",
   },
   {
     title: "We run the numbers",
-    body: "Our pricing engine builds a personalised range from our actual internal build pricing.",
+    body: "The calculator adds sample prices for your choices to show how the estimate works.",
   },
   {
     title: "Review your breakdown",
-    body: "See every cost itemised: pool model, equipment, decking, and more.",
+    body: "See the sample cost for the pool, decking and each selected feature.",
   },
   {
     title: "Book if you're ready",
@@ -56,12 +56,12 @@ const FAQS = [
     a: "We will follow up once to see if you would like to talk through your numbers. If not, no problem. No pressure, ever.",
   },
   {
-    q: "I don't get it. What's in it for you?",
-    a: "Serious shoppers with realistic numbers make better projects. We would rather show you real pricing up front than waste your time with a sales dance.",
+    q: "How should I use this estimate?",
+    a: "Use this preview to explore pool sizes and features. The prices are samples. Request a free site visit for a quote based on your property.",
   },
   {
     q: "How accurate is the estimate?",
-    a: "It is a real range built from our actual build pricing. Your final quote depends on your yard's access, slope and soil, which we confirm at your design consultation.",
+    a: "This preview uses sample prices, not an approved Integrity quote. Your project needs a site visit and a confirmed proposal based on access, slope, soil and your chosen design.",
   },
   { q: "How long does this take?", a: "About two minutes." },
   {
@@ -119,9 +119,9 @@ function SelectCard({
           <CheckIcon className="h-3 w-3" />
         </span>
       ) : null}
-      <p className="m-0 pr-7 text-[14px] font-bold uppercase tracking-[0.5px] text-navy">{title}</p>
+      <p className="m-0 pr-7 text-base font-bold leading-normal text-navy">{title}</p>
       {meta ? (
-        <p className="m-0 mt-1 text-[11px] font-semibold uppercase tracking-[1.2px] text-muted">
+        <p className="m-0 mt-1 text-sm font-medium leading-normal text-slate">
           {meta}
         </p>
       ) : null}
@@ -287,11 +287,11 @@ export default function QuoteWizard() {
           <div className="mx-auto max-w-[860px]">
             <p className="eyebrow m-0 mb-5">For Menifee & Temecula Valley Homeowners Only</p>
             <h1 className="m-0 mb-7 text-[clamp(34px,5.2vw,58px)] font-extrabold uppercase leading-[1.06] tracking-[-0.5px] text-navy">
-              Get an Accurate Price for Your{" "}
+              Explore a Sample Estimate for Your{" "}
               <span className="text-cyan">Custom Pool Project</span>
             </h1>
             <p className="mx-auto m-0 mb-10 max-w-[560px] text-[17px] leading-[1.75] text-slate">
-              See real numbers based on our actual build pricing. No rep required.
+              Choose a pool size and features to see a sample cost breakdown. Prices in this preview are examples. Request a free site visit for a confirmed quote.
             </p>
             <button
               type="button"
@@ -299,10 +299,10 @@ export default function QuoteWizard() {
               className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded bg-navy px-10 py-[18px] text-sm font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
             >
               <ArrowIcon />
-              Get My Instant Quote
+              Build a Sample Estimate
             </button>
             <ul className="m-0 mt-8 flex list-none flex-wrap items-center justify-center gap-x-8 gap-y-3 p-0">
-              {["Instant estimate", "No obligation", "Real pricing"].map((t) => (
+              {["Sample prices", "No obligation", "Free site visit available"].map((t) => (
                 <li
                   key={t}
                   className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[1.5px] text-muted"
@@ -364,26 +364,24 @@ export default function QuoteWizard() {
         <section className="section-x bg-white py-[100px]">
           <div className="mx-auto w-full max-w-[1400px]">
             <div className="mx-auto mb-[50px] max-w-[720px] text-center">
-              <p className="eyebrow m-0 mb-4">Recent Work</p>
-              <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-navy">
-                Built by the crew you&apos;ll actually meet
+              <p className="eyebrow m-0 mb-4">Design Inspiration</p>
+              <h2 className="display-heading m-0 text-[clamp(30px,4vw,44px)] leading-[1.15] text-navy">
+                Explore shapes, finishes and decking
               </h2>
+              <p className="mt-5 text-base leading-relaxed text-slate">Reference photos show design options, not completed Integrity projects.</p>
             </div>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                "/images/aqua/projects/custom-pool-01/custom-pool-01-01.webp",
-                "/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp",
-                "/images/aqua/projects/infinity-edge-01/infinity-edge-01-01.webp",
-                "/images/aqua/projects/hardscape-01/hardscape-01-01.webp",
-              ].map((src) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={src}
-                  src={src}
-                  alt="Recent pool project"
-                  loading="lazy"
-                  className="aspect-[4/3] w-full rounded object-cover"
-                />
+                ["/images/aqua/projects/custom-pool-01/custom-pool-01-01.webp", "Pool and spa with stone decking"],
+                ["/images/aqua/projects/lagoon-pool-01/lagoon-pool-01-01.webp", "Curved pool with a stone patio"],
+                ["/images/aqua/projects/infinity-edge-01/infinity-edge-01-01.webp", "Pool with an infinity edge"],
+                ["/images/aqua/projects/hardscape-01/hardscape-01-01.webp", "Patio with a fire pit and seating"],
+              ].map(([src, caption]) => (
+                <figure key={src} className="m-0 flex flex-col overflow-hidden rounded-lg bg-navy">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={src} alt={caption} loading="lazy" className="aspect-[4/3] w-full object-cover" />
+                  <figcaption className="photo-caption">{caption}</figcaption>
+                </figure>
               ))}
             </div>
           </div>
@@ -395,23 +393,20 @@ export default function QuoteWizard() {
             <div className="mx-auto mb-[50px] max-w-[720px] text-center">
               <p className="eyebrow m-0 mb-4">Why Homeowners Trust Us</p>
               <h2 className="m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] text-white">
-                43 five-star Google reviews
+                What our pool-care customers say
               </h2>
             </div>
             <div className="mx-auto mb-12 grid max-w-[860px] grid-cols-1 gap-6 text-center sm:grid-cols-3">
-              {[
-                ["30+", "Years Experience"],
-                ["43", "Five-Star Reviews"],
-                ["6–8 wks", "Average Build"],
-              ].map(([num, label]) => (
+              {STATS.map(({value: num, label}) => (
                 <div key={label}>
-                  <p className="m-0 text-4xl font-extrabold text-cyan">{num}</p>
-                  <p className="m-0 mt-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-white/70">
+                  <p className="m-0 text-4xl font-extrabold text-cyan-light">{num}</p>
+                  <p className="m-0 mt-1 text-sm font-medium leading-normal text-white/80">
                     {label}
                   </p>
                 </div>
               ))}
             </div>
+            <p className="mx-auto mb-8 max-w-[720px] text-center text-base leading-relaxed text-white/80">These reviews describe pool care and equipment work, not new pool construction.</p>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
               {REVIEWS.map((r) => (
                 <figure
@@ -424,9 +419,9 @@ export default function QuoteWizard() {
                   <blockquote className="m-0 flex-1 text-[15px] leading-[1.8] text-white/85">
                     &ldquo;{r.quote}&rdquo;
                   </blockquote>
-                  <figcaption className="mt-5 text-[13px] font-semibold uppercase tracking-[1px] text-white">
+                  <figcaption className="mt-5 text-base font-semibold leading-relaxed text-white">
                     {r.name}
-                    <span className="ml-2 font-normal normal-case tracking-normal text-white/60">
+                    <span className="mt-1 block text-sm font-normal text-white/80">
                       {r.source}
                     </span>
                   </figcaption>
@@ -617,7 +612,7 @@ export default function QuoteWizard() {
         step={3}
         kicker="Step 3 of 5"
         title="When are you planning to build?"
-        sub="This helps us provide the best service timeline for you."
+        sub="Tell us your target start date. Ryan will confirm current availability when you discuss the project."
         onBack={() => setScreen(2)}
         onContinue={() => setScreen(4)}
         continueDisabled={!timeline}
@@ -765,9 +760,9 @@ export default function QuoteWizard() {
     <section className="section-x bg-shell py-[80px]">
       <div className="mx-auto w-full max-w-[820px]">
         <div className="rounded-lg border border-line bg-white p-6 text-center sm:p-12">
-          <p className="eyebrow m-0 mb-5">Your Instant Estimate</p>
+          <p className="eyebrow m-0 mb-5">Your Sample Estimate</p>
           <h1 className="m-0 mb-8 text-[clamp(28px,4vw,42px)] font-extrabold uppercase leading-[1.12] text-navy">
-            {firstName ? `${firstName}, here's` : "Here's"} your estimated range
+            {firstName ? `${firstName}, here's` : "Here's"} your sample estimate
           </h1>
           <p className="m-0 text-[clamp(36px,6vw,60px)] font-extrabold leading-none text-cyan">
             {formatUsd(estimate.low)} – {formatUsd(estimate.high)}
@@ -825,8 +820,8 @@ export default function QuoteWizard() {
           </div>
 
           <p className="mx-auto m-0 mb-9 mt-8 max-w-[560px] text-sm leading-[1.75] text-slate">
-            This range is based on our standard build pricing. Your exact quote depends on yard
-            access, slope and soil, which we confirm in a free design consultation.
+            This preview uses sample prices, not an approved Integrity quote. Request a free site visit
+            for a proposal based on your yard, access, slope, soil and design.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3.5">

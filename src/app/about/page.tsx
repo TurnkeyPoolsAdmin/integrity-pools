@@ -7,13 +7,13 @@ import { BUSINESS, STATS } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Integrity Pools has been building Southern California pools since 2012. Owner-run, deliberately small, and still servicing the pools we build.",
+    "Work directly with owner Ryan Osborne on your pool design and build. Free 3D design, itemized pricing and ongoing pool care in Menifee and the Inland Empire.",
 };
 
 const RULES = [
   {
     title: "Answer the Phone",
-    body: "Ryan's number is on the paperwork and he answers it directly. Most build problems are small and fixable when they are raised the same week.",
+    body: "Ryan is your direct contact for questions, schedule updates and decisions about your build.",
   },
   {
     title: "Show It Before You Build It",
@@ -21,11 +21,11 @@ const RULES = [
   },
   {
     title: "Price and Schedule Up Front",
-    body: "An itemised proposal and a target date at contract. If the date moves, the call comes the same day.",
+    body: "Review each cost and the target schedule before construction starts. Ryan keeps you informed as the build progresses.",
   },
   {
     title: "Keep It One Project",
-    body: "Pool, hardscape, features and lighting on one contract with our own crews. One schedule, one warranty, one number to call.",
+    body: "Coordinate the pool, decking, features and lighting in one plan, with Ryan managing the construction schedule.",
   },
 ];
 
@@ -36,13 +36,13 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[900px]">
           <p className="eyebrow m-0 mb-5">About Integrity Pools</p>
           <h1 className="display-heading m-0 mb-6 max-w-[900px] text-[clamp(46px,5.5vw,72px)] leading-[1.08] text-navy">
-            Owner-Run, and Small on Purpose
+            Work with Ryan from design to first swim
           </h1>
           <p className="m-0 text-[17px] leading-[1.8] text-slate">
             Integrity Pools builds gunite pools, spas and the outdoor living space that goes around
-            them, across Menifee, the Temecula Valley and the wider Inland Empire. We only ever run a handful
-            of projects at once. That is a deliberate choice, and it is the reason the same person
-            stays on your build from the first walk-through to the day the water goes in.
+            them, across Menifee, the Temecula Valley and the wider Inland Empire. Owner Ryan Osborne
+            is your direct contact for the design, pricing and construction. You know who to call
+            when you have questions or need to make a decision.
           </p>
         </div>
       </section>
@@ -58,14 +58,12 @@ export default function AboutPage() {
               them from the first walk-through to the day the water goes in.
             </p>
             <p className="m-0">
-              He is the number on your paperwork. Not an account manager, not a call centre. When
-              something needs deciding on your build, you are talking to the person who can decide
-              it.
+              Ryan reviews your layout, explains the costs and coordinates the build. You can discuss
+              changes directly with the person managing your project.
             </p>
             <p className="m-0">
-              He is also the ceiling on how much work we take on. Every build goes across his desk
-              and onto his schedule, which caps how many can run at once. We would rather turn work
-              away than stretch a crew across more yards than it can properly cover.
+              Before construction starts, you review the design, the itemized proposal and the schedule
+              with Ryan. Your approval sets the plan for the work ahead.
             </p>
           </div>
         </div>
@@ -93,27 +91,22 @@ export default function AboutPage() {
               Our Story
             </h2>
             <p className="m-0 mt-6 text-[clamp(24px,2.6vw,32px)] font-bold uppercase leading-[1.2] text-navy">
-              Two Halves of One Business
+              Pool construction and ongoing care
             </p>
           </div>
           <div className="flex flex-col gap-5 text-base leading-[1.8] text-slate">
             <p className="m-0">
-              A pool, a patio and a lighting plan usually mean three companies, three contracts and
-              three numbers to ring when the schedule slips. Removing that is the whole point of how
-              we are set up.
+              Your pool, patio and lighting need to work together. We plan them as one project,
+              so the layout, drainage and equipment are considered before construction begins.
             </p>
             <p className="m-0">
-              We have been building Southern California pools since {BUSINESS.since}. Alongside the
-              build side, we run a pool service business in the same valley. That is unusual, and it
-              matters more than it sounds: we are the people who get called back to the pools we
-              build. Nobody cuts a corner on an equipment pad they will personally be standing at in
-              three years.
+              We have been building Southern California pools since {BUSINESS.since}. We also provide
+              pool care in the same area. At startup, we balance the water and explain the equipment.
+              You can continue with weekly service after the build.
             </p>
             <p className="m-0">
-              Around {BUSINESS.ownerFirstName} sits a settled group of gunite crews, masons and
-              finish trades, most of them on our jobs for years. That is why the stonework looks the
-              same standard from one backyard to the next. You are not getting whichever crew was
-              free that week.
+              {BUSINESS.ownerFirstName} coordinates the crews and trades involved in your pool,
+              stonework and finishes. Questions about the work go directly to him.
             </p>
             <p className="m-0">
               Today we build across Menifee, Murrieta, Temecula, Wildomar, Lake Elsinore, Corona,
@@ -127,10 +120,10 @@ export default function AboutPage() {
         <div className="mx-auto w-full max-w-[1400px] section-x grid grid-cols-3 gap-4 py-12 sm:gap-8">
           {STATS.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="m-0 whitespace-nowrap text-[21px] font-extrabold text-white sm:text-[34px]">
+              <p className="m-0 whitespace-nowrap text-[18px] font-extrabold text-white sm:text-[34px]">
                 {s.value}
               </p>
-              <p className="m-0 mt-1.5 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/50 sm:text-[11px]">
+              <p className="m-0 mt-1.5 text-sm font-medium leading-normal text-white/80">
                 {s.label}
               </p>
             </div>
@@ -143,8 +136,8 @@ export default function AboutPage() {
           <SectionHeading
             className="mb-[50px] max-w-[720px]"
             eyebrow="How We Work"
-            title="Four Rules We Work To"
-            body="These four cover what goes wrong on most builds. Writing them down means nobody here has to work it out in the moment, and it means you can hold us to them."
+            title="What you can expect from Integrity"
+            body="A clear design, a detailed price and a direct contact help you make informed choices throughout your build."
           />
           <div className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
             {RULES.map((r, i) => (
@@ -160,11 +153,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ProcessSteps eyebrow="Our Process" title="The Same Five Steps, Every Time" />
+      <ProcessSteps eyebrow="Our Process" title="The steps from design to startup" />
 
       <FinalCta
-        title="Come See the Work"
-        body="Our recent clients are happy to talk, and there is almost always an active jobsite you can walk. Ask for either one and we will set it up. We would rather you saw the work in person than took our word for it."
+        title="Meet Ryan and discuss your project"
+        body="Book a free site visit to discuss your layout, budget and questions. Ryan will review the property and prepare a design and itemized quote so you can decide with clear information."
       />
     </>
   );

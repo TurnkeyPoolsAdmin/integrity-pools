@@ -22,7 +22,7 @@ export const POOL_MODELS: PoolModel[] = [
     lengthFt: 16,
     widthFt: 8,
     description:
-      "The perfect entry-level pool for smaller yards. A very popular option.",
+      "A compact 8 by 16 foot layout for cooling off and relaxing in a smaller yard.",
     basePrice: 85000,
   },
   {
@@ -32,7 +32,7 @@ export const POOL_MODELS: PoolModel[] = [
     lengthFt: 24,
     widthFt: 12,
     description:
-      "The compact and sensible option. Great middle ground for smaller yards while keeping real swimming space.",
+      "A 12 by 24 foot layout with room to swim while leaving space for decking and seating.",
     basePrice: 105000,
   },
   {
@@ -42,7 +42,7 @@ export const POOL_MODELS: PoolModel[] = [
     lengthFt: 30,
     widthFt: 15,
     description:
-      "The most popular choice. Generous swimming space with a timeless form factor.",
+      "A 15 by 30 foot layout with space for swimming, play and optional built-in seating.",
     basePrice: 130000,
   },
   {
@@ -52,7 +52,7 @@ export const POOL_MODELS: PoolModel[] = [
     lengthFt: 36,
     widthFt: 18,
     description:
-      "A statement pool. Full-sized dimensions for the ultimate backyard experience.",
+      "An 18 by 36 foot layout for a larger yard, with room to plan separate swimming and seating areas.",
     basePrice: 160000,
   },
   {
@@ -62,7 +62,7 @@ export const POOL_MODELS: PoolModel[] = [
     lengthFt: 40,
     widthFt: 20,
     description:
-      "The largest standard residential footprint we offer. A piece that defines the property.",
+      "A 20 by 40 foot layout. Review yard access, setbacks and the surrounding deck space at your site visit.",
     basePrice: 195000,
   },
 ];
@@ -86,35 +86,35 @@ export const DECKING_MATERIALS: DeckingMaterial[] = [
     id: "travertine",
     name: "Travertine Pavers",
     description:
-      "Premium natural stone that stays cool underfoot and looks timeless. Typically available in Ivory, Silver, and Noce colors.",
+      "Natural stone pavers in colors such as ivory, silver and noce. Review samples, texture and heat in direct sun before choosing.",
     pricePerSqft: 28,
   },
   {
     id: "pavers",
     name: "Standard Pavers",
     description:
-      "Classic warmth and character. Individual pavers can be replaced if damaged.",
+      "Individual paving units arranged in a pattern. Damaged pieces can be replaced separately.",
     pricePerSqft: 22,
   },
   {
     id: "flagstone",
     name: "Natural Flagstone",
     description:
-      "Organic, unique, and luxurious. No two flagstone decks look the same.",
+      "Natural stone with varied shapes and colors. Review the surface texture and joint layout with your design.",
     pricePerSqft: 30,
   },
   {
     id: "bluestone",
     name: "Bluestone Pavers",
     description:
-      "A classic premium decking material. Popular in higher-end builds.",
+      "Stone pavers in blue-gray tones. Compare samples, finishes and layout options with Ryan.",
     pricePerSqft: 32,
   },
   {
     id: "porcelain",
     name: "Porcelain Tiles",
     description:
-      "Our highest-end finish. Will level up any backyard to a new level of luxury. Many options available.",
+      "Porcelain in a range of colors and patterns. Review outdoor-rated options and surface texture for your pool deck.",
     pricePerSqft: 38,
   },
 ];
@@ -150,7 +150,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
         id: "salt",
         name: "Saltwater System",
         description:
-          "Gentler on skin and eyes than traditional chlorine. Cheaper to run. Self-generating and easier to maintain.",
+          "A salt system that generates chlorine in the pool equipment. Ryan can explain its care needs and running costs.",
         price: 2500,
       },
       {
@@ -169,7 +169,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
         id: "heatpump",
         name: "Heat Pump",
         description:
-          "Energy-efficient heating that extends your swim season by months.",
+          "A heating option sized to your pool, local conditions and planned use.",
         price: 6500,
       },
       {
@@ -188,35 +188,35 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
         id: "spa",
         name: "Built-in Spa",
         description:
-          "A seamlessly integrated spa/hot tub. Either level or raised. Will instantly level up any backyard pool project.",
+          "A built-in spa set level with the pool or raised above it. Choose the seating and finish during design.",
         price: 20000,
       },
       {
         id: "shelf",
         name: "Sun Shelf / Tanning Ledge",
         description:
-          "A shallow entry platform perfect for loungers, toddlers, and pets.",
+          "A shallow pool ledge for in-water seating or loungers.",
         price: 6000,
       },
       {
         id: "sheer",
         name: "Sheer-Descent Water Feature",
         description:
-          "Raised back wall with an elegant sheer-descent water feature. Another instant level-up for any pool project.",
+          "A sheet of water flowing from a raised wall into the pool, with plumbing planned during design.",
         price: 7500,
       },
       {
         id: "jets",
         name: "Deck Jets",
         description:
-          "Elegant water arcs that shoot from the deck into the pool. Very popular with kids and pets.",
+          "Adjustable streams of water that arc from the deck into the pool.",
         price: 3500,
       },
       {
         id: "led",
         name: "LED Color Lighting",
         description:
-          "Multi-color LED lighting that transforms your pool at night.",
+          "Color-changing underwater lights, with placement and controls included in the lighting plan.",
         price: 2500,
       },
     ],
@@ -228,7 +228,7 @@ export const FEATURE_GROUPS: FeatureGroup[] = [
         id: "automation",
         name: "Pool Automation System",
         description:
-          "Control everything — lights, pump, temperature, jets — from your phone.",
+          "Control compatible lights, pumps, heating and features from your phone.",
         price: 6000,
       },
     ],

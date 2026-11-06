@@ -74,13 +74,13 @@ export default async function ServicePage({
               </div>
               <dl className="m-0 mt-11 grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
-                    Typical Timeline
+                  <dt className="m-0 text-sm font-medium text-white/70">
+                    Project Schedule
                   </dt>
-                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">6–8 weeks, dig to dive</dd>
+                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">Reviewed with your proposal</dd>
                 </div>
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
+                  <dt className="m-0 text-sm font-medium text-white/70">
                     Included
                   </dt>
                   <dd className="m-0 mt-1.5 text-sm font-bold text-white">
@@ -88,17 +88,17 @@ export default async function ServicePage({
                   </dd>
                 </div>
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
-                    Financing
+                  <dt className="m-0 text-sm font-medium text-white/70">
+                    Your Contact
                   </dt>
-                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">Available on request</dd>
+                  <dd className="m-0 mt-1.5 text-sm font-bold text-white">Ryan Osborne</dd>
                 </div>
               </dl>
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.35)] lg:h-[440px]">
               <Image
                 src={heroSrc}
-                alt={service.imageAlt}
+                alt={service.heroImageAlt ?? service.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
                 loading="eager"
@@ -141,8 +141,9 @@ export default async function ServicePage({
           <div className="mb-11 flex flex-wrap items-end justify-between gap-8">
             <SectionHeading
               className="max-w-[720px]"
-              eyebrow="Project Gallery"
-              title={`${service.name} We've Built Near Menifee`}
+              eyebrow="Design Inspiration"
+              title="Pool and patio design ideas"
+              body="Reference photos to help you choose layouts and finishes. These are not completed Integrity projects."
             />
             <Link
               href="/gallery"
@@ -156,18 +157,20 @@ export default async function ServicePage({
             {gallery.map((p) => (
               <Link
                 key={p.slug}
-                href="/gallery"
-                className="group relative block h-[210px] overflow-hidden rounded-lg"
+                href={`/gallery#${p.slug}`}
+                className="group flex flex-col overflow-hidden rounded-lg bg-navy"
               >
+                <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={p.image}
                   alt={p.alt}
                   fill
-                  sizes="(max-width: 1024px) 50vw, 430px"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 430px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
+                </div>
                 <span className="photo-caption">
-                  {p.city} &middot; {p.category}
+                  {p.title}
                 </span>
               </Link>
             ))}
@@ -175,7 +178,7 @@ export default async function ServicePage({
         </div>
       </section>
 
-      <Reviews light eyebrow="Menifee & Temecula Valley Homeowners" title="In Their Words" />
+      <Reviews light />
 
       {/* FAQ */}
       <section className="section-x bg-white py-[100px]">
@@ -225,7 +228,7 @@ export default async function ServicePage({
 
       <FinalCta
         title={`Get a Quote for Your ${service.name} Project`}
-        body="Tell us about the yard. We walk the site, talk through what is realistic, and send an itemised proposal with a design, normally inside a week."
+        body="Book a free site visit with Ryan. Review what fits your yard and budget, then receive a design and itemized proposal before you decide."
       />
     </>
   );

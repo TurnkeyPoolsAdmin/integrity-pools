@@ -13,7 +13,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Pool Construction, Remodeling & Hardscape"
-        body="A narrow list, run deep. New gunite builds, remodels of tired pools, and the decking, walls and lighting that finish the space, all from one company with its own crews. One schedule, one warranty, one number to call."
+        body="Build a custom pool, remodel an existing one or complete the space around it. Integrity coordinates design, permits and construction, with an itemized quote and Ryan as your direct contact."
       />
       <WhatWeBuild />
       <ProcessSteps />

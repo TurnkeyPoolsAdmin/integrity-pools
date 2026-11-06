@@ -55,7 +55,7 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-2">
-      <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
+      <span className="text-sm font-semibold text-slate">
         {label}
         {required ? " *" : ""}
       </span>
@@ -128,8 +128,8 @@ export default function ContactForm() {
           Your request is in
         </h2>
         <p className="m-0 text-base leading-[1.75] text-slate">
-          We will come back to you within one business day to book the site visit. If it is urgent,
-          call us and we will pick up.
+          We will contact you within one business day to arrange your site visit.
+          For urgent questions, call (951) 444-7150.
         </p>
       </div>
     );
@@ -156,7 +156,7 @@ export default function ContactForm() {
       {step === 0 ? (
         <div>
           <p className="m-0 mb-1 text-[19px] font-bold text-navy">
-            What are you thinking about building?
+            What would you like to build or update?
           </p>
           <p className="m-0 mb-6 text-sm text-slate">Pick everything that applies.</p>
           <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -201,7 +201,7 @@ export default function ContactForm() {
 
       {step === 2 ? (
         <div className="flex flex-col gap-4">
-          <p className="m-0 mb-1 text-[19px] font-bold text-navy">Where do we send it?</p>
+          <p className="m-0 mb-1 text-[19px] font-bold text-navy">How can Ryan reach you?</p>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field autoComplete="name" label="Name" value={name} onChange={setName} required />
             <Field autoComplete="tel" label="Phone" value={phone} onChange={setPhone} type="tel" required />
@@ -209,7 +209,7 @@ export default function ContactForm() {
           <Field autoComplete="email" label="Email" value={email} onChange={setEmail} type="email" required />
           <Field autoComplete="street-address" label="Project address" value={address} onChange={setAddress} />
           <label className="flex flex-col gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
+            <span className="text-sm font-semibold text-slate">
               Anything else we should know?
             </span>
             <textarea

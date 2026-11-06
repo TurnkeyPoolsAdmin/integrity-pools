@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!area) return {};
   return {
     title: `Pool Builder in ${area.name}, CA`,
-    description: `Custom gunite pools, spas, hardscape and lighting built in ${area.name}, CA by Integrity Pools. Free site visit, design and itemised quote.`,
+    description: `Custom gunite pools, spas, hardscape and lighting built in ${area.name}, CA by Integrity Pools. Free site visit, design and itemized quote.`,
   };
 }
 
@@ -68,7 +68,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               </div>
               {area.neighborhoods.length ? (
                 <p className="m-0 mt-9 border-t border-white/10 pt-7 text-sm leading-[1.8] text-white/70">
-                  <span className="font-semibold text-white/70">Neighbourhoods we build in: </span>
+                  <span className="font-semibold text-white/70">Neighborhoods we serve: </span>
                   {area.neighborhoods.join(" · ")}
                 </p>
               ) : null}
@@ -76,7 +76,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             <div className="relative h-[300px] overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(0,0,0,0.35)] lg:h-[420px]">
               <Image
                 src={HERO_IMAGE}
-                alt={`Custom pool built by Integrity Pools near ${area.name}, CA`}
+                alt="Rectangular pool and spa with stone decking and lawn"
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
                 loading="eager"
@@ -94,7 +94,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             className="mb-[50px] max-w-[720px]"
             eyebrow="What We Build"
             title={`Pools & Outdoor Living in ${area.name}`}
-            body={`Everything below is built by our own crews on one contract, anywhere in ${area.name} and the surrounding communities.`}
+            body={`Plan your pool, spa and surrounding patio with one builder serving ${area.name}. Ryan coordinates the design and construction, with each part priced in your proposal.`}
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.map((s) => (
@@ -119,25 +119,28 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         <div className="mx-auto w-full max-w-[1400px]">
           <SectionHeading
             className="mb-11 max-w-[720px]"
-            eyebrow="Recent Work"
-            title="Backyards Near You"
+            eyebrow="Design Inspiration"
+            title="Ideas for your pool and patio"
+            body="Reference photos show design options, not completed Integrity projects. Ask Ryan which ideas fit your property."
           />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((p) => (
               <Link
                 key={p.slug}
-                href="/gallery"
-                className="group relative block h-[210px] overflow-hidden rounded-lg"
+                href={`/gallery#${p.slug}`}
+                className="group flex flex-col overflow-hidden rounded-lg bg-navy"
               >
+                <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={p.image}
                   alt={p.alt}
                   fill
-                  sizes="(max-width: 1024px) 50vw, 430px"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 430px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
+                </div>
                 <span className="photo-caption">
-                  {p.city} &middot; {p.category}
+                  {p.title}
                 </span>
               </Link>
             ))}
@@ -176,7 +179,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       <FinalCta
         bg="bg-shell"
         title={`Build in ${area.name}`}
-        body={`Tell us about the yard. We walk the site, talk through what is realistic in ${area.name}, and send an itemised proposal with a design.`}
+        body={`Tell us about the yard. We walk the site, talk through what is realistic in ${area.name}, and send an itemized proposal with a design.`}
       />
     </>
   );

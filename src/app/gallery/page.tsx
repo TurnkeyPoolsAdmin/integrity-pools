@@ -5,7 +5,7 @@ import { FinalCta, PageHero } from "@/components/sections";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "Custom gunite pools, spas, hardscape and lighting built by Integrity Pools across Menifee, Murrieta and the Inland Empire.",
+    "Explore pool shapes, spas, decking and lighting ideas. Ask Integrity Pools for a free design based on your yard and budget.",
 };
 
 export default function GalleryPage() {
@@ -13,9 +13,9 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Work"
-        title="Backyards We've Finished"
-        body="Every one of these started as an empty yard and a conversation. Photography is from real Integrity Pools projects across Menifee, the Temecula Valley and the Inland Empire."
+        eyebrow="Design Inspiration"
+        title="Find ideas for your pool and patio"
+        body="Explore layouts, materials and features to discuss with Ryan. These reference photos show design options, not completed Integrity projects."
       />
 
       <section className="section-x bg-white py-[80px]">
@@ -26,8 +26,8 @@ export default function GalleryPage() {
 
       <FinalCta
         bg="bg-shell"
-        title="Want One of These?"
-        body="Send us the yard. We walk the site, talk through what is realistic, and come back with an itemised proposal and a design."
+        title="See your ideas in a design for your yard"
+        body="Tell Ryan which layouts and features you like. Your free site visit leads to a 3D design and itemized quote based on your property."
       />
     </>
   );
