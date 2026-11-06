@@ -13,118 +13,49 @@ import {
 } from "@/components/sections";
 import Faq from "@/components/Faq";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { BUSINESS, HOME_FAQS, PROJECTS } from "@/lib/site";
+import { HOME_FAQS, PROJECTS } from "@/lib/site";
 
-const HERO_TILES: {
-  src: string;
-  alt: string;
-  label: string;
-  className: string;
-  sizes: string;
-  priority?: boolean;
-  imgClassName?: string;
-}[] = [
-  {
-    src: "/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp",
-    alt: "Gunite pool and spa with an outdoor living space alongside",
-    label: "Custom Pools",
-    className: "col-span-2",
-    sizes: "(max-width: 1024px) 100vw, 1040px",
-    priority: true,
-  },
-  {
-    src: "/images/aqua/projects/pool-spa-16/pool-spa-16-01.webp",
-    alt: "Gunite pool and spa beneath a covered outdoor structure",
-    label: "Pools & Spas",
-    className: "lg:row-span-2",
-    sizes: "(max-width: 1024px) 50vw, 400px",
-    imgClassName: "object-[25%_center]",
-  },
-  {
-    src: "/images/aqua/projects/plunge-pool-01/plunge-pool-01-02.webp",
-    alt: "Plunge pool lit low in the evening",
-    label: "Plunge Pools",
-    className: "",
-    sizes: "(max-width: 1024px) 50vw, 520px",
-  },
-  {
-    src: "/images/aqua/projects/plunge-pool-05/plunge-pool-05-03.webp",
-    alt: "Plunge pool with a raised spa spilling into it",
-    label: "Water Features",
-    className: "hidden lg:block",
-    sizes: "420px",
-  },
-];
-
-// Slot order mirrors Aqua's recent-work mosaic. Where Aqua shows a service we
-// don't offer (landscapes, shade structures, outdoor kitchens) the slot takes
-// the nearest pool-side project instead.
-const RECENT = [
-  { i: 6, className: "col-span-2 row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
-  { i: 12, className: "", sizes: "(max-width: 1024px) 50vw, 350px" },
-  { i: 9, className: "row-span-2", sizes: "(max-width: 1024px) 50vw, 350px" },
-  { i: 11, className: "", sizes: "(max-width: 1024px) 50vw, 350px" },
-  { i: 3, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
-  { i: 5, className: "sm:col-span-2 sm:row-span-2", sizes: "(max-width: 1024px) 100vw, 700px" },
-];
+const RECENT = [0, 9, 11];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="section-x py-[70px] lg:py-[90px]">
-        <div className="mx-auto grid w-full max-w-[1500px] items-center gap-12 lg:grid-cols-[1.1fr_1fr]">
-          <div className="flex flex-col justify-center lg:pr-5">
-            <p className="m-0 mb-6 text-[13px] font-semibold uppercase tracking-[2.5px] text-cyan">
-              Menifee&apos;s Custom Pool Builder
-            </p>
-            <h1 className="m-0 mb-7 text-[clamp(40px,5.5vw,62px)] font-extrabold uppercase leading-[1.05] tracking-[-0.5px] text-navy">
-              <span className="block">Pools, Spas</span>
-              <span className="block">&amp; Hardscape</span>
-              <span className="block text-cyan">in Menifee, CA</span>
+      <section className="home-hero">
+        <div className="mx-auto grid max-w-[1680px] lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="section-x flex flex-col justify-center py-9 sm:py-14 lg:py-20">
+            <p className="eyebrow mb-6">Menifee&apos;s Custom Pool Builder</p>
+            <h1 className="display-heading m-0 max-w-[650px] text-[clamp(48px,5.6vw,82px)] leading-[1.02] text-navy">
+              Pools, Spas<br />&amp; Hardscape<br />
+              <span className="text-cyan">in Menifee, CA</span>
             </h1>
-            <p className="m-0 mb-10 max-w-[500px] text-[17px] leading-[1.75] text-slate">
+            <p className="mb-7 mt-5 max-w-[480px] text-base leading-[1.65] sm:mt-7 sm:text-[17px] sm:leading-[1.75] text-slate">
               We design and build custom gunite pools, spas, hardscape and outdoor lighting for
               homeowners across Menifee, Murrieta and the Inland Empire.
             </p>
-            <div className="flex flex-wrap gap-3.5">
-              <Button href="/contact" size="lg">
-                <ArrowIcon />
-                Start Your Project
-              </Button>
-              <Button href={BUSINESS.phoneHref} variant="outline" size="lg">
-                {BUSINESS.phone}
-              </Button>
+            <div className="flex flex-wrap items-center gap-5">
+              <Button href="/contact" size="lg" className="px-6 sm:px-9">Start Your Project<ArrowIcon /></Button>
+              <Link href="/gallery" className="inline-flex min-h-12 items-center gap-2 border-b border-navy text-sm font-semibold text-navy hover:text-cyan">
+                View Gallery<ArrowIcon className="h-4 w-4" />
+              </Link>
             </div>
+            <p className="mt-5 text-xs font-medium tracking-wide text-slate">Free site visit · Free design and quote · No obligation</p>
           </div>
-
-          <div className="grid w-full grid-cols-2 grid-rows-[150px_150px] gap-3 sm:grid-rows-[170px_170px] lg:grid-cols-[1fr_1fr_0.8fr] lg:grid-rows-[200px_200px]">
-            {HERO_TILES.map((t) => (
-              <div
-                key={t.src}
-                className={`relative overflow-hidden rounded-lg shadow-[0_8px_30px_rgba(26,42,58,0.12)] ${t.className}`}
-              >
-                <Image
-                  src={t.src}
-                  alt={t.alt}
-                  fill
-                  sizes={t.sizes}
-                  priority={t.priority}
-                  className={`object-cover ${t.imgClassName ?? ""}`}
-                />
-                <span className="absolute bottom-3 left-3 rounded-[3px] bg-navy/85 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[1px] text-white">
-                  {t.label}
-                </span>
-              </div>
-            ))}
+          <div className="hero-photo relative overflow-hidden">
+            <Image src="/images/aqua/projects/pool-spa-02/pool-spa-02-01.webp"
+              alt="Gunite pool and spa with an outdoor living space alongside"
+              fill sizes="(max-width: 1023px) 100vw, 55vw" loading="eager" fetchPriority="high"
+              className="object-cover object-[55%_center]" />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent px-7 pb-7 pt-20">
+              <Link href="/gallery" className="flex items-center justify-between gap-4 text-white">
+                <span className="text-sm font-medium tracking-wide">Custom pools. Room to unwind.</span>
+                <span className="flex h-11 w-11 items-center justify-center rounded-full border border-white/60"><ArrowIcon /></span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-
       <StatsBar />
-      <WhatWeBuild />
-      <WhatToExpect />
-      <ProcessSteps body="We have worked hard to make the process as smooth and streamlined as we can. Here is how a typical Integrity backyard build runs." />
+      <WhatWeBuild featured />
 
       {/* Recent work */}
       <section className="section-x bg-white py-[100px]">
@@ -143,29 +74,29 @@ export default function HomePage() {
               <ArrowIcon className="h-3 w-3" />
             </Link>
           </div>
-          <div className="grid auto-rows-[150px] grid-cols-2 gap-3 sm:auto-rows-[210px] lg:grid-cols-4">
-            {RECENT.map(({ i, className, sizes }) => {
+          <div className="grid gap-7 md:grid-cols-3">
+            {RECENT.map((i) => {
               const p = PROJECTS[i];
               return (
-                <div key={p.slug} className={`relative overflow-hidden rounded-lg ${className}`}>
-                  <Link href="/gallery" className="group block h-full w-full">
-                    <Image
-                      src={p.image}
-                      alt={p.alt}
-                      fill
-                      sizes={sizes}
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    />
-                    <span className="absolute bottom-3 left-3 rounded-[3px] bg-navy/85 px-2.5 py-1.5 text-[9px] font-semibold uppercase tracking-[1px] text-white">
-                      {p.city} &middot; {p.category}
-                    </span>
-                  </Link>
-                </div>
+                <Link key={p.slug} href={`/gallery#${p.slug}`} className="group block">
+                  <div className="project-photo relative overflow-hidden rounded-xl">
+                    <Image src={p.image} alt={p.alt} fill sizes="(max-width: 767px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
+                  </div>
+                  <div className="mt-4 flex items-center justify-between gap-3">
+                    <div><p className="text-xs font-medium tracking-wide text-cyan">{p.category}</p>
+                    <h3 className="mt-1 text-xl font-medium text-navy">{p.title}</h3></div>
+                    <ArrowIcon className="h-5 w-5 text-cyan" />
+                  </div>
+                </Link>
               );
             })}
           </div>
         </div>
       </section>
+
+      <WhatToExpect />
+      <ProcessSteps body="We have worked hard to make the process as smooth and streamlined as we can. Here is how a typical Integrity backyard build runs." />
 
       <Reviews />
       <ServiceAreaSection />

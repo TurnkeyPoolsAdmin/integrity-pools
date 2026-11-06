@@ -32,7 +32,7 @@ export default function Footer() {
             Menifee&apos;s custom gunite pool builder. Pools, spas, hardscape and lighting,
             all on one contract, from a company that still services pools every week.
           </p>
-          <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/40">
+          <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/70">
             {BUSINESS.license}
             <br />
             {BUSINESS.credential}
@@ -70,7 +70,7 @@ export default function Footer() {
               <li key={s.slug}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="text-sm font-medium text-white/70 transition-colors hover:text-cyan"
+                  className="text-sm font-medium text-white/70 transition-colors hover:text-cyan-light"
                 >
                   {s.name}
                 </Link>
@@ -83,8 +83,8 @@ export default function Footer() {
           <ColumnHeading>Company</ColumnHeading>
           <ul className="m-0 flex list-none flex-col gap-3.5 p-0">
             {COMPANY_LINKS.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm font-medium text-white/70 transition-colors hover:text-cyan">
+              <li key={l.label}>
+                <Link href={l.href} className="text-sm font-medium text-white/70 transition-colors hover:text-cyan-light">
                   {l.label}
                 </Link>
               </li>
@@ -106,7 +106,7 @@ export default function Footer() {
                 <p className="m-0 mt-1 text-sm font-medium leading-[1.6]">
                   <a
                     href={BUSINESS.phoneHref}
-                    className="text-white transition-colors hover:text-cyan"
+                    className="text-white transition-colors hover:text-cyan-light"
                   >
                     {BUSINESS.phone}
                   </a>
@@ -165,10 +165,10 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {BUSINESS.legalName}. All rights reserved.
           </p>
           <div className="flex gap-7">
-            <Link href="/privacy" className="text-[13px] text-white/50 transition-colors hover:text-cyan">
+            <Link href="/privacy" className="text-[13px] text-white/50 transition-colors hover:text-cyan-light">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-[13px] text-white/50 transition-colors hover:text-cyan">
+            <Link href="/terms" className="text-[13px] text-white/50 transition-colors hover:text-cyan-light">
               Terms of Service
             </Link>
           </div>

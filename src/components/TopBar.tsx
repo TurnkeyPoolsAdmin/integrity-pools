@@ -3,7 +3,7 @@ import { PhoneIcon } from "./ui";
 
 export default function TopBar() {
   return (
-    <div className="section-x flex flex-wrap items-center justify-between gap-1.5 border-b border-line bg-white py-2.5 text-[13px]">
+    <div className="section-x hidden flex-wrap sm:flex items-center justify-between gap-1.5 border-b border-line bg-white py-2.5 text-[13px]">
       <a
         href={BUSINESS.phoneHref}
         className="flex items-center gap-2 font-medium text-navy transition-colors hover:text-cyan"

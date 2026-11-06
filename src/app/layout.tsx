@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BUSINESS } from "@/lib/site";
 import "./globals.css";
 
-const montserrat = Montserrat({
+const sans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-montserrat",
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+const display = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
   display: "swap",
 });
 
@@ -46,7 +51,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"

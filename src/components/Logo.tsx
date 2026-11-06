@@ -17,13 +17,13 @@ export default function Logo({ light = false }: { light?: boolean }) {
   const ink = light ? "text-white" : "text-navy";
   const sub = light ? "text-white/60" : "text-slate";
   return (
-    <Link href="/" aria-label="Integrity Pools - home" className="flex shrink-0 items-center gap-3">
-      <WaveMark className="h-[46px] w-[38px]" color={light ? "#ffffff" : "#1b86c8"} />
+    <Link href="/" aria-label="Integrity Pools - home" className="flex shrink-0 items-center gap-2 sm:gap-3">
+      <WaveMark className="h-[40px] w-[30px] sm:h-[46px] sm:w-[38px]" color={light ? "#ffffff" : "#246c73"} />
       <span className="flex flex-col leading-none">
-        <span className={`text-[22px] font-extrabold uppercase tracking-[1px] ${ink}`}>
+        <span className={`text-[19px] sm:text-[22px] font-extrabold uppercase tracking-[1px] ${ink}`}>
           Integrity
         </span>
-        <span className={`mt-1 text-[9px] font-semibold uppercase tracking-[2.6px] ${sub}`}>
+        <span className={`mt-1 text-[8px] sm:text-[9px] font-semibold uppercase tracking-[2px] sm:tracking-[2.6px] ${sub}`}>
           Pools &amp; Hardscape
         </span>
       </span>

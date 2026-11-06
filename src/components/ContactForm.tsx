@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SERVICES } from "@/lib/site";
 
 const LEAD_EMAIL = "mattbsheeran@gmail.com"; // TODO(matt): switch to Integrity's real lead inbox
@@ -25,6 +25,7 @@ function Chip({
   return (
     <button
       type="button"
+      aria-pressed={active}
       onClick={onClick}
       className={`cursor-pointer rounded border px-4 py-3 text-left text-[13px] font-semibold transition-colors ${
         active
@@ -43,12 +44,14 @@ function Field({
   onChange,
   type = "text",
   required,
+  autoComplete,
 }: {
   label: string;
   value: string;
   onChange: (v: string) => void;
   type?: string;
   required?: boolean;
+  autoComplete?: string;
 }) {
   return (
     <label className="flex flex-col gap-2">
@@ -58,10 +61,12 @@ function Field({
       </span>
       <input
         type={type}
+        autoComplete={autoComplete}
+        name={autoComplete || label}
         value={value}
         required={required}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded border border-line-strong px-4 py-3 text-sm text-navy outline-none focus:border-cyan"
+        className="rounded border border-line-strong px-4 py-3 text-base text-navy focus:border-cyan"
       />
     </label>
   );
@@ -69,6 +74,14 @@ function Field({
 
 export default function ContactForm() {
   const [step, setStep] = useState(0);
+  const stepRef = useRef<HTMLDivElement>(null);
+  const changeStep = (next: number) => {
+    setStep(next);
+    requestAnimationFrame(() => {
+      stepRef.current?.focus({ preventScroll: true });
+      stepRef.current?.scrollIntoView({ behavior: "instant", block: "nearest" });
+    });
+  };
   const [projects, setProjects] = useState<string[]>([]);
   const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
@@ -123,11 +136,12 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-lg border border-line bg-white p-6 sm:p-10">
+    <form onSubmit={submit} className="rounded-xl border border-line bg-white p-6 shadow-[0_20px_60px_rgba(23,60,64,0.05)] sm:p-10">
       <ol className="m-0 mb-8 flex list-none gap-2 p-0">
         {STEPS.map((s, i) => (
           <li
             key={s}
+            aria-current={i === step ? "step" : undefined}
             className={`flex flex-1 items-center gap-2 border-t-2 pt-3 text-[11px] font-bold uppercase tracking-[1.2px] ${
               i <= step ? "border-cyan text-navy" : "border-line-cool text-faint"
             }`}
@@ -138,6 +152,7 @@ export default function ContactForm() {
         ))}
       </ol>
 
+      <div ref={stepRef} tabIndex={-1} aria-label={`Step ${step + 1} of ${STEPS.length}: ${STEPS[step]}`} className="rounded focus-visible:outline-none">
       {step === 0 ? (
         <div>
           <p className="m-0 mb-1 text-[19px] font-bold text-navy">
@@ -188,11 +203,11 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4">
           <p className="m-0 mb-1 text-[19px] font-bold text-navy">Where do we send it?</p>
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Name" value={name} onChange={setName} required />
-            <Field label="Phone" value={phone} onChange={setPhone} type="tel" required />
+            <Field autoComplete="name" label="Name" value={name} onChange={setName} required />
+            <Field autoComplete="tel" label="Phone" value={phone} onChange={setPhone} type="tel" required />
           </div>
-          <Field label="Email" value={email} onChange={setEmail} type="email" required />
-          <Field label="Project address" value={address} onChange={setAddress} />
+          <Field autoComplete="email" label="Email" value={email} onChange={setEmail} type="email" required />
+          <Field autoComplete="street-address" label="Project address" value={address} onChange={setAddress} />
           <label className="flex flex-col gap-2">
             <span className="text-[11px] font-bold uppercase tracking-[1.2px] text-muted">
               Anything else we should know?
@@ -201,21 +216,22 @@ export default function ContactForm() {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               rows={4}
-              className="rounded border border-line-strong px-4 py-3 text-sm text-navy outline-none focus:border-cyan"
+              className="rounded border border-line-strong px-4 py-3 text-base text-navy focus:border-cyan"
             />
           </label>
           {status === "error" ? (
-            <p className="m-0 text-sm font-semibold text-red-700">
+            <p role="alert" className="m-0 text-sm font-semibold text-red-700">
               Something went wrong sending that. Please call us instead.
             </p>
           ) : null}
         </div>
       ) : null}
 
+      </div>
       <div className="mt-8 flex items-center justify-between gap-4">
         <button
           type="button"
-          onClick={() => setStep((s) => Math.max(0, s - 1))}
+          onClick={() => changeStep(Math.max(0, step - 1))}
           disabled={step === 0}
           className="cursor-pointer border-none bg-transparent text-[13px] font-bold uppercase tracking-[1px] text-slate disabled:cursor-default disabled:opacity-30"
         >
@@ -224,7 +240,7 @@ export default function ContactForm() {
         {step < 2 ? (
           <button
             type="button"
-            onClick={() => setStep((s) => Math.min(2, s + 1))}
+            onClick={() => changeStep(Math.min(2, step + 1))}
             className="inline-flex cursor-pointer items-center justify-center rounded bg-navy px-9 py-4 text-[13px] font-bold uppercase tracking-[1px] text-white transition-colors hover:bg-cyan"
           >
             Continue

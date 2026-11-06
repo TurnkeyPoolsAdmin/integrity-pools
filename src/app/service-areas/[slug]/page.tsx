@@ -40,18 +40,18 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         <div className="section-x">
           <div className="mx-auto grid w-full max-w-[1400px] items-center gap-12 pb-[70px] pt-[60px] lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <nav aria-label="Breadcrumb" className="mb-6 flex gap-2 text-xs text-white/50">
-                <Link href="/" className="transition-colors hover:text-cyan">
+              <nav aria-label="Breadcrumb" className="mb-6 flex gap-2 text-xs text-white/70">
+                <Link href="/" className="transition-colors hover:text-cyan-light">
                   Home
                 </Link>
                 <span aria-hidden="true">/</span>
-                <Link href="/service-areas" className="transition-colors hover:text-cyan">
+                <Link href="/service-areas" className="transition-colors hover:text-cyan-light">
                   Service Areas
                 </Link>
               </nav>
               <p className="eyebrow m-0 mb-4">Serving {area.name}, CA</p>
-              <h1 className="m-0 mb-6 text-[clamp(34px,4.1vw,50px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
-                Custom Pool Builder in <span className="text-cyan">{area.name}</span>
+              <h1 className="display-heading m-0 mb-6 text-[clamp(42px,4.8vw,64px)] leading-[1.08] text-white">
+                Custom Pool Builder in <span className="text-cyan-light">{area.name}</span>
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
                 {area.blurb} We design the pool, build the deck and walls around it, run the lighting
@@ -67,7 +67,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 </Button>
               </div>
               {area.neighborhoods.length ? (
-                <p className="m-0 mt-9 border-t border-white/10 pt-7 text-sm leading-[1.8] text-white/50">
+                <p className="m-0 mt-9 border-t border-white/10 pt-7 text-sm leading-[1.8] text-white/70">
                   <span className="font-semibold text-white/70">Neighbourhoods we build in: </span>
                   {area.neighborhoods.join(" · ")}
                 </p>
@@ -79,7 +79,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                 alt={`Custom pool built by Integrity Pools near ${area.name}, CA`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
-                priority
+                loading="eager"
+                fetchPriority="high"
                 className="object-cover"
               />
             </div>
@@ -163,7 +164,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               <Link
                 key={a.slug}
                 href={`/service-areas/${a.slug}`}
-                className="rounded border border-line bg-white px-4 py-2.5 text-[13px] font-semibold text-navy transition-colors hover:border-cyan hover:text-cyan"
+                className="rounded border border-line bg-white px-4 py-2.5 text-[13px] font-semibold text-navy transition-colors hover:border-cyan hover:text-cyan-light"
               >
                 {a.name}
               </Link>

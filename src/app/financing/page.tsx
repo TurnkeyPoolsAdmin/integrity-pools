@@ -70,7 +70,7 @@ export default function FinancingPage() {
                 Talk to Us About Financing
               </Button>
               <Button href="/contact" variant="outline" size="lg">
-                Get an Instant Estimate
+                Request a Quote
               </Button>
             </div>
           </div>

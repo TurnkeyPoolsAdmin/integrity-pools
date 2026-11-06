@@ -35,7 +35,7 @@ export default function AboutPage() {
       <section className="section-x pb-14 pt-20">
         <div className="mx-auto w-full max-w-[900px]">
           <p className="eyebrow m-0 mb-5">About Integrity Pools</p>
-          <h1 className="m-0 mb-6 max-w-[900px] text-[clamp(38px,5.2vw,60px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-navy">
+          <h1 className="display-heading m-0 mb-6 max-w-[900px] text-[clamp(46px,5.5vw,72px)] leading-[1.08] text-navy">
             Owner-Run, and Small on Purpose
           </h1>
           <p className="m-0 text-[17px] leading-[1.8] text-slate">

@@ -34,7 +34,8 @@ export function StatsBar() {
 
 /* ---------------- What we build ---------------- */
 
-export function WhatWeBuild() {
+export function WhatWeBuild({ featured = false }: { featured?: boolean }) {
+  const shown = featured ? SERVICES.filter((s) => ["custom-pools", "plunge-pools", "pool-remodels"].includes(s.slug)) : SERVICES;
   return (
     <section className="section-x bg-white py-[100px]">
       <div className="mx-auto w-full max-w-[1400px]">
@@ -44,27 +45,27 @@ export function WhatWeBuild() {
           title="Everything that touches the pool"
           body="Pool construction, pool remodeling and the hardscape around them. That is the whole list, and it is narrow on purpose. The shell, the deck and the equipment are one job, so they should be one crew on one contract, not three companies blaming each other."
         />
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-          {SERVICES.map((s) => (
+        <div className={`grid grid-cols-1 gap-6 sm:grid-cols-2 ${featured ? "lg:grid-cols-3" : "lg:grid-cols-4"}`}>
+          {shown.map((s) => (
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="group flex flex-col overflow-hidden rounded-lg border border-line bg-white text-inherit transition-all hover:border-cyan hover:shadow-[0_14px_40px_rgba(26,42,58,0.10)]"
+              className="group flex flex-col overflow-hidden rounded-xl border border-line bg-white text-inherit transition-colors hover:border-cyan"
             >
-              <div className="relative h-[128px] overflow-hidden sm:h-[172px]">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={s.image}
                   alt={s.imageAlt}
                   fill
-                  sizes="(max-width: 1024px) 50vw, 320px"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 440px"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </div>
               <div className="flex flex-1 flex-col gap-2 p-4 sm:gap-2.5 sm:p-6">
-                <h3 className="m-0 text-[15px] font-bold uppercase leading-tight tracking-[0.5px] text-navy sm:text-base">
+                <h3 className="m-0 text-[22px] font-semibold leading-tight tracking-[-0.4px] text-navy">
                   {s.name}
                 </h3>
-                <p className="m-0 flex-1 text-[13px] leading-[1.6] text-slate sm:text-sm sm:leading-[1.65]">
+                <p className="m-0 flex-1 text-[15px] leading-[1.7] text-slate">
                   {s.short}
                 </p>
                 <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[1.5px] text-cyan">
@@ -75,6 +76,15 @@ export function WhatWeBuild() {
             </Link>
           ))}
         </div>
+        {featured ? (
+          <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4 border-t border-line pt-7">
+            {SERVICES.filter((s) => !shown.includes(s)).map((s) => (
+              <Link key={s.slug} href={`/services/${s.slug}`} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-cyan hover:underline">
+                {s.name}<ArrowIcon className="h-4 w-4" />
+              </Link>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );
@@ -132,7 +142,7 @@ export function ProcessSteps({
     <section className={`section-x ${bg} py-[100px]`}>
       <div className="mx-auto w-full max-w-[1400px]">
         <SectionHeading className="mb-[50px] max-w-[720px]" eyebrow={eyebrow} title={title} body={body} />
-        <div className="grid grid-cols-2 gap-x-4 gap-y-0 border-t-2 border-line-cool sm:gap-x-0 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 border-t-2 border-line-cool sm:gap-x-0 lg:grid-cols-5">
           {PROCESS.map((p, i) => (
             <div
               key={p.title}
@@ -256,7 +266,7 @@ export function BuilderPartnersBanner() {
       <div className="mx-auto grid w-full max-w-[1400px] gap-0 overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(26,42,58,0.10)] lg:grid-cols-2">
         <div className="flex flex-col justify-center gap-5 bg-navy px-8 py-12 text-white sm:px-14 sm:py-16">
           <p className="eyebrow m-0">For Custom Home Builders</p>
-          <h2 className="m-0 text-[clamp(26px,3vw,36px)] font-bold uppercase leading-[1.2]">
+          <h2 className="display-heading m-0 text-[clamp(36px,4vw,48px)] leading-[1.12]">
             Working With Custom Home Builders
           </h2>
           <p className="m-0 text-[15px] leading-[1.75] text-white/70">
@@ -306,7 +316,7 @@ export function FinancingSection() {
       <div className="mx-auto grid w-full max-w-[1400px] items-center gap-16 lg:grid-cols-[1fr_0.85fr]">
         <div>
           <p className="eyebrow m-0 mb-4">Financing</p>
-          <h2 className="m-0 mb-5 text-[clamp(28px,3.6vw,42px)] font-bold uppercase leading-[1.15] text-navy">
+          <h2 className="display-heading m-0 mb-5 text-[clamp(36px,4vw,52px)] leading-[1.12] text-navy">
             Pool Financing Without the Wait
           </h2>
           <p className="m-0 mb-7 max-w-[560px] text-base leading-[1.75] text-slate">
@@ -317,7 +327,7 @@ export function FinancingSection() {
           <div className="flex flex-wrap gap-3.5">
             <Button href="/financing">Check Your Rate</Button>
             <Button href="/contact" variant="outline">
-              Get an Instant Estimate
+              Request a Quote
             </Button>
           </div>
         </div>
@@ -358,7 +368,7 @@ export function FinalCta({
     <section className={`section-x ${bg} py-[100px] text-center`}>
       <div className="mx-auto max-w-[800px]">
         <p className="eyebrow m-0 mb-5">{eyebrow}</p>
-        <h2 className="m-0 mb-6 text-[clamp(32px,4.5vw,48px)] font-bold uppercase leading-[1.15] text-navy">
+        <h2 className="display-heading m-0 mb-6 text-[clamp(40px,5vw,64px)] leading-[1.08] text-navy">
           {title}
         </h2>
         <p className="mx-auto mb-10 mt-0 max-w-[600px] text-base leading-[1.7] text-slate">
@@ -418,7 +428,7 @@ export function PageHero({
           </nav>
         ) : null}
         {eyebrow ? <p className="eyebrow m-0 mb-4">{eyebrow}</p> : null}
-        <h1 className="m-0 max-w-[900px] text-[clamp(34px,4.5vw,52px)] font-extrabold uppercase leading-[1.1] tracking-[-0.5px] text-white">
+        <h1 className="display-heading m-0 max-w-[900px] text-[clamp(42px,5.5vw,72px)] leading-[1.06] text-white">
           {title}
         </h1>
         {body ? (

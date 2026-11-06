@@ -63,10 +63,10 @@ export function ChatIcon({ className = "h-5 w-5" }: { className?: string }) {
 /* ---------------- Buttons ---------------- */
 
 const BTN_BASE =
-  "inline-flex items-center justify-center gap-2.5 rounded text-[13px] font-bold uppercase tracking-[1px] transition-colors";
+  "inline-flex items-center justify-center gap-2.5 rounded-full text-[14px] font-semibold tracking-[0.1px] min-h-12 transition-colors";
 
 const VARIANTS = {
-  primary: "bg-navy text-white hover:bg-cyan",
+  primary: "bg-navy text-white hover:bg-cyan-dark",
   cyan: "bg-cyan text-white hover:bg-white hover:text-navy",
   outline: "border-2 border-line-strong bg-white text-navy hover:border-cyan hover:text-cyan",
   ghostLight: "border-2 border-white/30 text-white hover:border-white hover:bg-white hover:text-navy",
@@ -130,7 +130,7 @@ export function SectionHeading({
     <div className={className}>
       {eyebrow ? <p className="eyebrow m-0 mb-4">{eyebrow}</p> : null}
       <h2
-        className={`m-0 text-[clamp(30px,4vw,44px)] font-bold uppercase leading-[1.15] ${
+        className={`display-heading m-0 text-[clamp(36px,4.4vw,56px)] leading-[1.08] ${
           light ? "text-white" : "text-navy"
         }`}
       >

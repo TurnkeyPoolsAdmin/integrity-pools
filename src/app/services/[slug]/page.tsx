@@ -47,18 +47,18 @@ export default async function ServicePage({
         <div className="section-x">
           <div className="mx-auto grid w-full max-w-[1400px] items-center gap-12 pb-[70px] pt-[60px] lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <nav aria-label="Breadcrumb" className="mb-6 flex gap-2 text-xs text-white/50">
-                <Link href="/" className="transition-colors hover:text-cyan">
+              <nav aria-label="Breadcrumb" className="mb-6 flex gap-2 text-xs text-white/70">
+                <Link href="/" className="transition-colors hover:text-cyan-light">
                   Home
                 </Link>
                 <span aria-hidden="true">/</span>
-                <Link href="/services" className="transition-colors hover:text-cyan">
+                <Link href="/services" className="transition-colors hover:text-cyan-light">
                   Services
                 </Link>
               </nav>
               <p className="eyebrow m-0 mb-4">{service.name} Design &amp; Construction</p>
-              <h1 className="m-0 mb-6 text-[clamp(34px,4.1vw,50px)] font-extrabold uppercase leading-[1.08] tracking-[-0.5px] text-white">
-                {service.heroTitle} in Menifee, <span className="text-cyan">CA</span>
+              <h1 className="display-heading m-0 mb-6 text-[clamp(42px,4.8vw,64px)] leading-[1.08] text-white">
+                {service.heroTitle} in Menifee, <span className="text-cyan-light">CA</span>
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
                 {service.heroBlurb}
@@ -74,13 +74,13 @@ export default async function ServicePage({
               </div>
               <dl className="m-0 mt-11 grid grid-cols-1 gap-6 border-t border-white/10 pt-8 sm:grid-cols-3">
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/40">
+                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
                     Typical Timeline
                   </dt>
                   <dd className="m-0 mt-1.5 text-sm font-bold text-white">6–8 weeks, dig to dive</dd>
                 </div>
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/40">
+                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
                     Included
                   </dt>
                   <dd className="m-0 mt-1.5 text-sm font-bold text-white">
@@ -88,7 +88,7 @@ export default async function ServicePage({
                   </dd>
                 </div>
                 <div>
-                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/40">
+                  <dt className="m-0 text-[10px] font-semibold uppercase tracking-[1.5px] text-white/70">
                     Financing
                   </dt>
                   <dd className="m-0 mt-1.5 text-sm font-bold text-white">Available on request</dd>
@@ -101,7 +101,8 @@ export default async function ServicePage({
                 alt={service.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 640px"
-                priority
+                loading="eager"
+                fetchPriority="high"
                 className="object-cover"
               />
             </div>
@@ -145,7 +146,7 @@ export default async function ServicePage({
             />
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 border-b-2 border-cyan pb-1 text-xs font-bold uppercase tracking-[1.5px] text-navy transition-colors hover:text-cyan"
+              className="inline-flex items-center gap-2 border-b-2 border-cyan pb-1 text-xs font-bold uppercase tracking-[1.5px] text-navy transition-colors hover:text-cyan-light"
             >
               View Full Gallery
               <ArrowIcon className="h-3 w-3" />
@@ -213,7 +214,7 @@ export default async function ServicePage({
               <Link
                 key={a.slug}
                 href={`/service-areas/${a.slug}`}
-                className="rounded border border-line bg-white px-4 py-2.5 text-[13px] font-semibold text-navy transition-colors hover:border-cyan hover:text-cyan"
+                className="rounded border border-line bg-white px-4 py-2.5 text-[13px] font-semibold text-navy transition-colors hover:border-cyan hover:text-cyan-light"
               >
                 {a.name}
               </Link>
