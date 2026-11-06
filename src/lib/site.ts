@@ -577,14 +577,25 @@ export const PROCESS = [
 /* What to expect                                                      */
 /* ------------------------------------------------------------------ */
 
+// Launch positioning confirmed by Matt: the portal will be ready when the
+// customer-facing site launches. This is marketing copy, not a portal login.
+export const CUSTOMER_PORTAL = {
+  title: "Your project, in one place",
+  summary: "Your customer portal brings your project timeline, schedule and permit status together. Find your plans, signed permits, equipment manuals and warranties in one place, so you can see what is happening and find the records you need.",
+  faq: {
+    q: "How will I know what is happening with my project?",
+    a: "Your dedicated project manager coordinates the work and answers your questions. Your customer portal gives you access to your project timeline, schedule and permit status. It also keeps your plans, signed permits, equipment manuals and warranties together, so you can find project updates and important records in one place.",
+  },
+};
+
 export const EXPECTATIONS = [
   {
     title: "A person to turn to",
-    body: "Your dedicated project manager is your point of contact for questions and decisions. You know who to call and who is keeping you informed.",
+    body: "Your dedicated project manager coordinates our crews and is your point of contact for questions and decisions. You know who to call and who is keeping you informed.",
   },
   {
-    title: "Crews working to one plan",
-    body: "Your project manager coordinates the pool, decking, equipment and lighting work. You can discuss the whole project with one person.",
+    title: CUSTOMER_PORTAL.title,
+    body: "Check your timeline, schedule and permit status in your customer portal. Your plans, signed permits, equipment manuals and warranties are stored together for easy access.",
   },
   {
     title: "Your approval before digging",

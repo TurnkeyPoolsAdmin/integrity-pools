@@ -97,11 +97,11 @@ export function WhatToExpect() {
     <section className="section-x bg-navy py-[100px] text-white">
       <div className="mx-auto grid w-full max-w-[1400px] items-start gap-[70px] lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionHeading light eyebrow="Why Choose Integrity" title="Know who is responsible for your project" />
+          <SectionHeading light eyebrow="Why Choose Integrity" title="Stay informed throughout your build" />
           <p className="m-0 mb-8 mt-5 text-base leading-[1.75] text-white/70">
-            Choosing a pool builder means trusting a team with your home and your budget.
-            You deserve to know who will answer your questions, coordinate the work and care for
-            the finished pool. Here is how we take that responsibility.
+            Know what is happening with your pool and what comes next. Your dedicated project
+            manager keeps the work moving, while your customer portal puts the schedule,
+            permit status and project records within reach.
           </p>
           <Button href="/contact" variant="cyan">
             Get My Free Consultation

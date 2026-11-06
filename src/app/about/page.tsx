@@ -3,7 +3,7 @@ import Image from "next/image";
 import { FinalCta, ProcessSteps } from "@/components/sections";
 import { SectionHeading } from "@/components/ui";
 import FirstYearCare from "@/components/FirstYearCare";
-import { BUSINESS, STATS } from "@/lib/site";
+import { BUSINESS, CUSTOMER_PORTAL, STATS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -25,8 +25,8 @@ const RULES = [
     body: "Review each cost and the target schedule before construction starts. Your project manager keeps you informed as the build progresses.",
   },
   {
-    title: "Keep It One Project",
-    body: "Coordinate the pool, decking, features and lighting in one plan, with your project manager coordinating the crews and schedule.",
+    title: CUSTOMER_PORTAL.title,
+    body: "Check your timeline, schedule and permit status in your customer portal. Keep plans, signed permits, equipment manuals and warranties together for easy access.",
   },
 ];
 
@@ -66,6 +66,7 @@ export default function AboutPage() {
               Before construction starts, you review the design, the itemized proposal and the schedule
               with our team. Your approval sets the plan for the work ahead.
             </p>
+            <p className="m-0">{CUSTOMER_PORTAL.summary}</p>
           </div>
         </div>
       </section>

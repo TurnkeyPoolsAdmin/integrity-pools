@@ -14,7 +14,7 @@ import {
 import Faq from "@/components/Faq";
 import FirstYearCare from "@/components/FirstYearCare";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { FIRST_YEAR_CARE, HOME_FAQS, PROJECTS } from "@/lib/site";
+import { CUSTOMER_PORTAL, FIRST_YEAR_CARE, HOME_FAQS, PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
 
@@ -31,6 +31,7 @@ const CONSULTATION_STEPS = [
 const SALES_FAQS = [
   { q: "Do I need a finished plan before I contact you?", a: "No. Bring your ideas, questions and budget goals. We review your yard, prepare a 3D design and provide an itemized quote so you can decide what works for you." },
   { q: "Does the free consultation commit me to a build?", a: "No. Your site visit, design and quote are free, with no obligation to build. You can review the layout and costs before deciding." },
+  CUSTOMER_PORTAL.faq,
   ...HOME_FAQS,
 ];
 
