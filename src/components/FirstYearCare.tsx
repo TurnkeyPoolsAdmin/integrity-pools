@@ -43,7 +43,7 @@ export default function FirstYearCare({
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {FIRST_YEAR_CARE.steps.map((step, i) => (
-            <div key={step.title} className="border-t-2 border-cyan pt-6">
+            <div key={step.title} className="border-t-2 border-aqua pt-6">
               <p className="eyebrow m-0 mb-3">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="m-0 font-sans text-xl font-semibold leading-snug text-navy">{step.title}</h3>
               <p className="mb-0 mt-3 text-base leading-[1.7] text-slate">{step.body}</p>

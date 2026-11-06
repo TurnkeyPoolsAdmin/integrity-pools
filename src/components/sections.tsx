@@ -149,7 +149,7 @@ export function ProcessSteps({
           {steps.map((p, i) => (
             <div
               key={p.title}
-              className="-mt-0.5 flex flex-col gap-3 border-t-2 border-cyan pb-2.5 pt-6 sm:pr-6 sm:pt-8"
+              className="-mt-0.5 flex flex-col gap-3 border-t-2 border-aqua pb-2.5 pt-6 sm:pr-6 sm:pt-8"
             >
               <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">
@@ -191,7 +191,7 @@ export function Reviews({
             >
               <div
                 aria-label="Five out of five stars"
-                className="flex gap-[3px] text-[15px] tracking-[2px] text-cyan"
+                className={`flex gap-[3px] text-[15px] tracking-[2px] ${light ? "text-sand" : "text-sand-dark"}`}
               >
                 <span aria-hidden="true">★★★★★</span>
               </div>
@@ -268,7 +268,7 @@ export function ServiceAreaSection() {
 export function BuilderPartnersBanner() {
   return (
     <section className="section-x bg-shell py-[100px]">
-      <div className="mx-auto grid w-full max-w-[1400px] gap-0 overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(26,42,58,0.10)] lg:grid-cols-2">
+      <div className="mx-auto grid w-full max-w-[1400px] gap-0 overflow-hidden rounded-lg shadow-[0_20px_60px_rgba(4,34,66,0.10)] lg:grid-cols-2">
         <div className="flex flex-col justify-center gap-5 bg-navy px-8 py-12 text-white sm:px-14 sm:py-16">
           <p className="eyebrow m-0">For Custom Home Builders</p>
           <h2 className="display-heading m-0 text-[clamp(36px,4vw,48px)] leading-[1.12]">

@@ -1,36 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand */
-  --color-navy: #173c40;
-  --color-cyan: #246c73;
-  --color-cyan-dark: #19575e;
-  --color-cyan-pale: #f0f6f5;
-  --color-cyan-mist: #e3efec;
-  --color-cyan-light: #a5d3cf;
+  /* Logo navy and aqua, with a darker blue for readable links and buttons. */
+  --color-navy: #042242;
+  --color-cyan: #22658c;
+  --color-cyan-dark: #174d70;
+  --color-cyan-pale: #eff7fb;
+  --color-cyan-mist: #dceef6;
+  --color-cyan-light: #8cd5e5;
+  --color-aqua: #43a9c5;
+  --color-sand: #d7bc88;
+  --color-sand-dark: #86652e;
 
   /* Text */
-  --color-ink: #354e50;
-  --color-slate: #526568;
-  --color-muted: #637476;
+  --color-ink: #293f53;
+  --color-slate: #506477;
+  --color-muted: #607184;
   --color-faint: #c3ced8;
 
   /* Lines + surfaces */
-  --color-line: #e1e7e3;
-  --color-line-strong: #d6dfda;
-  --color-line-cool: #d6dfda;
-  --color-shell: #f6f4ef;
-  --color-shell-deep: #edece5;
+  --color-line: #dce5ed;
+  --color-line-strong: #71879b;
+  --color-line-cool: #d3e1ec;
+  --color-shell: #f7f5f0;
+  --color-shell-deep: #ebe5d8;
 
   /* Legacy aliases kept so the /quote wizard keeps its styling */
-  --color-primary: #173c40;
-  --color-primary-light: #2a5a8c;
-  --color-secondary: #246c73;
-  --color-secondary-light: #3aa0dc;
-  --color-accent: #f59e0b;
-  --color-accent-dark: #d97706;
-  --color-dark: #173c40;
-  --color-gray-light: #f6f4ef;
+  --color-primary: #042242;
+  --color-primary-light: #22658c;
+  --color-secondary: #22658c;
+  --color-secondary-light: #43a9c5;
+  --color-accent: #d7bc88;
+  --color-accent-dark: #86652e;
+  --color-dark: #042242;
+  --color-gray-light: #f7f5f0;
   --color-gray-medium: #94a3b8;
 
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
@@ -86,14 +89,16 @@ body {
 }
 
 /* Shared type and interaction rules. */
-::selection { background: #cce6df; color: #173c40; }
-:focus-visible { outline: 3px solid #39888f; outline-offset: 5px; }
+::selection { background: var(--color-cyan-mist); color: var(--color-navy); }
+:focus-visible { outline: 3px solid var(--color-cyan); outline-offset: 5px; }
+.bg-navy :focus-visible { outline-color: var(--color-cyan-light); }
 [id] { scroll-margin-top: 110px; }
 h1, h2 { text-wrap: balance; }
 p { text-wrap-style: pretty; }
 .display-heading { font-family: var(--font-display); font-weight: 400; text-transform: none; letter-spacing: -0.025em; }
-.bg-navy .eyebrow, .bg-navy .numeral { color: #a5d3cf; }
-.home-hero { background: #f6f4ef; }
+.bg-navy .eyebrow { color: var(--color-cyan-light); }
+.bg-navy .numeral { color: var(--color-sand); }
+.home-hero { background: var(--color-shell); }
 .hero-photo { min-height: 380px; }
 .project-photo { aspect-ratio: 4 / 3; }
 .photo-caption {
@@ -107,8 +112,8 @@ p { text-wrap-style: pretty; }
   font-weight: 600;
   line-height: 1.5;
 }
-.gallery-dialog { width: min(1120px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; border-radius: 12px; background: #fff; color: #173c40; }
-.gallery-dialog::backdrop { background: rgb(10 30 32 / 85%); backdrop-filter: blur(5px); }
+.gallery-dialog { width: min(1120px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; border-radius: 12px; background: #fff; color: var(--color-navy); }
+.gallery-dialog::backdrop { background: rgb(4 34 66 / 85%); backdrop-filter: blur(5px); }
 @media (max-width: 767px) {
   .hero-photo { min-height: 330px; }
   .section-x { padding-inline: 22px; }

@@ -136,7 +136,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-xl border border-line bg-white p-6 shadow-[0_20px_60px_rgba(23,60,64,0.05)] sm:p-10">
+    <form onSubmit={submit} className="rounded-xl border border-line bg-white p-6 shadow-[0_20px_60px_rgba(4,34,66,0.05)] sm:p-10">
       <ol className="m-0 mb-8 flex list-none gap-2 p-0">
         {STEPS.map((s, i) => (
           <li

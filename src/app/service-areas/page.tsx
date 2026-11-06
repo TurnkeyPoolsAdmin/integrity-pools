@@ -23,7 +23,7 @@ export default function ServiceAreasPage() {
             <Link
               key={a.slug}
               href={`/service-areas/${a.slug}`}
-              className="flex flex-col gap-3 rounded-lg border border-line bg-white p-7 transition-all hover:border-cyan hover:shadow-[0_14px_40px_rgba(26,42,58,0.08)]"
+              className="flex flex-col gap-3 rounded-lg border border-line bg-white p-7 transition-all hover:border-cyan hover:shadow-[0_14px_40px_rgba(4,34,66,0.08)]"
             >
               <span className="text-[17px] font-bold uppercase tracking-[0.5px] text-navy">
                 {a.name}

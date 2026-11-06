@@ -1,0 +1,51 @@
+{
+  "version": "1.0",
+  "date": "2026-11-06",
+  "website": "https://integrity-pools.vercel.app/",
+  "source": "Navy #042242 and aqua #43A9C5 sampled from supplied Integrity Logo-Main.png; remaining colors are supporting website choices.",
+  "colors": {
+    "navy": "#042242",
+    "cyan": "#22658c",
+    "cyan-dark": "#174d70",
+    "cyan-pale": "#eff7fb",
+    "cyan-mist": "#dceef6",
+    "cyan-light": "#8cd5e5",
+    "aqua": "#43a9c5",
+    "sand": "#d7bc88",
+    "sand-dark": "#86652e",
+    "ink": "#293f53",
+    "slate": "#506477",
+    "muted": "#607184",
+    "faint": "#c3ced8",
+    "line": "#dce5ed",
+    "line-strong": "#71879b",
+    "line-cool": "#d3e1ec",
+    "shell": "#f7f5f0",
+    "shell-deep": "#ebe5d8",
+    "primary": "#042242",
+    "primary-light": "#22658c",
+    "secondary": "#22658c",
+    "secondary-light": "#43a9c5",
+    "accent": "#d7bc88",
+    "accent-dark": "#86652e",
+    "dark": "#042242",
+    "gray-light": "#f7f5f0",
+    "gray-medium": "#94a3b8"
+  },
+  "typography": {
+    "display": {
+      "family": "DM Serif Display",
+      "weight": 400
+    },
+    "body": {
+      "family": "DM Sans",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ]
+    },
+    "logo": "Supplied artwork; original lettering is not replaced."
+  }
+}

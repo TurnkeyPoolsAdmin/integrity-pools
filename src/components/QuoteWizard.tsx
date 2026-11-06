@@ -337,7 +337,7 @@ export default function QuoteWizard() {
                   className="grid grid-cols-[44px_1fr] gap-x-5 sm:grid-cols-[1fr_44px_1fr] sm:gap-x-8"
                 >
                   <div className="relative row-span-1 flex flex-col items-center sm:col-start-2">
-                    <span className="z-[1] flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(27,134,200,0.35)]">
+                    <span className="z-[1] flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan text-[15px] font-bold text-white shadow-[0_6px_18px_rgba(34,101,140,0.35)]">
                       {i + 1}
                     </span>
                     {i < HOW_IT_WORKS.length - 1 ? (
