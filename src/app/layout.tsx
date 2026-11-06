@@ -74,6 +74,7 @@ export default function RootLayout({
               name: BUSINESS.name,
               legalName: BUSINESS.legalName,
               url: BUSINESS.url,
+              logo: new URL("/images/brand/integrity-main.png", BUSINESS.url).href,
               telephone: BUSINESS.phone,
               founder: { "@type": "Person", name: BUSINESS.ownerFullName },
               address: {
