@@ -44,7 +44,7 @@ const TAKE_ON = [
   { title: "Utility Coordination", body: "Equipment pad location and electrical load to your electrician at rough-in stage." },
   { title: "Grading Interface", body: "Pool elevations set to your finish grade, confirmed before excavation." },
   { title: "Access Protection", body: "Drive and lawn protection, contained spoil, site cleared daily." },
-  { title: "Client Walkthrough", body: "Startup, equipment training and maintenance handoff at closing." },
+  { title: "Startup & First-Year Service", body: "Professional startup, an equipment walkthrough and one year of free pool service included with every new pool." },
 ];
 
 const FAQS = [

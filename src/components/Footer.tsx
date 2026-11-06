@@ -30,7 +30,7 @@ export default function Footer() {
           <Logo light />
           <p className="m-0 max-w-[280px] text-sm leading-[1.7] text-white/70">
             Custom pool construction in Menifee and the Inland Empire. A dedicated project manager
-            coordinates your build, with support from our design, construction and pool-care team.
+            coordinates your build. Every new pool includes professional startup and one year of free pool service.
           </p>
           <p className="m-0 text-xs uppercase tracking-[1.2px] text-white/70">
             {BUSINESS.license}

@@ -55,10 +55,9 @@ export const BUSINESS = {
 /* ------------------------------------------------------------------ */
 
 export const STATS = [
-  // Matches Aqua's three-stat rhythm: a short number, then a two-word label.
+  { value: "1 year", label: "Free service with every new pool" }, // confirmed by Matt 2026-11-06
   { value: "30+", label: "Years Experience" }, // confirmed by Matt 2026-08-14
   { value: "43", label: "5-star pool-care reviews" }, // verified 2026-08-14, all 5 star
-  { value: "6–8 wks", label: "Typical new pool build" }, // confirmed by Matt 2026-08-14
 ];
 
 /* ------------------------------------------------------------------ */
@@ -83,6 +82,42 @@ export const STATS = [
  * Integrity's real photos are still in the repo under /images/photo-gallery,
  * /images/banner-img, etc. and can be swapped back in at any time.
  */
+
+// New-pool offer confirmed by Matt on 2026-11-06. Do not extend it to
+// standalone remodels, equipment work or spas without confirmed eligibility.
+export const FIRST_YEAR_CARE = {
+  headline: "One year of free pool service.",
+  summary: "Every new pool we build includes professional startup and a full year of pool service. Our team manages water chemistry and routine maintenance to help protect your new pool from the start.",
+  steps: [
+    {
+      title: "Professional startup",
+      body: "Our team handles startup, including water testing, balancing and care suited to your new finish and equipment.",
+    },
+    {
+      title: "Water chemistry managed",
+      body: "We test and balance the water throughout your included year of service, giving your pool consistent professional attention.",
+    },
+    {
+      title: "Routine maintenance included",
+      body: "Our pool-care team handles routine service during the first year and explains how to care for your pool between visits.",
+    },
+  ],
+} as const;
+
+export const POOL_CARE_FAQS = [
+  {
+    q: "Does my new pool include a year of free service?",
+    a: "Yes. Every new pool we build includes professional startup and one full year of pool service at no extra charge. Our team handles water chemistry and routine maintenance during that year.",
+  },
+  {
+    q: "Why is startup and early pool care so important?",
+    a: "A new plaster finish needs close attention while it cures, especially during the first 28 days. Improper startup or unbalanced water can cause staining, discoloration and surface damage. Consistent care helps protect the finish and its expected lifespan.",
+  },
+  {
+    q: "How does pool care affect warranty coverage?",
+    a: "Some finish and equipment warranties exclude damage caused by improper startup, water chemistry or maintenance. Our team follows the care requirements for your pool. Coverage is governed by the applicable warranty; included service does not extend or replace it.",
+  },
+];
 
 export type Service = {
   slug: string;
@@ -113,7 +148,7 @@ export const SERVICES: Service[] = [
     heroImageAlt: "Curved pool with underwater lights and an illuminated stone wall",
     heroTitle: "Custom Pools",
     heroBlurb:
-      "Gunite pools engineered for Southern California soil, sun and setbacks. Review your design and itemized quote before we dig. A dedicated project manager coordinates your build and keeps you informed from excavation through startup.",
+      "Gunite pools engineered for Southern California soil, sun and setbacks. Review your design and itemized quote before we dig. A dedicated project manager coordinates your build, and professional startup plus one year of free pool service are included.",
     intro:
       "Here is what is typically included in an Integrity custom pool build. Every yard is different, so your estimate documents carry the full inclusion list after we walk the site together.",
     inclusions: [
@@ -124,7 +159,7 @@ export const SERVICES: Service[] = [
       { title: "Steel & Plumbing", body: "Engineered rebar cage and schedule-40 runs, pressure tested." },
       { title: "Gunite Shell", body: "Pneumatically applied shell, cured and inspected before finish." },
       { title: "Tile, Coping & Decking", body: "Waterline tile, coping and your choice of deck material." },
-      { title: "Equipment & Startup", body: "Pump, filter, heater, automation, plus a full walkthrough." },
+      { title: "Equipment & Startup", body: "Pump, filter, heater, automation and professional startup. One year of pool service is included with your new pool." },
     ],
     faqs: [
       {
@@ -160,7 +195,7 @@ export const SERVICES: Service[] = [
     heroImageAlt: "Compact pool with blue underwater lighting beside a patio",
     heroTitle: "Plunge Pools",
     heroBlurb:
-      "Fit a pool into a smaller yard with a layout designed around your space. Our team reviews access, seating and heating options, then shows you the design and costs before you decide.",
+      "Fit a pool into a smaller yard with a layout designed around your space. Our team reviews access, seating and heating options, then shows you the design and costs before you decide. Every new plunge pool includes startup and one year of free pool service.",
     intro:
       "A plunge pool is a full gunite build in a smaller shell. Nothing about the structure or the equipment is downgraded.",
     inclusions: [
@@ -171,7 +206,7 @@ export const SERVICES: Service[] = [
       { title: "Tight Access Ready", body: "Small equipment and hand-dig where the gate will not take a machine." },
       { title: "Deck Integration", body: "Coping and decking laid to tie into the space you already have." },
       { title: "Automation", body: "Phone control for pump, heater and lights." },
-      { title: "Startup & Handoff", body: "Water balance and a walkthrough once it is full." },
+      { title: "Startup & First-Year Care", body: "Professional startup, an equipment walkthrough and one year of free pool service with your new plunge pool." },
     ],
     faqs: [
       {
@@ -533,8 +568,8 @@ export const PROCESS = [
     body: "Your project manager coordinates crews and updates. A typical new pool takes six to eight weeks after excavation begins, depending on site conditions, weather and inspections.",
   },
   {
-    title: "Startup & Care",
-    body: "Once water is in, our service crew balances the system and manages it through the first weeks so the finish cures properly.",
+    title: "Startup & First-Year Care",
+    body: "Every new pool includes professional startup and one year of free service. Our pool-care team manages water chemistry and routine maintenance.",
   },
 ];
 
@@ -556,8 +591,8 @@ export const EXPECTATIONS = [
     body: "Your quote lists the pool, equipment, decking and features separately. Compare proposals and adjust the plan with a clear view of each cost.",
   },
   {
-    title: "Pool care after construction",
-    body: "We balance the water at startup and show you how the equipment works. Weekly pool care is available after your build.",
+    title: "One year of free pool service",
+    body: "Every new pool includes professional startup and a full year of service. Our team manages water chemistry and routine maintenance to help protect your finish and equipment.",
   },
 ];
 
@@ -742,6 +777,7 @@ export const REVIEWS = [
 /* ------------------------------------------------------------------ */
 
 export const HOME_FAQS = [
+  ...POOL_CARE_FAQS,
   {
     q: "How do you price a project?",
     a: "Every proposal is itemized: shell, equipment, decking and each remaining line priced separately, so one part can change without re-pricing the rest. Pricing comes after the site visit and design, since access, soil and grade move the number more than anything else.",
@@ -761,10 +797,6 @@ export const HOME_FAQS = [
   {
     q: "Do you build fiberglass pools?",
     a: "No. We build gunite only. A sprayed concrete shell lets us customize the shape, depth and features. Your design accounts for the site conditions.",
-  },
-  {
-    q: "Do you service the pool after it is built?",
-    a: "Yes. Our service crew balances the water through startup, and weekly pool care is available afterward.",
   },
   {
     q: "Is financing available?",

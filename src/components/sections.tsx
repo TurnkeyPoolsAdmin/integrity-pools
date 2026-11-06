@@ -97,10 +97,10 @@ export function WhatToExpect() {
     <section className="section-x bg-navy py-[100px] text-white">
       <div className="mx-auto grid w-full max-w-[1400px] items-start gap-[70px] lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionHeading light eyebrow="Working With Us" title="Know the design, the price and who to call" />
+          <SectionHeading light eyebrow="Working With Us" title="A dedicated team for your build and first year" />
           <p className="m-0 mb-8 mt-5 text-base leading-[1.75] text-white/70">
             See how your pool will fit your yard before you commit. Review each cost in your quote.
-            Your dedicated project manager keeps you informed and coordinates the team behind your build.
+            Your dedicated project manager coordinates the build, and our service team handles startup and your included year of pool care.
           </p>
           <Button href="/about" variant="cyan">
             More About Us
@@ -372,6 +372,9 @@ export function FinalCta({
         <p className="mx-auto mb-10 mt-0 max-w-[600px] text-base leading-[1.7] text-slate">
           {body ??
             `We build across Menifee, Murrieta, Temecula, Wildomar and the towns around them. Call or send the form and our team will arrange a time to walk the yard with you.`}
+        </p>
+        <p className="mx-auto mb-8 mt-0 max-w-[600px] text-base font-semibold leading-relaxed text-navy">
+          Every new pool includes professional startup and one year of free pool service.
         </p>
         <Button href="/contact" size="lg" className="px-10">
           <ChatIcon />

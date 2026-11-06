@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Faq from "@/components/Faq";
+import FirstYearCare from "@/components/FirstYearCare";
 import { FinalCta, ProcessSteps, Reviews } from "@/components/sections";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { AREAS, BUSINESS, PROJECTS, SERVICES, serviceBySlug } from "@/lib/site";
+import { AREAS, BUSINESS, POOL_CARE_FAQS, PROJECTS, SERVICES, serviceBySlug } from "@/lib/site";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -34,6 +35,7 @@ export default async function ServicePage({
   const service = serviceBySlug(slug);
   if (!service) notFound();
 
+  const includesFirstYearCare = ["custom-pools", "plunge-pools"].includes(service.slug);
   const others = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 4);
   const heroSrc = service.heroImage ?? service.image;
   const gallery = PROJECTS.filter(
@@ -110,6 +112,8 @@ export default async function ServicePage({
         </div>
       </section>
 
+      {includesFirstYearCare ? <FirstYearCare /> : null}
+
       {/* Inclusions */}
       <section className="section-x bg-white py-[100px]">
         <div className="mx-auto w-full max-w-[1400px]">
@@ -184,7 +188,7 @@ export default async function ServicePage({
       <section className="section-x bg-white py-[100px]">
         <div className="mx-auto w-full max-w-[980px]">
           <SectionHeading className="mb-10" eyebrow="FAQ" title={`${service.name} in Menifee`} />
-          <Faq items={service.faqs} />
+          <Faq items={includesFirstYearCare ? [...POOL_CARE_FAQS, ...service.faqs] : service.faqs} />
         </div>
       </section>
 

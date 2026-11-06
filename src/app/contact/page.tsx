@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 import Faq from "@/components/Faq";
 import { PageHero } from "@/components/sections";
 import { SectionHeading } from "@/components/ui";
-import { BUSINESS } from "@/lib/site";
+import { BUSINESS, POOL_CARE_FAQS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -27,6 +27,7 @@ const NEXT_STEPS = [
 ];
 
 const CONTACT_FAQS = [
+  POOL_CARE_FAQS[0],
   {
     q: "What does the consultation include?",
     a: "A site visit, a design concept and an itemized proposal, at no cost and with no obligation to proceed.",
@@ -62,6 +63,9 @@ export default function ContactPage() {
             <h2 className="m-0 text-[22px] font-bold uppercase tracking-[0.5px] text-navy">
               Prefer the Phone?
             </h2>
+            <p className="m-0 text-base font-semibold leading-relaxed text-navy">
+              Every new pool includes professional startup and one year of free pool service.
+            </p>
             <a
               href={BUSINESS.phoneHref}
               className="text-[26px] font-extrabold text-cyan transition-colors hover:text-navy"

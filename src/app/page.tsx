@@ -12,8 +12,9 @@ import {
   WhatWeBuild,
 } from "@/components/sections";
 import Faq from "@/components/Faq";
+import FirstYearCare from "@/components/FirstYearCare";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { HOME_FAQS, PROJECTS } from "@/lib/site";
+import { FIRST_YEAR_CARE, HOME_FAQS, PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
 
@@ -30,7 +31,8 @@ export default function HomePage() {
             </h1>
             <p className="mb-7 mt-5 max-w-[480px] text-base leading-[1.65] sm:mt-7 sm:text-[17px] sm:leading-[1.75] text-slate">
               We design and build custom gunite pools, spas, hardscape and outdoor lighting for
-              homeowners across Menifee, Murrieta and the Inland Empire.
+              homeowners across Menifee, Murrieta and the Inland Empire. Every new pool includes
+              professional startup and one year of free pool service.
             </p>
             <div className="flex flex-wrap items-center gap-5">
               <Button href="/contact" size="lg" className="px-6 sm:px-9">Start Your Project<ArrowIcon /></Button>
@@ -49,13 +51,13 @@ export default function HomePage() {
             </div>
             <div className="px-6 py-7 text-white sm:px-9 sm:py-8">
               <h2 className="m-0 max-w-[530px] font-sans text-[26px] font-bold leading-[1.2] tracking-[-0.3px] sm:text-[30px]">
-                See your pool design before you commit.
+                {FIRST_YEAR_CARE.headline}
               </h2>
               <p className="mb-4 mt-3 max-w-[510px] text-base leading-[1.6] text-white">
-                Get a free 3D design and itemized quote. Your dedicated project manager coordinates the team and keeps you informed throughout your build.
+                Included with every new pool. Our team handles startup, water chemistry and routine maintenance, so your pool gets expert care from day one.
               </p>
-              <Link href="/contact" className="inline-flex min-h-11 items-center gap-3 text-base font-bold underline decoration-white/60 underline-offset-[6px] transition-colors hover:text-cyan-light">
-                Book a free site visit
+              <Link href="#first-year-care" className="inline-flex min-h-11 items-center gap-3 text-base font-bold underline decoration-white/60 underline-offset-[6px] transition-colors hover:text-cyan-light">
+                See what your first year includes
                 <ArrowIcon className="h-5 w-5 shrink-0" />
               </Link>
             </div>
@@ -63,6 +65,7 @@ export default function HomePage() {
         </div>
       </section>
       <StatsBar />
+      <FirstYearCare />
       <WhatWeBuild featured />
 
       {/* Recent work */}
@@ -105,7 +108,7 @@ export default function HomePage() {
       </section>
 
       <WhatToExpect />
-      <ProcessSteps body="Our team takes your project from site measurements and design review through construction and startup, with a dedicated project manager coordinating the work. Here is what happens at each step." />
+      <ProcessSteps body="Our team takes your project from site measurements and design review through construction, startup and your first year of care, with a dedicated project manager coordinating the work. Here is what happens at each step." />
 
       <Reviews />
       <ServiceAreaSection />

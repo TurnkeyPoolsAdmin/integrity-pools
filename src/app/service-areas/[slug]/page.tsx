@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Faq from "@/components/Faq";
+import FirstYearCare from "@/components/FirstYearCare";
 import { FinalCta, ProcessSteps, Reviews } from "@/components/sections";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
 import { AREAS, BUSINESS, HOME_FAQS, PROJECTS, SERVICES, areaBySlug } from "@/lib/site";
@@ -55,7 +56,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               </h1>
               <p className="m-0 mb-9 max-w-[560px] text-[17px] leading-[1.75] text-white/70">
                 {area.blurb} We design the pool, build the deck and walls around it, run the lighting
-                and hand it over with the water balanced.
+                and include professional startup plus one year of free pool service with every new pool.
               </p>
               <div className="flex flex-wrap gap-3.5">
                 <Button href="/contact" variant="cyan" size="lg">
@@ -112,6 +113,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
           </div>
         </div>
       </section>
+
+      <FirstYearCare />
 
       <ProcessSteps eyebrow="How It Works" title={`How a ${area.name} Build Runs`} />
 

@@ -12,7 +12,7 @@ import {
   computeEstimate,
   formatUsd,
 } from "@/lib/quotePricing";
-import { BUSINESS, REVIEWS, STATS } from "@/lib/site";
+import { BUSINESS, POOL_CARE_FAQS, REVIEWS, STATS } from "@/lib/site";
 import { ArrowIcon, CheckIcon, PhoneIcon } from "./ui";
 
 type Screen = "landing" | 1 | 2 | 3 | 4 | 5 | "result";
@@ -39,6 +39,7 @@ const HOW_IT_WORKS = [
 ];
 
 const FAQS = [
+  POOL_CARE_FAQS[0],
   {
     q: "Is this free to use?",
     a: "Yes. The estimate is completely free and there is no obligation of any kind.",
@@ -49,7 +50,7 @@ const FAQS = [
   },
   {
     q: "What's included in the base price of the pool I select?",
-    a: "Design, engineering, permits, excavation, steel, plumbing, gunite shell, standard finish and tile, equipment, and startup. Decking and upgrades are priced separately as you select them.",
+    a: "Design, engineering, permits, excavation, steel, plumbing, gunite shell, standard finish and tile, equipment, professional startup and one year of pool service with your new pool. Decking and upgrades are priced separately as you select them.",
   },
   {
     q: "Will someone call me afterward?",
@@ -292,6 +293,9 @@ export default function QuoteWizard() {
             </h1>
             <p className="mx-auto m-0 mb-10 max-w-[560px] text-[17px] leading-[1.75] text-slate">
               Choose a pool size and features to see a sample cost breakdown. Prices in this preview are examples. Request a free site visit for a confirmed quote.
+            </p>
+            <p className="mx-auto mb-8 max-w-[560px] text-base font-semibold leading-relaxed text-navy">
+              Every new pool includes professional startup and one year of free pool service.
             </p>
             <button
               type="button"
@@ -824,6 +828,9 @@ export default function QuoteWizard() {
             for a proposal based on your yard, access, slope, soil and design.
           </p>
 
+          <p className="mx-auto mb-8 max-w-[560px] text-base font-semibold leading-relaxed text-navy">
+            Professional startup and one year of pool service are included with every new pool we build.
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5">
             <a
               href="/contact"

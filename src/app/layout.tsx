@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: `%s | ${BUSINESS.name}`,
   },
   description:
-    "Custom gunite pools, spas, hardscape and outdoor lighting across Menifee, Murrieta and the Inland Empire. Free site visit, 3D design and an itemized quote.",
+    "Custom pools in Menifee and Murrieta with a free 3D design, dedicated project manager, professional startup and one year of free pool service with every new pool.",
   alternates: {
     canonical: "./",
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     title: `${BUSINESS.name} | Custom Pool Builder in Menifee & Murrieta, CA`,
     description:
-      "Custom gunite pools, spas, hardscape and outdoor lighting across Menifee, Murrieta and the Inland Empire.",
+      "Every new Integrity pool includes professional startup and one year of free pool service. Custom pools, spas and hardscape in Menifee and the Inland Empire.",
     type: "website",
     url: BUSINESS.url,
     images: [

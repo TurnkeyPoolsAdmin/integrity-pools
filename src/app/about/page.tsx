@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { FinalCta, ProcessSteps } from "@/components/sections";
 import { SectionHeading } from "@/components/ui";
+import FirstYearCare from "@/components/FirstYearCare";
 import { BUSINESS, STATS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Choose Integrity Pools for a dedicated project manager, coordinated construction and ongoing pool care. Serving Menifee and the Inland Empire.",
+    "Choose Integrity Pools for a dedicated project manager, coordinated construction and one year of free service with every new pool. Serving Menifee and the Inland Empire.",
 };
 
 const RULES = [
@@ -100,9 +101,9 @@ export default function AboutPage() {
               so the layout, drainage and equipment are considered before construction begins.
             </p>
             <p className="m-0">
-              We have been building Southern California pools since {BUSINESS.since}. We also provide
-              pool care in the same area. At startup, we balance the water and explain the equipment.
-              You can continue with weekly service after the build.
+              We have been building Southern California pools since {BUSINESS.since}. Every new pool
+              includes professional startup and one year of free pool service. Our team manages
+              water chemistry and routine maintenance during that first year.
             </p>
             <p className="m-0">
               Your project manager coordinates the crews and trades involved in your pool,
@@ -152,6 +153,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <FirstYearCare />
 
       <ProcessSteps eyebrow="Our Process" title="The steps from design to startup" />
 
