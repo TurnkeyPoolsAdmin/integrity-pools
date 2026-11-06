@@ -4,28 +4,27 @@ import {
   BuilderPartnersBanner,
   FinalCta,
   FinancingSection,
-  ProcessSteps,
   Reviews,
   ServiceAreaSection,
-  StatsBar,
-  WhatToExpect,
   WhatWeBuild,
 } from "@/components/sections";
 import Faq from "@/components/Faq";
 import FirstYearCare from "@/components/FirstYearCare";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
-import { CUSTOMER_PORTAL, FIRST_YEAR_CARE, HOME_FAQS, PROJECTS } from "@/lib/site";
+import { CUSTOMER_PORTAL, HOME_FAQS, PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
 
-// Each existing section advances a different buying decision. The consultation
-// section explains the free first step; the team section explains why to choose us.
+const BUILD_QUALITY = [
+  { title: "Skilled craftspeople", body: "chosen for the quality of their work." },
+  { title: "Carefully selected materials", body: "including genuine PebbleTec finishes." },
+  { title: "Daily construction checks", body: "by your dedicated project manager." },
+];
+
 const CONSULTATION_STEPS = [
-  { title: "Tell us your ideas", body: "Share your city, the features you want and your budget goals. Our team will arrange a free visit to your yard." },
-  { title: "Walk the yard", body: "Show us how you want to use the space. We take measurements and review access, slope and drainage." },
-  { title: "See your 3D design", body: "See where the pool, spa and patio could go in your own yard. Review the layout and tell us what you want to change." },
-  { title: "Review your quote", body: "See the pool, equipment, decking and features priced separately. Choose where to spend and where to adjust." },
-  { title: "Decide when ready", body: "Review the design and price before committing to a build. The site visit, design and quote are free, with no obligation." },
+  { title: "Walk the yard together.", body: "We take measurements, review access and discuss how you want to use the space." },
+  { title: "See your pool in 3D.", body: "Explore the layout and features, then tell us what you’d like to change." },
+  { title: "Understand where your budget goes.", body: "Review an itemized quote so you can compare choices and decide what matters most." },
 ];
 
 const SALES_FAQS = [
@@ -41,23 +40,23 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="mx-auto grid max-w-[1680px] lg:grid-cols-[0.95fr_1.05fr]">
           <div className="section-x flex flex-col justify-center py-9 sm:py-14 lg:py-20">
-            <p className="eyebrow mb-6">Menifee&apos;s Custom Pool Builder</p>
+            <p className="eyebrow mb-6">Custom Pool Builder in Menifee, CA</p>
             <h1 className="display-heading m-0 max-w-[650px] text-[clamp(48px,5.6vw,82px)] leading-[1.02] text-navy">
-              Pools, Spas<br />&amp; Hardscape<br />
-              <span className="text-cyan">in Menifee, CA</span>
+              Your dream pool deserves a builder who cares about{" "}
+              <span className="text-cyan">every detail.</span>
             </h1>
             <p className="mb-7 mt-5 max-w-[480px] text-base leading-[1.65] sm:mt-7 sm:text-[17px] sm:leading-[1.75] text-slate">
-              See your new backyard in 3D before you commit. Get a clear quote and a dedicated
-              project manager to guide your build. Every new pool includes professional startup
-              and one year of free pool service.
+              Bring your pool to life with a dedicated project manager who coordinates the crews
+              and keeps you informed from planning through construction. You’ll know who to call,
+              how your pool is progressing and what comes next.
             </p>
             <div className="flex flex-wrap items-center gap-5">
               <Button href="/contact" size="lg" className="px-6 sm:px-9">Get My Free Consultation<ArrowIcon /></Button>
               <Link href="/gallery" className="inline-flex min-h-12 items-center gap-2 border-b border-navy text-sm font-semibold text-navy hover:text-cyan">
-                View Gallery<ArrowIcon className="h-4 w-4" />
+                Explore Pool Designs<ArrowIcon className="h-4 w-4" />
               </Link>
             </div>
-            <p className="mt-5 text-sm font-medium leading-relaxed text-slate">Free site visit · Free design and quote · No obligation</p>
+            <p className="mt-5 text-sm font-medium leading-relaxed text-slate">Free site visit, 3D design and itemized quote. No obligation to build.</p>
           </div>
           <div className="flex flex-col overflow-hidden bg-navy">
             <div className="hero-photo relative flex-1">
@@ -66,44 +65,44 @@ export default function HomePage() {
                 fill sizes="(max-width: 1023px) 100vw, 55vw" loading="eager" fetchPriority="high"
                 className="object-cover object-[55%_center]" />
             </div>
-            <div className="px-6 py-7 text-white sm:px-9 sm:py-8">
-              <h2 className="m-0 max-w-[530px] font-sans text-[26px] font-bold leading-[1.2] tracking-[-0.3px] sm:text-[30px]">
-                {FIRST_YEAR_CARE.headline}
-              </h2>
-              <p className="mb-4 mt-3 max-w-[510px] text-base leading-[1.6] text-white">
-                Included with every new pool. Our team handles startup, water chemistry and routine maintenance, so your pool gets expert care from day one.
-              </p>
-              <Link href="#first-year-care" className="inline-flex min-h-11 items-center gap-3 text-base font-bold underline decoration-white/60 underline-offset-[6px] transition-colors hover:text-cyan-light">
-                See what your first year includes
-                <ArrowIcon className="h-5 w-5 shrink-0" />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
-      <StatsBar />
-      <FirstYearCare
-        title="Protect your new pool from the first fill"
-        summary="Your new pool is a major investment. Its first weeks need close attention as the finish cures and the water is balanced. That is why every new Integrity pool includes professional startup and one year of free service. Our team handles the chemistry and routine maintenance while you get to enjoy your pool."
-        ctaLabel="Get My Free Consultation"
-      />
-      <WhatWeBuild featured />
+      <section className="section-x bg-shell py-[80px] sm:py-[100px]">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <SectionHeading
+            className="max-w-[720px]"
+            title="Built Right, From the Ground Up"
+            body="We’re particular about who builds your pool and what goes into it. With pool building and service experience dating back to 2012, our team brings a practiced eye to the work."
+          />
+          <ul className="m-0 mt-10 grid list-none gap-5 p-0 md:grid-cols-3">
+            {BUILD_QUALITY.map((point) => (
+              <li key={point.title} className="border-t-2 border-aqua pt-6">
+                <h3 className="m-0 font-sans text-xl font-semibold leading-snug text-navy">{point.title}</h3>
+                <p className="mb-0 mt-3 text-base leading-[1.7] text-slate">{point.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Help the buyer picture the result. Reference images are not project proof. */}
       <section className="section-x bg-white py-[100px]">
         <div className="mx-auto w-full max-w-[1400px]">
           <div className="mb-11 flex flex-wrap items-end justify-between gap-8">
-            <SectionHeading
-              className="max-w-[640px]"
-              eyebrow="Design Ideas"
-              title="Picture what could work in your backyard"
-              body="A place to swim, room to gather or a spa for quiet evenings. Save the features you like and bring them to your free design consultation. These reference photos show design options, not completed Integrity projects."
-            />
+            <div className="max-w-[640px]">
+              <SectionHeading
+                eyebrow="Picture Your Backyard"
+                title="Make your backyard the place everyone wants to be."
+                body="Give the kids room to splash, gather friends around the water or settle into the spa after a long day. Your pool can bring more of the time you enjoy into the home you already love."
+              />
+              <p className="mb-0 mt-5 text-base leading-[1.75] text-slate">Explore the shapes, features and finishes that fit your vision.</p>
+            </div>
             <Link
               href="/gallery"
               className="inline-flex items-center gap-2 border-b-2 border-cyan pb-1 text-xs font-bold uppercase tracking-[1.5px] text-navy transition-colors hover:text-cyan"
             >
-              View Full Gallery
+              Explore Pool Designs
               <ArrowIcon className="h-3 w-3" />
             </Link>
           </div>
@@ -125,17 +124,53 @@ export default function HomePage() {
               );
             })}
           </div>
+          <p className="mb-0 mt-7 text-sm leading-relaxed text-slate">These reference photos show design ideas, not completed Integrity projects.</p>
         </div>
       </section>
 
-      <WhatToExpect />
-      <ProcessSteps
-        eyebrow="Your Free Consultation"
-        title="Find out what fits your yard and budget"
-        body="You do not need a finished plan to get started. Bring your ideas and questions. We will help you turn them into a design and a quote you can evaluate before you decide to build."
-        steps={CONSULTATION_STEPS}
+      <section className="section-x bg-navy py-[100px] text-white">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <SectionHeading
+            light
+            className="max-w-[720px]"
+            eyebrow="Your Customer Portal"
+            title="See where things stand. Find what you need."
+            body="Check your project timeline, schedule and permit status in your customer portal. Your plans and signed permits stay organized alongside equipment manuals and warranties, giving you one place to follow progress and find important details."
+          />
+        </div>
+      </section>
+
+      <section className="section-x bg-shell py-[100px]">
+        <div className="mx-auto w-full max-w-[1400px]">
+          <SectionHeading
+            className="mb-[50px] max-w-[720px]"
+            eyebrow="Your Free Consultation"
+            title="Find out what fits your yard and your budget."
+            body="Bring your ideas, questions and wish list. We’ll help you turn them into a pool design and a clear picture of the cost."
+          />
+          <div className="grid grid-cols-1 gap-x-4 gap-y-6 border-t-2 border-line-cool sm:grid-cols-2 sm:gap-x-0 lg:grid-cols-3">
+            {CONSULTATION_STEPS.map((step, i) => (
+              <div key={step.title} className="-mt-0.5 flex flex-col gap-3 border-t-2 border-aqua pb-2.5 pt-6 sm:pr-6 sm:pt-8">
+                <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">{step.title}</h3>
+                <p className="m-0 text-base leading-[1.7] text-slate">{step.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mb-7 mt-8 text-base leading-[1.75] text-slate">Take time to review the design and price before deciding to build.</p>
+          <Button href="/contact">Get My Free Consultation<ArrowIcon /></Button>
+        </div>
+      </section>
+
+      <FirstYearCare
+        title="A year of expert care for the pool you’ve invested in."
+        summary="Your new Integrity pool comes with professional startup and one full year of free pool service."
+        body="We handle water chemistry and routine maintenance to help protect your finish and equipment from the first fill. You can enjoy your new pool with experienced help already in place."
+        ctaLabel="See What Your First Year Includes"
+        ctaHref="#first-year-care-details"
       />
 
+      <WhatWeBuild featured />
       <Reviews
         eyebrow="Hear From Our Customers"
         title="See why homeowners trust our pool-care team"

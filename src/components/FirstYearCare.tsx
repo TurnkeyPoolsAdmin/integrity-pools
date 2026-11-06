@@ -4,8 +4,10 @@ import { ArrowIcon, Button } from "./ui";
 export default function FirstYearCare({
   title = FIRST_YEAR_CARE.headline,
   summary = FIRST_YEAR_CARE.summary,
+  body,
   ctaLabel = "Plan your pool with us",
-}: { title?: string; summary?: string; ctaLabel?: string }) {
+  ctaHref = "/contact",
+}: { title?: string; summary?: string; body?: string; ctaLabel?: string; ctaHref?: string }) {
   return (
     <section id="first-year-care" className="section-x bg-shell py-[80px] sm:py-[100px]">
       <div className="mx-auto w-full max-w-[1400px]">
@@ -18,7 +20,8 @@ export default function FirstYearCare({
             <p className="mb-7 mt-5 max-w-[640px] text-lg leading-[1.7] text-slate">
               {summary}
             </p>
-            <Button href="/contact">{ctaLabel}<ArrowIcon /></Button>
+            {body ? <p className="mb-7 mt-5 max-w-[640px] text-lg leading-[1.7] text-slate">{body}</p> : null}
+            <Button href={ctaHref}>{ctaLabel}<ArrowIcon /></Button>
           </div>
           <div className="rounded-xl border border-line bg-white p-6 sm:p-8">
             <h3 className="m-0 font-sans text-2xl font-semibold leading-snug text-navy">
@@ -41,7 +44,7 @@ export default function FirstYearCare({
             </p>
           </div>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div id="first-year-care-details" className="mt-10 grid scroll-mt-28 gap-5 md:grid-cols-3">
           {FIRST_YEAR_CARE.steps.map((step, i) => (
             <div key={step.title} className="border-t-2 border-aqua pt-6">
               <p className="eyebrow m-0 mb-3">{String(i + 1).padStart(2, "0")}</p>
