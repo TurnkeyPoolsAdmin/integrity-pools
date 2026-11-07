@@ -16,12 +16,6 @@ import { PROJECTS } from "@/lib/site";
 
 const RECENT = [0, 9, 11];
 
-const CONSULTATION_STEPS = [
-  { title: "Walk the yard together.", body: "We take measurements, review access and discuss how you want to use the space." },
-  { title: "See your pool in 3D.", body: "Explore the layout and features, then tell us what you’d like to change." },
-  { title: "Understand where your budget goes.", body: "Review an itemized quote so you can compare choices and decide what matters most." },
-];
-
 const SALES_FAQS = [
   { q: "How long does construction take?", a: "A typical build takes six to eight weeks after excavation begins. Site conditions, weather and inspections can affect the schedule. We review the target timeline with you before construction." },
   { q: "Do you handle permits and HOA submissions?", a: "Yes. We prepare the drawings, handle submissions and schedule inspections. Approval times depend on the city and your HOA." },
@@ -122,27 +116,16 @@ export default function HomePage() {
       <section className="section-x bg-shell py-[100px]">
         <div className="mx-auto w-full max-w-[1400px]">
           <SectionHeading
-            className="mb-[50px] max-w-[720px]"
+            className="mb-7 max-w-[720px]"
             eyebrow="Your Free Consultation"
             title="Find out what fits your yard and your budget."
             body="Bring your ideas, questions and wish list. We’ll help you turn them into a pool design and a clear picture of the cost."
           />
-          <div className="grid grid-cols-1 gap-x-4 gap-y-6 border-t-2 border-line-cool sm:grid-cols-2 sm:gap-x-0 lg:grid-cols-3">
-            {CONSULTATION_STEPS.map((step, i) => (
-              <div key={step.title} className="-mt-0.5 flex flex-col gap-3 border-t-2 border-aqua pb-2.5 pt-6 sm:pr-6 sm:pt-8">
-                <span className="numeral">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="m-0 text-base font-bold uppercase tracking-[0.5px] text-navy">{step.title}</h3>
-                <p className="m-0 text-base leading-[1.7] text-slate">{step.body}</p>
-                {i === 2 ? (
-                  <p className="mb-0 mt-2 text-base leading-[1.7] text-slate">
-                    <Link href="#pool-financing" className="font-semibold text-cyan underline underline-offset-4">Thinking about financing?</Link>{" "}
-                    We can discuss options during your free consultation, so you can consider
-                    the design and how you’ll pay for it together.
-                  </p>
-                ) : null}
-              </div>
-            ))}
-          </div>
+          <p className="mb-0 max-w-[720px] text-base leading-[1.7] text-slate">
+            <Link href="#pool-financing" className="font-semibold text-cyan underline underline-offset-4">Thinking about financing?</Link>{" "}
+            We can discuss options during your free consultation, so you can consider
+            the design and how you’ll pay for it together.
+          </p>
           <p className="mb-7 mt-8 text-base leading-[1.75] text-slate">Take time to review the design and price before deciding to build.</p>
           <Button href="/contact">Get My Free Consultation<ArrowIcon /></Button>
         </div>

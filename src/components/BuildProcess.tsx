@@ -4,45 +4,45 @@ import { ArrowIcon, Button, SectionHeading } from "./ui";
 const STAGES = [
   {
     title: "Layout & Excavation",
-    benefit: "Get the groundwork right.",
-    body: "Your pool’s shape, depth and position begin here. Your project manager checks the work daily as the yard is prepared and your pool takes shape.",
-    image: "/images/build-process/01-layout-excavation.webp",
-    visual: "Construction illustration of an excavator shaping a pool, with layout strings and exposed soil walls",
+    benefit: "Your design starts taking shape.",
+    body: "We establish your pool’s position, shape and depth, then prepare the ground for construction. The pool you pictured begins to become part of your backyard.",
+    image: "/images/build-process/01-layout-excavation-modern.webp",
+    visual: "Architectural drawing of the pool excavation with layout lines and survey stakes",
   },
   {
     title: "Steel & Plumbing",
-    benefit: "Give the hidden work the attention it deserves.",
-    body: "Steel reinforcement and plumbing become part of the pool you’ll depend on for years. We choose skilled tradespeople and keep a close eye on the work throughout construction.",
-    image: "/images/build-process/02-steel-plumbing.webp",
-    visual: "Construction illustration of a steel cage across the pool floor and walls, with plumbing beside the shell",
+    benefit: "Quality beneath the surface.",
+    body: "Steel supports the structure. Plumbing carries the water. We put experienced tradespeople behind this hidden work because you’ll depend on it long after construction is complete.",
+    image: "/images/build-process/02-steel-plumbing-modern.webp",
+    visual: "Architectural drawing of steel reinforcement across the pool floor and walls, with plumbing routes",
   },
   {
     title: "Concrete Shell",
-    benefit: "Put experienced hands behind your pool’s structure.",
-    body: "The concrete shell forms the body of your pool. Carefully chosen craftspeople and daily oversight bring our focus on workmanship to this critical stage.",
-    image: "/images/build-process/03-concrete-shell.webp",
-    visual: "Construction illustration of a concrete pool shell and entry steps, with a cutaway revealing embedded steel",
+    benefit: "A solid start to years of enjoyment.",
+    body: "The concrete shell forms your pool’s walls, floor and steps. Your project manager checks the work daily as construction moves forward, keeping close attention on how your pool is built.",
+    image: "/images/build-process/03-concrete-shell-modern.webp",
+    visual: "Architectural cutaway of a concrete pool shell, entry steps and embedded steel",
   },
   {
     title: "Tile, Coping & Decking",
-    benefit: "Craftsmanship you’ll see every day.",
-    body: "The tile, pool edging and surrounding deck bring your backyard together. We’re particular about the people doing this work because these are the details you’ll see and use every time you enjoy your pool.",
-    image: "/images/build-process/04-tile-coping-decking.webp",
-    visual: "Construction illustration of waterline tile, stone coping and aligned deck pavers around the empty pool",
+    benefit: "Details you’ll appreciate every day.",
+    body: "The tile line, stone edging and surrounding deck bring your backyard together. Carefully chosen materials and precise installation make these everyday surfaces feel like part of one complete design.",
+    image: "/images/build-process/04-tile-coping-decking-modern.webp",
+    visual: "Architectural drawing of waterline tile, stone coping and deck paving around the pool",
   },
   {
     title: "Interior Finish",
-    benefit: "Choose quality all the way to the surface.",
-    body: "We use genuine PebbleTec finishes. Your pool’s finish deserves the same care in material selection and workmanship as everything beneath it.",
-    image: "/images/build-process/05-interior-finish.webp",
-    visual: "Construction illustration of a pebble finish covering the pool interior and steps, with a matching surface sample",
+    benefit: "Genuine PebbleTec. A finish worth investing in.",
+    body: "We use genuine PebbleTec finishes, with care in both material selection and application. Your pool’s surface gets the same attention as the structure beneath it.",
+    image: "/images/build-process/05-interior-finish-modern.webp",
+    visual: "Architectural cutaway showing a pebble finish across the pool floor, walls and steps",
   },
   {
     title: "Startup & First-Year Care",
-    benefit: "Protect your pool from the first fill.",
-    body: "We handle professional startup and include one full year of free pool service. Water chemistry and routine maintenance receive expert attention while you enjoy your new pool.",
-    image: "/images/build-process/06-startup-care.webp",
-    visual: "Construction illustration of a filled pool with a water-testing kit and pool brush on the deck",
+    benefit: "Enjoy your pool. We’ll help protect it.",
+    body: "Professional startup and one full year of free pool service are included. We manage water chemistry and routine maintenance while you settle into life with your new pool.",
+    image: "/images/build-process/06-startup-care-modern.webp",
+    visual: "Architectural drawing of a filled pool with water-testing vials and a pool brush",
   },
 ];
 
@@ -57,10 +57,20 @@ export default function BuildProcess() {
             body="The quality of your pool starts beneath the surface. Follow the six stages that turn your backyard into a finished pool, with selected craftspeople, carefully chosen materials and daily project-manager checks along the way."
           />
         </div>
+        <div className="mt-7 grid gap-3 rounded-xl border border-line border-l-[3px] border-l-aqua bg-white px-5 py-5 md:grid-cols-[0.8fr_1.2fr] md:items-center md:gap-8 md:px-6">
+          <div>
+            <p className="mb-2 mt-0 text-xs font-semibold uppercase tracking-[1.2px] text-cyan">Design &amp; Consultation</p>
+            <h3 className="m-0 font-sans text-xl font-semibold leading-snug text-navy">Before we build, make it yours.</h3>
+          </div>
+          <p className="m-0 text-[15px] leading-[1.65] text-slate">
+            Walk your yard with us, explore your pool in 3D and review an itemized quote.
+            Refine the design around the way you want to live and the budget you have in mind.
+          </p>
+        </div>
         <ol className="m-0 mt-8 grid list-none gap-5 p-0 md:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3">
           {STAGES.map((stage, i) => (
             <li key={stage.title} className="flex flex-col overflow-hidden rounded-xl border border-line bg-white">
-              <div className="relative h-[176px] overflow-hidden border-b border-line bg-[#f4f0e9] sm:h-[160px]">
+              <div className="relative h-[176px] overflow-hidden border-b border-line bg-shell sm:h-[160px]">
                 <Image
                   src={stage.image}
                   alt={stage.visual}
