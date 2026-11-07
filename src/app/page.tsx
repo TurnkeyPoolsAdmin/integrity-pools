@@ -11,6 +11,7 @@ import {
 import Faq from "@/components/Faq";
 import FirstYearCare from "@/components/FirstYearCare";
 import BuildProcess from "@/components/BuildProcess";
+import CustomerPortalPreview from "@/components/CustomerPortalPreview";
 import { ArrowIcon, Button, SectionHeading } from "@/components/ui";
 import { PROJECTS } from "@/lib/site";
 
@@ -101,8 +102,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section-x bg-navy py-[100px] text-white">
-        <div className="mx-auto w-full max-w-[1400px]">
+      <section id="customer-portal" className="section-x bg-navy py-16 text-white sm:py-20">
+        <div className="mx-auto grid w-full max-w-[1400px] items-center gap-10 xl:grid-cols-[0.8fr_1.2fr] xl:gap-14">
           <SectionHeading
             light
             className="max-w-[720px]"
@@ -110,6 +111,7 @@ export default function HomePage() {
             title="See where things stand. Find what you need."
             body="Check your project timeline, schedule and permit status in your customer portal. Your plans and signed permits stay organized alongside equipment manuals and warranties, giving you one place to follow progress and find important details."
           />
+          <CustomerPortalPreview />
         </div>
       </section>
 
